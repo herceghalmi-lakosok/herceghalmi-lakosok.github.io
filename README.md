@@ -4,6 +4,8 @@ Lakossági tájékoztató weboldal a herceghalmi (440/5 hrsz.) Panattoni logiszt
 
 Ez lakossági kezdeményezés, nem Herceghalom Község Önkormányzatának és nem a beruházónak az oldala. Az adatok nyilvános iratokból származnak; a források az oldal alján szerepelnek.
 
-## Közzététel
+## Elérhetőség
 
-A teljes oldal egyetlen fájl (`index.html`), két kép és egy videó (`ordoglovas-vazlatfuzet.mp4`, `ordoglovas-poster.jpg`). GitHub Pages-en: Settings → Pages → Source: „Deploy from a branch”, Branch: `main`, mappa: `/ (root)`.
+https://herceghalmi-lakosok.github.io
+
+A teljes oldal egyetlen fájl (`index.html`), két kép és egy videó (`ordoglovas-vazlatfuzet.mp4`, `ordoglovas-poster.jpg`). A GitHub Pages a `main` ág gyökeréből szolgálja ki.
