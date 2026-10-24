@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Lakossági tájékoztató a herceghalmi Panattoni-beruházásról: időrend, a kért szabálymódosítás, telekcsere, környezeti hatás, lakossági fórum.">
+<title>Panattoni-ügy Herceghalmon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: egy hasábos, hosszan görgethető tájékoztató; a fejezetek a Facebook-ábrák újrarajzolt változatai köré épülnek. Színek a herceghalom.hu színvilágából: fehér alap, sötétkék (#1C355E), türkiz (#48B5BC) a beruházó kéréseire, olajzöld (#B8BD44) a falunak járó tételekre és kiemelésekre. */
+:root{
+  --bg:#FFFFFF; --surface:#F5F6F7; --ink:#1C355E; --muted:#404758; --line:#D9D9D9; --soft:#ECECEC;
+  --orange:#1F7F86; --orange-fill:#48B5BC; --orange-soft:#DDF1F2;
+  --green:#5E6216; --green-fill:#9DA232; --green-soft:#F1F2D9;
+  --navy:#1C355E; --on-navy:#FFFFFF; --navy-accent:#B8BD44;
+  --state:#1E273F; --people:#7A4E9E;
+  --grey-bar:#A9AEB8;
+  --f-display:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  --f-body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121A2A; --surface:#1A2438; --ink:#E8ECF2; --muted:#AEB6C4; --line:#2C3750; --soft:#222D44;
+  --orange:#6FD0D6; --orange-fill:#48B5BC; --orange-soft:#163A40;
+  --green:#C9CE5E; --green-fill:#B8BD44; --green-soft:#2E3018;
+  --navy:#0E1626; --on-navy:#E8ECF2; --navy-accent:#B8BD44;
+  --state:#8FB0E6; --people:#C7A3E6; --grey-bar:#6E7586; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121A2A; --surface:#1A2438; --ink:#E8ECF2; --muted:#AEB6C4; --line:#2C3750; --soft:#222D44;
+  --orange:#6FD0D6; --orange-fill:#48B5BC; --orange-soft:#163A40;
+  --green:#C9CE5E; --green-fill:#B8BD44; --green-soft:#2E3018;
+  --navy:#0E1626; --on-navy:#E8ECF2; --navy-accent:#B8BD44;
+  --state:#8FB0E6; --people:#C7A3E6; --grey-bar:#6E7586; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.02;margin:0;text-wrap:balance}
+h2{font-size:clamp(34px,5.5vw,52px)}
+h3{font-size:clamp(22px,3vw,28px);line-height:1.1}
+p{margin:0;max-width:68ch}
+a{color:var(--orange)}
+:focus-visible{outline:3px solid var(--orange-fill);outline-offset:3px}
+.eyebrow{font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:19px;color:var(--muted)}
+.src{font-size:13.5px;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Fejléc, navigáció */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+.notice-band{background:var(--navy);color:var(--on-navy);font-size:15px;line-height:1.45}
+.notice-band .wrap{padding-block:12px}
+.notice-band strong{color:var(--navy-accent);margin-right:6px}
+nav.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;align-items:center;padding-block:10px}
+nav.top b{font-family:var(--f-display);font-size:22px;margin-right:auto}
+nav.top a{color:var(--ink);text-decoration:none;font-size:14.5px;font-weight:600;padding:8px 0;min-height:44px;display:inline-flex;align-items:center}
+nav.top a:hover{color:var(--orange)}
+@media (max-width:760px){nav.top .links{display:flex;gap:4px 14px;flex-wrap:nowrap;overflow-x:auto;width:100%}nav.top .links a{white-space:nowrap}}
+
+header.hero .wrap{padding-block:56px 40px;display:flex;flex-direction:column;gap:22px}
+header.hero h1{font-size:clamp(48px,9vw,96px);letter-spacing:-.01em}
+header .status{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:6px}
+header .status div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+header .status small{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header .status strong{font-family:var(--f-display);font-size:26px;line-height:1.1}
+header .status .hot{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+header .status .hot small{color:var(--navy-accent)}
+.disclaimer{font-size:14px;color:var(--muted);border-left:0;padding:12px 14px;background:var(--soft);border-radius:8px;max-width:none}
+
+main section{padding-block:64px;border-top:1px solid var(--line)}
+main section > .wrap{display:flex;flex-direction:column;gap:22px}
+figure{margin:0;display:flex;flex-direction:column;gap:10px}
+figcaption{font-size:14px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(16px,3vw,28px)}
+.scroll{overflow-x:auto}
+svg text{font-family:var(--f-body)}
+
+/* Aktuális */
+.news{display:flex;flex-direction:column;border-top:2px solid var(--ink)}
+.news li{list-style:none;display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.news{padding:0;margin:0}
+.news time{font-family:var(--f-display);font-size:22px;font-weight:700;line-height:1.15}
+.news .next time{color:var(--orange)}
+.news h3{font-family:var(--f-body);font-size:17px;font-weight:700;line-height:1.35;margin-bottom:4px}
+.news p{color:var(--muted);font-size:16px}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:2px;background:var(--orange-soft);color:var(--orange)}
+.open-q{columns:2;column-gap:32px;padding-left:20px;margin:0}
+.open-q li{break-inside:avoid;margin-bottom:8px;font-size:16px}
+
+/* Számok */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.facts div{padding:16px 16px 16px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.facts strong{font-family:var(--f-display);font-size:40px;line-height:1}
+.facts span{font-size:15px;color:var(--muted)}
+
+/* Idővonal */
+#idovonal .legend{display:flex;flex-wrap:wrap;gap:8px}
+#idovonal .legend button{font:inherit;font-size:14px;font-weight:600;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+#idovonal .legend button[aria-pressed="false"]{opacity:.45}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
+.d-onk{background:var(--green-fill)} .d-ber{background:var(--orange-fill)} .d-all{background:var(--state)} .d-lak{background:var(--people)}
+ol.tl{list-style:none;margin:0;padding:0;position:relative}
+ol.tl .year{font-family:var(--f-display);font-size:44px;font-weight:700;line-height:1;margin:28px 0 8px;color:var(--ink)}
+ol.tl .ev{display:grid;grid-template-columns:120px 22px minmax(0,1fr);gap:12px;padding:10px 0;position:relative}
+ol.tl .ev::before{content:"";position:absolute;left:142px;top:0;bottom:0;width:2px;background:var(--line)}
+ol.tl .ev time{font-size:14px;font-weight:600;color:var(--muted);text-align:right;padding-top:2px}
+ol.tl .ev .dot{margin-top:6px;position:relative;z-index:1;justify-self:center;box-shadow:0 0 0 4px var(--bg)}
+ol.tl .ev h3{font-family:var(--f-body);font-size:16.5px;font-weight:700;line-height:1.4}
+ol.tl .ev p{font-size:15px;color:var(--muted)}
+ol.tl .ev.key h3::after{content:"kulcsmozzanat";font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--navy);color:var(--on-navy);vertical-align:2px}
+ol.tl .ev.future time,ol.tl .ev.future h3{color:var(--orange)}
+ol.tl .ev[hidden]{display:none}
+
+/* Kérések */
+.req{display:flex;flex-direction:column}
+.req .row{display:grid;grid-template-columns:200px minmax(0,1fr) 120px;gap:18px;align-items:center;padding:16px 0;border-top:1px solid var(--line)}
+.req .row:last-child{border-bottom:1px solid var(--line)}
+.req .lbl{font-weight:700;font-size:17px;line-height:1.25}
+.req .bars{display:flex;flex-direction:column;gap:8px}
+.req .bar{display:grid;grid-template-columns:minmax(0,1fr) 110px;align-items:center;gap:12px}
+.req .bar b{display:block;min-width:0}
+.req .bar i{display:block;height:18px;border-radius:3px;background:var(--grey-bar);min-width:6px}
+.req .bar.ask i{background:var(--orange-fill)}
+.req .bar span{font-size:15px;white-space:nowrap;color:var(--muted)}
+.req .bar.ask span{color:var(--orange);font-weight:700}
+.delta{justify-self:end;padding:6px 12px;border-radius:999px;background:var(--orange-soft);color:var(--orange);font-weight:700;font-size:15px;white-space:nowrap}
+.keys{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.keys span{display:inline-flex;gap:8px;align-items:center}
+.keys i{width:24px;height:12px;border-radius:2px;display:inline-block}
+
+/* Mérleg */
+.scale{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.scale > div{border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.scale .give{background:var(--orange-soft)}
+.scale .get{background:var(--green-soft)}
+.scale h3{font-size:30px}
+.scale ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:16px}
+.scale .give h3{color:var(--orange)} .scale .get h3{color:var(--green)}
+.scale em{font-style:normal;font-weight:700}
+.zero{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;background:var(--navy);color:var(--on-navy);border-radius:12px;padding:18px 22px}
+.zero strong{font-family:var(--f-display);font-size:48px;line-height:1;color:var(--navy-accent)}
+
+/* Táblázat */
+.tbl{width:100%;border-collapse:collapse;font-size:15.5px}
+.tbl th,.tbl td{text-align:left;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink)}
+.tbl td:first-child{font-weight:600;width:45%}
+
+.cta{background:var(--navy);color:var(--on-navy);border-radius:16px;padding:clamp(22px,4vw,40px);display:flex;flex-direction:column;gap:14px}
+.cta .eyebrow{color:var(--navy-accent)}
+.cta h2{color:var(--on-navy)}
+.cta p{color:#D4DBE6}
+.cta ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;color:#D4DBE6}
+.cta a{color:var(--navy-accent);font-weight:700}
+.sources{columns:2;column-gap:32px;font-size:14px;color:var(--muted);padding-left:18px;margin:0}
+.sources li{break-inside:avoid;margin-bottom:6px}
+footer .wrap{padding-block:28px 48px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  header .status,.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .news li{grid-template-columns:minmax(0,1fr);gap:4px}
+  .open-q,.sources{columns:1}
+  ol.tl .ev{grid-template-columns:22px minmax(0,1fr);}
+  ol.tl .ev time{grid-column:2;text-align:left;order:-1}
+  ol.tl .ev .dot{grid-row:1 / span 2;grid-column:1}
+  ol.tl .ev::before{left:10px}
+  .req .row{grid-template-columns:minmax(0,1fr) auto}
+  .req .lbl{grid-column:1}
+  .req .bars{grid-column:1 / -1;grid-row:2}
+  .req .delta{grid-column:2;grid-row:1}
+  .scale{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+/* Kisfilm: sötét vetítővászon a herceghalom.hu színeiből (sötétkék alap, olajzöld jelzés, türkiz park) */
+#film{--night:#14233D; --panel:#1C355E; --fline:#2E4A78; --wheat:#F2F4F7; --mute:#B5C0D0;
+  --signal:#B8BD44; --park:#48B5BC; --alert:#F08C6E; --road:#4F6A94;
+  --fdisplay:'Barlow Condensed','Arial Narrow',Arial,sans-serif; --fbody:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif}
+#film .filmbox > *{min-width:0}
+#film .filmbox{grid-template-columns:minmax(0,1fr);background:var(--night);color:var(--wheat);border-radius:16px;padding:clamp(14px,2.5vw,24px);display:grid;gap:16px}
+#film .stage{--u:1cqw;position:relative;container-type:inline-size;aspect-ratio:16/9;background:var(--panel);border:1px solid var(--fline);border-radius:6px;overflow:hidden;max-width:100%;font-family:var(--fbody);line-height:1.5;cursor:pointer}
+#film .stage:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+@media (max-width:700px){#film .stage{aspect-ratio:3/5}}
+#film .stage::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--fline) 1px,transparent 1px),linear-gradient(90deg,var(--fline) 1px,transparent 1px);background-size:5cqw 5cqw;opacity:.18;pointer-events:none}
+#film .scene{position:absolute;inset:0 0 calc(var(--u)*9.5) 0;padding:calc(var(--u)*4) calc(var(--u)*4.5) calc(var(--u)*2);display:grid;grid-template-columns:1.05fr 1fr;gap:calc(var(--u)*3.5);align-items:center;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}
+#film .scene.active{opacity:1;visibility:visible}
+#film .scene.full{grid-template-columns:1fr}
+#film .scene{border:0}
+#film .txt{min-width:0;display:grid;gap:calc(var(--u)*1.2);align-content:center}
+#film .eyebrow{font-family:var(--fdisplay);font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--signal);font-size:max(11px,calc(var(--u)*1.25))}
+#film .scene h2{font-family:var(--fdisplay);font-weight:700;font-size:max(22px,calc(var(--u)*4));line-height:1.02;margin:0;color:var(--wheat);text-wrap:balance}
+#film .scene p,#film .scene li{font-size:max(13px,calc(var(--u)*1.55));margin:0;color:var(--wheat);max-width:none}
+#film .scene ul{margin:0;padding:0;list-style:none;display:grid;gap:calc(var(--u)*.7)}
+#film .scene ul li{padding-left:1.1em;position:relative}
+#film .scene ul li::before{content:"";position:absolute;left:0;top:.55em;width:.5em;height:.5em;background:var(--signal);transform:rotate(45deg)}
+#film .small{color:var(--mute)!important;font-size:max(11px,calc(var(--u)*1.2))!important}
+#film .ill{min-width:0;display:flex;justify-content:center;align-items:center}
+#film .ill svg{width:100%;height:auto;max-height:100%;overflow:visible}
+#film svg text{font-family:var(--fdisplay)}
+#film svg text:not([fill]){fill:var(--wheat)}
+#film b,#film strong{color:var(--signal);font-weight:600}
+#film .alert{color:var(--alert)}
+#film .s-title h2{font-size:max(34px,calc(var(--u)*7))}
+#film .s-title .lede{font-size:max(15px,calc(var(--u)*2));color:var(--mute);max-width:32ch}
+#film .playbig{justify-self:start;display:inline-flex;align-items:center;gap:.6em;background:var(--signal);color:#14233D;border:0;border-radius:3px;padding:.65em 1.2em;font-family:var(--fdisplay);font-weight:700;font-size:max(15px,calc(var(--u)*1.8));letter-spacing:.06em;text-transform:uppercase;cursor:pointer;min-height:44px}
+#film .sub{position:absolute;left:0;right:0;bottom:0;height:calc(var(--u)*9.5);display:flex;align-items:center;padding:0 calc(var(--u)*4.5);background:linear-gradient(transparent,rgba(10,20,36,.7) 25%)}
+#film .sub p{margin:0;font-size:max(12.5px,calc(var(--u)*1.55));line-height:1.4;max-width:90ch;color:var(--wheat)}
+#film .sub p::before{content:"Narrátor ";font-family:var(--fdisplay);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);font-size:.8em;margin-right:.6em}
+@media (max-width:700px){
+  #film .stage{--u:2.6cqw}
+  #film .scene{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;inset:0 0 calc(var(--u)*14) 0;gap:calc(var(--u)*2)}
+  #film .scene .ill{order:-1;max-height:38%}
+  #film .scene .ill svg{max-height:200px}
+  #film .sub{height:calc(var(--u)*14);align-items:flex-start;padding-top:calc(var(--u)*2)}
+  #film .scene h2{font-size:max(22px,calc(var(--u)*3.4))}
+  #film .scene p,#film .scene li{font-size:13.5px}
+  #film .s-title h2{font-size:34px}
+}
+#film .scene.active .a{animation:fup .7s cubic-bezier(.2,.7,.2,1) var(--d,0s) both}
+#film .scene.active .gx{transform-box:fill-box;transform-origin:left center;animation:fgx 1.1s cubic-bezier(.2,.7,.2,1) var(--d,0s) both}
+#film .scene.active .gy{transform-box:fill-box;transform-origin:center bottom;animation:fgy 1s cubic-bezier(.2,.7,.2,1) var(--d,0s) both}
+#film .scene.active .pop{transform-box:fill-box;transform-origin:center;animation:fpop .5s cubic-bezier(.3,1.6,.5,1) var(--d,0s) both}
+#film .scene.active .slide{transform-box:fill-box;animation:fslide 1.2s ease-in-out var(--d,0s) both}
+#film .scene.active .fadeout{animation:ffo .4s var(--d,0s) both}
+@keyframes fup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fgx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fgy{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes fpop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+@keyframes fslide{from{transform:translateY(0)}to{transform:translateY(38px)}}
+@keyframes ffo{to{opacity:0}}
+@media (prefers-reduced-motion:reduce){#film .scene.active *{animation-duration:.01s!important;animation-delay:0s!important}#film .scene{transition:none}}
+#film .fbars{display:grid;gap:calc(var(--u)*1.4);width:100%}
+#film .fbar{display:grid;gap:4px}
+#film .lab{display:flex;justify-content:space-between;gap:12px;font-family:var(--fdisplay);font-weight:600;font-size:max(13px,calc(var(--u)*1.6));letter-spacing:.02em}
+#film .lab span:last-child{font-variant-numeric:tabular-nums;color:var(--mute)}
+#film .track{height:max(8px,calc(var(--u)*1.1));background:var(--fline);border-radius:2px;position:relative;overflow:hidden}
+#film .fill{position:absolute;inset:0 auto 0 0;background:var(--mute);border-radius:2px;transform-origin:left}
+#film .fill.new{background:var(--signal)}
+#film .scene.active .fill{animation:fgx 1.1s cubic-bezier(.2,.7,.2,1) var(--d,0s) both}
+#film .flegend{display:flex;gap:16px;flex-wrap:wrap;font-size:max(11px,calc(var(--u)*1.15));color:var(--mute)}
+#film .flegend i{display:inline-block;width:.9em;height:.9em;border-radius:2px;margin-right:.4em;vertical-align:-.1em}
+#film .fcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(var(--u)*1.4)}
+#film .fcard{border-top:3px solid var(--alert);background:rgba(242,244,247,.05);padding:calc(var(--u)*1.2) calc(var(--u)*1.3);display:grid;gap:4px;align-content:start}
+#film .fcard .n{font-family:var(--fdisplay);font-weight:700;font-size:max(20px,calc(var(--u)*3.2));line-height:1;color:var(--wheat)}
+#film .fcard .t{font-size:max(11.5px,calc(var(--u)*1.25));color:var(--mute);line-height:1.35}
+@media (max-width:700px){#film .fcards{grid-template-columns:repeat(2,minmax(0,1fr))}#film .fcard .t{font-size:11px}#film .fcard .n{font-size:19px}}
+#film .ftl{display:grid;gap:calc(var(--u)*1.1);width:100%}
+#film .ftl .frow{display:grid;grid-template-columns:calc(var(--u)*11) 1fr;gap:calc(var(--u)*1.5);align-items:baseline;border-bottom:1px solid var(--fline);padding-bottom:calc(var(--u)*.9)}
+#film .ftl .yr{font-family:var(--fdisplay);font-weight:700;color:var(--signal);font-size:max(14px,calc(var(--u)*1.9));font-variant-numeric:tabular-nums}
+#film .ftl p{font-size:max(12.5px,calc(var(--u)*1.45))}
+@media (max-width:700px){#film .ftl .frow{grid-template-columns:72px 1fr}#film .ftl p{font-size:12.5px}}
+#film .vs{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*2);width:100%}
+#film .box{border:1px solid var(--fline);padding:calc(var(--u)*1.8);display:grid;gap:calc(var(--u)*.8);align-content:start;background:rgba(242,244,247,.03)}
+#film .box .k{font-family:var(--fdisplay);font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mute);font-size:max(11px,calc(var(--u)*1.2))}
+#film .box .big{font-family:var(--fdisplay);font-weight:700;font-size:max(26px,calc(var(--u)*5));line-height:1}
+#film .stamp{justify-self:start;font-family:var(--fdisplay);font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:2px solid currentColor;padding:.15em .55em;font-size:max(13px,calc(var(--u)*1.7));transform:rotate(-4deg)}
+#film .pairs{display:grid;gap:calc(var(--u)*1.1);width:100%}
+#film .pair{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.5)}
+#film .pair>div{padding:calc(var(--u)*1) calc(var(--u)*1.3);font-size:max(12px,calc(var(--u)*1.4));line-height:1.35}
+#film .said{background:rgba(240,140,110,.12);border-left:3px solid var(--alert)}
+#film .wrote{background:rgba(72,181,188,.12);border-left:3px solid var(--park)}
+#film .pair .psrc{display:block;font-family:var(--fdisplay);letter-spacing:.08em;text-transform:uppercase;font-size:.8em;color:var(--mute);margin-bottom:2px}
+@media (max-width:700px){#film .pair>div{font-size:11.5px}#film .vs{gap:10px}#film .box .big{font-size:24px}}
+#film .fstatus{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1)}
+#film .chip{font-family:var(--fdisplay);font-weight:600;letter-spacing:.04em;padding:.25em .7em;border:1px solid var(--signal);color:var(--signal);font-size:max(12px,calc(var(--u)*1.4));border-radius:2px}
+#film .checks{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.8) calc(var(--u)*2)}
+#film .checks li{font-size:max(12px,calc(var(--u)*1.4))!important}
+@media (max-width:700px){#film .checks{grid-template-columns:1fr}}
+#film .date{border:2px solid var(--signal);padding:calc(var(--u)*1.6) calc(var(--u)*2);display:grid;gap:4px}
+#film .date .d{font-family:var(--fdisplay);font-weight:700;font-size:max(20px,calc(var(--u)*3.2));line-height:1.05}
+#film .date .w{font-size:max(12px,calc(var(--u)*1.4));color:var(--mute)}
+#film .date.sec{border-color:var(--fline)}
+#film .closing{font-family:var(--fdisplay);font-weight:600;font-size:max(17px,calc(var(--u)*2.4))!important;line-height:1.15;color:var(--wheat);text-wrap:balance}
+#film .ctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#film .ctrl button{background:transparent;color:var(--wheat);border:1px solid var(--fline);border-radius:3px;font-family:var(--fdisplay);font-weight:600;letter-spacing:.06em;font-size:15px;padding:8px 14px;cursor:pointer;min-width:44px;min-height:44px}
+#film .ctrl button:hover{border-color:var(--signal);color:var(--signal)}
+#film .ctrl .ftime{font-variant-numeric:tabular-nums;color:var(--mute);font-size:13px;margin-left:auto}
+#film .segs{display:flex;gap:3px;flex:1 1 260px;min-width:0}
+#film .seg{flex:1;height:10px;background:var(--fline);border-radius:1px;overflow:hidden;cursor:pointer;border:0;padding:0}
+#film .ctrl .seg{min-width:0;min-height:0;padding:0;border:0}
+#film .seg i{display:block;height:100%;width:0;background:var(--signal)}
+#film .fchapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 18px;margin:0;padding:0;list-style:none}
+#film .fchapters button{all:unset;cursor:pointer;display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--fline);width:100%;font-size:14px;color:var(--mute)}
+#film .fchapters button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+#film .fchapters button span:first-child{font-family:var(--fdisplay);font-weight:700;color:var(--signal);font-variant-numeric:tabular-nums;min-width:2.2ch}
+#film .fchapters button[aria-current="true"],#film .fchapters button:hover{color:var(--wheat)}
+
+#szamok .photo img{display:block;width:100%;height:auto;border-radius:8px}
+</style>
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="notice-band" role="note"><div class="wrap"><strong>Ez nem az önkormányzat oldala.</strong> Lakossági kezdeményezés: sem Herceghalom Község Önkormányzata, sem a beruházó nem készítette és nem hagyta jóvá. A hivatalos tájékoztatás a herceghalom.hu oldalon olvasható.</div></div>
+<nav class="top" aria-label="Tartalom">
+  <div class="wrap">
+    <b>Panattoni-ügy</b>
+    <div class="links">
+      <a href="#most">Most</a>
+      <a href="#szamok">Számok</a>
+      <a href="#idovonal">Idővonal</a>
+      <a href="#keresek">Mit kér</a>
+      <a href="#merleg">Mit ad, mit kap</a>
+      <a href="#telekcsere">Telekcsere</a>
+      <a href="#kornyezet">Környezet</a>
+      <a href="#allitasok">Állítások</a>
+      <a href="#film">Kisfilm</a>
+      <a href="#teendo">Mit tehetsz</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Herceghalom · 440/5 hrsz. · lakossági tájékoztató</div>
+    <h1>Panattoni-ügy Herceghalmon</h1>
+    <p class="lead">Két, egyenként körülbelül 38&nbsp;000&nbsp;m²-es logisztikai csarnok épülne a falu szélére, az óvodától nagyjából 200 méterre. A beruházó ehhez enyhébb építési szabályokat kér. Erről a képviselő-testület dönt, egy településrendezési szerződés keretében, amely még nincs aláírva. Ez az oldal időrendben mutatja be, hogyan jutott idáig az ügy, és mi várható most.</p>
+    <div class="status" aria-label="Az ügy állása">
+      <div class="hot"><small>Következő lépés</small><strong>Lakossági fórum, nov. 2., 16:00</strong></div>
+      <div><small>Településrendezési szerződés</small><strong>Nincs aláírva</strong></div>
+      <div><small>Változtatási tilalom</small><strong>2027. dec. 17-ig</strong></div>
+      <div><small>Környezetvédelmi per</small><strong>Tárgyalás 2027. jan. 14.</strong></div>
+    </div>
+    <p class="disclaimer">Lakossági kezdeményezés, nem az önkormányzat és nem a beruházó oldala. Minden adat nyilvános iratból származik: testületi jegyzőkönyvekből és határozatokból, a 2026. szeptember 30-i hirdetményből, a Telepítési Tanulmánytervből és a környezetvédelmi eljárás irataiból. A forrásokat az oldal alján soroljuk fel. Utolsó frissítés: 2026. október 24.</p>
+  </div>
+</header>
+
+<main>
+
+<section id="most" aria-labelledby="most-h">
+  <div class="wrap">
+    <div class="eyebrow">Aktuális fejlemények</div>
+    <h2 id="most-h">Hol tart most az ügy?</h2>
+    <p class="lead">A tanulmányterv írásos véleményezése október 15-én lezárult. A következő nyilvános alkalom a november 2-i lakossági fórum, amelyet a hirdetmény „a partnerségi egyeztetés lezárásaként” tűzött ki.</p>
+    <ol class="news">
+      <li class="next"><time>2027. jan. 14.</time><div><h3>Tárgyalás a környezetvédelmi perben <span class="tag">várható</span></h3><p>A kormányhivatal 2024-es döntése elleni perben ezen a tárgyaláson érdemi döntés várható. A 2026. szeptember 10-i tárgyaláson az önkormányzat, amely maga is felperes, nem jelent meg.</p></div></li>
+      <li class="next"><time>nov. 2., 16:00</time><div><h3>Lakossági fórum a Sándor Móric Községi Könyvtárban <span class="tag">várható</span></h3><p>Gesztenyés út 15. A fórumon elhangzó észrevételeket jegyzőkönyv rögzíti. A lakosok itt mondhatják el, milyen feltételek nélkül ne legyen aláírva a szerződés.</p></div></li>
+      <li><time>okt. 22.</time><div><h3>Lezárult a lakossági kérdésgyűjtés</h3><p>A herceghalmi lakosok kérdéseit témák szerint rendezve, írásban juttatjuk el az önkormányzatnak, azzal a kéréssel, hogy a beruházó a fórumon írásban válaszoljon.</p></div></li>
+      <li><time>okt. 15.</time><div><h3>Polgármesteri levél az országgyűlési képviselőnek</h3><p>A levél kéri, hogy a képviselő „álljon az ügy élére”, és segítsen háromoldalú egyeztetést indítani a minisztérium, az állami vagyonkezelő és az önkormányzat között. Új javaslat: az állami föld előbb az önkormányzathoz kerüljön, és az cserélje el a beruházóval. A levél szerint a tanulmányterv hivatalos benyújtása szeptember 24-én megtörtént, és az önkormányzatnak „nincsenek olyan jogosítványai”, amelyekkel a beruházást megakadályozhatná.</p></div></li>
+      <li><time>okt. 15.</time><div><h3>Lejárt az írásos véleményezés határideje; tévéinterjú</h3><p>Ugyanezen a napon került adásba a polgármesteri interjú a Buda Környéki Televízióban. Az interjú sem a határidőt, sem a fórum időpontját nem említette.</p></div></li>
+      <li><time>okt. 9.</time><div><h3>Újabb levél az agrárminiszternek</h3><p>Az önkormányzat megküldte a telekcseréről szóló 143/2026. számú határozatot. A július 6-i és szeptember 21-i levelekre a polgármester szerint érdemi válasz nem érkezett.</p></div></li>
+      <li><time>okt. 6.</time><div><h3>A testület megerősítette a telekcsere kezdeményezését</h3><p>143/2026. (X.6.) határozat, határidő nélkül. Az állam 2022 óta háromszor utasította el a cserét, legutóbb 2026. március 4-én.</p></div></li>
+      <li><time>szept. 30.</time><div><h3>Hirdetmény a Telepítési Tanulmánytervről</h3><p>A hirdetmény táblázatban sorolja fel, mely szabályokat kellene enyhíteni. Véleményezési határidő: október 15.; fórum: november 2.</p></div></li>
+      <li><time>szeptember</time><div><h3>A tanulmányterv felkerült az önkormányzat honlapjára</h3><p>Egy lakossági közérdekűadat-igénylés és az ennek nyomán indított per után. Korábban csak személyes betekintésre volt elérhető.</p></div></li>
+      <li><time>szept. 24.</time><div><h3>Hivatalosan benyújtották a tanulmánytervet</h3><p>A polgármester október 15-i levele szerint. A testületnek a hiánytalan benyújtástól számított 30 napon belül kell döntenie, de a lakossági véleményezés ideje ebbe nem számít bele.</p></div></li>
+      <li><time>szept. 1.</time><div><h3>Megérkezett a tanulmányterv „előzetes egyeztetés céljából”</h3><p>A testületi ülés jegyzőkönyve szerint a formális benyújtás akkor még nem történt meg. A tervet a HA Tervstúdió Kft. készítette 2026 júliusában.</p></div></li>
+    </ol>
+    <div class="panel">
+      <h3 style="margin-bottom:12px">Nyitott kérdések</h3>
+      <ul class="open-q">
+        <li>Kié lesz a park, és ki tartja fenn?</li>
+        <li>Lesz-e pénzbeli hozzájárulás, határidő és bankgarancia?</li>
+        <li>Hány kamion jár majd naponta: a dokumentumokban 70 és 208 közötti számok szerepelnek.</li>
+        <li>Csak az 1101-es út felől járnak-e majd a kamionok?</li>
+        <li>14,5 vagy 16 méter lesz az épületmagasság? A hirdetményben mindkét szám szerepel.</li>
+        <li>Mikor dönt a testület a tanulmánytervről, és a fórum előtt vagy utána?</li>
+        <li>Látható lesz-e a szerződéstervezet az aláírás előtt?</li>
+        <li>Teljesülnek-e a testület saját, 35/2024. számú határozatának feltételei?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="szamok" aria-labelledby="szamok-h">
+  <div class="wrap">
+    <div class="eyebrow">A beruházás egy pillantásra</div>
+    <h2 id="szamok-h">Mekkora, és milyen közel lesz?</h2>
+    <div class="facts">
+      <div><strong class="num">2 × 38 000 m²</strong><span>két csarnok, csarnokonként legfeljebb 8 bérlővel</span></div>
+      <div><strong class="num">14,5 m</strong><span>kért épületmagasság (ma 12 m a megengedett)</span></div>
+      <div><strong class="num">~200 m</strong><span>az óvoda távolsága a területtől</span></div>
+      <div><strong class="num">192</strong><span>nyerges szerelvény naponta, a beruházó által elfogadott forgalmi adat szerint</span></div>
+      <div><strong class="num">152</strong><span>tehergépjármű naponta az építés idején, 1–2 évig</span></div>
+      <div><strong class="num">26,88 ha</strong><span>a beruházási terület (440/2, 440/4 és 440/5 hrsz.)</span></div>
+    </div>
+    <figure class="panel">
+      <div class="scroll"><svg id="section-svg" viewBox="0 0 960 300" width="100%" role="img" aria-label="Vázlatos metszet: a falu lakóházai, az óvoda, kétszáz méter távolság, majd a 14,5 méter magas, mintegy 400 méter hosszú csarnok."></svg></div>
+      <figcaption>Vázlatos metszet a falutól a csarnokig. A magasságok egymáshoz képest arányosak, a vízszintes távolságok tömörítve. A csarnok körülbelül 100 × 400 méteres; a családi házak gerincmagasságát 7 méterrel számoltuk.</figcaption>
+    </figure>
+    <figure class="panel photo">
+      <img src="telepites-falura-vetitve.jpg" width="1351" height="767" loading="lazy" alt="Légifotó Herceghalomról: a tervezett logisztikai telepítés alaprajza, a csarnokokkal és a parkkal, a lakott terület fölé vetítve. Így a Zsámbéki utcától a Kossuth Lajos utcáig érne, a Thallóczy, a Széchenyi István, az Arany János és a Deák Ferenc utca házait takarná.">
+      <figcaption>Szemléltető montázs: a tervezett telepítés alaprajzát (zöld) a piros nyíl irányában a falu lakott része fölé helyeztük, hogy látszódjon a mérete. A csarnokok és a park ekkora területet foglalnak el: a Zsámbéki utcától a Kossuth Lajos utcáig érnének.</figcaption>
+    </figure>
+    <p class="src">Források: Telepítési Tanulmányterv (2026. július); a környezetvédelmi eljárás iratai (PE/KTHF/14808/2024), beruházói nyilatkozat III. (2024. október 18.); tervtanácsi vélemény.</p>
+  </div>
+</section>
+
+<section id="idovonal" aria-labelledby="ido-h">
+  <div class="wrap">
+    <div class="eyebrow">Időrend, 2021–2027</div>
+    <h2 id="ido-h">Öt év, lépésről lépésre</h2>
+    <p class="lead">Az önkormányzat saját jegyzőkönyvei és a hatósági iratok alapján. A szereplők szerint szűrhető.</p>
+    <div class="legend" role="group" aria-label="Szűrés szereplő szerint">
+      <button type="button" data-k="onk" aria-pressed="true"><span class="dot d-onk"></span>Önkormányzat</button>
+      <button type="button" data-k="ber" aria-pressed="true"><span class="dot d-ber"></span>Beruházó</button>
+      <button type="button" data-k="all" aria-pressed="true"><span class="dot d-all"></span>Állam, hatóság</button>
+      <button type="button" data-k="lak" aria-pressed="true"><span class="dot d-lak"></span>Lakosság</button>
+    </div>
+    <ol class="tl" id="tl"></ol>
+  </div>
+</section>
+
+<section id="keresek" aria-labelledby="ker-h">
+  <div class="wrap">
+    <div class="eyebrow">A kért szabálymódosítás</div>
+    <h2 id="ker-h">Mit kér a beruházó?</h2>
+    <p class="lead">Új, csak erre a telekre szabott építési övezetet (Gksz-8). A mai szabályok szerint a két csarnok nagyjából megépíthető; a lazítást a testület adhatja meg, és a lazítás az, amiért cserébe feltételeket lehet szabni.</p>
+    <div class="panel">
+      <div class="keys"><span><i style="background:var(--grey-bar)"></i>hatályos szabály</span><span><i style="background:var(--orange-fill)"></i>a beruházó kérése</span></div>
+      <div class="req" id="req"></div>
+      <p class="src" style="margin-top:14px">Ezen felül: megszűnne a Zsámbéki úti 7,5 tonnás súlykorlátozás, részben törlődne a lakóterületet védő zöld „küszöb” (Zkk-1), és a módosítás egyszerűsített eljárásban történne. Forrás: az önkormányzat 2026. szeptember 30-i hirdetménye, Telepítési Tanulmányterv.</p>
+    </div>
+  </div>
+</section>
+
+<section id="merleg" aria-labelledby="mer-h">
+  <div class="wrap">
+    <div class="eyebrow">Mit ad – mit kap a falu</div>
+    <h2 id="mer-h">A mérleg két oldala</h2>
+    <div class="scale">
+      <div class="give">
+        <h3>A falu adja</h3>
+        <ul>
+          <li>Beépíthetőség <em>30 → 40%</em></li>
+          <li>Épületmagasság <em>12 → 14,5 m</em></li>
+          <li>Kötelező zöldfelület <em>35 → 25%</em></li>
+          <li>A <em>7,5 tonnás</em> súlykorlátozás megszűnése a Zsámbéki úton</li>
+          <li>A lakóterületet, iskolát és víztornyot védő zöld küszöb részleges törlése</li>
+          <li>Egyszerűsített eljárás, 10 napos lakossági véleményezéssel</li>
+        </ul>
+      </div>
+      <div class="get">
+        <h3>A falu kap, a terv szövege szerint</h3>
+        <ul>
+          <li>Kb. 5 hektáros park, amely „a fejlesztő tulajdonában marad”, önkormányzati tulajdonba csak „megállapodás, vagy vétel után” kerülhet</li>
+          <li>A Zsámbéki út 2×2 sávos bővítése, összeg és határidő nélkül (becsült költség: <em>331,7 M Ft</em> nettó)</li>
+          <li>16 méteres bekötőút</li>
+          <li>„Bizonyos arányú részvállalás” a víztoronyhoz és a szennyvíztelephez, összeg nélkül</li>
+          <li>Gyalogos-kerékpáros kapcsolat</li>
+        </ul>
+      </div>
+    </div>
+    <div class="zero"><strong>0 Ft</strong><span>pénzbeli hozzájárulás, bankgarancia és kötbér szerepel ma a tervben. Az önkormányzat közben saját pénzén rendelt tanulmányokat, földmérést és vásárolt földsávokat a bekötőúthoz.</span></div>
+    <figure class="panel">
+      <h3>Mennyit kértek máshol?</h3>
+      <div class="scroll"><svg id="trsz-svg" viewBox="0 0 900 300" width="100%" role="img" aria-label="Településrendezési szerződésekben vállalt pénzbeli hozzájárulás: Gyömrő 360 millió, Biatorbágy 160 millió, Soroksár 15 millió, Herceghalom 0 forint; arányosítva Herceghalomra 220 és 270 millió forint között."></svg></div>
+      <figcaption>Pénzbeli hozzájárulás logisztikai és ipari beruházások településrendezési szerződéseiben, millió forintban. A sáv a területarányos becslés Herceghalomra (8–10 M Ft/ha); ez felső viszonyítási pont, mert Biatorbágyon a beépíthetőséget is a szerződés adta. Soroksár: 10 M Ft + 5 M Ft előleg. Forrás: a települések nyilvános szerződései és határozatai, a 2026. szeptember 27-i összehasonlítás szerint.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="telekcsere" aria-labelledby="tel-h">
+  <div class="wrap">
+    <div class="eyebrow">A telekcsere</div>
+    <h2 id="tel-h">Háromszor kért, háromszor elutasított</h2>
+    <p class="lead">Az önkormányzat 2022 márciusa óta azt kéri, hogy a beruházás állami földre, az autópálya mellé költözzön. A beruházó 26,88 hektár belterületet adna, az állam 38,38 hektár külterületi szántót és rétet: 11,5 hektárral, 43%-kal többet.</p>
+    <figure class="panel">
+      <div class="scroll"><svg id="swap-svg" viewBox="0 0 900 150" width="100%" role="img" aria-label="Területek a telekcserében: a beruházó 26,88 hektárt adna, az állam 38,38 hektárt."></svg></div>
+    </figure>
+    <table class="tbl">
+      <thead><tr><th>Elutasítás</th><th>Indok</th></tr></thead>
+      <tbody>
+        <tr><td>2022. október · Nemzeti Földügyi Központ</td><td>Termőföld csak termőföldre cserélhető.</td></tr>
+        <tr><td>2024. február · Nemzeti Földügyi Központ</td><td>A földeket 2051. augusztus 31-ig bérlő használja, aki az eladáshoz nem járult hozzá; „az ügyet lezárták”.</td></tr>
+        <tr><td>2026. március 4. · Agrárminisztérium</td><td>A beruházó jogi személyként termőföldet nem szerezhet; az egyik telket az M1 bővítése érinti.</td></tr>
+      </tbody>
+    </table>
+    <p class="src">2024 márciusában a testületi ülésen felolvasott országgyűlési képviselői levél szerint a csere „nem kivitelezhető”, a beruházó pedig „telekcserében már nem gondolkodik”. A testület 2026. október 6-án ennek ellenére megerősítette a kezdeményezést (143/2026. határozat).</p>
+    <p class="src">Új javaslat a polgármester 2026. október 15-i levelében: mivel jogi személy termőföldet nem szerezhet, az állam előbb az önkormányzatnak adná át a 019/2, 019/17, 019/18, 019/19 és 019/23 hrsz.-ú szántókat, és a művelésből való kivonás után az önkormányzat cserélné el őket a beruházóval. Cserébe az önkormányzat vállalná, hogy egy korábbi fejlesztési területét mezőgazdaságivá minősíti vissza. A levél szerint a beruházó akkor hajlandó a cserére, ha az „viszonylag rövid idő alatt lebonyolítható”.</p>
+  </div>
+</section>
+
+<section id="kornyezet" aria-labelledby="kor-h">
+  <div class="wrap">
+    <div class="eyebrow">Környezet, park, per</div>
+    <h2 id="kor-h">Mekkora a hatás, és ki vizsgálja?</h2>
+    <p class="lead">A kormányhivatal 2024 decemberében úgy döntött, hogy nem kell teljes környezeti hatásvizsgálat. Ez ellen per folyik, amelyben egy lakos és az önkormányzat is felperes. Az építési zaj hatásterületét a különböző anyagok egyre nagyobbra becsülték.</p>
+    <figure class="panel">
+      <h3>Az építési zaj hatásterülete, méterben</h3>
+      <div class="scroll"><svg id="noise-svg" viewBox="0 0 900 250" width="100%" role="img" aria-label="Az építési zaj hatásterülete a különböző anyagok szerint: tanulmányterv 352 méter, környezetvédelmi eljárás 485 méter, tényállás-tisztázás 452 és 592 méter között, civil szakértő 639 és 837 méter között. Az óvoda kétszáz méterre van."></svg></div>
+      <figcaption>Pont: egyetlen érték; vonal: a megadott tartomány. Szaggatott vonal: az óvoda távolsága. Forrás: PE/KTHF/14808/2024 iratanyag; Telepítési Tanulmányterv.</figcaption>
+    </figure>
+    <div class="scale">
+      <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+        <h3>Víz és közművek</h3>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:16px">
+          <li>A napi 20 m³ ivóvíz a meglévő hálózatról „nem biztosítható”; a terv két fúrt kutat és víztisztítót számol.</li>
+          <li>A szennyvíztelep „teljes kihasználtsággal” működik; a beruházás a szabad kapacitás 22%-át venné el.</li>
+          <li>A csapadéktározó 1 120 m³, a vízügy kb. 1 200 m³-t kért.</li>
+          <li>Talajvíz 1–1,5 méteren, 5,5–8 méteres bevágások.</li>
+        </ul>
+      </div>
+      <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+        <h3>Természet és park</h3>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:16px">
+          <li>15 védett madárfaj fészkel a területen; a nagy kócsag táplálkozóterülete.</li>
+          <li>A park négy fafaja mind vízparti vagy ártéri faj, öntözési terv nélkül.</li>
+          <li>2026 nyarán a csapadék a sokéves átlag 36%-a volt: 1901 óta a legszárazabb nyár.</li>
+          <li>A takarás a lakóházak felől reálisan 10–15 év alatt alakul ki.</li>
+        </ul>
+      </div>
+    </div>
+    <figure class="panel">
+      <h3>2026 nyara: a csapadék a sokéves átlag százalékában</h3>
+      <div class="scroll"><svg id="rain-svg" viewBox="0 0 900 230" width="100%" role="img" aria-label="Csapadék 2026 nyarán az 1991–2020-as átlag százalékában: június 55, július 26, augusztus 26 százalék."></svg></div>
+      <figcaption>Országos adatok, HungaroMet; viszonyítás az 1991–2020-as átlaghoz. Ilyen nyáron kell megmaradnia a park vízigényes fáinak.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="allitasok" aria-labelledby="all-h">
+  <div class="wrap">
+    <div class="eyebrow">Állítások és iratok</div>
+    <h2 id="all-h">Amit mondtak, és amit a papírok mutatnak</h2>
+    <p class="lead">A 2026. október 15-i tévéinterjú állításai, összevetve az önkormányzat saját irataival. Nem a beruházás mellett érvelünk: aki védekezni akar, annak tudnia kell, mi van a kezében.</p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Elhangzott</th><th>Az iratokban</th></tr></thead>
+      <tbody>
+        <tr><td>Az önkormányzatnak „nincs beleszólása”, a paramétereket „nem tudja módosítani”.</td><td>A szeptember 30-i hirdetmény táblázatban sorolja a kért lazításokat. A helyi építési szabályzatot, a szerződést és a változtatási tilalmat csak a testület módosíthatja.</td></tr>
+        <tr><td>„5 hektáros zöld felület” a lakóházak felé.</td><td>A hirdetmény szerint a park tulajdonát majd a szerződés „határozza meg”; a tanulmányterv szerint a fejlesztőé marad.</td></tr>
+        <tr><td>„Mindent megteszünk” a telekcseréért.</td><td>A cserét az állam háromszor elutasította. Az október 6-i előterjesztés ezeket nem említi.</td></tr>
+        <tr><td>Azért perelünk, mert a beruházás „erős és komoly környezeti hatással jár”.</td><td>A hivatal október 9-én azt írta egy lakosnak, hogy „nem környezetvédelmi hatóság”. A szeptember 10-i tárgyaláson az önkormányzat nem jelent meg.</td></tr>
+        <tr><td>Nemet mondani „több milliárdos” kártérítést jelentene.</td><td>A mai szabályok szerint megépíthető csarnokot valóban nem lehet megtiltani. A lazítás viszont kedvezmény, és feltételhez köthető.</td></tr>
+        <tr><td>Október 15-i levél: az önkormányzatnak „nincsenek olyan jogosítványai”, amelyekkel a beruházást megakadályozhatná.</td><td>Ez a mai szabályok szerint megépíthető csarnokra igaz. A kért lazítások (40%-os beépítés, 14,5 m, 25% zöld, a súlykorlát megszüntetése) viszont mind testületi döntések, és feltételhez köthetők.</td></tr>
+        <tr><td>Október 15-i levél, időrendi áttekintés: a július 6-i és szeptember 21-i levelekre „érdemi válasz nem érkezett”.</td><td>Az áttekintés július 6-án kezdődik. A minisztérium 2026. március 4-i elutasítása, amely szerint jogi személy termőföldet nem szerezhet, nem szerepel benne.</td></tr>
+        <tr><td>A 2024-es testületi határozat (35/2024.)</td><td>Részletes zaj-, por-, rezgés- és forgalmi számítások nélkül a terv „nem nyerhet támogatást”. A tanulmánytervben ma sincs napi kamionszám.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Az interjú idézetei gépi átiratból valók, a videón ellenőrizhetők: Buda Környéki Televízió, 2026. október 15.</p>
+  </div>
+</section>
+
+<section id="film" aria-labelledby="film-h">
+  <div class="wrap">
+    <div class="eyebrow">Kisfilm · kb. 2½ perc</div>
+    <h2 id="film-h">Mi van még a kezünkben?</h2>
+    <p class="lead">Rövid, feliratos összefoglaló az ügyről, tizenkét jelenetben. Kattints a képre vagy a Lejátszás gombra; a jelenetek között a fejezetlistából is ugorhatsz. Az összefoglaló a 2026. október 17-i állapotot mutatja.</p>
+    <div class="filmbox">
+    <div class="stage paused" id="fstage" tabindex="0" aria-roledescription="kisfilm" aria-label="Lakossági tájékoztató kisfilm, 12 jelenet. Szóköz: lejátszás vagy szünet, nyilak: előző vagy következő jelenet.">
+
+    <section class="scene s-title active" data-dur="7" data-title="Nyitókép" data-sub="Ez a kisfilm az önkormányzat saját jegyzőkönyvei, a beruházó tanulmányterve és a hatósági iratok alapján foglalja össze, hol tart az ügy.">
+      <div class="txt">
+        <div class="eyebrow a">Herceghalom · Panattoni-beruházás</div>
+        <h2 class="a" style="--d:.15s">Mi van még a kezünkben?</h2>
+        <p class="lede a" style="--d:.3s">Hol tart a logisztikai beruházás, mit kap érte a falu, és miért ilyen gyenge eddig az önkormányzat alkupozíciója.</p>
+        <button class="playbig a" style="--d:.45s" id="fbig" type="button">▶ Lejátszás · kb. 2½ perc</button>
+      </div>
+      <div class="ill" aria-hidden="true">
+        <svg viewBox="0 0 400 260">
+          <line x1="0" y1="200" x2="400" y2="200" stroke="var(--road)" stroke-width="2"/>
+          <rect class="gy" style="--d:.3s" x="150" y="96" width="230" height="104" fill="var(--fline)"/>
+          <rect class="gy" style="--d:.5s" x="170" y="120" width="200" height="80" fill="#24406B"/>
+          <g fill="var(--wheat)" opacity=".9">
+            <path class="pop" style="--d:.9s" d="M20 200v-28l16-14 16 14v28z"/>
+            <path class="pop" style="--d:1s" d="M62 200v-22l13-12 13 12v22z"/>
+            <path class="pop" style="--d:1.1s" d="M98 200v-26l15-13 15 13v26z"/>
+          </g>
+          <circle class="pop" style="--d:1.2s" cx="140" cy="176" r="14" fill="var(--park)"/>
+          <rect x="138" y="186" width="4" height="14" fill="var(--park)"/>
+          <text x="265" y="88" text-anchor="middle" font-size="13" fill="var(--mute)" class="a" style="--d:1.3s">14,5 m · 2 × ~38 000 m²</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="scene" data-dur="12" data-title="A terület" data-sub="A terület nem most lett ipari: 2005 óta gazdasági övezet. A beruházó eredeti, három csarnokos terve a mai szabályok szerint is megépíthető – ezt 2024-ben a beruházó és az alpolgármester is kimondta.">
+      <div class="txt">
+        <div class="eyebrow a">1 · A terület</div>
+        <h2 class="a" style="--d:.1s">26,9 hektár a falu szélén</h2>
+        <ul>
+          <li class="a" style="--d:.3s">2005 óta beépíthető gazdasági övezet (Gksz-1), magántulajdon</li>
+          <li class="a" style="--d:.45s">Két csarnok, egyenként kb. 38 000 m², 14,5 m magas</li>
+          <li class="a" style="--d:.6s">239 személyautó- és 47 kamionállás</li>
+          <li class="a" style="--d:.75s">A 2023-ban épült óvoda kb. 200 méterre van</li>
+        </ul>
+      </div>
+      <div class="ill" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <rect x="0" y="26" width="400" height="16" fill="var(--road)"/>
+          <text x="10" y="39" font-size="12" font-weight="700" fill="var(--night)">M1</text>
+          <line x1="372" y1="42" x2="372" y2="300" stroke="var(--road)" stroke-width="7"/>
+          <text x="380" y="120" font-size="11" fill="var(--mute)" transform="rotate(90 380 120)">1101-es út</text>
+          <path d="M0 252 L372 236" stroke="var(--road)" stroke-width="7"/>
+          <text x="14" y="272" font-size="11" fill="var(--mute)">Zsámbéki út</text>
+          <rect x="150" y="62" width="200" height="160" fill="none" stroke="var(--signal)" stroke-width="2" stroke-dasharray="6 4" class="a" style="--d:.2s"/>
+          <rect class="gy" style="--d:.6s" x="165" y="74" width="170" height="48" fill="var(--wheat)" opacity=".85"/>
+          <rect class="gy" style="--d:.8s" x="165" y="130" width="170" height="48" fill="var(--wheat)" opacity=".85"/>
+          <rect class="gx" style="--d:1.2s" x="150" y="186" width="200" height="34" fill="var(--park)" opacity=".85"/>
+          <text x="250" y="208" font-size="12" text-anchor="middle" fill="var(--night)" font-weight="700" class="a" style="--d:1.6s">tervezett park ~5 ha</text>
+          <text x="250" y="56" font-size="12" text-anchor="middle" fill="var(--signal)" class="a" style="--d:.4s">26,9 ha</text>
+          <g fill="var(--mute)" opacity=".8">
+            <rect class="pop" style="--d:1s" x="24" y="160" width="14" height="12"/><rect class="pop" style="--d:1.05s" x="46" y="160" width="14" height="12"/><rect class="pop" style="--d:1.1s" x="68" y="160" width="14" height="12"/>
+            <rect class="pop" style="--d:1.15s" x="24" y="182" width="14" height="12"/><rect class="pop" style="--d:1.2s" x="46" y="182" width="14" height="12"/><rect class="pop" style="--d:1.25s" x="68" y="182" width="14" height="12"/>
+            <rect class="pop" style="--d:1.3s" x="24" y="204" width="14" height="12"/><rect class="pop" style="--d:1.35s" x="46" y="204" width="14" height="12"/>
+          </g>
+          <text x="24" y="150" font-size="11" fill="var(--mute)">lakóterület</text>
+          <circle class="pop" style="--d:1.8s" cx="112" cy="214" r="7" fill="var(--alert)"/>
+          <text x="98" y="236" font-size="11" fill="var(--alert)" class="a" style="--d:1.9s">óvoda</text>
+          <line x1="120" y1="214" x2="150" y2="200" stroke="var(--alert)" stroke-dasharray="3 3" class="a" style="--d:2s"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="scene" data-dur="12" data-title="Mit kér a beruházó" data-sub="Amit a beruházó most kér, az kedvezmény. Ezeket csak a képviselő-testület adhatja meg: a helyi építési szabályzat módosításával és településrendezési szerződéssel.">
+      <div class="txt">
+        <div class="eyebrow a">2 · A kérés</div>
+        <h2 class="a" style="--d:.1s">Amit csak a testület adhat meg</h2>
+        <p class="a" style="--d:.3s">A tanulmányterv lazítást kér a szabályokon. Mindegyik a képviselő-testület döntése, egyiket sem kaphatja meg a beruházó magától.</p>
+        <p class="small a" style="--d:.45s">Emellett: új, egyedi övezet és 15 hektáros, oszthatatlan telek.</p>
+      </div>
+      <div class="ill">
+        <div class="fbars">
+          <div class="fbar a" style="--d:.3s"><div class="lab"><span>Beépítettség</span><span>30% → <b>40%</b></span></div>
+            <div class="track"><div class="fill" style="width:75%;--d:.5s"></div></div><div class="track"><div class="fill new" style="width:100%;--d:.8s"></div></div></div>
+          <div class="fbar a" style="--d:.6s"><div class="lab"><span>Épületmagasság</span><span>12 m → <b>14,5 m</b></span></div>
+            <div class="track"><div class="fill" style="width:83%;--d:.8s"></div></div><div class="track"><div class="fill new" style="width:100%;--d:1.1s"></div></div></div>
+          <div class="fbar a" style="--d:.9s"><div class="lab"><span>Kötelező zöldfelület</span><span>35% → <b>25%</b></span></div>
+            <div class="track"><div class="fill" style="width:100%;--d:1.1s"></div></div><div class="track"><div class="fill new" style="width:71%;--d:1.4s"></div></div></div>
+          <div class="fbar a" style="--d:1.2s"><div class="lab"><span>Súlykorlát a Zsámbéki úton</span><span>7,5 t → <b class="alert">megszűnik</b></span></div>
+            <div class="track"><div class="fill" style="width:100%;--d:1.4s"></div></div><div class="track"><div class="fill new" style="width:0%"></div></div></div>
+          <div class="flegend a" style="--d:1.5s"><span><i style="background:var(--mute)"></i>hatályos szabály</span><span><i style="background:var(--signal)"></i>a tanulmányterv kérése</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-dur="12" data-title="A park ára" data-sub="A beruházó egyetlen négyzetméter raktárról sem mond le. A parkot a lazított mutatók fizetik meg – és a terv szerint a park a fejlesztő tulajdonában marad.">
+      <div class="txt">
+        <div class="eyebrow a">3 · A park ára</div>
+        <h2 class="a" style="--d:.1s">Az 5 hektáros park nem ajándék</h2>
+        <p class="a" style="--d:.3s">A tervezett csarnokok a teljes telken pontosan beleférnek a mai 30%-ba: <b>29,99%</b>.</p>
+        <p class="a" style="--d:.5s">Ha a parkot leválasztják, ugyanaz a csarnoktömeg a maradék telken már <b>~37%</b>. Ezért kell a 40%.</p>
+        <p class="small a" style="--d:.7s">A park önkormányzati tulajdonba csak „megállapodás, vagy vétel után” kerülhet; az övezet vendéglátást és autós mozit is megengedne.</p>
+      </div>
+      <div class="ill" aria-hidden="true">
+        <svg viewBox="0 0 360 280">
+          <rect x="30" y="20" width="300" height="200" fill="none" stroke="var(--signal)" stroke-width="2" stroke-dasharray="6 4"/>
+          <rect x="50" y="36" width="260" height="56" fill="var(--wheat)" opacity=".85"/>
+          <rect x="50" y="102" width="260" height="56" fill="var(--wheat)" opacity=".85"/>
+          <g class="slide" style="--d:3s">
+            <rect x="30" y="170" width="300" height="50" fill="var(--park)" opacity=".85"/>
+            <text x="180" y="200" font-size="14" text-anchor="middle" font-weight="700" fill="var(--night)">park ~5 ha</text>
+          </g>
+          <text x="180" y="252" text-anchor="middle" font-size="22" font-weight="700" fill="var(--signal)" class="fadeout" style="--d:3s">29,99% a teljes telken</text>
+          <text x="180" y="276" text-anchor="middle" font-size="22" font-weight="700" fill="var(--alert)" class="a" style="--d:4s">~37% a park nélküli telken</text>
+          <line x1="30" y1="170" x2="330" y2="170" stroke="var(--alert)" stroke-width="2" stroke-dasharray="4 3" class="a" style="--d:3.6s"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="scene" data-dur="13" data-title="Mit kap a falu" data-sub="Hasonló léptékű logisztikai beruházásoknál a település 150–360 millió forint fejlesztési hozzájárulást és a teljes útépítést kapta, park nélkül. A herceghalmi tanulmánytervben fix összeg, határidő és biztosíték nincs.">
+      <div class="txt">
+        <div class="eyebrow a">4 · Az ellentételezés</div>
+        <h2 class="a" style="--d:.1s">Máshol pénzt és határidőt kaptak</h2>
+        <ul>
+          <li class="a" style="--d:.4s">Park: a fejlesztő tulajdonában, fenntartás nyitott</li>
+          <li class="a" style="--d:.55s">Zsámbéki út bővítése: összeg és határidő nélkül</li>
+          <li class="a" style="--d:.7s">Víztorony, szennyvíztelep: „bizonyos arányú” részvállalás</li>
+          <li class="a" style="--d:.85s">Bankgarancia, kötbér: <span class="alert">nincs</span></li>
+        </ul>
+      </div>
+      <div class="ill">
+        <div class="fbars">
+          <div class="fbar a" style="--d:.3s"><div class="lab"><span>Gyömrő · 36 ha</span><span>360 M Ft</span></div><div class="track"><div class="fill" style="width:100%;--d:.5s"></div></div></div>
+          <div class="fbar a" style="--d:.6s"><div class="lab"><span>Biatorbágy · 18 ha</span><span>150 M Ft + út</span></div><div class="track"><div class="fill" style="width:42%;--d:.8s"></div></div></div>
+          <div class="fbar a" style="--d:.9s"><div class="lab"><span>Soroksár · útcsatlakozás</span><span>10 M Ft + körforgalom</span></div><div class="track"><div class="fill" style="width:3%;--d:1.1s"></div></div></div>
+          <div class="fbar a" style="--d:1.4s"><div class="lab"><span style="color:var(--signal)">Herceghalom · 26,9 ha</span><span class="alert">0 Ft rögzített összeg</span></div><div class="track" style="outline:1px dashed var(--alert)"></div></div>
+          <p class="small a" style="--d:1.8s">Fix településfejlesztési hozzájárulás a nyilvános településrendezési szerződésekben (2022–2023).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene full" data-dur="14" data-title="Ami biztosan jön" data-sub="A haszon – iparűzési adó, park, út – feltételes. A terhek nem azok. A tanulmányterv kamion/nap adatot sem közöl, pedig a testület 2024 márciusában maga írta elő, hogy számítások nélkül a terv nem kaphat támogatást.">
+      <div class="txt">
+        <div class="eyebrow a">5 · A terhek</div>
+        <h2 class="a" style="--d:.1s">Ami biztosan megérkezik</h2>
+        <div class="fcards">
+          <div class="fcard a" style="--d:.3s"><span class="n">192</span><span class="t">nyerges szerelvény naponta – a beruházó által a hatósági eljárásban elfogadott érték</span></div>
+          <div class="fcard a" style="--d:.45s"><span class="n">59,9 dB</span><span class="t">építési zaj egy szomszédos telken, 55 dB-es határérték mellett (szakértői újraszámítás)</span></div>
+          <div class="fcard a" style="--d:.6s"><span class="n">7,5 t</span><span class="t">súlykorlát szűnne meg a Zsámbéki úton, amely „még az építési forgalmat sem bírja ki” (önkormányzati műszaki előadó)</span></div>
+          <div class="fcard a" style="--d:.75s"><span class="n">20 m³</span><span class="t">napi vízigény, amelyet a vízmű szerint a hálózat nem tud biztosítani; a szennyvíztelep a határán működik</span></div>
+          <div class="fcard a" style="--d:.9s"><span class="n">15</span><span class="t">védett madárfaj fészkelőhelye érintett; zajvédő fal nem lesz</span></div>
+          <div class="fcard a" style="--d:1.05s"><span class="n">+1</span><span class="t">másik logisztikai csarnok épül a Tesco-terület mögött; a pátyi parkok forgalma ugyanezeket az utakat terheli</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-dur="13" data-title="A telekcsere" data-sub="Az önkormányzat négy és fél éve egyetlen megoldást képvisel: a telekcserét. Az állam háromszor elutasította, a beruházó 2024-ben elengedte. Október 6-án a testület határidő és feltétel nélkül újra „megerősítette”.">
+      <div class="txt">
+        <div class="eyebrow a">6 · A telekcsere</div>
+        <h2 class="a" style="--d:.1s">Egy terv, három elutasítás</h2>
+        <p class="a" style="--d:.3s">Termőföld csak termőföldre cserélhető, a kért földeket 2051-ig egy agrárcég bérli, és az egyik telket az M1 bővítése érinti.</p>
+        <p class="small a" style="--d:.5s">A beruházó 2024-ben: „telekcserében már nem gondolkodik”. 2026-ban hat önkormányzati levél maradt érdemi válasz nélkül.</p>
+      </div>
+      <div class="ill">
+        <div class="ftl">
+          <div class="frow a" style="--d:.5s"><span class="yr">2022. okt.</span><p><span class="alert">✕</span> Nemzeti Földügyi Központ: elutasítva</p></div>
+          <div class="frow a" style="--d:.9s"><span class="yr">2024. febr.</span><p><span class="alert">✕</span> Nemzeti Földügyi Központ: az ügyet lezárták</p></div>
+          <div class="frow a" style="--d:1.3s"><span class="yr">2026. márc.</span><p><span class="alert">✕</span> Agrárminisztérium: elutasítva</p></div>
+          <div class="frow a" style="--d:1.8s"><span class="yr">2026. okt. 6.</span><p>A testület „megerősíti” a szándékát – határidő, értékbecslés, beruházói nyilatkozat nélkül</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene full" data-dur="15" data-title="Ahol elcsúszott az alku" data-sub="Mindegyik lépés követhető az önkormányzat saját jegyzőkönyveiben és irataiban. Egyik sem jogellenes – de mindegyik az önkormányzat alkupozícióját gyengítette.">
+      <div class="txt">
+        <div class="eyebrow a">7 · Érdekérvényesítés</div>
+        <h2 class="a" style="--d:.1s">Öt pillanat, amikor elcsúszott az alku</h2>
+        <div class="ftl">
+          <div class="frow a" style="--d:.4s"><span class="yr">2021</span><p>A beruházó a telekvásárlás előtt bemutatkozik a polgármesternek. Változtatási tilalom nem születik – egy másik területen ugyanez a testület tilalommal érte el a kisebb beépítést.</p></div>
+          <div class="frow a" style="--d:.7s"><span class="yr">2023–24</span><p>A beruházó szerződéstervezete négy hónapig tárgyalás nélkül áll; a testület csak 2024 márciusában veszi elő.</p></div>
+          <div class="frow a" style="--d:1s"><span class="yr">2024. dec.</span><p>A tilalom mellé 3,2 millió forintért megrendelt szabályzatmódosítás „a tulajdonosok igényével összhangban” készül.</p></div>
+          <div class="frow a" style="--d:1.3s"><span class="yr">2025–26</span><p>Az önkormányzat saját pénzén készíti elő a bekötőutat – amelynek telkeit a beruházó 2024-ben maga ajánlotta megvenni.</p></div>
+          <div class="frow a" style="--d:1.6s"><span class="yr">2026. szept.</span><p>A környezetvédelmi per tárgyalásán az önkormányzat sem személyesen, sem jogi képviselővel nem jelenik meg.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene full" data-dur="12" data-title="Tíz ház, nulla forint" data-sub="Ugyanaz a testület, ugyanaz a Zsámbéki út. A kisebb beruházásnál tudta, mi a fejlesztési hozzájárulás, és tudott nemet mondani. A nagyobbnál négy év alatt nem kért.">
+      <div class="txt">
+        <div class="eyebrow a">8 · Ugyanaz a terem</div>
+        <h2 class="a" style="--d:.1s">Tíz háznál tudott nemet mondani</h2>
+        <div class="vs">
+          <div class="box a" style="--d:.4s">
+            <span class="k">2026. május · lakóparkfejlesztő</span>
+            <span class="big">+10 ház</span>
+            <p>20 millió forint felajánlott fejlesztési hozzájárulás mellett is</p>
+            <span class="stamp pop alert" style="--d:1.2s">Elutasítva</span>
+            <p class="small">Indok: a Zsámbéki út terhelhetősége</p>
+          </div>
+          <div class="box a" style="--d:.8s">
+            <span class="k">Panattoni · 2022–2026</span>
+            <span class="big">75 000 m²</span>
+            <p>csarnok, napi akár 192 kamionnal</p>
+            <span class="stamp pop" style="--d:1.8s;color:var(--signal)">0 Ft kérve</span>
+            <p class="small">Fix hozzájárulást a testület eddig nem fogalmazott meg</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene full" data-dur="14" data-title="Ami elhangzik, ami le van írva" data-sub="A nyilvános kommunikáció tehetetlenséget sugall. Az önkormányzat saját dokumentumai szerint viszont a kért kedvezmények mind a testület kezében vannak.">
+      <div class="txt">
+        <div class="eyebrow a">9 · Szavak és iratok</div>
+        <h2 class="a" style="--d:.1s">Ami elhangzik, és ami le van írva</h2>
+        <div class="pairs">
+          <div class="pair a" style="--d:.4s">
+            <div class="said"><span class="psrc">Tévéinterjú, okt. 15.</span>Az önkormányzatnak „nincs beleszólása”, a paramétereket nem tudja módosítani.</div>
+            <div class="wrote"><span class="psrc">Saját hirdetmény, szept. 30.</span>Táblázatban sorolja a kért lazításokat – ezek mind testületi döntések.</div>
+          </div>
+          <div class="pair a" style="--d:.8s">
+            <div class="said"><span class="psrc">Tévéinterjú</span>Perben állnak, mert a beruházás erős környezeti hatással jár.</div>
+            <div class="wrote"><span class="psrc">Hivatali válasz lakosoknak, okt. 9.</span>„nem környezetvédelmi hatóság” – a zajról, porról a beruházótól kell nyilatkozatot kérni.</div>
+          </div>
+          <div class="pair a" style="--d:1.2s">
+            <div class="said"><span class="psrc">Tévéinterjú</span>Mindent megtesznek a telekcseréért.</div>
+            <div class="wrote"><span class="psrc">Okt. 6-i előterjesztés</span>A három korábbi elutasítás közül egyet sem említ.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene full" data-dur="14" data-title="Ami még a kezünkben van" data-sub="A szerződés aláírása és a szabályzat módosítása után már nincs alku – és a változtatási tilalom is megszűnik. Most kell feltételeket szabni: számokkal, határidővel, biztosítékkal.">
+      <div class="txt">
+        <div class="eyebrow a">10 · Ami maradt</div>
+        <h2 class="a" style="--d:.1s">Amíg nincs aláírás, van alku</h2>
+        <div class="fstatus a" style="--d:.3s">
+          <span class="chip">Településrendezési szerződés: nincs aláírva</span>
+          <span class="chip">Változtatási tilalom: 2027. december 17-ig</span>
+        </div>
+        <p class="a" style="--d:.5s">A kedvezményekért cserébe a szerződésben rögzíthető:</p>
+        <ul class="checks">
+          <li class="a" style="--d:.7s">célhoz kötött pénz: víztorony, szennyvíz, zajvédelem</li>
+          <li class="a" style="--d:.85s">a Zsámbéki út és a bekötőút teljes költsége, határidővel</li>
+          <li class="a" style="--d:1s">bankgarancia és kötbér minden vállalásra</li>
+          <li class="a" style="--d:1.15s">a park önkormányzati tulajdona vagy bejegyzett közhasználata</li>
+          <li class="a" style="--d:1.3s">kamionforgalom csak az 1101-es út felől</li>
+          <li class="a" style="--d:1.45s">zajmérés az iskolánál és az óvodánál</li>
+          <li class="a" style="--d:1.6s">minden vállalás átszáll az új tulajdonosra</li>
+          <li class="a" style="--d:1.75s">nyilvános feltétellista a döntés előtt</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="scene" data-dur="14" data-title="Mit tehetsz" data-sub="Gyere el a fórumra, kérdezz, és kérd írásban a választ. A múlt döntésein nem tudunk változtatni. A szerződésen még igen.">
+      <div class="txt">
+        <div class="eyebrow a">11 · Mit tehetsz?</div>
+        <h2 class="a" style="--d:.1s">Legyünk ott, és kérdezzünk</h2>
+        <ul>
+          <li class="a" style="--d:.4s">Kérjünk nyilvános feltétellistát, mielőtt a testület dönt</li>
+          <li class="a" style="--d:.55s">Kérjük, hogy az önkormányzat jelenjen meg a perben</li>
+          <li class="a" style="--d:.7s">Minden kérdésre kérjünk írásos választ</li>
+        </ul>
+        <p class="closing a" style="--d:1.2s">A múlt döntésein nem tudunk változtatni. A szerződésen még igen.</p>
+      </div>
+      <div class="ill">
+        <div style="display:grid;gap:14px;width:100%">
+          <div class="date a" style="--d:.5s"><span class="eyebrow">Lakossági fórum</span><span class="d">2026. november 2., hétfő 16:00</span><span class="w">Sándor Móric Községi Könyvtár, Gesztenyés út 15.</span></div>
+          <div class="date sec a" style="--d:.8s"><span class="eyebrow">Környezetvédelmi per</span><span class="d">2027. január 14., 11:00</span><span class="w">A bíróság tájékoztatása szerint érdemi döntés várható</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sub" aria-live="polite"><p id="fsub"></p></div>
+    </div>
+
+    <div class="ctrl" role="group" aria-label="Lejátszás vezérlése">
+      <button type="button" id="fprev" aria-label="Előző jelenet">◀</button>
+      <button type="button" id="fplay" aria-label="Lejátszás">▶ Lejátszás</button>
+      <button type="button" id="fnext" aria-label="Következő jelenet">▶▶</button>
+      <div class="segs" id="fsegs"></div>
+      <span class="ftime" id="ftime">0:00</span>
+    </div>
+    <ol class="fchapters" id="fchap"></ol>
+    </div>
+    <p class="src">A kisfilm nyilvános iratokon alapul, tisztségeket említ, neveket nem. A 29,99% → ~37% a tanulmányterv adataiból számolt becslés, a park pontos területétől függ. A „hat levél” és a telekcsere állása az október 17-i állapotot tükrözi; az azóta érkezett leveleket a fenti fejezetek tartalmazzák.</p>
+  </div>
+</section>
+
+
+<section id="teendo" aria-labelledby="ten-h">
+  <div class="wrap">
+    <div class="cta">
+      <div class="eyebrow">Mit tehetsz?</div>
+      <h2 id="ten-h">A szerződést még nem írták alá. Amíg nincs aláírás, van alku.</h2>
+      <ol>
+        <li>Gyere el a lakossági fórumra: <strong>2026. november 2., hétfő 16:00, Sándor Móric Községi Könyvtár, Gesztenyés út 15.</strong></li>
+        <li>Felszólaláskor mondd be a neved és a herceghalmi címed, hogy partnerként kerülj a jegyzőkönyvbe.</li>
+        <li>Kérdezz számra, határidőre, vállalásra, és kérd írásban a választ.</li>
+        <li>A korábbi kérdésgyűjtés témái és a javasolt feltételek itt olvashatók: <a href="https://claude.ai/artifact/FqKRga3vW7ZFXAP6ZNebw3" target="_blank" rel="noopener">Kérdezz a fórum előtt</a>.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="forr-h">
+  <div class="wrap">
+    <h3 id="forr-h">Források</h3>
+    <ul class="sources">
+      <li>Herceghalom Község Önkormányzata: hirdetmény a Telepítési Tanulmánytervről, 2026. szeptember 30. (herceghalom.hu, Panattoni-ügy rovat)</li>
+      <li>Herceghalom Község Önkormányzata: „Panattoni ügy időrendben” (herceghalom.hu)</li>
+      <li>Telepítési Tanulmányterv, 440/5 hrsz., HA Tervstúdió Kft., 2026. július</li>
+      <li>Képviselő-testületi jegyzőkönyvek, 2022–2026 (kiemelten 2022.05.03., 2023.02.14., 2024.03.05., 2024.06.27., 2024.12.17., 2025.07.15., 2026.03.03., 2026.05.28.)</li>
+      <li>35/2024. (III.05.) képviselő-testületi határozat, hiteles kivonat</li>
+      <li>27/2024. (XII.17.) és 5/2026. (III.4.) önkormányzati rendelet</li>
+      <li>Közmeghallgatások: 2023.11.14., 2024.11.26., 2025.11.24.</li>
+      <li>Környezetvédelmi eljárás iratai, PE/KTHF/14808/2024</li>
+      <li>A 2026. október 6-i testületi előterjesztés a telekcseréről, és a polgármesteri levelek (2026. július–szeptember)</li>
+      <li>A Polgármesteri Hivatal 2026. október 9-i válasza lakossági adatigénylésre</li>
+      <li>Polgármesteri levél az országgyűlési képviselőnek a telekcseréről, 2026. október 15. (iktatva október 16.)</li>
+      <li>Buda Környéki Televízió, polgármesteri interjú, 2026. október 15.</li>
+      <li>Szabadidőpark-koncepcióterv, 2025. augusztus; HungaroMet: 2026. nyári éghajlati összesítő</li>
+      <li>Más települések településrendezési szerződései: Gyömrő, Biatorbágy, Soroksár/Alsónémedi</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Lakossági tájékoztató a herceghalmi Panattoni-beruházásról. Nem az önkormányzat és nem a beruházó oldala. Ha hibát találsz, jelezd: a javítást a forrás megjelölésével tesszük meg.</div>
+</footer>
+
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+function s(tag, attrs, text) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
+function clear(el) { while (el.firstChild) el.firstChild.remove(); }
+
+/* Idővonal */
+const EVENTS = [
+  ["2021","szeptember","ber","A korábbi tulajdonos bemutatja a Panattoni vezetőjét a polgármesternek","Ismertetik a helyi építési szabályok korlátait. Változtatási tilalom nem születik.",0],
+  ["2022","január","ber","A beruházó bemutatja a három csarnokos tervet","Ehhez nem kellett volna szabályzatmódosítás.",0],
+  ["2022","március","onk","Az önkormányzat telekcserét kezdeményez","Azóta is ezt kéri: a beruházás költözzön állami földre, az autópálya mellé.",1],
+  ["2022","május 5.","ber","Elmarad a beruházó meghirdetett lakossági fóruma","",0],
+  ["2022","október","all","1. elutasítás: termőföld csak termőföldre cserélhető","Nemzeti Földügyi Központ.",0],
+  ["2023","február 14.","onk","Visszaállítják a Zsámbéki út felőli megközelítési tilalmat","A 2018-ban „adminisztrációs hiba” miatt kimaradt előírás 2023 végétől újra hatályos.",0],
+  ["2023","október 26.","ber","Megérkezik a beruházó szerződéstervezete","",0],
+  ["2024","január","ber","Lakossági fórum, amelyet a beruházó tart","Ez az eddigi egyetlen lakossági fórum.",0],
+  ["2024","február","all","2. elutasítás: a földek 2051-ig bérletben","A bérlő az eladáshoz nem járult hozzá; „az ügyet lezárták”.",0],
+  ["2024","március 5.","onk","A testület elutasítja a szerződéstervezetet (35/2024.)","Részletes zaj-, por-, rezgés- és forgalmi számításokat ír elő: ezek nélkül a terv „nem nyerhet támogatást”.",1],
+  ["2024","június","ber","Kártérítési perrel fenyegető levél a képviselőknek","Ugyanebben a hónapban a testület 3 igen és 3 tartózkodás mellett nem rendel el népszavazást a telekcseréről.",0],
+  ["2024","november 26.","lak","Közmeghallgatás 800 aláírással","A beruházó vezetője szerint a két csarnok a mai szabályok szerint is megépíthető, de nem kívánják „úgy létrehozni”, hogy azt az önkormányzat és a lakosság ne támogassa.",0],
+  ["2024","december","all","A kormányhivatal szerint nem kell teljes környezeti hatásvizsgálat","",1],
+  ["2024","december 17.","onk","Változtatási tilalom 2027. december 17-ig, per a hatósági döntés ellen","Ugyanekkor 3,2 M Ft + ÁFA értékben tervezőt bíznak meg a szabályzat módosítására, „a tulajdonosok … igényével összhangban”.",1],
+  ["2025","január","ber","A beruházó benyújtja a tanulmánytervet","Februárban hiánypótlás következik.",0],
+  ["2025","február 4.","onk","Földmérő a bekötőút telekalakítására","980 000 Ft az önkormányzat költségvetéséből.",0],
+  ["2025","július 15.","onk","A kérelmet hibás meghatalmazás miatt visszautasítják","",0],
+  ["2025","november 24.","lak","210 aláírásos nyílt levél a közmeghallgatáson","A válasz: a levél a beruházónak szólt, „válaszadási kötelezettség nincs”.",0],
+  ["2026","március 3.","onk","A bekötőút három telkét kiveszik a tilalom alól","5/2026. rendelet.",0],
+  ["2026","március 4.","all","3. elutasítás: jogi személy nem szerezhet termőföldet","Agrárminisztérium; az egyik telket az M1 bővítése is érinti.",1],
+  ["2026","május 28.","onk","Az önkormányzat megveszi a bekötőút két földsávját","Ugyanazon az ülésen egy lakóparkbővítést 20 M Ft felajánlott hozzájárulás ellenére is elutasítanak.",0],
+  ["2026","július","ber","Elkészül a Telepítési Tanulmányterv","146 oldal, HA Tervstúdió Kft.",0],
+  ["2026","szeptember 1.","ber","A terv „előzetes egyeztetés céljából” megérkezik","Formális benyújtás a jegyzőkönyv szerint még nem történt.",0],
+  ["2026","szeptember 10.","all","Tárgyalás a környezetvédelmi perben","Az önkormányzat, amely felperes, nem jelent meg.",0],
+  ["2026","szeptember","lak","Adatigénylés és per után a tanulmányterv felkerül a honlapra","",0],
+  ["2026","szeptember 24.","ber","A tanulmánytervet hivatalosan benyújtják","A polgármester 2026. október 15-i levele szerint.",1],
+  ["2026","szeptember 30.","onk","Hirdetmény: véleményezés október 15-ig, fórum november 2-án","",1],
+  ["2026","október 6.","onk","A testület megerősíti a telekcsere-kezdeményezést","143/2026. (X.6.) határozat.",0],
+  ["2026","október 9.","onk","Újabb levél az agrárminiszternek","Megküldik a 143/2026. határozatot.",0],
+  ["2026","október 15.","onk","Polgármesteri levél az országgyűlési képviselőnek","Háromoldalú egyeztetést kér a telekcseréről; az állami föld előbb az önkormányzathoz kerülne, és az cserélné el a beruházóval.",0],
+  ["2026","október 15.","lak","Lezárul az írásos véleményezés","Lakossági vélemények és kérdéssorok érkeztek a tervről és a szerződésről.",0],
+  ["2026","november 2.","lak","Lakossági fórum","Sándor Móric Községi Könyvtár, 16:00.",2],
+  ["2027","január 14.","all","Tárgyalás a környezetvédelmi perben","Érdemi döntés várható.",2],
+  ["2027","december 17.","onk","Lejár a változtatási tilalom","",2]
+];
+const ACTOR = {onk:"Önkormányzat", ber:"Beruházó", all:"Állam, hatóság", lak:"Lakosság"};
+const shown = {onk:true, ber:true, all:true, lak:true};
+function renderTL() {
+  const tl = document.getElementById("tl"); tl.textContent = "";
+  let year = "";
+  for (const [y, d, k, t, p, flag] of EVENTS) {
+    if (!shown[k]) continue;
+    if (y !== year) { year = y; const li = document.createElement("li"); li.className = "year"; li.textContent = y; tl.append(li); }
+    const li = document.createElement("li");
+    li.className = "ev" + (flag === 1 ? " key" : flag === 2 ? " future" : "");
+    const time = document.createElement("time"); time.textContent = d;
+    const dot = document.createElement("span"); dot.className = "dot d-" + k; dot.title = ACTOR[k];
+    const body = document.createElement("div");
+    const h = document.createElement("h3"); h.textContent = t; body.append(h);
+    if (p) { const pp = document.createElement("p"); pp.textContent = p; body.append(pp); }
+    const sr = document.createElement("span"); sr.textContent = " (" + ACTOR[k] + ")"; sr.style.cssText = "position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"; h.append(sr);
+    li.append(time, dot, body); tl.append(li);
+  }
+}
+document.querySelectorAll(".legend button").forEach(b => b.addEventListener("click", () => {
+  const k = b.dataset.k; shown[k] = !shown[k]; b.setAttribute("aria-pressed", String(shown[k])); renderTL();
+}));
+
+/* Kért paraméterek */
+const REQ = [
+  ["Beépíthetőség", 30, "30%", 40, "40%", "+10 %-pont", 40],
+  ["Épületmagasság", 12, "12 m", 14.5, "14,5 m", "+2,5 m", 16],
+  ["Kötelező zöldfelület", 35, "min. 35%", 25, "25%", "−10 %-pont", 35],
+  ["Legkisebb telekméret", 5000, "5 000 m²", 150000, "150 000 m²", "30-szoros", 150000]
+];
+function renderReq() {
+  const box = document.getElementById("req"); box.textContent = "";
+  for (const [l, a, al, b, bl, d, max] of REQ) {
+    const row = document.createElement("div"); row.className = "row";
+    const lab = document.createElement("div"); lab.className = "lbl"; lab.textContent = l;
+    const bars = document.createElement("div"); bars.className = "bars";
+    for (const [v, t, ask] of [[a, al, false], [b, bl, true]]) {
+      const bar = document.createElement("div"); bar.className = "bar" + (ask ? " ask" : "");
+      const track = document.createElement("b");
+      const i = document.createElement("i"); i.style.width = Math.max(1.5, v / max * 100) + "%";
+      track.append(i);
+      const sp = document.createElement("span"); sp.textContent = t;
+      bar.append(track, sp); bars.append(bar);
+    }
+    const de = document.createElement("div"); de.className = "delta"; de.textContent = d;
+    row.append(lab, bars, de); box.append(row);
+  }
+}
+
+/* Metszet */
+function renderSection() {
+  const svg = document.getElementById("section-svg"); clear(svg);
+  const ink = css("--ink"), muted = css("--muted"), green = css("--green-fill"), orange = css("--orange-fill"), line = css("--line");
+  const ground = 250, k = 9; // 1 m magasság = 9 px
+  svg.append(s("line", {x1: 0, y1: ground, x2: 960, y2: ground, stroke: muted, "stroke-width": 2}));
+  // házak
+  for (let i = 0; i < 4; i++) {
+    const x = 20 + i * 52, w = 34, h = 4 * k, r = 3 * k;
+    svg.append(s("rect", {x, y: ground - h, width: w, height: h, fill: css("--surface"), stroke: ink, "stroke-width": 1.5}));
+    svg.append(s("polygon", {points: `${x - 3},${ground - h} ${x + w / 2},${ground - h - r} ${x + w + 3},${ground - h}`, fill: css("--surface"), stroke: ink, "stroke-width": 1.5}));
+  }
+  svg.append(s("text", {x: 20, y: ground + 26, fill: muted, "font-size": 14}, "lakóházak (~7 m)"));
+  // óvoda
+  const ox = 240, ow = 70, oh = 5 * k;
+  svg.append(s("rect", {x: ox, y: ground - oh, width: ow, height: oh, fill: css("--green-soft"), stroke: green, "stroke-width": 2}));
+  svg.append(s("text", {x: ox, y: ground + 26, fill: muted, "font-size": 14}, "óvoda"));
+  // park/takarás fák
+  for (let i = 0; i < 6; i++) { const x = 380 + i * 22; svg.append(s("circle", {cx: x, cy: ground - 26, r: 12, fill: css("--green-soft"), stroke: green, "stroke-width": 1.5})); svg.append(s("line", {x1: x, y1: ground - 14, x2: x, y2: ground, stroke: green, "stroke-width": 2})); }
+  svg.append(s("text", {x: 370, y: ground + 26, fill: muted, "font-size": 14}, "park, takarás"));
+  // csarnok
+  const cx = 540, cw = 400, ch = 14.5 * k;
+  svg.append(s("rect", {x: cx, y: ground - ch, width: cw, height: ch, fill: css("--orange-soft"), stroke: orange, "stroke-width": 2.5}));
+  svg.append(s("text", {x: cx + 16, y: ground - ch + 56, fill: ink, "font-size": 20, "font-weight": 700}, "csarnok, 14,5 m"));
+  svg.append(s("text", {x: cx + 16, y: ground - ch + 80, fill: muted, "font-size": 15}, "kb. 100 × 400 m, egyenként ~38 000 m²"));
+  // magasság-méretvonal
+  const mx = cx + cw + 10;
+  svg.append(s("line", {x1: mx, y1: ground, x2: mx, y2: ground - ch, stroke: ink, "stroke-width": 1.5}));
+  svg.append(s("line", {x1: mx - 5, y1: ground - ch, x2: mx + 5, y2: ground - ch, stroke: ink, "stroke-width": 1.5}));
+  // mai 12 m
+  svg.append(s("line", {x1: cx, y1: ground - 12 * k, x2: cx + cw, y2: ground - 12 * k, stroke: muted, "stroke-width": 1.5, "stroke-dasharray": "6 5"}));
+  svg.append(s("line", {x1: cx - 90, y1: ground - 12 * k, x2: cx, y2: ground - 12 * k, stroke: muted, "stroke-width": 1, "stroke-dasharray": "3 4"}));
+  svg.append(s("text", {x: cx - 94, y: ground - 12 * k + 4, fill: muted, "font-size": 13, "text-anchor": "end"}, "ma megengedett: 12 m"));
+  // 200 m távolság
+  const y = 40;
+  svg.append(s("line", {x1: ox + ow, y1: y, x2: cx, y2: y, stroke: ink, "stroke-width": 1.5}));
+  svg.append(s("line", {x1: ox + ow, y1: y - 6, x2: ox + ow, y2: y + 6, stroke: ink, "stroke-width": 1.5}));
+  svg.append(s("line", {x1: cx, y1: y - 6, x2: cx, y2: y + 6, stroke: ink, "stroke-width": 1.5}));
+  svg.append(s("text", {x: (ox + ow + cx) / 2, y: y - 10, fill: ink, "font-size": 18, "font-weight": 700, "text-anchor": "middle"}, "~200 m"));
+}
+
+/* TRSZ összehasonlítás */
+function renderTrsz() {
+  const svg = document.getElementById("trsz-svg"); clear(svg);
+  const ink = css("--ink"), muted = css("--muted"), grey = css("--grey-bar"), orange = css("--orange"), line = css("--line"), soft = css("--orange-soft");
+  const data = [["Gyömrő – GreenGo, 36 ha", 360], ["Biatorbágy – CTP, 18,1 ha", 160], ["Soroksár/Alsónémedi – RaktárAD", 15], ["Herceghalom – Panattoni, 26,9 ha", 0]];
+  const x0 = 290, x1 = 860, max = 400, sc = (v) => x0 + (x1 - x0) * v / max;
+  for (const t of [0, 100, 200, 300, 400]) {
+    svg.append(s("line", {x1: sc(t), y1: 20, x2: sc(t), y2: 262, stroke: line, "stroke-width": 1}));
+    svg.append(s("text", {x: sc(t), y: 284, fill: muted, "font-size": 13, "text-anchor": "middle"}, t + (t === 400 ? " M Ft" : "")));
+  }
+  // arányosítási sáv Herceghalom sorában
+  const hy = 20 + 3 * 60;
+  svg.append(s("rect", {x: sc(220), y: hy + 2, width: sc(270) - sc(220), height: 34, fill: soft, stroke: orange, "stroke-width": 1.5, "stroke-dasharray": "5 4"}));
+  svg.append(s("text", {x: sc(245), y: hy - 6, fill: orange, "font-size": 13, "font-weight": 600, "text-anchor": "middle"}, "arányosítva: 220–270"));
+  data.forEach(([l, v], i) => {
+    const y = 20 + i * 60;
+    const isH = i === 3;
+    svg.append(s("text", {x: x0 - 12, y: y + 24, fill: ink, "font-size": 15, "font-weight": isH ? 700 : 500, "text-anchor": "end"}, l));
+    if (v > 0) svg.append(s("rect", {x: x0, y: y + 4, width: sc(v) - x0, height: 30, fill: grey, rx: 3}));
+    svg.append(s("text", {x: (v > 0 ? sc(v) : x0) + 8, y: y + 25, fill: isH ? orange : ink, "font-size": 16, "font-weight": 700}, v + " M Ft"));
+  });
+}
+
+/* Telekcsere */
+function renderSwap() {
+  const svg = document.getElementById("swap-svg"); clear(svg);
+  const ink = css("--ink"), muted = css("--muted"), green = css("--green-fill"), state = css("--state"), orange = css("--orange");
+  const x0 = 230, x1 = 800, max = 40, sc = (v) => x0 + (x1 - x0) * v / max;
+  const rows = [["A beruházó adná (belterület)", 26.88, green, "26,88 ha"], ["Az állam adná (szántó, rét)", 38.38, state, "38,38 ha"]];
+  rows.forEach(([l, v, c, t], i) => {
+    const y = 14 + i * 56;
+    svg.append(s("text", {x: x0 - 12, y: y + 25, fill: ink, "font-size": 15, "font-weight": 600, "text-anchor": "end"}, l));
+    svg.append(s("rect", {x: x0, y: y + 6, width: sc(v) - x0, height: 30, fill: c, rx: 3}));
+    svg.append(s("text", {x: sc(v) + 8, y: y + 27, fill: ink, "font-size": 16, "font-weight": 700}, t));
+  });
+  svg.append(s("line", {x1: sc(26.88), y1: 76, x2: sc(26.88), y2: 112, stroke: orange, "stroke-width": 2, "stroke-dasharray": "4 3"}));
+  svg.append(s("text", {x: (sc(26.88) + sc(38.38)) / 2, y: 140, fill: orange, "font-size": 15, "font-weight": 700, "text-anchor": "middle"}, "+11,5 ha (+43%) az állam terhére"));
+}
+
+/* Zaj hatásterület */
+function renderNoise() {
+  const svg = document.getElementById("noise-svg"); clear(svg);
+  const ink = css("--ink"), muted = css("--muted"), orange = css("--orange-fill"), line = css("--line"), green = css("--green");
+  const x0 = 250, x1 = 800, max = 900, sc = (v) => x0 + (x1 - x0) * v / max;
+  for (const t of [0, 200, 400, 600, 800]) {
+    svg.append(s("line", {x1: sc(t), y1: 10, x2: sc(t), y2: 210, stroke: line, "stroke-width": 1}));
+    svg.append(s("text", {x: sc(t), y: 232, fill: muted, "font-size": 13, "text-anchor": "middle"}, t + (t === 800 ? " m" : "")));
+  }
+  svg.append(s("line", {x1: sc(200), y1: 10, x2: sc(200), y2: 210, stroke: green, "stroke-width": 2, "stroke-dasharray": "6 4"}));
+  svg.append(s("text", {x: sc(200) + 6, y: 205, fill: green, "font-size": 13, "font-weight": 600}, "óvoda ~200 m"));
+  const rows = [["Tanulmányterv", 352, 352, "352 m"], ["Környezetvédelmi eljárás", 485, 485, "485 m"], ["Beruházói tényállás-tisztázás", 452, 592, "452–592 m"], ["Civil szakértő", 639, 837, "639–837 m"]];
+  rows.forEach(([l, a, b, t], i) => {
+    const y = 34 + i * 44;
+    svg.append(s("text", {x: x0 - 12, y: y + 5, fill: ink, "font-size": 14.5, "text-anchor": "end"}, l));
+    if (b > a) {
+      svg.append(s("line", {x1: sc(a), y1: y, x2: sc(b), y2: y, stroke: orange, "stroke-width": 4, "stroke-linecap": "round"}));
+      svg.append(s("line", {x1: sc(a), y1: y - 8, x2: sc(a), y2: y + 8, stroke: orange, "stroke-width": 2}));
+      svg.append(s("line", {x1: sc(b), y1: y - 8, x2: sc(b), y2: y + 8, stroke: orange, "stroke-width": 2}));
+    }
+    svg.append(s("circle", {cx: sc((a + b) / 2), cy: y, r: 6, fill: orange}));
+    svg.append(s("text", {x: sc(b) + 12, y: y + 5, fill: ink, "font-size": 14.5, "font-weight": 700}, t));
+  });
+}
+
+/* Csapadék */
+function renderRain() {
+  const svg = document.getElementById("rain-svg"); clear(svg);
+  const ink = css("--ink"), muted = css("--muted"), line = css("--line"), state = css("--state");
+  const data = [["június", 55], ["július", 26], ["augusztus", 26], ["a nyár egésze", 36]];
+  const x0 = 170, x1 = 860, sc = (v) => x0 + (x1 - x0) * v / 100;
+  for (const t of [0, 25, 50, 75, 100]) {
+    svg.append(s("line", {x1: sc(t), y1: 8, x2: sc(t), y2: 188, stroke: t === 100 ? muted : line, "stroke-width": t === 100 ? 2 : 1, "stroke-dasharray": t === 100 ? "6 4" : ""}));
+    svg.append(s("text", {x: sc(t), y: 210, fill: muted, "font-size": 13, "text-anchor": "middle"}, t + "%"));
+  }
+  svg.append(s("text", {x: sc(100) - 6, y: 24, fill: muted, "font-size": 13, "text-anchor": "end"}, "sokéves átlag"));
+  data.forEach(([l, v], i) => {
+    const y = 34 + i * 40, last = i === 3;
+    svg.append(s("text", {x: x0 - 12, y: y + 18, fill: ink, "font-size": 15, "font-weight": last ? 700 : 500, "text-anchor": "end"}, l));
+    svg.append(s("rect", {x: x0, y: y + 2, width: sc(v) - x0, height: 24, fill: state, rx: 3, opacity: last ? 1 : 0.75}));
+    svg.append(s("text", {x: sc(v) + 8, y: y + 20, fill: ink, "font-size": 15, "font-weight": 700}, v + "%"));
+  });
+}
+
+function renderAll() { renderSection(); renderTrsz(); renderSwap(); renderNoise(); renderRain(); }
+renderTL(); renderReq(); renderAll();
+try { matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll); } catch (e) {}
+new MutationObserver(renderAll).observe(document.documentElement, {attributes: true, attributeFilter: ["data-theme"]});
+
+/* Kisfilm lejátszó */
+(function(){
+  var stage=document.getElementById('fstage'); if(!stage) return;
+  var scenes=[].slice.call(stage.querySelectorAll('.scene'));
+  var sub=document.getElementById('fsub'), segsEl=document.getElementById('fsegs'), chEl=document.getElementById('fchap');
+  var playBtn=document.getElementById('fplay'), timeEl=document.getElementById('ftime');
+  var durs=scenes.map(function(s){return parseFloat(s.dataset.dur)*1000});
+  var total=durs.reduce(function(a,b){return a+b},0);
+  var idx=0,elapsed=0,playing=false,last=0,fills=[],chBtns=[];
+  scenes.forEach(function(s,i){
+    var b=document.createElement('button');b.className='seg';b.type='button';
+    b.setAttribute('aria-label',(i+1)+'. jelenet: '+s.dataset.title);
+    var f=document.createElement('i');b.appendChild(f);fills.push(f);
+    b.addEventListener('click',function(){go(i)});segsEl.appendChild(b);
+    var li=document.createElement('li');var c=document.createElement('button');c.type='button';
+    var n=document.createElement('span');n.textContent=String(i+1).padStart(2,'0');
+    var t=document.createElement('span');t.textContent=s.dataset.title;
+    c.append(n,t);
+    c.addEventListener('click',function(){go(i);if(!playing)toggle();});
+    li.appendChild(c);chEl.appendChild(li);chBtns.push(c);
+  });
+  function fmt(ms){var s=Math.floor(ms/1000);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+  function paint(){
+    fills.forEach(function(f,i){f.style.width=(i<idx?100:i>idx?0:Math.min(100,elapsed/durs[i]*100))+'%'});
+    var before=durs.slice(0,idx).reduce(function(a,b){return a+b},0);
+    timeEl.textContent=fmt(before+elapsed)+' / '+fmt(total);
+  }
+  function go(i){
+    idx=Math.max(0,Math.min(scenes.length-1,i));elapsed=0;
+    scenes.forEach(function(s){s.classList.remove('active')});
+    void stage.offsetWidth;
+    scenes[idx].classList.add('active');
+    sub.textContent=scenes[idx].dataset.sub;
+    chBtns.forEach(function(c,j){c.setAttribute('aria-current',j===idx?'true':'false')});
+    paint();
+  }
+  function setPlaying(p){
+    playing=p;stage.classList.toggle('paused',!p);
+    playBtn.textContent=p?'❚❚ Szünet':'▶ Lejátszás';
+    playBtn.setAttribute('aria-label',p?'Szünet':'Lejátszás');
+    if(p){last=performance.now();requestAnimationFrame(tick)}
+  }
+  function toggle(){
+    if(!playing && idx===scenes.length-1 && elapsed>=durs[idx]) go(0);
+    setPlaying(!playing);
+  }
+  function tick(t){
+    if(!playing)return;
+    elapsed+=t-last;last=t;
+    if(elapsed>=durs[idx]){
+      if(idx<scenes.length-1){go(idx+1)}else{elapsed=durs[idx];paint();setPlaying(false);return}
+    }
+    paint();requestAnimationFrame(tick);
+  }
+  playBtn.addEventListener('click',toggle);
+  document.getElementById('fbig').addEventListener('click',function(e){e.stopPropagation();go(1);setPlaying(true)});
+  document.getElementById('fprev').addEventListener('click',function(){go(idx-1)});
+  document.getElementById('fnext').addEventListener('click',function(){go(idx+1)});
+  stage.addEventListener('click',function(e){if(e.target.closest('button'))return;toggle()});
+  stage.addEventListener('keydown',function(e){
+    if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle()}
+    else if(e.key==='ArrowRight'){e.preventDefault();go(idx+1)}
+    else if(e.key==='ArrowLeft'){e.preventDefault();go(idx-1)}
+  });
+  /* Ha a film kigörget a képből, megáll */
+  try{new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting&&playing)setPlaying(false)})},{threshold:0.2}).observe(stage)}catch(e){}
+  go(0);
+})();
+
+</script>
+</body>
+</html>
