@@ -62,7 +62,7 @@ nav.top a:hover{color:var(--orange)}
 header.hero .wrap{padding-block:56px 40px;display:flex;flex-direction:column;gap:22px}
 header.hero h1{font-size:clamp(48px,9vw,96px);letter-spacing:-.01em}
 header .status{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:6px}
-header .status div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+header .status div,header .status a{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
 header .status small{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 header .status strong{font-family:var(--f-display);font-size:26px;line-height:1.1}
 header .status .hot{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
@@ -156,6 +156,23 @@ ol.tl .ev[hidden]{display:none}
 .cta a{color:var(--navy-accent);font-weight:700}
 .sources{columns:2;column-gap:32px;font-size:14px;color:var(--muted);padding-left:18px;margin:0}
 .sources li{break-inside:avoid;margin-bottom:6px}
+/* Következő esemény */
+#forum{padding-block:0 8px;border-top:0}
+.nextev{background:var(--navy);color:var(--on-navy);border-radius:16px;padding:clamp(20px,4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:clamp(18px,3vw,32px);align-items:start}
+.nextev .eyebrow{color:var(--navy-accent)}
+.nextev .when{font-family:var(--f-display);font-weight:700;font-size:clamp(40px,7vw,68px);line-height:1;margin:8px 0 4px}
+.nextev .when span{color:var(--navy-accent)}
+.nextev .where{font-size:18px;font-weight:600;line-height:1.4}
+.nextev .where small{display:block;font-weight:400;font-size:15px;color:#D4DBE6}
+.nextev p{color:#D4DBE6;font-size:16px;margin-top:14px}
+.nextev .count{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--navy-accent);color:#1C355E;border-radius:999px;padding:4px 12px}
+.nextev .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.nextev .acts a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--navy-accent);color:var(--on-navy);font-weight:600;font-size:15px;text-decoration:none}
+.nextev .acts a:first-child{background:var(--navy-accent);color:#1C355E}
+.nextev figure a{display:block}
+.nextev figure img{width:100%;height:auto;border-radius:8px;display:block}
+.nextev figcaption{color:#D4DBE6;font-size:13px}
+@media (max-width:760px){.nextev{grid-template-columns:1fr}.nextev figure{max-width:220px}}
 footer .wrap{padding-block:28px 48px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line)}
 
 @media (max-width:760px){
@@ -298,6 +315,7 @@ footer .wrap{padding-block:28px 48px;font-size:13.5px;color:var(--muted);border-
   <div class="wrap">
     <b>Panattoni-ügy</b>
     <div class="links">
+      <a href="#forum">Fórum</a>
       <a href="#most">Most</a>
       <a href="#szamok">Számok</a>
       <a href="#idovonal">Idővonal</a>
@@ -319,16 +337,41 @@ footer .wrap{padding-block:28px 48px;font-size:13.5px;color:var(--muted);border-
     <h1>Panattoni-ügy Herceghalmon</h1>
     <p class="lead">Két, egyenként körülbelül 38&nbsp;000&nbsp;m²-es logisztikai csarnok épülne a falu szélére, az óvodától nagyjából 200 méterre. A beruházó ehhez enyhébb építési szabályokat kér. Erről a képviselő-testület dönt, egy településrendezési szerződés keretében, amely még nincs aláírva. Ez az oldal időrendben mutatja be, hogyan jutott idáig az ügy, és mi várható most.</p>
     <div class="status" aria-label="Az ügy állása">
-      <div class="hot"><small>Következő lépés</small><strong>Lakossági fórum, nov. 2., 16:00</strong></div>
+      <a class="hot" href="#forum" style="text-decoration:none;color:inherit"><small>Következő esemény</small><strong>Lakossági fórum, nov. 2., 16:00</strong></a>
       <div><small>Településrendezési szerződés</small><strong>Nincs aláírva</strong></div>
       <div><small>Változtatási tilalom</small><strong>2027. dec. 17-ig</strong></div>
       <div><small>Környezetvédelmi per</small><strong>Tárgyalás 2027. jan. 14.</strong></div>
     </div>
-    <p class="disclaimer">Lakossági kezdeményezés, nem az önkormányzat és nem a beruházó oldala. Minden adat nyilvános iratból származik: testületi jegyzőkönyvekből és határozatokból, a 2026. szeptember 30-i hirdetményből, a Telepítési Tanulmánytervből és a környezetvédelmi eljárás irataiból. A forrásokat az oldal alján soroljuk fel. Utolsó frissítés: 2026. október 24.</p>
+    <p class="disclaimer">Lakossági kezdeményezés, nem az önkormányzat és nem a beruházó oldala. Minden adat nyilvános iratból származik: testületi jegyzőkönyvekből és határozatokból, a 2026. szeptember 30-i hirdetményből, a Telepítési Tanulmánytervből és a környezetvédelmi eljárás irataiból. A forrásokat az oldal alján soroljuk fel. Utolsó frissítés: 2026. október 26.</p>
   </div>
 </header>
 
 <main>
+
+<section id="forum" aria-labelledby="forum-h">
+  <div class="wrap">
+    <div class="nextev">
+      <div>
+        <div class="eyebrow">Következő esemény</div>
+        <h2 id="forum-h" style="color:var(--on-navy);margin-top:6px">Lakossági fórum a Panattoni-beruházásról</h2>
+        <div class="when">2026. nov. 2. <span>16:00</span></div>
+        <div class="where">hétfő · KEK, Gesztenyés út 36.<small>Sándor Móric Községi Könyvtár, Egyházi és Közösségi Ház</small></div>
+        <span class="count" id="forum-count" hidden></span>
+        <p>A meghívó szerint a fórumon a beruházó képviselői tájékoztatnak, és válaszolnak a kérdésekre. Témája a Panattoni Kft. által a 440/2, 440/4 és 440/5 hrsz.-ú területre benyújtott Telepítési Tanulmányterv, amelyről partnerségi egyeztetés folyik. A szeptember 30-i hirdetmény a fórumot e partnerségi egyeztetés lezárásaként tűzte ki: ez az utolsó nyilvános alkalom, hogy a lakosok feltételeket mondjanak a szerződés aláírása előtt.</p>
+        <p>Érdemes kérni, hogy a kérdések és a válaszok a jegyzőkönyvbe kerüljenek, és hogy amire a helyszínen nincs válasz, arra írásban válaszoljanak. A kérdések egy része nem a beruházóra, hanem a képviselő-testületre tartozik (szerződés, pénzbeli hozzájárulás, Zsámbéki út): ezekre az önkormányzattól kérjünk választ.</p>
+        <div class="acts">
+          <a id="forum-ics" href="#" download="lakossagi-forum-2026-11-02.ics">Naptárba</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Herceghalom%2C%20Geszteny%C3%A9s%20%C3%BAt%2036." target="_blank" rel="noopener">Térkép</a>
+          <a href="#teendo">Mit tehetsz?</a>
+        </div>
+      </div>
+      <figure>
+        <a href="forum-plakat.jpg" target="_blank" rel="noopener"><img src="forum-plakat.jpg" width="893" height="1174" loading="lazy" alt="A fórum meghívója: Panattoni beruházás, lakossági fórum, kérdezze közvetlenül a beruházót. Herceghalom, Gesztenyés út 36., 2026. november 2., hétfő 16:00."></a>
+        <figcaption>A meghívó (plakát). Kattintásra nagyobb méretben.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <section id="most" aria-labelledby="most-h">
   <div class="wrap">
@@ -337,7 +380,7 @@ footer .wrap{padding-block:28px 48px;font-size:13.5px;color:var(--muted);border-
     <p class="lead">A tanulmányterv írásos véleményezése október 15-én lezárult. A következő nyilvános alkalom a november 2-i lakossági fórum, amelyet a hirdetmény „a partnerségi egyeztetés lezárásaként” tűzött ki.</p>
     <ol class="news">
       <li class="next"><time>2027. jan. 14.</time><div><h3>Tárgyalás a környezetvédelmi perben <span class="tag">várható</span></h3><p>A kormányhivatal 2024-es döntése elleni perben ezen a tárgyaláson érdemi döntés várható. A 2026. szeptember 10-i tárgyaláson az önkormányzat, amely maga is felperes, nem jelent meg.</p></div></li>
-      <li class="next"><time>nov. 2., 16:00</time><div><h3>Lakossági fórum a KEK-ben <span class="tag">várható</span></h3><p>KEK, Gesztenyés út 36. A fórumon elhangzó észrevételeket jegyzőkönyv rögzíti. A lakosok itt mondhatják el, milyen feltételek nélkül ne legyen aláírva a szerződés.</p></div></li>
+      <li class="next"><time>nov. 2., 16:00</time><div><h3>Lakossági fórum a KEK-ben <span class="tag">várható</span></h3><p>KEK (Sándor Móric Községi Könyvtár, Egyházi és Közösségi Ház), Gesztenyés út 36. A meghívó szerint a beruházó képviselői tájékoztatnak és válaszolnak a kérdésekre. A fórumon elhangzó észrevételeket jegyzőkönyv rögzíti. A lakosok itt mondhatják el, milyen feltételek nélkül ne legyen aláírva a szerződés.</p></div></li>
       <li><time>okt. 22.</time><div><h3>Lezárult a lakossági kérdésgyűjtés</h3><p>A herceghalmi lakosok kérdéseit témák szerint rendezve, írásban juttatjuk el az önkormányzatnak, azzal a kéréssel, hogy a beruházó a fórumon írásban válaszoljon.</p></div></li>
       <li><time>okt. 15.</time><div><h3>Polgármesteri levél az országgyűlési képviselőnek</h3><p>A levél kéri, hogy a képviselő „álljon az ügy élére”, és segítsen háromoldalú egyeztetést indítani a minisztérium, az állami vagyonkezelő és az önkormányzat között. Új javaslat: az állami föld előbb az önkormányzathoz kerüljön, és az cserélje el a beruházóval. A levél szerint a tanulmányterv hivatalos benyújtása szeptember 24-én megtörtént, és az önkormányzatnak „nincsenek olyan jogosítványai”, amelyekkel a beruházást megakadályozhatná.</p></div></li>
       <li><time>okt. 15.</time><div><h3>Lejárt az írásos véleményezés határideje; tévéinterjú</h3><p>Ugyanezen a napon került adásba a polgármesteri interjú a Buda Környéki Televízióban. Az interjú sem a határidőt, sem a fórum időpontját nem említette.</p></div></li>
@@ -885,6 +928,30 @@ const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v
 function s(tag, attrs, text) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
 function clear(el) { while (el.firstChild) el.firstChild.remove(); }
 
+/* Következő esemény: visszaszámlálás és naptárfájl */
+(function(){
+  const start = new Date("2026-11-02T16:00:00+01:00");
+  const el = document.getElementById("forum-count");
+  const today = new Date(); today.setHours(0,0,0,0);
+  const day = new Date(2026,10,2);
+  const diff = Math.round((day - today) / 86400000);
+  if (el) {
+    if (diff > 1) { el.textContent = diff + " nap múlva"; el.hidden = false; }
+    else if (diff === 1) { el.textContent = "Holnap"; el.hidden = false; }
+    else if (diff === 0) { el.textContent = Date.now() < start.getTime() + 3*3600000 ? "Ma délután" : "Ma volt"; el.hidden = false; }
+    else { el.textContent = "Lezajlott"; el.hidden = false; }
+  }
+  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//herceghalmi-lakosok//forum//HU","BEGIN:VEVENT",
+    "UID:forum-20261102@herceghalmi-lakosok.github.io","DTSTAMP:20261026T160000Z",
+    "DTSTART:20261102T150000Z","DTEND:20261102T170000Z",
+    "SUMMARY:Lakossági fórum a Panattoni-beruházásról",
+    "LOCATION:KEK\\, Gesztenyés út 36.\\, Herceghalom",
+    "DESCRIPTION:https://herceghalmi-lakosok.github.io/#forum",
+    "END:VEVENT","END:VCALENDAR"].join("\r\n");
+  const a = document.getElementById("forum-ics");
+  if (a) a.href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+})();
+
 /* Idővonal */
 const EVENTS = [
   ["2021","szeptember","ber","A korábbi tulajdonos bemutatja a Panattoni vezetőjét a polgármesternek","Ismertetik a helyi építési szabályok korlátait. Változtatási tilalom nem születik.",0],
@@ -921,7 +988,7 @@ const EVENTS = [
   ["2026","október 9.","onk","Újabb levél az agrárminiszternek","Megküldik a 143/2026. határozatot.",0],
   ["2026","október 15.","onk","Polgármesteri levél az országgyűlési képviselőnek","Háromoldalú egyeztetést kér a telekcseréről; az állami föld előbb az önkormányzathoz kerülne, és az cserélné el a beruházóval.",0],
   ["2026","október 15.","lak","Lezárul az írásos véleményezés","Lakossági vélemények és kérdéssorok érkeztek a tervről és a szerződésről.",0],
-  ["2026","november 2.","lak","Lakossági fórum","KEK, Gesztenyés út 36., 16:00.",2],
+  ["2026","november 2.","lak","Lakossági fórum: kérdezni a beruházótól","KEK (Sándor Móric Községi Könyvtár, Egyházi és Közösségi Ház), Gesztenyés út 36., 16:00. A meghívó szerint a beruházó képviselői tájékoztatnak; a hirdetmény a partnerségi egyeztetés lezárásaként tűzte ki.",2],
   ["2027","január 14.","all","Tárgyalás a környezetvédelmi perben","Érdemi döntés várható.",2],
   ["2027","december 17.","onk","Lejár a változtatási tilalom","",2]
 ];
