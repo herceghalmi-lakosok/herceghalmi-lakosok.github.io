@@ -1,0 +1,462 @@
+<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="description" content="Lakossági kérdésgyűjtés a herceghalmi Panattoni-beruházásról tartandó 2026. november 2-i lakossági fórumra."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kérdezz a fórum előtt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: egy hasábos közérdekű tájékoztató, a kérdésszerkesztő a közepén mint a fő teendő; zöld alap, borostyán kiemelés a Facebook-képpel egyezően */
+:root{
+  --bg:#F6F7F4; --surface:#FFFFFF; --ink:#16271F; --muted:#4D5E55; --line:#D5DDD7;
+  --forest:#1F3A2E; --on-forest:#F4F1EA; --amber:#B86E10; --amber-fill:#E8A33D; --on-amber:#16271F;
+  --ok:#2F6B47; --soft:#EAF0EC;
+  --f-display:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --f-body:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --f-mono:'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101A15; --surface:#16231C; --ink:#E9EEEA; --muted:#A8B7AE; --line:#2C3E34;
+  --forest:#1B3327; --on-forest:#F4F1EA; --amber:#F0B65A; --amber-fill:#E8A33D; --on-amber:#16271F;
+  --ok:#7CC49A; --soft:#1C2C23; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101A15; --surface:#16231C; --ink:#E9EEEA; --muted:#A8B7AE; --line:#2C3E34;
+  --forest:#1B3327; --on-forest:#F4F1EA; --amber:#F0B65A; --amber-fill:#E8A33D; --on-amber:#16271F;
+  --ok:#7CC49A; --soft:#1C2C23; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.12}
+h2{font-size:clamp(24px,4vw,30px);font-weight:800;letter-spacing:-0.01em}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:65ch}
+a{color:var(--amber)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.code{font-family:var(--f-mono);font-size:13px;font-weight:600;padding:2px 7px;border-radius:5px;background:var(--soft);color:var(--ink);white-space:nowrap}
+
+/* Hero */
+.hero{background:var(--forest);color:var(--on-forest)}
+.hero .wrap{padding-block:48px 40px;display:flex;flex-direction:column;gap:20px}
+.hero .eyebrow{color:var(--amber-fill)}
+.hero h1{font-size:clamp(36px,7vw,60px);font-weight:900;letter-spacing:-0.02em}
+.hero p{color:#D9D4C7;font-size:19px}
+.deadline{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.deadline div{background:var(--amber-fill);color:var(--on-amber);border-radius:10px;padding:14px 18px;display:flex;flex-direction:column;gap:2px}
+.deadline div.alt{background:transparent;color:var(--on-forest);border:2px solid #4C6B5C}
+.deadline small{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.deadline strong{font-size:22px;font-weight:900;font-variant-numeric:tabular-nums}
+.notice{font-size:14px;color:#B9C4BC}
+
+main .wrap{display:flex;flex-direction:column;gap:56px;padding-block:48px 64px}
+section{display:flex;flex-direction:column;gap:18px}
+.lead{color:var(--muted);font-size:18px}
+
+/* Ki küldhet */
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rules div{border-top:3px solid var(--forest);padding-top:12px;display:flex;flex-direction:column;gap:6px}
+:root[data-theme="dark"] .rules div{border-top-color:var(--amber)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rules div{border-top-color:var(--amber)}}
+.rules p{color:var(--muted);font-size:16px}
+
+/* Témák */
+.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+details.topic{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+details.topic summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+details.topic summary::-webkit-details-marker{display:none}
+details.topic summary::after{content:"+";font-weight:700;color:var(--muted);font-size:20px}
+details.topic[open] summary::after{content:"–"}
+details.topic summary:focus-visible{outline:3px solid var(--amber-fill);outline-offset:4px;border-radius:4px}
+.topic .sub{color:var(--muted);font-size:15px;margin-top:4px}
+.topic ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.topic li{display:grid;grid-template-columns:auto 1fr;gap:10px;font-size:15.5px;align-items:baseline}
+
+/* Szerkesztő */
+.composer{background:var(--surface);border:2px solid var(--forest);border-radius:14px;padding:clamp(18px,4vw,32px);display:flex;flex-direction:column;gap:22px}
+:root[data-theme="dark"] .composer{border-color:var(--amber)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .composer{border-color:var(--amber)}}
+.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.field legend{font-size:14px;font-weight:700}
+.field .hint{font-size:13.5px;color:var(--muted)}
+select,textarea,input[type=text]{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;width:100%;min-height:46px}
+textarea{min-height:120px;resize:vertical}
+select:focus-visible,textarea:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--amber-fill);outline-offset:2px}
+fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:999px;padding:9px 14px;font-size:15px;font-weight:500;cursor:pointer;min-height:44px;background:var(--bg)}
+.chips input{accent-color:var(--forest)}
+.chips label:has(input:checked){border-color:var(--forest);background:var(--soft);font-weight:700}
+:root[data-theme="dark"] .chips label:has(input:checked){border-color:var(--amber)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chips label:has(input:checked){border-color:var(--amber)}}
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;font-size:15px}
+.compare div{border-radius:8px;padding:12px 14px;background:var(--soft)}
+.compare b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.warn{font-size:14.5px;color:var(--amber);font-weight:600;min-height:1.2em}
+.preview{font-family:var(--f-mono);font-size:14.5px;line-height:1.6;background:var(--bg);border:1.5px dashed var(--line);border-radius:8px;padding:14px 16px;white-space:pre-wrap;overflow-wrap:anywhere;min-height:90px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+button,.btn{font:inherit;font-size:16px;font-weight:700;border-radius:9px;padding:12px 20px;min-height:46px;cursor:pointer;border:2px solid var(--forest);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.primary{background:var(--forest);color:var(--on-forest)}
+.secondary{background:transparent;color:var(--ink)}
+:root[data-theme="dark"] .primary{background:var(--amber-fill);color:var(--on-amber);border-color:var(--amber-fill)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .primary{background:var(--amber-fill);color:var(--on-amber);border-color:var(--amber-fill)}}
+:root[data-theme="dark"] .secondary{border-color:var(--line)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .secondary{border-color:var(--line)}}
+.status{font-size:15px;font-weight:600;color:var(--ok)}
+.how{display:flex;flex-direction:column;gap:8px;font-size:15.5px;color:var(--muted)}
+.how ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+
+/* Feltételek */
+.conds{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.conds li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.conds p{color:var(--muted);font-size:15.5px}
+
+/* Menetrend */
+.timeline{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;position:relative}
+.timeline li{position:relative;padding:28px 12px 0 0;display:flex;flex-direction:column;gap:4px}
+.timeline li::before{content:"";position:absolute;top:8px;left:0;right:0;height:3px;background:var(--line)}
+.timeline li::after{content:"";position:absolute;top:2px;left:0;width:15px;height:15px;border-radius:50%;background:var(--surface);border:3px solid var(--forest)}
+.timeline li.key::after{background:var(--amber-fill);border-color:var(--amber-fill)}
+.timeline time{font-weight:800;font-size:15px;font-variant-numeric:tabular-nums}
+.timeline span{font-size:14.5px;color:var(--muted)}
+
+.privacy{background:var(--soft);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.privacy p{color:var(--muted)}
+.full-notice summary{cursor:pointer;font-weight:700;color:var(--ink);min-height:44px;display:flex;align-items:center}
+.full-notice .fn{display:flex;flex-direction:column;gap:8px;padding-top:8px}
+.full-notice h4{margin:10px 0 0;font-size:15px;color:var(--ink)}
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:24px 40px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+
+@media (max-width:720px){
+  .rules,.row,.topics,.compare{grid-template-columns:minmax(0,1fr)}
+  .timeline{grid-template-columns:minmax(0,1fr)}
+  .timeline li{padding:0 0 18px 30px}
+  .timeline li::before{top:0;bottom:0;left:6px;right:auto;width:3px;height:auto}
+  .timeline li::after{top:3px}
+}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Panattoni-ügy · Herceghalom · lakossági kezdeményezés</div>
+    <h1>Kérdezz a fórum előtt</h1>
+    <p>A november 2-i lakossági fórum előtt összegyűjtjük a herceghalmi lakosok kérdéseit, és egy közös, témák szerint rendezett kérdéssorként írásban elküldjük az önkormányzatnak, azzal a kéréssel, hogy továbbítsa a beruházónak, és a fórumon írásban válaszoljanak.</p>
+    <div class="deadline">
+      <div><small>Beküldési határidő</small><strong>október 30., péntek 20:00</strong></div>
+      <div class="alt"><small>Lakossági fórum</small><strong>november 2., hétfő 16:00</strong></div>
+    </div>
+    <p class="notice" id="deadline-note">Az első kör október 22-én lezárult; a kérdésgyűjtést október 30-ig meghosszabbítottuk. Helyszín: KEK (Sándor Móric Községi Könyvtár, Egyházi és Közösségi Ház), Gesztenyés út 36. Ez az oldal lakossági kezdeményezés, nem az önkormányzat vagy a beruházó oldala.</p>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<section aria-labelledby="ki">
+  <h2 id="ki">Ki küldhet be?</h2>
+  <div class="rules">
+    <div><h3>Herceghalmi lakosok</h3><p>Csak herceghalmi állandó lakcímmel rendelkezők kérdéseit és hozzászólásait vesszük fel a kérdéssorba.</p></div>
+    <div><h3>Név, utca, nyilatkozat</h3><p>Beküldéskor meg kell adnod a neved és a herceghalmi utcát, és nyilatkoznod kell az állandó lakcímedről.</p></div>
+    <div><h3>Nem nyilvános</h3><p>A nevet és a címet csak a szervezők látják. A kérdéssorba és az önkormányzathoz név nélkül kerülnek a kérdések.</p></div>
+  </div>
+  <p class="lead">A lakcímet hatósági nyilvántartásból nem tudjuk ellenőrizni, ezért a nyilatkozatodra hagyatkozunk. A hiányos vagy nem herceghalmi beküldéseket nem vesszük fel.</p>
+</section>
+
+<section aria-labelledby="temak">
+  <h2 id="temak">Ezeket már megkérdezzük</h2>
+  <p class="lead">Az előzetes kérdéssor már tartalmazza az alábbiakat. Ha a kérdésed ezek valamelyikéhez kapcsolódik, jelöld meg a kódját: minél többen jelölnek egy kérdést, annál nagyobb súllyal kerül a fórum elé. Új kérdéseket is várunk.</p>
+  <div class="topics" id="topics"></div>
+</section>
+
+<section aria-labelledby="szerk">
+  <h2 id="szerk">Írd meg a kérdésed</h2>
+  <p class="lead">A szerkesztő segít, hogy a kérdésed megválaszolható legyen. A beküldött kérdésekre igen vagy nem, egy szám vagy egy határidő legyen a válasz, ne az, hogy „majd a szerződés rendezi”.</p>
+  <form class="composer" id="composer" novalidate>
+    <div class="row">
+      <div class="field">
+        <label for="topic">Téma</label>
+        <select id="topic"></select>
+      </div>
+      <div class="field">
+        <label for="to">Kinek szól?</label>
+        <select id="to">
+          <option value="Beruházónak">A beruházónak</option>
+          <option value="Önkormányzatnak">Az önkormányzatnak</option>
+          <option value="Mindkettőnek">Mindkettőnek</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="code">Kapcsolódó kérdés</label>
+        <select id="code"></select>
+        <span class="hint">Ha nincs ilyen, válaszd az „új kérdés” lehetőséget.</span>
+      </div>
+    </div>
+
+    <fieldset class="field">
+      <legend>Mit küldesz be?</legend>
+      <div class="chips" id="kind">
+        <label><input type="radio" name="kind" id="kind-q" value="Kérdés" checked> Kérdés</label>
+        <label><input type="radio" name="kind" id="kind-c" value="Feltétel-javaslat"> Feltétel a szerződésbe</label>
+        <label><input type="radio" name="kind" id="kind-o" value="Hozzászólás"> Hozzászólás, vélemény</label>
+      </div>
+    </fieldset>
+
+    <div class="field">
+      <label for="text" id="text-label">A kérdésed</label>
+      <textarea id="text" placeholder="Például: Vállalja-e a beruházó, hogy a kamionok kizárólag az 1101-es út felől közlekednek, és ezt a bérleti szerződésekbe kötbérrel átvezeti?"></textarea>
+      <div class="compare" aria-label="Példa">
+        <div><b>Nehezen megválaszolható</b>„Mi lesz a forgalommal?”</div>
+        <div><b>Jól megválaszolható</b>„Hány kamion jár naponta 22 és 6 óra között, és vállalja-e ezt felső korlátként a szerződésben?”</div>
+      </div>
+      <div class="warn" id="warn" aria-live="polite"></div>
+    </div>
+
+    <fieldset class="field" id="expect-set">
+      <legend>Milyen választ vársz?</legend>
+      <div class="chips">
+        <label><input type="checkbox" name="exp" id="exp-yn" value="igen/nem" checked> Igen / nem</label>
+        <label><input type="checkbox" name="exp" id="exp-num" value="szám"> Szám</label>
+        <label><input type="checkbox" name="exp" id="exp-date" value="határidő"> Határidő</label>
+        <label><input type="checkbox" name="exp" id="exp-ft" value="összeg"> Összeg</label>
+      </div>
+    </fieldset>
+
+    <div class="field">
+      <label for="preview-box">Így kerül be a kérdéssorba</label>
+      <div class="preview" id="preview-box" role="status" aria-live="polite"></div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="primary" id="copy">Szöveg másolása</button>
+      <a class="btn secondary" id="form-link" href="#" target="_blank" rel="noopener" hidden>Beküldés az űrlapon</a>
+      <span class="status" id="copy-status" aria-live="polite"></span>
+    </div>
+
+    <div class="how">
+      <strong style="color:var(--ink)">Hogyan küldd be?</strong>
+      <ol id="how-list">
+        <li>Másold ki a szöveget a fenti gombbal.</li>
+        <li id="how-form" hidden>Nyisd meg az űrlapot, illeszd be a szöveget, add meg a neved és a herceghalmi utcát, és jelöld be a lakcím-nyilatkozatot.</li>
+        <li id="how-comment">Illeszd be kommentként a kérdésgyűjtésről szóló Facebook-poszt alá, vagy küldd el üzenetben a szervezőnek. Írd mellé a neved és a herceghalmi utcát (ezt üzenetben is megteheted).</li>
+        <li>Október 30-án, pénteken 20 óráig küldd be.</li>
+      </ol>
+    </div>
+  </form>
+</section>
+
+<section aria-labelledby="felt">
+  <h2 id="felt">A tárgyalási mandátum</h2>
+  <p class="lead">A fórum nem dönt, de a résztvevők a végén megszavazhatják, milyen feltételek nélkül ne legyen aláírva a településrendezési szerződés. Azt kérjük, hogy a képviselő-testület ezt saját határozatként fogadja el. Ezek a javasolt minimumfeltételek; ha hiányolsz valamit, küldd be feltételként.</p>
+  <ul class="conds" id="conds"></ul>
+</section>
+
+<section aria-labelledby="menet">
+  <h2 id="menet">Mi történik a kérdéseddel?</h2>
+  <ol class="timeline">
+    <li class="key"><time>okt. 30., 20:00</time><span>Lezárul a beküldés (az első kör október 22-én zárult)</span></li>
+    <li><time>okt. 31.</time><span>A címzett szerint rendezett, kiegészített kérdéssor írásban az önkormányzathoz megy</span></li>
+    <li class="key"><time>nov. 2., 16:00</time><span>Lakossági fórum: kérdések, válaszok, a mandátum megszavazása</span></li>
+    <li><time>nov. 5-ig</time><span>A meg nem válaszolt kérdések listája írásban a polgármesternek</span></li>
+    <li><time>15 napon belül</time><span>Írásbeli választ kérünk, a honlapon közzétéve</span></li>
+  </ol>
+</section>
+
+<section aria-labelledby="adat" class="privacy">
+  <h3 id="adat">Adatkezelés röviden</h3>
+  <p>Adatkezelő: Birkás Balázs magánszemély, a kérdésgyűjtés szervezője (ktiklaszter@gmail.com). A nevet és a herceghalmi utcát kizárólag a lakcím ellenőrzésére kezeljük, a kifejezett hozzájárulásod alapján. Nem tesszük közzé, és nem adjuk át sem az önkormányzatnak, sem a beruházónak; a kérdések név nélkül kerülnek a kérdéssorba. Az űrlap a Google, a szövegek rendszerezése a Claude (Anthropic) szolgáltatással történik. Az adatokat legkésőbb 2026. november 30-ig töröljük.</p>
+  <p>Hozzájárulásodat bármikor visszavonhatod, és kérheted az adataid megismerését, helyesbítését vagy törlését a fenti e-mail-címen; egy hónapon belül válaszolunk. Panasszal a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (1055 Budapest, Falk Miksa utca 9–11., ugyfelszolgalat@naih.hu) vagy bírósághoz fordulhatsz. A Facebook-kommentekből csak a szöveget vesszük át, név nélkül; ha nem szeretnéd, hogy a kommented bekerüljön, írj a fenti címre.</p>
+  <details class="full-notice" id="tajekoztato">
+    <summary>A teljes adatkezelési tájékoztató</summary>
+    <div class="fn">
+      <p><em>A Panattoni-beruházásról tartandó 2026. november 2-i herceghalmi lakossági fórumhoz kapcsolódó lakossági kérdésgyűjtésről, az (EU) 2016/679 rendelet (GDPR) 13. cikke alapján. Hatályos: 2026. október 20-tól.</em></p>
+      <h4>1. Az adatkezelő</h4>
+      <p>Birkás Balázs magánszemély, a lakossági kérdésgyűjtés szervezője. Kapcsolat: ktiklaszter@gmail.com. A kérdésgyűjtés lakossági kezdeményezés; az adatkezelő nem Herceghalom Község Önkormányzata és nem a beruházó. Adatvédelmi tisztviselő kijelölésére nincs kötelezettség.</p>
+      <h4>2. Az adatkezelés célja</h4>
+      <p>A herceghalmi lakosok kérdéseinek, hozzászólásainak és feltétel-javaslatainak összegyűjtése, rendszerezése és név nélküli továbbítása Herceghalom Község Önkormányzatának a lakossági fórum előkészítéséhez. A név és az utca kezelésének egyetlen célja annak megállapítása, hogy a beküldés herceghalmi állandó lakcímmel rendelkező személytől származik, és hogy egy beküldőt egyszer számoljunk.</p>
+      <h4>3. A kezelt adatok</h4>
+      <p>Név; herceghalmi utca (házszám nélkül); nyilatkozat az állandó lakcímről; a kérdés, hozzászólás vagy feltétel szövege; a beküldés ideje és forrása. A beküldött szöveg utalhat a beküldő véleményére a beruházásról, amely politikai véleménynek minősülhet (GDPR 9. cikk). E-mail-címet, telefonszámot, házszámot nem kérünk; kérjük, a szövegben se adj meg más személyre vonatkozó adatot.</p>
+      <h4>4. Az adatkezelés jogalapja</h4>
+      <p>Az érintett kifejezett hozzájárulása (GDPR 6. cikk (1) a) pont és 9. cikk (2) a) pont), amelyet a beküldéskor külön jelölőnégyzettel ad meg. A hozzájárulás önkéntes, és bármikor visszavonható; a visszavonás nem érinti a korábbi adatkezelés jogszerűségét. Hozzájárulás nélkül a beküldést nem tudjuk felvenni; a kérdés a fórumon szóban ilyenkor is feltehető. A nyilvános Facebook-kommentekből a szervező csak a szöveg tartalmát veszi át, név nélkül, a kérdéssor összeállításához fűződő jogos érdek alapján (6. cikk (1) f) pont); a komment felhasználása ellen bármikor tiltakozni lehet.</p>
+      <h4>5. Kik ismerhetik meg az adatokat?</h4>
+      <p>A nevet és az utcát kizárólag a szervező ismeri meg. Ezeket nem tesszük közzé, és nem adjuk át sem az önkormányzatnak, sem a beruházónak, sem harmadik személynek. Az önkormányzat és rajta keresztül a beruházó csak a név nélküli, témák szerint összesített kérdéssort kapja meg, a kérdésekhez kapcsolódó lakosok számával.</p>
+      <h4>6. Adatfeldolgozók</h4>
+      <p>Google Ireland Limited / Google LLC (Google Űrlapok és Táblázatok: a beküldések fogadása és tárolása; a Google LLC az EU–USA adatvédelmi keretrendszer szerint tanúsított). Anthropic (Claude: a beküldött szövegek rendszerezése, témákba sorolása és kérdéssé fogalmazása, valamint a szervező belső nyilvántartása). Mindkét esetben lehetséges adattovábbítás az Egyesült Államokba.</p>
+      <h4>7. Az adatok megőrzése</h4>
+      <p>A nevet, az utcát és a nyilatkozatot a fórumot követően, legkésőbb 2026. november 30-ig töröljük, az űrlap válaszaival és a belső nyilvántartásban szereplő példányokkal együtt. Az ezt követően megmaradt kérdéssor személyes adatot nem tartalmaz.</p>
+      <h4>8. Automatizált döntéshozatal</h4>
+      <p>Nincs. A Claude által javasolt besorolást és megfogalmazást minden esetben a szervező hagyja jóvá vagy javítja; arról, hogy egy beküldés bekerül-e a kérdéssorba, ember dönt.</p>
+      <h4>9. Adatbiztonság</h4>
+      <p>Az adatokhoz csak a szervező fér hozzá, jelszóval és kétlépcsős azonosítással védett fiókokban. Adatvédelmi incidens esetén a szervező 72 órán belül bejelenti azt a NAIH-nak, és ha az érintettekre magas kockázatot jelent, őket is tájékoztatja.</p>
+      <h4>10. Az érintett jogai</h4>
+      <p>Jogod van tájékoztatást kérni az adataidról, másolatot kapni róluk, kérni a helyesbítésüket, törlésüket, kezelésük korlátozását és hordozhatóságukat, tiltakozni a jogos érdeken alapuló kezelés ellen, és bármikor visszavonni a hozzájárulásodat. Kérésedet a ktiklaszter@gmail.com címre küldd; legkésőbb egy hónapon belül válaszolunk. Visszavonás esetén a beküldésedet töröljük, és a lakosszámban sem szerepelsz.</p>
+      <h4>11. Jogorvoslat</h4>
+      <p>Panaszt tehetsz a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (1055 Budapest, Falk Miksa utca 9–11.; postacím: 1363 Budapest, Pf. 9.; ugyfelszolgalat@naih.hu; www.naih.hu), vagy bírósághoz fordulhatsz; a per a lakóhelyed vagy tartózkodási helyed szerinti törvényszék előtt is megindítható. Azt kérjük, előbb a szervezőhöz fordulj, hogy a problémát gyorsan rendezhessük.</p>
+    </div>
+  </details>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Lakossági kezdeményezés a herceghalmi Panattoni-beruházás lakossági fórumához. Nem az önkormányzat és nem a beruházó oldala.</span>
+    <span><a href="./">Vissza a lakossági tájékoztató főoldalára</a></span>
+    <span>Források: a Telepítési Tanulmányterv (2026. július), az önkormányzat 2026. szeptember 30-i hirdetménye, a 35/2024. (III.05.) testületi határozat.</span>
+  </div>
+</footer>
+
+<script>
+// Ha elkészült a Google Űrlap, ide kerül a linkje: akkor megjelenik a "Beküldés az űrlapon" gomb.
+const FORM_URL = "";
+
+const TOPICS = [
+  {id:"forgalom", name:"Forgalom és utak", sub:"kamionszám, útvonal, Zsámbéki út, csomópont", items:[
+    ["B1","Hány nyerges szerelvény jár naponta és csúcsórában, és vállalja-e ezt felső korlátként?"],
+    ["B2","Hány kamionmozgás lesz 22 és 6 óra között, vállal-e éjszakai korlátot?"],
+    ["B3","Kizárólag az 1101-es út felől jön-e a teherforgalom, és marad-e a súlykorlátozás a lakott szakaszon?"],
+    ["B4","Fizeti-e a Zsámbéki út bővítését teljes egészében, határidővel és bankgaranciával?"],
+    ["B6","Finanszírozza-e az 1101-es csomópont átépítését, ha a forgalom a vállaltat túllépi?"],
+    ["B7","26 vagy 47 kamion-várakozóhely lesz, és tilos lesz-e a közúton várakozni?"],
+    ["B19","Milyen arányban lesznek elektromos kamionok, melyik évre, és épülnek-e töltők?"],
+    ["Ö9","Hol marad a súlykorlátozás a Zsámbéki úton?"]]},
+  {id:"zaj", name:"Zaj, levegő, környezet", sub:"iskola, óvoda, zajvédelem, épületállapot", items:[
+    ["B8","Elkészül-e a döntés előtt a zajszámítás az iskolára, az óvodára és a lakóterületre?"],
+    ["B9","Megépíti-e a zajvédő falat, ha a határérték túllépés bekövetkezik?"],
+    ["B10","Vállalja-e a lakóházak állapotfelmérését az építés előtt és után?"],
+    ["B11","Kizárja-e a veszélyes áru tárolását és az éjszakai zajjal járó üzemet?"]]},
+  {id:"park", name:"A park", sub:"tulajdon, határidő, fenntartás, használat", items:[
+    ["B12","Kié lesz a park, átadja-e ingyen, elkészült állapotban, és mikor?"],
+    ["B13","Kikerül-e a park övezetéből a vendéglátás, az autós mozi és a parkoló?"]]},
+  {id:"kozmu", name:"Közművek", sub:"ivóvíz, víztorony, szennyvíz, csapadékvíz", items:[
+    ["B14","Mekkora összeggel járul hozzá a víztoronyhoz és a szennyvíztelep bővítéséhez?"]]},
+  {id:"biztositek", name:"Szerződés és biztosítékok", sub:"összeg, határidő, bankgarancia, visszaszabályozás", items:[
+    ["B5","Megtéríti-e az önkormányzat eddigi kiadásait a bekötőútra?"],
+    ["B15","Minden vállalás összeggel, határidővel, kötbérrel és bankgaranciával kerül-e a szerződésbe?"],
+    ["B16","Ha 3 éven belül nem indul az építés, visszaállítható-e kártalanítás nélkül a mai szabályozás?"],
+    ["B17","Hány munkahely és mennyi iparűzési adó várható?"],
+    ["B18","Fenntartja-e, hogy a lakosság és az önkormányzat támogatása nélkül nem valósítja meg a beruházást?"]]},
+  {id:"eljaras", name:"Eljárás és önkormányzat", sub:"határidők, nyilvánosság, tárgyalási álláspont", items:[
+    ["Ö1","A fórumon elhangzott észrevételekre tételesen válaszolnak-e a testületi döntés előtt?"],
+    ["Ö2","Mikor dönt a testület a tanulmánytervről?"],
+    ["Ö3","Nyilvános lesz-e a szerződéstervezet az aláírás előtt?"],
+    ["Ö4","Mi a testület tárgyalási feltétellistája, és közzéteszik-e?"],
+    ["Ö5","Ki tárgyal a beruházóval, lesz-e független szakértő és lakossági megfigyelő?"],
+    ["Ö6","Hatályos-e a 35/2024. határozat, és miért támogatható a terv az előírt számítások nélkül?"],
+    ["Ö8","Milyen kötelezettségeket vállalna az önkormányzat, milyen felső korláttal?"],
+    ["Ö11","Csak a szerződés aláírása és a biztosítékok után oldják-e fel a változtatási tilalmat?"],
+    ["Ö12","Van-e még reális esélye a telekcserének, és mi a terv, ha nincs?"]]}
+];
+const CONDS = [
+  ["F1","Teherforgalom csak az 1101-es út felől; a lakott Zsámbéki úti szakaszon marad a súlykorlátozás."],
+  ["F2","A Zsámbéki út bővítése, a bekötőút, a járda és a fasorpótlás a beruházó költségén, bankgaranciával."],
+  ["F3","A park önkormányzati tulajdonba kerül ingyen és kész állapotban, vagy bejegyzett közhasználattal és a beruházó fenntartásában."],
+  ["F4","Zajszámítás a döntés előtt, mérés az iskolánál és az óvodánál; túllépés esetén kötelező zajvédő fal."],
+  ["F5","Minden vállalás összeggel, határidővel, kötbérrel, bankgaranciával és ingatlan-nyilvántartási bejegyzéssel."],
+  ["F6","Előbb a szerződés aláírása és a biztosítékok, csak utána a szabályzat módosítása és a tilalom feloldása."],
+  ["F7","Ha az építés 3 éven belül nem indul, a mai szabályozás kártalanítás nélkül visszaállítható."]
+];
+
+const $ = (id) => document.getElementById(id);
+
+// Témák kirajzolása
+const topicsEl = $("topics");
+for (const t of TOPICS) {
+  const d = document.createElement("details"); d.className = "topic";
+  const s = document.createElement("summary");
+  const box = document.createElement("div");
+  const h = document.createElement("h3"); h.textContent = t.name;
+  const sub = document.createElement("div"); sub.className = "sub"; sub.textContent = t.sub + " · " + t.items.length + " kérdés";
+  box.append(h, sub); s.append(box); d.append(s);
+  const ul = document.createElement("ul");
+  for (const [c, q] of t.items) {
+    const li = document.createElement("li");
+    const code = document.createElement("span"); code.className = "code"; code.textContent = c;
+    const tx = document.createElement("span"); tx.textContent = q;
+    li.append(code, tx); ul.append(li);
+  }
+  d.append(ul); topicsEl.append(d);
+}
+const condsEl = $("conds");
+for (const [c, tx] of CONDS) {
+  const li = document.createElement("li");
+  const code = document.createElement("span"); code.className = "code"; code.textContent = c;
+  const p = document.createElement("p"); p.textContent = tx;
+  li.append(code, p); condsEl.append(li);
+}
+
+// Szerkesztő
+const topicSel = $("topic"), codeSel = $("code"), toSel = $("to"), textEl = $("text");
+for (const t of TOPICS) { const o = document.createElement("option"); o.value = t.id; o.textContent = t.name; topicSel.append(o); }
+{ const o = document.createElement("option"); o.value = "egyeb"; o.textContent = "Egyéb"; topicSel.append(o); }
+
+function fillCodes() {
+  const t = TOPICS.find(x => x.id === topicSel.value);
+  codeSel.textContent = "";
+  const n = document.createElement("option"); n.value = ""; n.textContent = "Új kérdés"; codeSel.append(n);
+  if (t) for (const [c, q] of t.items) {
+    const o = document.createElement("option"); o.value = c;
+    o.textContent = c + " – " + (q.length > 60 ? q.slice(0, 58) + "…" : q); codeSel.append(o);
+  }
+  if (topicSel.value === "biztositek" || topicSel.value === "egyeb") {
+    for (const [c] of CONDS) { const o = document.createElement("option"); o.value = c; o.textContent = c + " – feltétel"; codeSel.append(o); }
+  }
+}
+function kind() { return document.querySelector('input[name="kind"]:checked').value; }
+function expects() { return [...document.querySelectorAll('input[name="exp"]:checked')].map(x => x.value); }
+
+function check(text, k) {
+  if (k !== "Kérdés" || text.length < 12) return "";
+  const t = text.toLowerCase();
+  if (/\b(mi lesz|mit gondol|hogyan látja|miért jó)\b/.test(t) && !/\b(hány|mennyi|mikor|vállalja|igen|nem|határid)/.test(t))
+    return "Tipp: ez nyitott kérdés. Kérdezz rá számra, határidőre vagy vállalásra (pl. „Vállalja-e…”, „Hány…”, „Mikorra…”).";
+  if (!text.trim().endsWith("?")) return "Tipp: zárd kérdőjellel, így a fórumon is pontosan felolvasható.";
+  return "";
+}
+
+function build() {
+  const t = TOPICS.find(x => x.id === topicSel.value);
+  const k = kind();
+  const text = textEl.value.trim();
+  const head = [(t ? t.name : "Egyéb").toUpperCase(), toSel.value, k, codeSel.value || "új"].join(" · ");
+  const lines = ["[" + head + "]", text || "(ide kerül a szöveged)"];
+  if (k === "Kérdés" && expects().length) lines.push("Elvárt válasz: " + expects().join(", "));
+  lines.push("Beküldő: [név], Herceghalom, [utca] – herceghalmi állandó lakcímmel rendelkezem.");
+  return lines.join("\n");
+}
+function render() {
+  const k = kind();
+  $("text-label").textContent = k === "Kérdés" ? "A kérdésed" : k === "Feltétel-javaslat" ? "A javasolt feltétel" : "A hozzászólásod";
+  $("expect-set").hidden = k !== "Kérdés";
+  $("preview-box").textContent = build();
+  $("warn").textContent = check(textEl.value, k);
+}
+topicSel.addEventListener("change", () => { fillCodes(); render(); });
+for (const el of [codeSel, toSel, textEl]) el.addEventListener("input", render);
+document.querySelectorAll('input[name="kind"],input[name="exp"]').forEach(el => el.addEventListener("change", render));
+
+$("copy").addEventListener("click", async () => {
+  const out = build();
+  const st = $("copy-status");
+  if (!textEl.value.trim()) { st.textContent = "Előbb írd meg a szöveget."; textEl.focus(); return; }
+  try { await navigator.clipboard.writeText(out); st.textContent = "Kimásolva. Most illeszd be ott, ahol beküldöd."; }
+  catch (e) {
+    const r = document.createRange(); r.selectNodeContents($("preview-box"));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    st.textContent = "Kijelöltem a szöveget, másold ki (Ctrl+C vagy hosszú nyomás).";
+  }
+});
+
+if (FORM_URL) { $("form-link").href = FORM_URL; $("form-link").hidden = false; $("how-form").hidden = false; }
+
+// Határidő után jelezzük, hogy a kérdést már a fórumon érdemes feltenni
+const DEADLINE = new Date("2026-10-30T20:00:00+01:00");
+if (Date.now() > DEADLINE.getTime()) {
+  $("deadline-note").textContent = "Az írásbeli beküldés lezárult. Kérdésedet a november 2-i fórumon szóban teheted fel. Helyszín: KEK, Gesztenyés út 36., 16:00.";
+}
+
+// Mintaállapot: egy kitöltött példa, hogy látszódjon, mit készít a szerkesztő
+textEl.value = "Vállalja-e a beruházó, hogy a kamionok kizárólag az 1101-es út felől közlekednek, és ezt a bérleti szerződésekbe kötbérrel átvezeti?";
+fillCodes(); codeSel.value = "B3"; render();
+textEl.addEventListener("focus", function once(){ if (textEl.dataset.touched) return; textEl.dataset.touched = "1"; textEl.select(); });
+</script>
+
+</body></html>
