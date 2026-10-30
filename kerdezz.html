@@ -317,14 +317,19 @@ const TOPICS = [
     ["B6","Finanszírozza-e az 1101-es csomópont átépítését, ha a forgalom a vállaltat túllépi?"],
     ["B7","26 vagy 47 kamion-várakozóhely lesz, és tilos lesz-e a közúton várakozni?"],
     ["B19","Milyen arányban lesznek elektromos kamionok, melyik évre, és épülnek-e töltők?"],
-    ["Ö9","Hol marad a súlykorlátozás a Zsámbéki úton?"]]},
+    ["B23","Napi hány kamionnal és hány egyéb tehergépjárművel számol a forgalmi tanulmány? Egy lakossági nyílt levél kb. 200 kamiont és további 300 tehergépjárművet említ."],
+    ["B24","Vállalja-e, hogy a lakott területet elkerülő út a csarnokok használatbavétele előtt elkészül, és ezt a szerződés kikényszeríthetően rögzíti?"],
+    ["B25","A Zsámbéki út tervezett négysávosítása a beruházás forgalmát szolgálja-e, és vizsgáltak-e a lakóházakat elkerülő nyomvonalat?"],
+    ["Ö9","Hol marad a súlykorlátozás a Zsámbéki úton?"],
+    ["Ö15","Hány tonnás ma a Zsámbéki úti behajtási tilalom, és kizárja-e a testület, hogy a beruházás kedvéért feloldja, enyhítse vagy kivételt adjon alóla?"]]},
   {id:"zaj", name:"Zaj, levegő, környezet", sub:"iskola, óvoda, zajvédelem, fény, gyártás, épületállapot", items:[
     ["B8","Elkészül-e a döntés előtt a zajszámítás az iskolára, az óvodára és a lakóterületre?"],
     ["B9","Megépíti-e a zajvédő falat, ha a határérték túllépés bekövetkezik?"],
     ["B10","Vállalja-e a lakóházak állapotfelmérését az építés előtt és után?"],
     ["B11","Kizárja-e a veszélyes áru tárolását és az éjszakai zajjal járó üzemet?"],
     ["B20","Lefelé irányított, a lakóterület felé árnyékolt lesz-e a külső világítás, és csökkentik-e éjszaka a fényerőt?"],
-    ["B21","Kizárja-e kötelező erővel a gyártást és az akkumulátorok tárolását, a bérlőkre is kiterjedően?"]]},
+    ["B21","Kizárja-e kötelező erővel a gyártást és az akkumulátorok tárolását, a bérlőkre is kiterjedően?"],
+    ["B26","Ki és milyen eljárásban téríti meg a teherforgalom rezgéséből eredő épületkárokat a lakóházakban?"]]},
   {id:"park", name:"A park", sub:"tulajdon, határidő, fenntartás, használat", items:[
     ["B12","Kié lesz a park, átadja-e ingyen, elkészült állapotban, és mikor?"],
     ["B13","Kikerül-e a park övezetéből a vendéglátás, az autós mozi és a parkoló?"]]},
@@ -348,7 +353,8 @@ const TOPICS = [
     ["Ö8","Milyen kötelezettségeket vállalna az önkormányzat, milyen felső korláttal?"],
     ["Ö11","Csak a szerződés aláírása és a biztosítékok után oldják-e fel a változtatási tilalmat?"],
     ["Ö12","Van-e még reális esélye a telekcserének, és mi a terv, ha nincs?"],
-    ["Ö13","Kizárja-e a szabályozás (HÉSZ) módosítása a gyártást és a veszélyes anyagok, köztük az akkumulátorok tárolását?"]]}
+    ["Ö13","Kizárja-e a szabályozás (HÉSZ) módosítása a gyártást és a veszélyes anyagok, köztük az akkumulátorok tárolását?"],
+    ["Ö16","Válaszol-e a testület a döntés előtt tételesen a Hercegi Civil Mozgalom Egyesület nyílt levelének négy követelésére?"]]}
 ];
 const CONDS = [
   ["F1","Teherforgalom csak az 1101-es út felől; a lakott Zsámbéki úti szakaszon marad a súlykorlátozás."],
@@ -357,7 +363,8 @@ const CONDS = [
   ["F4","Zajszámítás a döntés előtt, mérés az iskolánál és az óvodánál; túllépés esetén kötelező zajvédő fal."],
   ["F5","Minden vállalás összeggel, határidővel, kötbérrel, bankgaranciával és ingatlan-nyilvántartási bejegyzéssel."],
   ["F6","Előbb a szerződés aláírása és a biztosítékok, csak utána a szabályzat módosítása és a tilalom feloldása."],
-  ["F7","Ha az építés 3 éven belül nem indul, a mai szabályozás kártalanítás nélkül visszaállítható."]
+  ["F7","Ha az építés 3 éven belül nem indul, a mai szabályozás kártalanítás nélkül visszaállítható."],
+  ["F8","A lakott területet elkerülő út a csarnokok használatbavétele előtt elkészül; amíg nincs kész, a teherforgalom nem indulhat el."]
 ];
 
 const $ = (id) => document.getElementById(id);
