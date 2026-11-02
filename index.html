@@ -112,6 +112,13 @@ ol.tl .ev p{font-size:15px;color:var(--muted)}
 ol.tl .ev.key h3::after{content:"kulcsmozzanat";font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--navy);color:var(--on-navy);vertical-align:2px}
 ol.tl .ev.future time,ol.tl .ev.future h3{color:var(--orange)}
 ol.tl .ev[hidden]{display:none}
+.d-elo{background:var(--muted)}
+details.pre{margin:20px 0 8px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);padding:0 16px}
+details.pre summary{cursor:pointer;font-weight:700;font-size:16px;padding:14px 0;min-height:44px;color:var(--ink)}
+details.pre .pre-lead{font-size:15px;color:var(--muted);margin:0 0 4px}
+details.pre ol.tl .year{font-size:32px;margin-top:18px}
+details.pre ol.tl .ev .dot{box-shadow:0 0 0 4px var(--surface)}
+details.pre .src{font-size:13px;color:var(--muted);margin:12px 0 16px}
 
 /* Kérések */
 .req{display:flex;flex-direction:column}
@@ -452,6 +459,12 @@ footer .wrap{padding-block:28px 48px;font-size:13.5px;color:var(--muted);border-
       <button type="button" data-k="all" aria-pressed="true"><span class="dot d-all"></span>Állam, hatóság</button>
       <button type="button" data-k="lak" aria-pressed="true"><span class="dot d-lak"></span>Lakosság</button>
     </div>
+    <details class="pre" id="elozmenyek">
+      <summary>Előzmények: a telkek eredete, 2003–2022</summary>
+      <p class="pre-lead">A beruházás telkét (440/5 hrsz.) és a mellette fekvő 442 hrsz.-t, amelyet az önkormányzat 2020 decemberében megvett, ugyanaz a cégcsoport adta el, egy éven belül. A bejegyzések nyilvános iratokból származnak; magánszemély tulajdonosokat nem nevezünk meg.</p>
+      <ol class="tl" id="tl-pre"></ol>
+      <p class="src">Források: a 440/5 és a 442 hrsz. teljes tulajdonilap-másolata (2026. október); Cégközlöny, 2020. december 5. (Cg.01-09-377131); a SASBUSINESS Kft. tárolt cégkivonata (2026. április); a Herceghalomi Községfejlesztési Kft. 2020-as beszámolójának kiegészítő melléklete; Herceghalomi Hírmondó, 2021. január és március, 2022. május–június.</p>
+    </details>
     <ol class="tl" id="tl"></ol>
   </div>
 </section>
@@ -916,6 +929,8 @@ footer .wrap{padding-block:28px 48px;font-size:13.5px;color:var(--muted);border-
       <li>Közmeghallgatások: 2023.11.14., 2024.11.26., 2025.11.24.</li>
       <li>Környezetvédelmi eljárás iratai, PE/KTHF/14808/2024</li>
       <li>Építési engedélyezési eljárás adatlapja, azonosító: 202400104192, Pest Megyei Kormányhivatal (építésügy), benyújtva 2024. december 16. (e-építés eljáráskereső, lekérdezve 2026. október 24.)</li>
+      <li>Tulajdonilap-másolat (teljes), Herceghalom 442 hrsz.; Cégközlöny, 2020. december 5., Cg.01-09-377131 (Patak Corner Kft. bejegyzése); SASBUSINESS Kft. tárolt cégkivonata, 2026. április 12.; a Herceghalomi Községfejlesztési Kft. 2020. és 2021. évi beszámolójának kiegészítő melléklete</li>
+      <li>Herceghalomi Hírmondó, 2021. január, 2021. március, 2022. május–június</li>
       <li>Tulajdonilap-másolat, Herceghalom 440/5 hrsz., Pest Megyei Kormányhivatal Földhivatali Főosztály, 2026. október 4. (INYER/TULLAP/20261004/17169)</li>
       <li>A 2026. október 6-i testületi előterjesztés a telekcseréről, és a polgármesteri levelek (2026. július–szeptember)</li>
       <li>A Polgármesteri Hivatal 2026. október 9-i válasza lakossági adatigénylésre</li>
@@ -968,10 +983,10 @@ function clear(el) { while (el.firstChild) el.firstChild.remove(); }
 
 /* Idővonal */
 const EVENTS = [
-  ["2021","szeptember","ber","A korábbi tulajdonos bemutatja a Panattoni vezetőjét a polgármesternek","Ismertetik a helyi építési szabályok korlátait. Változtatási tilalom nem születik.",0],
-  ["2021","december 6.","ber","A beruházó cége megvásárolja a 440/5 hrsz. telket","A PDC Industrial HUN First Kft. adásvétellel 1/1 arányban tulajdonos lesz (25,45 ha). A dátum a földhivatali bejegyzési kérelem érkezési ideje, a tulajdoni lap szerint. Változtatási tilalom ekkor sincs.",1],
+  ["2021","szeptember","ber","A korábbi tulajdonos bemutatja a Panattoni vezetőjét a polgármesternek","Ismertetik a helyi építési szabályok korlátait. Változtatási tilalom nem születik. A telek többségi tulajdonosa ekkor a CBS Property Zrt.",0],
+  ["2021","december 6.","ber","A beruházó cége megvásárolja a 440/5 hrsz. telket","A PDC Industrial HUN First Kft. adásvétellel 1/1 arányban tulajdonos lesz (25,45 ha). Az eladók: a CBS Property Zrt. (88,3%) és három magánszemély. A dátum a földhivatali bejegyzési kérelem érkezési ideje, a tulajdoni lap szerint. Változtatási tilalom ekkor sincs.",1],
   ["2022","január","ber","A beruházó bemutatja a három csarnokos tervet","Ehhez nem kellett volna szabályzatmódosítás.",0],
-  ["2022","március","onk","Az önkormányzat telekcserét kezdeményez","Azóta is ezt kéri: a beruházás költözzön állami földre, az autópálya mellé.",1],
+  ["2022","március","onk","Az önkormányzat telekcserét kezdeményez","Azóta is ezt kéri: a beruházás költözzön állami földre, az autópálya mellé. Az önkormányzat cége ekkor már tulajdonosa a 440/5 melletti 5,36 ha-os 442 hrsz. 86,59%-ának.",1],
   ["2022","május 5.","ber","Elmarad a beruházó meghirdetett lakossági fóruma","",0],
   ["2022","október","all","1. elutasítás: termőföld csak termőföldre cserélhető","Nemzeti Földügyi Központ.",0],
   ["2023","február 14.","onk","Visszaállítják a Zsámbéki út felőli megközelítési tilalmat","A 2018-ban „adminisztrációs hiba” miatt kimaradt előírás 2023 végétől újra hatályos.",0],
@@ -1012,13 +1027,27 @@ const EVENTS = [
   ["2027","január 14.","all","Tárgyalás a környezetvédelmi perben","Érdemi döntés várható.",2],
   ["2027","december 17.","onk","Lejár a változtatási tilalom","",2]
 ];
-const ACTOR = {onk:"Önkormányzat", ber:"Beruházó", all:"Állam, hatóság", lak:"Lakosság"};
+const PRE = [
+  ["2003–2018","","elo","A 442 hrsz. és a 440-es tömb közös tulajdonosi körnél","2003-tól SASAD-cégek, 2007-től a HHLP, majd a Földber Kft. a többségi tulajdonos. A jelzálogokat a 440-es telkekkel közösen jegyzik be.",0],
+  ["2018","december","elo","A CBS Property Zrt. megszerzi a 442 hrsz. többségét","86,7%-os hányad a 440/5 melletti, ma lakóövezetként kijelölt 5,36 ha-os telken.",0],
+  ["2020","","elo","Kialakítják a mai 440/5 hrsz. telket","Egy 2020-as vázrajz alapján jön létre a 25,45 ha-os telek; többségi tulajdonosa (88,3%) a CBS Property Zrt. A bejegyzési kérelem 2021. január 21-én érkezik.",0],
+  ["2020","december 3.","elo","A CBS leánycége új céget alapít: Patak Corner Kft.","Az alapító a SASBUSINESS Kft., a CBS Property Zrt. 100%-os leánya. Székhelye a CBS budapesti címe, kézbesítési címe CBS-es e-mail-cím. December 10-én a törzstőkét 327 M Ft-ra emelik.",0],
+  ["2020","december 15.","elo","A 442 hrsz. 86,59%-a a Patak Corner Kft.-hez kerül","Vétel a CBS Property Zrt.-től. A dátum a földhivatali bejegyzési kérelem érkezési ideje.",0],
+  ["2020","december 22.","onk","Az önkormányzat megveszi a céget, és vele a 442 hrsz.-t","324 M Ft, négy költségvetési év alatt fizetve; a hányad értékbecslése 428 M Ft. A céget az alapításkor kinevezett ügyvezető 2021. február 15-ig vezeti, akkor új ügyvezetőt kap, és a neve Herceghalomi Községfejlesztési Kft. lesz.",1],
+  ["2022","június 7.","onk","12,8 M Ft tagi kölcsön a 442 hrsz. terveire","Az önkormányzat a cégnek adja a teljes körű engedélyezési és kiviteli tervek elkészítésére.",0]
+];
+const ACTOR = {onk:"Önkormányzat", ber:"Beruházó", all:"Állam, hatóság", lak:"Lakosság", elo:"Korábbi tulajdonos"};
 const shown = {onk:true, ber:true, all:true, lak:true};
 function renderTL() {
-  const tl = document.getElementById("tl"); tl.textContent = "";
+  fillTL(document.getElementById("tl"), EVENTS, true);
+  fillTL(document.getElementById("tl-pre"), PRE, false);
+}
+function fillTL(tl, list, filter) {
+  if (!tl) return;
+  tl.textContent = "";
   let year = "";
-  for (const [y, d, k, t, p, flag] of EVENTS) {
-    if (!shown[k]) continue;
+  for (const [y, d, k, t, p, flag] of list) {
+    if (filter && !shown[k]) continue;
     if (y !== year) { year = y; const li = document.createElement("li"); li.className = "year"; li.textContent = y; tl.append(li); }
     const li = document.createElement("li");
     li.className = "ev" + (flag === 1 ? " key" : flag === 2 ? " future" : "");
