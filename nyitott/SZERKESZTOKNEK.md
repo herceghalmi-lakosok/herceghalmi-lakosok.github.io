@@ -41,3 +41,11 @@ A lakosok bejelentései e-mailben érkeznek (a cím az `index.html`-ben, a `REPO
 ## Dokumentumkereső frissítése
 
 A dokumentumlista az `adatok/dokumentumok.json` fájlban van. A frissítést a herceghalom.hu rovataiból végezzük; a fájlt egészében cseréljük.
+
+## Hatásköri jegyzék (`hataskori/`)
+
+Az Önkormányzatok Elektronikus Hatásköri Jegyzékét a `.github/workflows/hataskori-jegyzek.yml` GitHub Actions-munkafolyamat minden hétfőn ellenőrzi a kormany.hu-n. Ha új negyedéves kiadás jelent meg, letölti, a PDF-eket a `hataskori/pdf` mappába teszi, újraépíti a kereshető `hataskori/hataskori.json`-t, és az eredményt a `main` ágra menti.
+
+- Kézi indítás: GitHub → Actions → „Hatásköri jegyzék frissítése” → Run workflow.
+- Kézi frissítés letöltött zip-ből: `python3 nyitott/tools/build_hataskori.py --zip <fájl.zip> --out nyitott/hataskori --kiadas 2026-IV --forras <zip-URL>`
+- Ha a munkafolyamat hibával áll le, a kormany.hu valószínűleg megváltoztatta a letöltési címet, vagy elutasítja a GitHub szervereit. Ilyenkor a kézi frissítés működik.

@@ -46,6 +46,7 @@
   color-scheme: dark;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:110px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6}
@@ -153,6 +154,25 @@ section.block{padding:44px 0;border-top:1px solid var(--line)}
 .leaflet-container{font-family:var(--font-body)}
 @media (max-width:860px){.pmap-grid,.report{grid-template-columns:1fr}.rside{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:14px}.pmap{height:360px}.rgrid{grid-template-columns:1fr}}
 
+/* Hatásköri jegyzék */
+.hkmeta{font-size:.9rem;color:var(--muted);margin-bottom:12px}
+.hkfilters{grid-template-columns:2fr 1fr 1.4fr}
+.hkopts{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-top:12px;font-size:.9rem}
+.hkopts label{display:inline-flex;gap:6px;align-items:center}
+.hkchips{display:inline-flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:.82rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.hkresults li{grid-template-columns:150px 1fr auto}
+.hkresults .org{font-size:.8rem;font-weight:700;color:var(--accent)}
+.hkresults .sec{display:block;font-size:.8rem;color:var(--muted);margin-bottom:3px}
+.hkresults .law{display:block;font-size:.84rem;color:var(--muted);margin-top:3px}
+.newpill{font-size:.7rem;font-weight:700;background:var(--warn-soft);color:var(--warn);padding:1px 6px;border-radius:4px;margin-left:6px}
+.hkfiles{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px}
+.hkfiles summary{cursor:pointer;font-weight:600}
+.hkfiles h4{margin:14px 0 6px;font-size:.95rem}
+.hkfiles ul{margin:0;padding-left:18px;columns:2;column-gap:28px;font-size:.9rem}
+@media (max-width:860px){.hkfilters{grid-template-columns:1fr}.hkresults li{grid-template-columns:1fr}.hkfiles ul{columns:1}}
+
 /* Search */
 .search-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
 .filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}
@@ -249,6 +269,7 @@ footer.site .muted{color:var(--muted)}
         <li><a href="#problemak">Problématérkép</a></li>
         <li><a href="#dokumentumok">Dokumentumkereső</a></li>
         <li><a href="#testulet">Testület</a></li>
+        <li><a href="#hataskor">Ki miben dönt?</a></li>
         <li><a href="#atlathatosag">Átláthatóság</a></li>
         <li><a href="#teendok">Mit tehetsz?</a></li>
         <li><a href="#rolunk">Rólunk</a></li>
@@ -481,6 +502,36 @@ footer.site .muted{color:var(--muted)}
         <p class="legal-note"><a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=testulet-meghivok">Meghívók, előterjesztések, jegyzőkönyvek és felvételek</a> · <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=hatarozatok">Határozatok 2018-tól</a></p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="block" id="hataskor" aria-labelledby="hk-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="hk-h">Ki miben dönt?</h2>
+      <p>Az Önkormányzatok Elektronikus Hatásköri Jegyzéke megmutatja, hogy egy ügyben a képviselő-testület, a bizottság, a polgármester, a jegyző vagy a hivatal ügyintézője jár-e el, és melyik jogszabály alapján. Ha tudod, ki illetékes, oda fordulhatsz a kéréseddel vagy a panaszoddal.</p>
+    </div>
+    <div class="search-panel">
+      <p class="hkmeta" id="hkMeta">A jegyzék betöltése…</p>
+      <div class="filters hkfilters">
+        <label for="hkQ">Keresett szó<input id="hkQ" type="search" placeholder="Például: közterület, fakivágás, parkolás, óvoda" autocomplete="off"></label>
+        <label for="hkOrg">Ki jár el?<select id="hkOrg"><option value="">Mind</option></select></label>
+        <label for="hkAg">Ágazat<select id="hkAg"><option value="">Mind</option></select></label>
+      </div>
+      <div class="hkopts">
+        <label><input type="checkbox" id="hkK" checked> Csak a községekre (így Herceghalomra) vonatkozók</label>
+        <label><input type="checkbox" id="hkU"> Csak az új vagy módosult tételek</label>
+        <span class="hkchips" aria-label="Gyakori keresések"><button type="button" class="chip" data-hk="közterület">közterület</button><button type="button" class="chip" data-hk="fakivágás">fakivágás</button><button type="button" class="chip" data-hk="parkolás">parkolás</button><button type="button" class="chip" data-hk="óvoda">óvoda</button><button type="button" class="chip" data-hk="népszavazás">népszavazás</button><button type="button" class="chip" data-hk="állattartás">állattartás</button></span>
+      </div>
+      <div class="meta-row"><span id="hkCount" aria-live="polite"></span><button class="linkbtn" id="hkReset" type="button">Szűrők törlése</button></div>
+      <ul class="results hkresults" id="hkRes"></ul>
+      <div style="text-align:center;margin-top:12px"><button class="btn ghost" id="hkMore" type="button" hidden>További találatok</button></div>
+    </div>
+    <details class="hkfiles">
+      <summary>A jegyzék fájljai (PDF) és a hivatalos forrás</summary>
+      <div id="hkFiles"></div>
+    </details>
+    <p class="legal-note">Forrás: Vidék- és Településfejlesztési Minisztérium, Önkormányzatok Elektronikus Hatásköri Jegyzéke (<a href="https://kormany.hu/onkormanyzatok-elektronikus-hataskori-jegyzeke">kormany.hu</a>). A jegyzék tájékoztató jellegű, a feladatok leírása eltérhet a jogszabály szó szerinti szövegétől, ezért mindig a hatályos jogszabály az irányadó. A kereshető változatot mi készítettük a PDF-ekből, ezért feldolgozási hiba előfordulhat: kétség esetén a „PDF” linkkel nyisd meg az eredeti oldalt. Az új negyedéves kiadásokat az oldal hetente keresi, és automatikusan átveszi.</p>
   </div>
 </section>
 
@@ -735,6 +786,40 @@ Köszönettel:
     $('rMsg').innerHTML='Megnyílt a levelezőprogramod? Ha nem, másold ki a szöveget, és küldd el ide: <b>'+esc(REPORT_EMAIL)+'</b>.';});
   $('rCopy').addEventListener('click',function(){var m=compose();if(!m)return;var txt='Címzett: '+(REPORT_EMAIL.indexOf('@')<0?'(még nincs beállítva)':REPORT_EMAIL)+'\nTárgy: '+m.subj+'\n\n'+m.body;
     try{navigator.clipboard.writeText(txt).then(function(){$('rMsg').textContent='A bejelentés szövege a vágólapra került.';},function(){$('rMsg').textContent='A másolás nem sikerült; jelöld ki és másold a mezők tartalmát.';});}catch(err){$('rMsg').textContent='A másolás nem sikerült.';}});
+})();
+</script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var ORGS={T:'Képviselő-testület',B:'Bizottság',P:'Polgármester',J:'Jegyző',U:'Ügyintéző'};
+  var D=null,rows=[],shown=20,loading=false;
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function hi(text,terms){var t=esc(text);terms.forEach(function(term){if(term.length<2)return;var n=norm(t),idx=n.indexOf(term),o='',last=0;while(idx>-1){o+=t.slice(last,idx)+'<mark>'+t.slice(idx,idx+term.length)+'</mark>';last=idx+term.length;idx=n.indexOf(term,last);}t=o+t.slice(last);});return t;}
+  function load(){if(D||loading)return;loading=true;
+    fetch('hataskori/hataskori.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(J){D=J;
+      var m=J.meta;$('hkMeta').innerHTML='Hatályos kiadás: <b>'+esc(m.szam||m.kiadas)+'</b>'+(m.lezarva?', lezárva '+esc(m.lezarva):'')+' · '+J.tetelek.length+' feladat- és hatáskör · utoljára ellenőrizve: '+esc(m.frissitve);
+      Object.keys(ORGS).forEach(function(k){if(J.tetelek.some(function(t){return t[0]===k;})){var o=document.createElement('option');o.value=k;o.textContent=ORGS[k];$('hkOrg').appendChild(o);}});
+      var ags=[];J.cimek.forEach(function(c){var a=c[0].replace(/^[IVXL]+\.\s*/,'');if(a&&ags.indexOf(a)<0)ags.push(a);});ags.sort(function(a,b){return a.localeCompare(b,'hu');});
+      ags.forEach(function(a){var o=document.createElement('option');o.value=a;o.textContent=a.charAt(0)+a.slice(1).toLowerCase();$('hkAg').appendChild(o);});
+      var kbit=1<<J.oszlopok.indexOf('k');
+      rows=J.tetelek.map(function(t){var c=J.cimek[t[1]];return {o:t[0],ag:c[0].replace(/^[IVXL]+\.\s*/,''),c:c[1],n:t[2],t:t[3],j:t[4],k:!!(t[5]&kbit),u:!!t[6],f:J.fajlok[t[7]].f,p:t[8],hay:norm(t[3]+' '+t[4]+' '+c[1]+' '+c[0])};});
+      var byOrg={};J.fajlok.forEach(function(f){(byOrg[f.org]=byOrg[f.org]||[]).push(f);});
+      $('hkFiles').innerHTML=(m.forras?'<p style="margin:10px 0 0;font-size:.9rem">A teljes kiadás egyben: <a href="'+esc(m.forras)+'">hivatalos ZIP-fájl a kormany.hu-n</a></p>':'')+Object.keys(byOrg).map(function(o){return '<h4>'+esc(o)+'</h4><ul>'+byOrg[o].map(function(f){var t=f.cim.replace(/^[IVXL]+\.\s*/,'');return '<li><a href="hataskori/pdf/'+encodeURIComponent(f.f)+'">'+esc(t.charAt(0)+t.slice(1).toLowerCase())+'</a> <span style="color:var(--muted)">('+f.kb+' kB)</span></li>';}).join('')+'</ul>';}).join('');
+      render();
+    }).catch(function(){$('hkMeta').textContent='A hatásköri jegyzék nem töltődött be. Frissítsd az oldalt, vagy töltsd le a jegyzéket a kormany.hu-ról.';loading=false;});}
+  function render(){if(!D)return;
+    var terms=norm($('hkQ').value.trim()).split(/\s+/).filter(Boolean),org=$('hkOrg').value,ag=$('hkAg').value,onlyK=$('hkK').checked,onlyU=$('hkU').checked;
+    var res=rows.filter(function(r){return (!org||r.o===org)&&(!ag||r.ag===ag)&&(!onlyK||r.k)&&(!onlyU||r.u)&&terms.every(function(t){return r.hay.indexOf(t)>-1;});});
+    $('hkCount').textContent=res.length+' találat';
+    var total=res.length;$('hkMore').hidden=total<=shown;$('hkMore').textContent='További találatok ('+(total-shown)+')';
+    $('hkRes').innerHTML=res.length?res.slice(0,shown).map(function(r){return '<li><span class="org">'+ORGS[r.o]+'</span><span class="t"><span class="sec">'+esc(r.ag.charAt(0)+r.ag.slice(1).toLowerCase())+' › '+esc(r.c.replace(/^\d+\.\s*/,''))+'</span>'+hi(r.t,terms)+(r.u?'<span class="newpill">új vagy módosult</span>':'')+'<span class="law">'+esc(r.j)+'</span></span><span><a class="tag" href="hataskori/pdf/'+encodeURIComponent(r.f)+'#page='+r.p+'" title="Az eredeti PDF '+r.p+'. oldala">PDF '+r.p+'. o.</a></span></li>';}).join(''):'<li class="empty">Nincs találat. Próbálj másik szót, vagy kapcsold ki a „csak a községekre vonatkozók” szűrést.</li>';}
+  ['hkQ','hkOrg','hkAg','hkK','hkU'].forEach(function(id){$(id).addEventListener('input',function(){shown=20;load();render();});$(id).addEventListener('change',function(){shown=20;render();});});
+  $('hkMore').addEventListener('click',function(){shown+=40;render();});
+  $('hkReset').addEventListener('click',function(){$('hkQ').value='';$('hkOrg').value='';$('hkAg').value='';$('hkK').checked=true;$('hkU').checked=false;shown=20;render();});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-hk]'),function(b){b.addEventListener('click',function(){$('hkQ').value=b.getAttribute('data-hk');shown=20;load();render();});});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){if(e.some(function(x){return x.isIntersecting;})){load();io.disconnect();}},{rootMargin:'800px'});io.observe($('hataskor'));}else load();
+  if(location.hash==='#hataskor')load();
 })();
 </script>
 </body>

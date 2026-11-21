@@ -1,0 +1,39 @@
+name: Hatásköri jegyzék frissítése
+
+on:
+  schedule:
+    - cron: '23 5 * * 1'   # minden hétfőn 6:23-kor (téli idő szerint)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hataskori-jegyzek
+  cancel-in-progress: false
+
+jobs:
+  frissites:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Függőségek
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          pip install pdfplumber==0.11.10
+      - name: Új kiadás keresése és feldolgozása
+        run: python3 nyitott/tools/hataskori_frissites.py
+      - name: Változások mentése
+        run: |
+          if [ -n "$(git status --porcelain nyitott/hataskori)" ]; then
+            git config user.name "Nyitott Herceghalom frissítő"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A nyitott/hataskori
+            git commit -m "Hatásköri jegyzék automatikus frissítése"
+            git push
+          else
+            echo "Nincs változás."
+          fi
