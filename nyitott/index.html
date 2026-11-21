@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nyitott Herceghalom</title>
+<meta name="description" content="Nem hivatalos, lakossági tájékoztató oldal Herceghalom önkormányzati döntéseiről, dokumentumairól és a közéletet foglalkoztató ügyekről. Üzemelteti: Herceghalmi Gesztenyés Tisza Sziget.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout: civic notice board. Fixed disclaimer, compact topic grid, search-first document register, compliance table. */
+  --paper:#f6f5f1;
+  --surface:#ffffff;
+  --ink:#1c2420;
+  --muted:#58635d;
+  --line:#d9ddd6;
+  --accent:#2f6b4f;
+  --accent-ink:#ffffff;
+  --accent-soft:#e3efe8;
+  --warn:#8a5a00;
+  --warn-soft:#fbf0d9;
+  --bad:#9b2c2c;
+  --bad-soft:#f8e3e1;
+  --good:#256140;
+  --good-soft:#e1f0e6;
+  --font-display:"Literata", Georgia, "Times New Roman", serif;
+  --font-body:"Public Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --radius:6px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121614; --surface:#1a201d; --ink:#e7ebe8; --muted:#a3ada7; --line:#2e3632;
+    --accent:#7cc39d; --accent-ink:#0d1a13; --accent-soft:#1f3329;
+    --warn:#e6b85c; --warn-soft:#33290f; --bad:#ef9a93; --bad-soft:#3a1d1b; --good:#8fd1ab; --good-soft:#18301f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121614; --surface:#1a201d; --ink:#e7ebe8; --muted:#a3ada7; --line:#2e3632;
+  --accent:#7cc39d; --accent-ink:#0d1a13; --accent-soft:#1f3329;
+  --warn:#e6b85c; --warn-soft:#33290f; --bad:#ef9a93; --bad-soft:#3a1d1b; --good:#8fd1ab; --good-soft:#18301f;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6}
+a{color:var(--accent);text-underline-offset:2px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:2px}
+h1,h2,h3{font-family:var(--font-display);line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,4.5vw,2.9rem)}
+h2{font-size:clamp(1.5rem,3vw,1.95rem)}
+h3{font-size:1.15rem}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--accent-ink);padding:10px 14px;z-index:100}
+.skip:focus{left:10px;top:10px}
+
+/* Disclaimer */
+.notice{background:var(--ink);color:var(--paper);font-size:.92rem}
+.notice .wrap{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center;padding-top:9px;padding-bottom:9px}
+.notice strong{letter-spacing:.02em}
+.notice a{color:var(--paper)}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+.brand b{font-family:var(--font-display);font-size:1.3rem}
+.brand span{font-size:.8rem;color:var(--muted)}
+nav.main ul{display:flex;flex-wrap:wrap;gap:4px;list-style:none;margin:0;padding:0}
+nav.main a{display:block;padding:8px 10px;border-radius:var(--radius);text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem}
+nav.main a:hover{background:var(--accent-soft)}
+
+/* Hero */
+.hero{padding:44px 0 32px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start}
+.lede{color:var(--muted);max-width:60ch;margin-top:14px}
+.quick{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap}
+.quick input{flex:1 1 260px;font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink)}
+.btn{font:inherit;font-weight:600;padding:12px 18px;border-radius:var(--radius);border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--accent)}
+.dates{display:grid;gap:10px}
+.date{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:12px 14px}
+.date time{font-family:var(--font-display);font-weight:700;font-size:1.05rem;line-height:1.15;font-variant-numeric:tabular-nums}
+.date small{display:block;color:var(--muted);font-size:.82rem}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+
+/* Sections */
+section.block{padding:44px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head p{color:var(--muted);max-width:62ch}
+
+/* Topics */
+.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.topic{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:12px}
+.topic header{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.pill{font-size:.75rem;font-weight:600;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.pill.hot{background:var(--bad-soft);color:var(--bad)}
+.pill.open{background:var(--warn-soft);color:var(--warn)}
+.pill.ok{background:var(--good-soft);color:var(--good)}
+.topic ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:.95rem}
+.topic .q{font-size:.92rem;background:var(--accent-soft);border-radius:var(--radius);padding:10px 12px}
+.topic .q b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.topic .links{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.92rem;margin-top:auto}
+.figs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fig{border:1px solid var(--line);border-radius:var(--radius);padding:8px 10px}
+.fig b{display:block;font-family:var(--font-display);font-size:1.15rem;font-variant-numeric:tabular-nums}
+.fig span{font-size:.78rem;color:var(--muted);line-height:1.3;display:block}
+
+/* Search */
+.search-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}
+.filters label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.filters input,.filters select{font:inherit;font-weight:400;color:var(--ink);padding:10px 12px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+.meta-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 6px;font-size:.9rem;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--accent);font:inherit;cursor:pointer;text-decoration:underline;padding:0}
+.results{list-style:none;margin:0;padding:0}
+.results li{display:grid;grid-template-columns:110px 1fr auto;gap:6px 16px;padding:12px 4px;border-top:1px solid var(--line);align-items:baseline}
+.results .d{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.9rem}
+.results .t a{font-weight:600}
+.results .sub{display:block;color:var(--muted);font-size:.85rem}
+.tag{font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+mark{background:var(--warn-soft);color:inherit;padding:0 1px}
+.empty{padding:20px 4px;color:var(--muted)}
+
+/* Council */
+.council{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.people{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.people li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px}
+.people li span{display:block;font-size:.88rem;color:var(--muted)}
+.meetings{list-style:none;margin:0;padding:0}
+.meetings li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.meetings-wrap{max-height:560px;overflow:auto;padding-right:6px}
+.mlinks{text-align:right;font-size:.9rem}
+.meetings time{font-variant-numeric:tabular-nums;font-weight:600}
+.kind{color:var(--muted);font-size:.85rem}
+
+/* Compliance */
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.93rem}
+caption{text-align:left;padding:12px 14px;color:var(--muted);font-size:.88rem}
+th,td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top;text-align:left}
+thead th{background:var(--accent-soft);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;border-top:0}
+.st{display:inline-block;font-weight:700;font-size:.8rem;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.st.ok{background:var(--good-soft);color:var(--good)}
+.st.chk{background:var(--warn-soft);color:var(--warn)}
+.st.no{background:var(--bad-soft);color:var(--bad)}
+.legal-note{margin-top:12px;font-size:.88rem;color:var(--muted);max-width:80ch}
+
+/* Act */
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;counter-increment:s}
+.step h3::before{content:counter(s) ". ";color:var(--accent)}
+.step p{font-size:.94rem;color:var(--muted);margin-top:6px}
+
+/* Footer */
+footer.site{background:var(--surface);border-top:1px solid var(--line);padding:36px 0 48px;font-size:.92rem}
+footer.site .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+footer.site h3{font-size:1rem;margin-bottom:8px}
+footer.site p+p{margin-top:8px}
+footer.site .muted{color:var(--muted)}
+
+@media (max-width:860px){
+  .hero .wrap,.council,footer.site .wrap{grid-template-columns:1fr}
+  .filters{grid-template-columns:1fr 1fr}
+  .filters label:first-child{grid-column:1/-1}
+  html{scroll-padding-top:150px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .results li{grid-template-columns:1fr}
+  .figs{grid-template-columns:1fr 1fr}
+  nav.main a{padding:6px 8px;font-size:.88rem}
+  header.site{position:static}
+  html{scroll-padding-top:10px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+
+<div class="notice" role="note" aria-label="Fontos tudnivaló az oldalról">
+  <div class="wrap">
+    <span><strong>Nem hivatalos oldal.</strong> Ez nem Herceghalom Község Önkormányzatának honlapja. A hivatalos honlap: <a href="https://www.herceghalom.hu/">herceghalom.hu</a>.</span>
+    <span>Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget.</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#tartalom"><b>Nyitott Herceghalom</b><span>Lakossági tájékoztató az önkormányzat működéséről</span></a>
+    <nav class="main" aria-label="Fő navigáció">
+      <ul>
+        <li><a href="#temak">Témák</a></li>
+        <li><a href="#dokumentumok">Dokumentumkereső</a></li>
+        <li><a href="#testulet">Testület</a></li>
+        <li><a href="#atlathatosag">Átláthatóság</a></li>
+        <li><a href="#teendok">Mit tehetsz?</a></li>
+        <li><a href="#rolunk">Rólunk</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="tartalom">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Herceghalom · 2053 · Pest vármegye</p>
+      <h1>Mit döntött a testület, és hol találom a dokumentumot?</h1>
+      <p class="lede">Összegyűjtjük és kereshetővé tesszük Herceghalom nyilvános önkormányzati dokumentumait: a határozatokat, a rendeleteket, a költségvetést és a szerződéseket. Minden tétel a hivatalos honlap eredeti dokumentumára mutat. Mellé röviden, tényszerűen összefoglaljuk a falut leginkább foglalkoztató ügyeket.</p>
+      <form class="quick" role="search" id="quickForm">
+        <label for="quickQ" class="eyebrow" style="flex-basis:100%">Keresés a dokumentumok között</label>
+        <input id="quickQ" type="search" placeholder="Például: óvoda, járda, költségvetés, 152/2026" autocomplete="off">
+        <button class="btn" type="submit">Keresés</button>
+      </form>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin-bottom:10px">Közelgő időpontok</p>
+      <div class="dates">
+        <div class="date"><time datetime="2026-11-23T18:00">nov. 23.<small>2026 · 18:00</small></time><div><b>Közmeghallgatás</b><small>Az önkormányzat felhívása szerint. Itt bárki kérdezhet, és a kérdésekre válaszolni kell.</small></div></div>
+        <div class="date"><time datetime="2027-01-14T11:00">jan. 14.<small>2027 · 11:00</small></time><div><b>Bírósági tárgyalás a Panattoni-ügyben</b><small>Részletek a <a href="https://herceghalmi-lakosok.github.io/">Panattoni-ügy társoldalon</a>.</small></div></div>
+        <div class="date"><time datetime="2027-12-17">dec. 17.<small>2027</small></time><div><b>Lejár a változtatási tilalom</b><small>27/2024. (XII.17.) önkormányzati rendelet.</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="temak" aria-labelledby="temak-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="temak-h">A falut foglalkoztató ügyek</h2>
+      <p>Röviden: mi történt, melyik dokumentumban áll, és milyen kérdés maradt nyitva. Ahol saját véleményünket írjuk, azt kérdésként jelöljük.</p>
+    </div>
+    <div class="topics">
+
+      <article class="topic">
+        <header><h3>Panattoni logisztikai beruházás</h3><span class="pill hot">Folyamatban</span></header>
+        <ul>
+          <li>Két, egyenként kb. 38 000 m²-es raktárcsarnok épülne a falu szélén, az óvodától kb. 200 méterre.</li>
+          <li>A testület a telepítési tanulmánytervet visszautasította, a település területén változtatási tilalom van érvényben.</li>
+          <li>2026. október 6.: a testület megerősítette a telekcsere kezdeményezését (143/2026.), és felterjesztéssel kezdeményezte, hogy az építésügyi hatósági hatáskörök visszakerüljenek az önkormányzatokhoz (144/2026.). Erről levelet kapott a kormány és a térség országgyűlési képviselője is.</li>
+          <li>2026. november 9.: rendkívüli ülés a telepítési tanulmánytervről, a lakossági kérdésekre adott válaszokkal.</li>
+          <li>Környezetvédelmi per van folyamatban; a következő tárgyalás 2027. január 14-én lesz.</li>
+        </ul>
+        <p class="q"><b>Nyitott kérdés</b>Mi történik a változtatási tilalom 2027. decemberi lejárta után, és milyen településrendezési döntés készül addig?</p>
+        <div class="links"><a href="https://herceghalmi-lakosok.github.io/">Részletes társoldal</a><a href="https://www.herceghalom.hu/?module=news&amp;fname=panattoni">Hivatalos dokumentumok</a><button class="linkbtn" data-topic="panattoni">Dokumentumok itt</button></div>
+      </article>
+
+      <article class="topic">
+        <header><h3>Csicsergő Óvoda</h3><span class="pill open">Nyitott kérdések</span></header>
+        <ul>
+          <li>2026. május 28.: döntés a 2026/27-es csoportszámról, és intézkedések a szakértői vélemény alapján (70/2026., 69/2026.).</li>
+          <li>2026. augusztus 11.: döntés a pedagógiai asszisztensek foglalkoztatásáról és a fenntartói elvárásokról (110/2026.).</li>
+          <li>2026. augusztus 19.: a testület kiírta az igazgatói pályázatot (126/2026.), október 20-án pedig elbírálta (157/2026.).</li>
+          <li>Felújítások: a tetőszerkezet kárenyhítő felújítása (93/2026.), udvari fa játszóeszközök (76/2026., 118/2026., 137/2026.).</li>
+        </ul>
+        <p class="q"><b>Nyitott kérdés</b>Hosszabb távra is érvényes marad a kisebb csoportlétszám, vagy csak erre a nevelési évre szól?</p>
+        <div class="links"><button class="linkbtn" data-topic="ovoda">Óvodai dokumentumok</button></div>
+      </article>
+
+      <article class="topic">
+        <header><h3>Közlekedésbiztonság és vasútállomás</h3><span class="pill hot">Sürgős</span></header>
+        <ul>
+          <li>2026. november 17-én halálos baleset történt az 1-es főúton, Herceghalom közelében.</li>
+          <li>2026. november 20-án a Gesztenyés Tisza Sziget két javaslatot küldött a térség országgyűlési képviselőjének: az 1-es főút és a Gesztenyés út csomópontjának felülvizsgálatáról, valamint a vasútállomás és környéke megújításáról.</li>
+          <li>2026. április 7.: a testület továbbította a vasútállomás közlekedésbiztonsága érdekében gyűjtött aláírásokat (40/2026.).</li>
+          <li>Önkormányzati lépések: az 1-es főút burkolatfelújítása (87/2026.), járdák a Petőfi és a Jókai utcában (86/2026., 140/2026.), VIDAR sebességmérő kamerák (116/2026.).</li>
+        </ul>
+        <p class="q"><b>Nyitott kérdés</b>Lesz-e közös helyszíni bejárás a Magyar Közúttal, a MÁV-val és a rendőrséggel, és mikor?</p>
+        <div class="links"><a href="dok/javaslat-gesztenyes-csomopont-2026-11-20.pdf">Csomópont-javaslat (PDF)</a><a href="dok/javaslat-vasutallomas-2026-11-20.pdf">Vasútállomás-javaslat (PDF)</a><button class="linkbtn" data-topic="kozlekedes">Közlekedési dokumentumok</button></div>
+      </article>
+
+      <article class="topic">
+        <header><h3>Költségvetés és gazdálkodás</h3><span class="pill open">Figyelendő</span></header>
+        <div class="figs">
+          <div class="fig"><b>392,5 M</b><span>iparűzési adó 2025-ben (2023: 917,8 M Ft)</span></div>
+          <div class="fig"><b>23%</b><span>a módosított beruházási terv teljesülése 2025-ben</span></div>
+          <div class="fig"><b>1 035,6 M</b><span>pénzkészlet 2025 végén; hitel nincs</span></div>
+        </div>
+        <p style="font-size:.88rem;color:var(--muted)">Saját összesítés a 2023–2025-ös zárszámadási rendeletek alapján, forintban.</p>
+        <p class="q"><b>Nyitott kérdés</b>Miért marad el évről évre a tervezett beruházások nagy része, például az Egészségház felújítása?</p>
+        <div class="links"><button class="linkbtn" data-topic="koltsegvetes">Költségvetési dokumentumok</button><a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=ktsgvetes">Hivatalos rovat</a></div>
+      </article>
+
+      <article class="topic">
+        <header><h3>Részvétel és közélet</h3><span class="pill ok">Új lehetőségek</span></header>
+        <ul>
+          <li>2026. szeptember 1.: döntés a közösségi költségvetés bevezetéséről és a Közösségi Költségvetési Alap létrehozásáról (133/2026.). A lakosok maguk javasolhatnak fejlesztéseket, és szavazhatnak róluk.</li>
+          <li>2026. november 3.: a testület helyi népszavazás kiírásának kezdeményezéséről döntött (168/2026.). A kérdés a határozatban olvasható.</li>
+          <li>Ugyanezen az ülésen kijelölték a 2027-es falugyűlés és közmeghallgatás időpontját (165/2026.).</li>
+        </ul>
+        <p class="q"><b>Nyitott kérdés</b>Mekkora lesz az alap, és mikor nyílik meg a javaslattétel?</p>
+        <div class="links"><a href="https://www.herceghalom.hu/?module=news&amp;action=getfile&amp;fid=302130">Közösségi költségvetés (133/2026.)</a><a href="https://www.herceghalom.hu/?module=news&amp;action=getfile&amp;fid=303747">Népszavazás (168/2026.)</a></div>
+      </article>
+
+      <article class="topic">
+        <header><h3>Fejlesztések, tervek</h3><span class="pill ok">Elfogadva</span></header>
+        <ul>
+          <li>Gördülő Fejlesztési Terv a 2027–2041-es évekre (152/2026.).</li>
+          <li>Újabb napelemes kandeláberek (147/2026.), a Liget utcai közpark tájépítészeti terve (148/2026.).</li>
+          <li>Egészségház: elkészült a kiviteli terv. Október 20-án döntöttek a felújítás idejére szóló ideiglenes rendelőkről és a projektmenedzserről (158/2026., 159/2026.).</li>
+        </ul>
+        <div class="links"><button class="linkbtn" data-topic="fejlesztes">Fejlesztési dokumentumok</button></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="block" id="dokumentumok" aria-labelledby="dok-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="dok-h">Dokumentumkereső</h2>
+      <p><b id="docCount">Közel ezer</b> dokumentum egy helyen a jelenlegi képviselő-testület megbízatásának kezdetétől, 2024. októbertől: határozatok, rendeletek, előterjesztések, meghívók, jegyzőkönyvek, bizottsági anyagok és szerződések. Ékezet nélkül is kereshetsz, és a határozat számára is (például „140/2026”). A találatok a herceghalom.hu eredeti fájljait nyitják meg. A „Javaslat” típusú tételek a Gesztenyés Tisza Sziget saját anyagai.</p>
+    </div>
+    <div class="search-panel">
+      <div class="filters">
+        <label for="q">Keresett szöveg<input id="q" type="search" placeholder="Cím, szám, téma…" autocomplete="off"></label>
+        <label for="fType">Típus<select id="fType"><option value="">Mind</option></select></label>
+        <label for="fTopic">Téma<select id="fTopic"><option value="">Mind</option></select></label>
+        <label for="fYear">Év<select id="fYear"><option value="">Mind</option></select></label>
+      </div>
+      <div class="meta-row"><span id="count" aria-live="polite"></span><button class="linkbtn" id="reset" type="button">Szűrők törlése</button></div>
+      <ul class="results" id="results"></ul>
+      <div style="text-align:center;margin-top:12px"><button class="btn ghost" id="more" type="button" hidden>További találatok</button></div>
+    </div>
+    <p class="legal-note">Az adatbázis a herceghalom.hu nyilvános rovatainak teljes anyagát tartalmazza a 2024. október 8-i alakuló üléstől, 2026. november 21-i állapot szerint. A 2024-es ülések határozatait a hivatalos oldal ülésenként egy fájlban közli, ezért ezek így szerepelnek. A Panattoni-ügy dokumentumai 2024 tavaszától szerepelnek. A korábbi anyagokhoz a hivatalos gyűjtőoldalakra mutatunk. A szerződéseknél a hivatalos oldal nem tünteti fel a dátumot, ezért ott mi sem írunk dátumot. A téma szerinti besorolást a címek alapján, automatikusan végeztük, ezért előfordulhat benne tévedés.</p>
+  </div>
+</section>
+
+<section class="block" id="testulet" aria-labelledby="test-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="test-h">Képviselő-testület</h2>
+      <p>A testület ülései nyilvánosak, bárki részt vehet rajtuk hallgatóként. Zárt ülést csak a törvényben meghatározott esetekben lehet tartani.</p>
+    </div>
+    <div class="council">
+      <div>
+        <h3 style="margin-bottom:12px">Tagok és bizottságok</h3>
+        <ul class="people">
+          <li><b>Csizmadia Zsuzsanna</b><span>polgármester</span></li>
+          <li><b>Dr. Petrik Péter</b><span>alpolgármester</span></li>
+          <li><b>Róka Péter</b><span>alpolgármester</span></li>
+          <li><b>Papp Xénia</b><span>képviselő · a Humán és Környezetvédelmi Bizottság elnöke, a Pénzügyi és Településfejlesztési Bizottság alelnöke</span></li>
+          <li><b>Pörge Sándor</b><span>képviselő · a Pénzügyi és Településfejlesztési Bizottság elnöke, a Humán és Környezetvédelmi Bizottság alelnöke</span></li>
+          <li><b>Cserkuti Edina</b><span>képviselő · a Humán és Környezetvédelmi Bizottság tagja</span></li>
+          <li><b>Losonczi Csongor</b><span>képviselő · a Pénzügyi és Településfejlesztési Bizottság tagja</span></li>
+        </ul>
+        <p class="legal-note">Forrás: <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=testulet-kepviselok">Képviselők</a> és <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=kepv_vagyon">vagyonnyilatkozatok</a> a hivatalos honlapon.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom:12px">Ülések a ciklus kezdete óta</h3>
+        <div class="meetings-wrap"><ul class="meetings" id="meetings"></ul></div>
+        <p class="legal-note"><a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=testulet-meghivok">Meghívók, előterjesztések, jegyzőkönyvek és felvételek</a> · <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=hatarozatok">Határozatok 2018-tól</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="atlathatosag" aria-labelledby="atl-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="atl-h">Átláthatósági mérce</h2>
+      <p>Mit kell a jogszabályok szerint egy önkormányzatnak a honlapján közzétennie, és ezek közül mit találtunk meg a herceghalom.hu-n?</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <caption>Saját áttekintésünk, 2026. november 21. Ez nem hatósági megállapítás. Ha valamit tévesen jelöltünk, írj nekünk, és javítjuk.</caption>
+        <thead><tr><th scope="col">Követelmény</th><th scope="col">Jogszabály</th><th scope="col">herceghalom.hu</th><th scope="col">Megjegyzés</th></tr></thead>
+        <tbody>
+          <tr><td>A közzétételi listákra mutató hivatkozás a nyitóoldalon</td><td>18/2005. (XII. 27.) IHM rendelet 2. § (1)</td><td><span class="st ok">Megvan</span></td><td>„Közérdekű adatok” hivatkozás az oldal alján.</td></tr>
+          <tr><td>Általános közzétételi lista I–III. fejezete: szervezeti, működési és gazdálkodási adatok</td><td>Infotv. 37. § és 1. melléklet; IHM rendelet 2. melléklet</td><td><span class="st ok">Tagolás megvan</span></td><td>A rovatok léteznek. Azt, hogy teljesek és frissek-e, tételenként kellene ellenőrizni.</td></tr>
+          <tr><td>A frissítés dátumának feltüntetése a közzétételi egységekben</td><td>IHM rendelet 4. §</td><td><span class="st chk">Hiányos</span></td><td>A listaoldalakon a legtöbb tétel mellett nincs dátum.</td></tr>
+          <tr><td>Testületi ülések helye, ideje, meghívói, előterjesztései, jegyzőkönyvei, szavazási adatai</td><td>Infotv. 1. melléklet II/8–9.; Mötv. 52. § (3)</td><td><span class="st ok">Nagyrészt megvan</span></td><td>A 2024. október 8-i alakuló ülés óta 38 testületi ülés volt. Mindegyiknek van meghívója, 34-nek jegyzőkönyve. Hiányzik a 2025. április 29-i rendkívüli ülés jegyzőkönyve. A két zárt ülés (2024. október 29., 2026. január 22.) jegyzőkönyve nem nyilvános, a 2026. november 9-i ülésé még készülhet. Négy rendkívüli ülésnél nem találtunk előterjesztést.</td></tr>
+          <tr><td>Testületi határozatok, zárt ülés esetén anonimizálva</td><td>Infotv. 1. melléklet II/8.</td><td><span class="st chk">Hiányos</span></td><td>Ülésenként közzéteszik, a legutóbbi a 2026. november 3-i ülésé. 2026-ban azonban 33 határozatszám nem szerepel a honlapon (például 2–3., 21–24., 47–55., 79–82., 105–107., 122–125.), és a 2024. október 29-i, valamint a 2026. január 22-i zárt ülésről sem találtunk közzétett határozatot. 2025-ben a zárt ülésen hozott határozatokat még közzétették.</td></tr>
+          <tr><td>Az 5 millió forintot elérő szerződések adatai</td><td>Infotv. 1. melléklet III/4.</td><td><span class="st chk">Részben</span></td><td>A szerződések listája elérhető, de a megkötés dátuma és értéke nem látszik a listában.</td></tr>
+          <tr><td>Költségvetés, zárszámadás, módosítások</td><td>Infotv. 1. melléklet III/1.; Áht.</td><td><span class="st ok">Megvan</span></td><td>2019-től évenként, egységes szerkezetben is.</td></tr>
+          <tr><td>Képviselői vagyonnyilatkozatok</td><td>Mötv. 39. §</td><td><span class="st ok">Megvan</span></td><td>Külön rovatban.</td></tr>
+          <tr><td>Akadálymentes honlap (WCAG 2.1 AA) és akadálymentesítési nyilatkozat</td><td>2018. évi LXXV. törvény; MSZ EN 301 549</td><td><span class="st chk">Ellenőrizendő</span></td><td>Van nyilatkozat-rovat és szöveges változat (index_vak.php). A tartalmát és a megfelelést nem vizsgáltuk.</td></tr>
+          <tr><td>Adatkezelési tájékoztató, süti-tájékoztató</td><td>GDPR 13. cikk</td><td><span class="st no">Hibás link</span></td><td>Az oldal alján az „Adatvédelmi nyilatkozat” és az „Internetes sütik” hivatkozás üres. Adatkezelési tájékoztató a Közérdekű adatok rovatban található.</td></tr>
+          <tr><td>Hivatkozás az egységes közadatkereső rendszerre</td><td>305/2005. (XII. 25.) Korm. rendelet</td><td><span class="st chk">Nem láttuk</span></td><td>A nyitóoldalon nem találtunk ilyen hivatkozást.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legal-note">Jogszabályi háttér röviden. Az információszabadságról szóló törvény (Infotv., 2011. évi CXII. törvény) szerint az önkormányzat a közérdekű adatokat honlapon, bárki számára, azonosítás és korlátozás nélkül köteles közzétenni. Ezek között vannak a nyilvános ülések előterjesztései, jegyzőkönyvei és döntései. Az önkormányzati törvény (Mötv., 2011. évi CLXXXIX. törvény) szerint a testület ülése nyilvános, és a választópolgárok betekinthetnek a nyilvános ülések előterjesztéseibe és jegyzőkönyveibe. A közszféra honlapjainak a 2018. évi LXXV. törvény szerint akadálymentesnek kell lenniük (érzékelhetőnek, kezelhetőnek, érthetőnek és stabilnak), és akadálymentesítési nyilatkozatot kell közzétenniük. Ergonómiai jó gyakorlatnak tekintjük még a kereshetőséget, a dátumokat minden dokumentumnál, a gépileg olvasható (nem szkennelt) fájlokat és a mobilon is olvasható elrendezést.</p>
+  </div>
+</section>
+
+<section class="block" id="teendok" aria-labelledby="teendo-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="teendo-h">Mit tehetsz?</h2>
+      <p>Az önkormányzat működését minden lakos figyelemmel kísérheti. Ehhez ezek az eszközök állnak rendelkezésre.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Menj el egy ülésre</h3><p>A testületi ülések nyilvánosak. Az időpontot és a napirendet a meghívó tartalmazza a hivatalos honlapon.</p></div>
+      <div class="step"><h3>Kérdezz a közmeghallgatáson</h3><p>A közmeghallgatáson bárki kérdést vagy javaslatot tehet közérdekű ügyben. A legközelebbi 2026. november 23-án, 18 órakor lesz.</p></div>
+      <div class="step"><h3>Kérj ki adatot</h3><p>Közérdekű adatot bárki igényelhet szóban, írásban vagy e-mailben, indoklás nélkül. Az önkormányzat címe: polghiv@herceghalom.hu. A teljesítés határideje főszabályként 15 nap.</p></div>
+      <div class="step"><h3>Tekints bele az iratokba</h3><p>A nyilvános ülések előterjesztéseibe és jegyzőkönyveibe a választópolgárok betekinthetnek a Polgármesteri Hivatalban.</p></div>
+      <div class="step"><h3>Javasolj fejlesztést</h3><p>A közösségi költségvetés indulásával a lakosok maguk is javasolhatnak fejlesztéseket. Figyeld a felhívást.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site" id="rolunk">
+  <div class="wrap">
+    <div>
+      <h3>Rólunk és impresszum</h3>
+      <p>A Nyitott Herceghalom nem hivatalos, lakossági tájékoztató oldal. Üzemelteti és szerkeszti a <b>Herceghalmi Gesztenyés Tisza Sziget</b>, amely a Tisza Párt helyi támogatói közössége. Az önkormányzat ezt az oldalt nem hagyta jóvá, és nem felel érte.</p>
+      <p>A dokumentumok az önkormányzat nyilvános közlései. Mindegyik az eredeti forrásra mutat, ezeket nem módosítjuk. Az összefoglalók és a nyitott kérdések a szerkesztők megfogalmazásai.</p>
+    </div>
+    <div>
+      <h3>Javítás, észrevétel</h3>
+      <p>Ha hibát találsz, vagy hiányzik egy dokumentum, írd meg nekünk a Gesztenyés Tisza Sziget Facebook-oldalán, és javítjuk.</p>
+      <p class="muted">Társoldal: <a href="https://herceghalmi-lakosok.github.io/">Panattoni-ügy Herceghalmon</a></p>
+    </div>
+    <div>
+      <h3>Adatkezelés és akadálymentesség</h3>
+      <p>Az oldal nem használ sütiket és látogatásmérést, és nem gyűjt személyes adatot.</p>
+      <p>Az oldalt a WCAG 2.1 AA szint követelményeinek figyelembevételével készítettük: billentyűzettel is kezelhető, képernyőolvasóval is használható, nagyítható, és sötét módban is olvasható. A hivatkozott PDF-ek akadálymentességéért az önkormányzat felel.</p>
+      <p class="muted">Utolsó frissítés: 2026. november 21.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var L='https://www.herceghalom.hu/?module=news&action=list&fname=';
+  var EXTRA=[
+    {t:'Javaslat',ti:'Javaslat Herceghalom vasútállomásának és környezetének korszerűsítésére (Gesztenyés Tisza Sziget, Bujdosó Andrea Anna országgyűlési képviselő részére, fényképmelléklettel)',d:'2026-11-20',tp:['kozlekedes'],u:'dok/javaslat-vasutallomas-2026-11-20.pdf',n:'PDF, 2,5 MB · nem önkormányzati dokumentum'},
+    {t:'Javaslat',ti:'Javaslat a herceghalmi Gesztenyés úti csomópont biztonságának javítására (Gesztenyés Tisza Sziget, Bujdosó Andrea Anna országgyűlési képviselő részére)',d:'2026-11-20',tp:['kozlekedes'],u:'dok/javaslat-gesztenyes-csomopont-2026-11-20.pdf',n:'PDF, 2 oldal · nem önkormányzati dokumentum'},
+    {t:'Gyűjtőoldal',ti:'Képviselő-testület határozatai, 2018–2026',d:'',tp:['egyeb'],u:L+'hatarozatok',n:''},
+    {t:'Gyűjtőoldal',ti:'Képviselő-testület ülései: meghívók, előterjesztések, jegyzőkönyvek, felvételek',d:'',tp:['egyeb'],u:L+'testulet-meghivok',n:''},
+    {t:'Gyűjtőoldal',ti:'Költségvetések, beszámolók, pénzügyi rendeletek, 2008–2026',d:'',tp:['koltsegvetes'],u:L+'ktsgvetes',n:''},
+    {t:'Gyűjtőoldal',ti:'Szerződések (teljes lista, a 2025 előtti szerződésekkel)',d:'',tp:['koltsegvetes'],u:L+'szerzodesek1',n:''},
+    {t:'Gyűjtőoldal',ti:'Közérdekű adatok: általános közzétételi lista',d:'',tp:['egyeb'],u:'https://www.herceghalom.hu/?module=news&fname=kozerdeku',n:''},
+    {t:'Gyűjtőoldal',ti:'Rendeletek témák szerint, a hatályon kívül helyezett rendeletekkel',d:'',tp:['egyeb'],u:'https://www.herceghalom.hu/?module=news&fname=rendeletek',n:''},
+    {t:'Gyűjtőoldal',ti:'Bizottságok: tagok, meghívók, előterjesztések, jegyzőkönyvek',d:'',tp:['egyeb'],u:L+'bizottsag',n:''},
+    {t:'Gyűjtőoldal',ti:'Képviselői vagyonnyilatkozatok',d:'',tp:['egyeb'],u:L+'kepv_vagyon',n:''},
+    {t:'Gyűjtőoldal',ti:'Akadálymentesítési nyilatkozat',d:'',tp:['egyeb'],u:L+'akadalymentesites',n:''}
+  ];
+  var TYPES=['Határozat','Rendelet','Előterjesztés','Meghívó','Jegyzőkönyv','Bizottság','Szerződés','Panattoni','Hirdetmény, közbeszerzés','Javaslat','Gyűjtőoldal'];
+  var HU=['jan.','febr.','márc.','ápr.','máj.','jún.','júl.','aug.','szept.','okt.','nov.','dec.'];
+  var HUL=['január','február','március','április','május','június','július','augusztus','szeptember','október','november','december'];
+  function fmt(d){if(!d)return 'dátum nélkül';var p=d.split('-');return p[0]+'. '+HU[+p[1]-1]+' '+(+p[2])+'.';}
+  function longd(d){if(!d)return '';var p=d.split('-');return p[0]+'. '+HUL[+p[1]-1]+' '+(+p[2]);}
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var $=function(id){return document.getElementById(id);};
+  var shown=15,more=$('more'),q=$('q'),fType=$('fType'),fTopic=$('fTopic'),fYear=$('fYear'),out=$('results'),count=$('count');
+  var docs=[],TOPICS={};
+  function opts(sel,vals,labels){vals.forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=labels?labels[v]:v;sel.appendChild(o);});}
+  function hi(text,terms){var t=esc(text);terms.forEach(function(term){if(term.length<2)return;var n=norm(t),idx=n.indexOf(term),o='',last=0;while(idx>-1){o+=t.slice(last,idx)+'<mark>'+t.slice(idx,idx+term.length)+'</mark>';last=idx+term.length;idx=n.indexOf(term,last);}t=o+t.slice(last);});return t;}
+  function render(){
+    var terms=norm(q.value.trim()).split(/\s+/).filter(Boolean);
+    var res=docs.filter(function(d){
+      if(fType.value&&d.t!==fType.value)return false;
+      if(fTopic.value&&d.tp.indexOf(fTopic.value)<0)return false;
+      if(fYear.value==='nincs'&&d.year)return false;
+      if(fYear.value&&fYear.value!=='nincs'&&d.year!==fYear.value)return false;
+      return terms.every(function(t){return d.hay.indexOf(t)>-1;});
+    });
+    res.sort(function(a,b){if(a.d&&b.d)return a.d<b.d?1:a.d>b.d?-1:a.i-b.i;if(a.d)return -1;if(b.d)return 1;return a.i-b.i;});
+    count.textContent=res.length+' találat a '+docs.length+' dokumentumból';
+    if(!res.length){more.hidden=true;out.innerHTML='<li class="empty">Nincs találat. Próbálj rövidebb szót, vagy töröld a szűrőket.</li>';return;}
+    var total=res.length;more.hidden=total<=shown;more.textContent='További találatok ('+(total-shown)+')';res=res.slice(0,shown);
+    out.innerHTML=res.map(function(d){
+      return '<li><span class="d">'+(d.d?fmt(d.d):(d.y?d.y:'dátum nélkül'))+'</span><span class="t"><a href="'+esc(d.u)+'" rel="noopener">'+hi(d.ti,terms)+'</a><span class="sub">'+d.tp.map(function(t){return TOPICS[t]||t;}).join(' · ')+(d.n?' · '+esc(d.n):'')+'</span></span><span class="tag">'+esc(d.t)+'</span></li>';
+    }).join('');
+  }
+  function go(){render();$('dokumentumok').scrollIntoView();}
+  function setFilters(o){q.value=o.q||'';fType.value=o.type||'';fTopic.value=o.topic||'';fYear.value=o.year||'';shown=15;}
+  [q,fType,fTopic,fYear].forEach(function(el){el.addEventListener('input',function(){shown=15;render();});});
+  more.addEventListener('click',function(){shown+=30;render();});
+  $('reset').addEventListener('click',function(){setFilters({});render();q.focus();});
+  $('quickForm').addEventListener('submit',function(e){e.preventDefault();setFilters({q:$('quickQ').value});go();q.focus({preventScroll:true});});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-topic]'),function(b){b.addEventListener('click',function(){setFilters({topic:b.getAttribute('data-topic')});go();});});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-q]'),function(b){b.addEventListener('click',function(){setFilters({q:b.getAttribute('data-q')});go();});});
+  function meetings(list){
+    $('meetings').innerHTML=list.map(function(m){
+      var links=[];
+      if(m.m)links.push('<a href="'+esc(m.m)+'">Meghívó</a>');
+      if(m.e)links.push('<button class="linkbtn" type="button" data-meet="'+m.d+'" data-mt="Előterjesztés">'+m.e+' előterjesztés</button>');
+      if(m.h)links.push('<button class="linkbtn" type="button" data-meet="'+m.d+'" data-mt="Határozat">'+m.h+' határozat</button>');
+      if(m.j)links.push('<a href="'+esc(m.j)+'">Jegyzőkönyv</a>');
+      return '<li><span><time datetime="'+m.d+'">'+fmt(m.d)+'</time> <span class="kind">'+esc(m.kind)+'</span></span><span class="mlinks">'+(links.join(' · ')||'<span class="kind">nincs közzétett anyag</span>')+'</span></li>';
+    }).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-meet]'),function(b){b.addEventListener('click',function(){setFilters({q:b.getAttribute('data-meet'),type:b.getAttribute('data-mt')});go();});});
+  }
+  count.textContent='Betöltés…';
+  fetch('adatok/dokumentumok.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(D){
+    TOPICS=D.temak;
+    docs=EXTRA.concat(D.dokumentumok).map(function(x,i){
+      var year=x.d?x.d.slice(0,4):(x.y||'');
+      return {i:i,t:x.t,ti:x.ti,d:x.d,tp:x.tp,u:x.u,n:x.n||'',y:x.y||'',year:year,
+        hay:norm([x.t,x.ti,x.tp.map(function(t){return TOPICS[t]||t;}).join(' '),x.n||'',x.d||'',longd(x.d),x.y||''].join(' '))};
+    });
+    opts(fType,TYPES.filter(function(t){return docs.some(function(d){return d.t===t;});}));
+    opts(fTopic,Object.keys(TOPICS),TOPICS);
+    var years=[];docs.forEach(function(d){if(d.year&&years.indexOf(d.year)<0)years.push(d.year);});years.sort().reverse();
+    var yl={nincs:'Dátum nélkül'};years.forEach(function(y){yl[y]=y;});opts(fYear,years.concat(['nincs']),yl);
+    $('docCount').textContent=docs.length;
+    render();meetings(D.ulesek);
+  }).catch(function(){count.textContent='';out.innerHTML='<li class="empty">A dokumentumlista nem töltődött be. Frissítsd az oldalt, vagy nézd meg a dokumentumokat közvetlenül a <a href="https://www.herceghalom.hu/">herceghalom.hu</a> oldalon.</li>';});
+})();
+</script>
+</body>
+</html>

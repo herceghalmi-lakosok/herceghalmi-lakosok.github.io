@@ -9,3 +9,11 @@ Ez lakossági kezdeményezés, nem Herceghalom Község Önkormányzatának és 
 https://herceghalmi-lakosok.github.io
 
 A teljes oldal egyetlen fájl (`index.html`), két kép és egy videó (`ordoglovas-vazlatfuzet.mp4`, `ordoglovas-poster.jpg`). A GitHub Pages a `main` ág gyökeréből szolgálja ki.
+
+## Nyitott Herceghalom (`/nyitott/`)
+
+Nem hivatalos lakossági tájékoztató oldal Herceghalom önkormányzati működéséről: kereshető dokumentumtár a képviselő-testület 2024. októberi alakuló ülésétől, témakártyák és átláthatósági mérce. Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget.
+
+Elérhetőség: https://herceghalmi-lakosok.github.io/nyitott/
+
+Fájlok: `nyitott/index.html` (az oldal), `nyitott/adatok/dokumentumok.json` (a dokumentumlista, frissítéskor ezt kell cserélni), `nyitott/dok/` (saját PDF-ek).
