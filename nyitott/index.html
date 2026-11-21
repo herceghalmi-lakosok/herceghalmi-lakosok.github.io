@@ -153,10 +153,15 @@ thead th{background:var(--accent-soft);font-size:.82rem;text-transform:uppercase
 .infobox{margin-top:16px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:var(--radius);padding:14px 16px;font-size:.93rem}
 .infobox h4{margin:0 0 6px;font-size:1rem}
 .infobox p+p{margin-top:8px}
+.foia{margin-top:22px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px}
+.foia ol{margin:8px 0 0;padding-left:20px;display:grid;gap:8px;font-size:.95rem}
+.minta{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+.minta textarea{font:inherit;font-size:.9rem;line-height:1.5;width:100%;min-height:300px;padding:10px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--paper);color:var(--ink);resize:vertical}
+@media (max-width:860px){.foia{grid-template-columns:1fr}}
 .legal-note{margin-top:12px;font-size:.88rem;color:var(--muted);max-width:80ch}
 
 /* Act */
-.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;counter-reset:s}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;counter-reset:s}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;counter-increment:s}
 .step h3::before{content:counter(s) ". ";color:var(--accent)}
 .step p{font-size:.94rem;color:var(--muted);margin-top:6px}
@@ -409,10 +414,49 @@ footer.site .muted{color:var(--muted)}
     <div class="steps">
       <div class="step"><h3>Menj el egy ülésre</h3><p>A testületi ülések nyilvánosak. Az időpontot és a napirendet a meghívó tartalmazza a hivatalos honlapon.</p></div>
       <div class="step"><h3>Kérdezz a közmeghallgatáson</h3><p>A közmeghallgatáson bárki kérdést vagy javaslatot tehet közérdekű ügyben. A legközelebbi 2026. november 23-án, 18 órakor lesz.</p></div>
-      <div class="step"><h3>Kérj ki adatot</h3><p>Közérdekű adatot bárki igényelhet szóban, írásban vagy e-mailben, indoklás nélkül. Az önkormányzat címe: polghiv@herceghalom.hu. A teljesítés határideje főszabályként 15 nap.</p></div>
+      <div class="step"><h3>Kérj ki adatot</h3><p>Közérdekű adatot bárki igényelhet, indoklás nélkül. Lent lépésről lépésre leírjuk, hogyan, és mintaszöveget is adunk hozzá: <a href="#adatigenyles">közérdekű adatigénylés</a>.</p></div>
       <div class="step"><h3>Tekints bele az iratokba</h3><p>A nyilvános ülések előterjesztéseibe és jegyzőkönyveibe a választópolgárok betekinthetnek a Polgármesteri Hivatalban.</p></div>
       <div class="step"><h3>Ellenőrizd a vagyonnyilatkozatokat</h3><p>A választott tisztségviselők vagyonnyilatkozata nyilvános. Hiányosságot vagy szabálytalanságot az <a href="https://integritashatosag.whispli.com/lp/vnyt?locale=hu">Integritás Hatóság bejelentőfelületén</a> jelezhetsz, további tájékoztatás a <a href="https://integritashatosag.hu/tajekoztatok-az-onkormanyzatokhozkapcsolodo-vagyonnyilatkozatokrol/">Hatóság honlapján</a>.</p></div>
       <div class="step"><h3>Javasolj fejlesztést</h3><p>A közösségi költségvetés indulásával a lakosok maguk is javasolhatnak fejlesztéseket. Figyeld a felhívást.</p></div>
+    </div>
+    <div class="foia" id="adatigenyles">
+      <div class="infobox" style="margin-top:0">
+        <h4>Közérdekű adatigénylés helyi lakosként</h4>
+        <p>Az önkormányzat működésével, döntéseivel és pénzügyeivel kapcsolatos adatok többsége közérdekű. Ami nincs fent a honlapon, azt bárki kikérheti, akár herceghalmi lakos, akár nem. Indokolni nem kell.</p>
+        <ol>
+          <li><b>Fogalmazd meg pontosan, mit kérsz.</b> Például: „a Liget utcai közpark tájépítészeti tervezésére kötött szerződés (148/2026. határozat)”. Írd meg azt is, milyen formában kéred, például e-mailben, PDF-ben. Érdemes hivatkozni az információszabadságról szóló törvényre (Infotv.).</li>
+          <li><b>Küldd el a Polgármesteri Hivatalnak.</b> Szóban, írásban vagy elektronikusan is beadható: <br>e-mail: polghiv@herceghalom.hu (<a href="mailto:polghiv@herceghalom.hu">levél írása</a>) <br>postán vagy személyesen: 2053 Herceghalom, Gesztenyés út 13. <br>telefon: +36 23 530 560. <br>A válaszhoz add meg a neved és az elérhetőséged.</li>
+          <li><b>Vagy add be nyilvánosan a KiMitTud oldalon.</b> Ott a kérés és a válasz mindenki számára látható marad, így mások is tanulhatnak belőle. Herceghalom Község Önkormányzata egyelőre nem szerepel a KiMitTud adatgazdái között (<a href="https://kimittud.hu/select_authority?utf8=%E2%9C%93&amp;query=Herceghalom+K%C3%B6zs%C3%A9g+%C3%96nkorm%C3%A1nyzata&amp;bodies=1&amp;commit=Keres%C3%A9s">keresés</a>), de a felvételét bárki kérheti: <a href="https://kimittud.hu/help/requesting#missing_body">így kérhető egy új adatgazda felvétele</a>.</li>
+          <li><b>Határidő.</b> Az önkormányzatnak a lehető leghamarabb, de legfeljebb 15 napon belül kell teljesítenie a kérést. Ha a kért adat jelentős terjedelmű, ez egy alkalommal további 15 nappal meghosszabbítható, erről azonban az első 15 napon belül értesíteni kell. Ha költségtérítést kérnek, például a másolatokért, ezt is előre, a 15 napon belül közölniük kell.</li>
+          <li><b>Ha nem válaszolnak, vagy elutasítják.</b> Bejelentést tehetsz a <a href="https://naih.hu/">Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH)</a>, vagy bírósághoz fordulhatsz. A bírósági út határideje az elutasítás közlésétől vagy a határidő eredménytelen elteltétől számított 30 nap.</li>
+        </ol>
+      </div>
+      <div class="minta">
+        <h4 style="margin:0">Mintaszöveg</h4>
+        <p style="font-size:.9rem;color:var(--muted)">Másold ki, töltsd ki a szögletes zárójeles részeket, és küldd el e-mailben.</p>
+        <label for="mintaText" class="eyebrow">Közérdekű adatigénylés – minta</label>
+        <textarea id="mintaText">Címzett: Herceghalom Község Önkormányzata, Herceghalomi Polgármesteri Hivatal
+polghiv@herceghalom.hu
+
+Tárgy: Közérdekű adatigénylés
+
+Tisztelt Polgármesteri Hivatal!
+
+Az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény (Infotv.) 28. §-a alapján közérdekű adatigényléssel fordulok Önökhöz. Kérem, hogy az alábbi adatokat bocsássák rendelkezésemre:
+
+1. [a kért dokumentum vagy adat pontos megnevezése, például ülésdátum, határozatszám, időszak]
+2. [további kért adat]
+
+Az adatokat elektronikus formában, e-mailben kérem megküldeni a fenti címre.
+
+Amennyiben az igénylés teljesítéséért költségtérítést állapítanak meg, kérem, erről előzetesen, az Infotv. 29. §-ában foglaltak szerint tájékoztassanak.
+
+Köszönettel:
+[név]
+[értesítési cím vagy e-mail-cím]
+[dátum]</textarea>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn" type="button" id="copyMinta">Szöveg másolása</button><span id="copyMsg" aria-live="polite" style="font-size:.9rem;color:var(--muted)"></span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -504,6 +548,7 @@ footer.site .muted{color:var(--muted)}
     }).join('');
     Array.prototype.forEach.call(document.querySelectorAll('[data-meet]'),function(b){b.addEventListener('click',function(){setFilters({q:b.getAttribute('data-meet'),type:b.getAttribute('data-mt')});go();});});
   }
+  var cb=$('copyMinta');if(cb)cb.addEventListener('click',function(){var t=$('mintaText');try{navigator.clipboard.writeText(t.value).then(function(){$('copyMsg').textContent='A szöveg a vágólapra került.';},function(){t.select();$('copyMsg').textContent='Jelöld ki és másold a szöveget (Ctrl+C).';});}catch(e){t.select();$('copyMsg').textContent='Jelöld ki és másold a szöveget (Ctrl+C).';}});
   count.textContent='Betöltés…';
   fetch('adatok/dokumentumok.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(D){
     TOPICS=D.temak;
