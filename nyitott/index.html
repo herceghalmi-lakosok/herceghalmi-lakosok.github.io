@@ -71,7 +71,12 @@ p{margin:0}
 /* Header */
 header.site{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
-.brand{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand .bt{display:flex;flex-direction:column}
+.brand img{width:52px;height:52px;border-radius:50%;flex:none}
+.flogo{display:flex;gap:14px;align-items:flex-start}
+.flogo img{width:88px;height:88px;border-radius:50%;flex:none}
+@media (max-width:560px){.brand img{width:42px;height:42px}.flogo img{width:64px;height:64px}}
 .brand b{font-family:var(--font-display);font-size:1.3rem}
 .brand span{font-size:.8rem;color:var(--muted)}
 nav.main ul{display:flex;flex-wrap:wrap;gap:4px;list-style:none;margin:0;padding:0}
@@ -257,6 +262,8 @@ footer.site .muted{color:var(--muted)}
   html{scroll-padding-top:10px}
 }
 </style>
+<link rel="icon" type="image/png" href="kepek/favicon-64.png">
+<link rel="apple-touch-icon" href="kepek/apple-touch-icon.png">
 </head>
 <body>
 <a class="skip" href="#tartalom">Ugrás a tartalomra</a>
@@ -270,7 +277,7 @@ footer.site .muted{color:var(--muted)}
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#tartalom"><b>Nyitott Herceghalom</b><span>Lakossági tájékoztató az önkormányzat működéséről</span></a>
+    <a class="brand" href="#tartalom"><img src="kepek/gesztenyes-tisza-sziget-logo-96.webp" srcset="kepek/gesztenyes-tisza-sziget-logo-96.webp 1x, kepek/gesztenyes-tisza-sziget-logo-192.webp 2x" width="52" height="52" alt="A Gesztenyés Tisza Sziget logója"><span class="bt"><b>Nyitott Herceghalom</b><span>Lakossági tájékoztató az önkormányzat működéséről</span></span></a>
     <nav class="main" aria-label="Fő navigáció">
       <ul>
         <li><a href="#aktualis">Aktuális</a></li>
@@ -686,9 +693,10 @@ Köszönettel:
 <footer class="site" id="rolunk">
   <div class="wrap">
     <div>
-      <h3>Rólunk és impresszum</h3>
+      <div class="flogo"><img src="kepek/gesztenyes-tisza-sziget-logo-192.webp" width="88" height="88" alt="A Gesztenyés Tisza Sziget logója" loading="lazy"><div><h3>Rólunk és impresszum</h3>
       <p>A Nyitott Herceghalom nem hivatalos, lakossági tájékoztató oldal. Üzemelteti és szerkeszti a <b>Herceghalmi Gesztenyés Tisza Sziget</b>, amely a Tisza Párt helyi támogatói közössége. Az önkormányzat ezt az oldalt nem hagyta jóvá, és nem felel érte.</p>
       <p>A dokumentumok az önkormányzat nyilvános közlései. Mindegyik az eredeti forrásra mutat, ezeket nem módosítjuk. Az összefoglalók és a nyitott kérdések a szerkesztők megfogalmazásai.</p>
+    </div></div>
     </div>
     <div>
       <h3>Javítás, észrevétel</h3>
