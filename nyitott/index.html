@@ -416,14 +416,14 @@ footer.site .muted{color:var(--muted)}
       <aside class="rside">
         <h4>Mi történik a bejelentéseddel?</h4>
         <ol>
-          <li><b>Beérkezik</b> hozzánk e-mailben.</li>
+          <li><b>Beérkezik</b> hozzánk e-mailben, a gesztenyestisza@proton.me címre.</li>
           <li><b>Ellenőrizzük:</b> valós-e, nincs-e benne személyes adat vagy sértő tartalom. Ha kell, visszakérdezünk.</li>
           <li><b>Felkerül a térképre</b> „Beérkezett” állapottal.</li>
           <li><b>Továbbítjuk</b> az illetékesnek: az önkormányzatnak, a Magyar Közútnak, a MÁV-nak vagy a szolgáltatónak.</li>
           <li><b>Követjük</b> az ügyet, és frissítjük az állapotát egészen a megoldásig.</li>
         </ol>
         <h4 id="adatkezeles-bejelentes">Adatkezelési tájékoztató</h4>
-        <p>Adatkezelő: Herceghalmi Gesztenyés Tisza Sziget. A neved és az elérhetőséged kizárólag a bejelentés kezelésére és a visszajelzésre használjuk, a hozzájárulásod alapján (GDPR 6. cikk (1) a)). Ezeket nem tesszük közzé, és harmadik félnek csak akkor adjuk át, ha ezt kifejezetten kéred. A közzétett leírásból eltávolítjuk a személyes adatokat. Az adataidat az ügy lezárását követő egy évig őrizzük meg. Hozzájárulásodat bármikor visszavonhatod, és kérheted az adataid törlését a bejelentési e-mail-címen.</p>
+        <p>Adatkezelő: Herceghalmi Gesztenyés Tisza Sziget. A neved és az elérhetőséged kizárólag a bejelentés kezelésére és a visszajelzésre használjuk, a hozzájárulásod alapján (GDPR 6. cikk (1) a)). Ezeket nem tesszük közzé, és harmadik félnek csak akkor adjuk át, ha ezt kifejezetten kéred. A közzétett leírásból eltávolítjuk a személyes adatokat. Az adataidat az ügy lezárását követő egy évig őrizzük meg. Hozzájárulásodat bármikor visszavonhatod, és kérheted az adataid törlését a gesztenyestisza@proton.me címen.</p>
       </aside>
     </div>
   </div>
@@ -580,7 +580,8 @@ Köszönettel:
     </div>
     <div>
       <h3>Javítás, észrevétel</h3>
-      <p>Ha hibát találsz, vagy hiányzik egy dokumentum, írd meg nekünk a Gesztenyés Tisza Sziget Facebook-oldalán, és javítjuk.</p>
+      <p>Kapcsolat: <b>gesztenyestisza@proton.me</b> (<a href="mailto:gesztenyestisza@proton.me">levél írása</a>)</p>
+      <p>Ha hibát találsz, hiányzik egy dokumentum, vagy problémát szeretnél bejelenteni, írj nekünk erre a címre, vagy használd a <a href="#bejelentes">bejelentőfelületet</a>.</p>
       <p class="muted">Társoldal: <a href="https://herceghalmi-lakosok.github.io/">Panattoni-ügy Herceghalmon</a></p>
     </div>
     <div>
@@ -678,7 +679,7 @@ Köszönettel:
 <script src="vendor/leaflet/leaflet.js"></script>
 <script>
 (function(){
-  var REPORT_EMAIL='EMAIL_CIM_HIANYZIK'; // ide kerül a Gesztenyés Tisza Sziget bejelentési e-mail-címe
+  var REPORT_EMAIL='gesztenyestisza@proton.me'; // ide kerül a Gesztenyés Tisza Sziget bejelentési e-mail-címe
   var CATS={ut:'Út, kátyú',jarda:'Járda, gyalogos közlekedés, akadálymentesség',kozlekedesbiztonsag:'Közlekedésbiztonság, tábla, zebra',vilagitas:'Közvilágítás',viz:'Csapadékvíz, árok, csatorna',hulladek:'Hulladék, illegális lerakás',zold:'Fák, zöldterület',eszkoz:'Játszótér, pad, közterületi eszköz',epulet:'Középület, intézmény',egyeb:'Egyéb'};
   var STS={beerkezett:['Beérkezett','#2f6fd6'],tovabbitva:['Továbbítva','#c98a00'],folyamatban:['Folyamatban','#7b4cc4'],megoldva:['Megoldva','#2f8a55']};
   var $=function(id){return document.getElementById(id);};
