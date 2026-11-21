@@ -61,3 +61,11 @@ Az Önkormányzatok Elektronikus Hatásköri Jegyzékét a `.github/workflows/ha
 
 - Az `index.html` `#aktualis` szakaszában vannak a futó felhívások (most: közösségi költségvetés, határidő 2026. november 30.). Ha lejár egy határidő, a kártyát vedd ki vagy írd át, és a hero „Közelgő időpontok” listájából is töröld.
 - Új Hírmondó-szám megjelenésekor: a `#hirmondo` kártyán írd át a hónapot, a tartalmat és a PDF linkjét (`fid`); a dokumentumkeresőbe a `adatok/dokumentumok.json` fájlban vegyél fel egy új `"t":"Hírmondó"` tételt (`m` mezőben a hónap neve, pl. „2026. december”). Archívum: https://www.herceghalom.hu/?module=news&action=list&fname=hirmondo
+
+## Lakossági kérdőív (`kerdoiv/`)
+
+- A válaszok e-mailben érkeznek a gesztenyestisza@proton.me címre, tárgyuk: `[Kérdőív] Herceghalmi lakossági kérdőív – HK-2026-1`.
+- A levelekben soronként `K01=…` formátumú adatok vannak. A számok az opciók sorszámai a `kerdoiv/index.html` fájl `Q` tömbjében; több választás esetén vesszővel elválasztva, a K07 rácskérdésnél `a:4 b:2 …` formában (`?` = nincs tapasztalata, `-` = nem válaszolt).
+- Ha a gyűjtés közben módosítjátok a kérdéseket, írjátok át a `VERSION` értékét, hogy a régi és az új válaszok elkülöníthetők legyenek.
+- Az összesítéshez a feladók e-mail-címét nem kell megőrizni; aki értesítést kért (K12, K13), azt külön listában tartsátok, és a gyűjtés lezárása után a többit töröljétek.
+- Az eredményeket a kérdőív oldalának „Eredmények” szakaszában tegyétek közzé, a válaszok számával és a gyűjtés időszakával. Jelezzétek, hogy a felmérés nem reprezentatív.
