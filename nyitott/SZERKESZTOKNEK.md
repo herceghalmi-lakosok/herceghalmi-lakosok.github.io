@@ -56,3 +56,8 @@ Az Önkormányzatok Elektronikus Hatásköri Jegyzékét a `.github/workflows/ha
 - A lefordított oldal a `koltsegvetes/`, a forrása a `koltsegvetes-forras/` mappában van; a frissítés lépéseit a forrás README-je írja le.
 - Az adatok ezer forintban (eFt) szerepelnek. Működési bevétel = B1+B3+B4+B6, működési kiadás = K1+K2+K3+K4+K512; a tartalék (K513) nincs benne.
 - Új zárszámadás vagy költségvetési rendelet után egy új sor kerül az Excelbe, és az `alapEv` értéke a tervév.
+
+## Aktuális rovat és Herceghalmi Hírmondó
+
+- Az `index.html` `#aktualis` szakaszában vannak a futó felhívások (most: közösségi költségvetés, határidő 2026. november 30.). Ha lejár egy határidő, a kártyát vedd ki vagy írd át, és a hero „Közelgő időpontok” listájából is töröld.
+- Új Hírmondó-szám megjelenésekor: a `#hirmondo` kártyán írd át a hónapot, a tartalmat és a PDF linkjét (`fid`); a dokumentumkeresőbe a `adatok/dokumentumok.json` fájlban vegyél fel egy új `"t":"Hírmondó"` tételt (`m` mezőben a hónap neve, pl. „2026. december”). Archívum: https://www.herceghalom.hu/?module=news&action=list&fname=hirmondo
