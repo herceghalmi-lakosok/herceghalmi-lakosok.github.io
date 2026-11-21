@@ -49,3 +49,10 @@ Az Önkormányzatok Elektronikus Hatásköri Jegyzékét a `.github/workflows/ha
 - Kézi indítás: GitHub → Actions → „Hatásköri jegyzék frissítése” → Run workflow.
 - Kézi frissítés letöltött zip-ből: `python3 nyitott/tools/build_hataskori.py --zip <fájl.zip> --out nyitott/hataskori --kiadas 2026-IV --forras <zip-URL>`
 - Ha a munkafolyamat hibával áll le, a kormany.hu valószínűleg megváltoztatta a letöltési címet, vagy elutasítja a GitHub szervereit. Ilyenkor a kézi frissítés működik.
+
+
+## Közérthető költségvetés (`koltsegvetes/`)
+
+- A lefordított oldal a `koltsegvetes/`, a forrása a `koltsegvetes-forras/` mappában van; a frissítés lépéseit a forrás README-je írja le.
+- Az adatok ezer forintban (eFt) szerepelnek. Működési bevétel = B1+B3+B4+B6, működési kiadás = K1+K2+K3+K4+K512; a tartalék (K513) nincs benne.
+- Új zárszámadás vagy költségvetési rendelet után egy új sor kerül az Excelbe, és az `alapEv` értéke a tervév.

@@ -1,0 +1,34 @@
+{
+    "varosNeve": "Herceghalom",
+    "alapEv": 2026,
+    "szinek": {
+        "elsodleges": "#2f6b4f",
+        "masodlagos": "#2f6fd6",
+        "harmadlagos": "#c98a00"
+    },
+    "elerhetoseg": {
+        "cim": "Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget · gesztenyestisza@proton.me",
+        "weboldal": "https://herceghalmi-lakosok.github.io/nyitott/"
+    },
+    "szovegek": {
+        "polgarmesterNeve": "",
+        "polgarmesterKoszonto": "",
+        "kisokosPeldak": {
+            "kotelezo": "pl. a Csicsergő Óvoda fenntartása, a közvilágítás, a Polgármesteri Hivatal működése",
+            "onkentes": "fejlesztésekre, beruházásokra és pályázatokra, például az Egészségház felújítására"
+        }
+    },
+    "kepek": {
+        "cimer": "",
+        "polgarmester": ""
+    },
+    "szekciok": {
+        "polgarmesteriUzenet": false,
+        "beruhazasok": true,
+        "kulcsindikatorok": true,
+        "szolidaritasiGrafikon": false,
+        "koltsegvetesiKisokos": true,
+        "bevetelMegoszlas": true,
+        "kiadasMegoszlas": true
+    }
+}
