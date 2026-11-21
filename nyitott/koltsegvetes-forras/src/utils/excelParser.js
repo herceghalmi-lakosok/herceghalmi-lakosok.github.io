@@ -38,23 +38,27 @@ const parseValue = (val) => {
 
 export const fetchAndParseData = async () => {
     try {
-        const [bevRes, kiadRes] = await Promise.all([
-            fetch('data/bevetel.xlsx'),
-            fetch('data/kiadas.xlsx')
-        ]);
-
-        const bevBuffer = await bevRes.arrayBuffer();
-        const kiadBuffer = await kiadRes.arrayBuffer();
-
-        const bevObj = XLSX.read(bevBuffer, { type: 'array' });
-        const kiadObj = XLSX.read(kiadBuffer, { type: 'array' });
-
-        // Munkalapok keresése név alapján, fallback az első lapra
-        const bevSheet = bevObj.Sheets['Alaptábla I.'] || bevObj.Sheets[bevObj.SheetNames[0]];
-        const kiadSheet = kiadObj.Sheets['II. Alaptábla'] || kiadObj.Sheets[kiadObj.SheetNames[0]];
-
-        const bevData = XLSX.utils.sheet_to_json(bevSheet, { header: 1 });
-        const kiadData = XLSX.utils.sheet_to_json(kiadSheet, { header: 1 });
+        // Elsődleges forrás: a két Excel-fájl. Ha nem érhetők el (pl. előnézetben),
+        // a public/data/adatok.json tartalék (ugyanazok a sorok) töltődik be.
+        let bevData, kiadData;
+        try {
+            const [bevRes, kiadRes] = await Promise.all([
+                fetch('data/bevetel.xlsx'),
+                fetch('data/kiadas.xlsx')
+            ]);
+            if (!bevRes.ok || !kiadRes.ok) throw new Error('Excel nem érhető el');
+            const bevObj = XLSX.read(await bevRes.arrayBuffer(), { type: 'array' });
+            const kiadObj = XLSX.read(await kiadRes.arrayBuffer(), { type: 'array' });
+            const bevSheet = bevObj.Sheets['Alaptábla I.'] || bevObj.Sheets[bevObj.SheetNames[0]];
+            const kiadSheet = kiadObj.Sheets['II. Alaptábla'] || kiadObj.Sheets[kiadObj.SheetNames[0]];
+            bevData = XLSX.utils.sheet_to_json(bevSheet, { header: 1 });
+            kiadData = XLSX.utils.sheet_to_json(kiadSheet, { header: 1 });
+        } catch (e) {
+            const res = await fetch('data/adatok.json');
+            const j = await res.json();
+            bevData = j.bevetel;
+            kiadData = j.kiadas;
+        }
 
         const results = [];
 
