@@ -1,0 +1,43 @@
+# Nyitott Herceghalom – szerkesztői útmutató
+
+## Bejelentések felvétele a problématérképre
+
+A lakosok bejelentései e-mailben érkeznek (a cím az `index.html`-ben, a `REPORT_EMAIL` változóban van beállítva). A térkép az `adatok/bejelentesek.json` fájlból dolgozik: ami ebben szerepel, az nyilvánosan megjelenik.
+
+### Mielőtt felveszel egy bejelentést
+
+1. Valós-e a probléma, és Herceghalomban van-e?
+2. Távolítsd el a leírásból a személyes adatokat: nevet, telefonszámot, rendszámot, házszámot, ha az egy magánszemélyhez köthető.
+3. Ne kerüljön fel sértő, vádaskodó vagy egy konkrét személyt minősítő szöveg. A probléma leírása tárgyszerű legyen.
+4. A bejelentő nevét és elérhetőségét soha ne írd a fájlba.
+5. Fénykép csak akkor kerüljön fel, ha nem látszik rajta arc vagy rendszám.
+
+### Egy bejelentés mezői
+
+```json
+{
+  "id": "2026-004",
+  "cim": "Kátyú a Liget utca elején",
+  "kategoria": "ut",
+  "leiras": "Tárgyszerű leírás, személyes adatok nélkül.",
+  "helyszin": "Liget utca 1. előtt",
+  "lat": 47.4981,
+  "lng": 18.7480,
+  "allapot": "beerkezett",
+  "bejelentve": "2026-11-22",
+  "frissitve": "2026-11-22",
+  "illetekes": "Herceghalom Község Önkormányzata",
+  "megjegyzes": "Továbbítva a polghiv@herceghalom.hu címre.",
+  "link": "",
+  "forras": "lakossági bejelentés"
+}
+```
+
+- `kategoria`: `ut`, `jarda`, `kozlekedesbiztonsag`, `vilagitas`, `viz`, `hulladek`, `zold`, `eszkoz`, `epulet`, `egyeb`
+- `allapot`: `beerkezett`, `tovabbitva`, `folyamatban`, `megoldva`
+- `lat`, `lng`: a bejelentő e-mailjében szereplő koordináta, vagy az OpenStreetMap-ről kimásolt érték.
+- Állapotváltozáskor frissítsd az `allapot`, a `frissitve` és a `megjegyzes` mezőt.
+
+## Dokumentumkereső frissítése
+
+A dokumentumlista az `adatok/dokumentumok.json` fájlban van. A frissítést a herceghalom.hu rovataiból végezzük; a fájlt egészében cseréljük.

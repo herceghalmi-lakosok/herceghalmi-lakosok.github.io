@@ -1,0 +1,53 @@
+{
+  "frissitve": "2026-11-21",
+  "bejelentesek": [
+    {
+      "id": "2026-001",
+      "cim": "Veszélyes, nehezen belátható csomópont: 1-es főút és Gesztenyés út",
+      "kategoria": "kozlekedesbiztonsag",
+      "leiras": "A STOP-vonaltól nem látni be a főutat, ezért a főút széléig kell előregurulni. A négyágú csomópontban nehezen áttekinthetők a kanyarodó és a felfelé érkező járművek mozgásai. A vasútállomás felé gyalog vagy kerékpárral közlekedők védelem nélkül kelnek át a széles csomóponton. 2026. november 17-én halálos baleset történt az 1-es főúton, Herceghalom közelében.",
+      "helyszin": "1-es főút – Gesztenyés út kereszteződése",
+      "lat": 47.49476,
+      "lng": 18.75240,
+      "allapot": "tovabbitva",
+      "bejelentve": "2026-11-20",
+      "frissitve": "2026-11-20",
+      "illetekes": "Magyar Közút Nonprofit Zrt., Herceghalom Község Önkormányzata, rendőrség",
+      "megjegyzes": "Javaslat a térség országgyűlési képviselőjének: közös helyszíni bejárás, forgalom- és sebességmérés, átmeneti intézkedések, körforgalom előkészítése.",
+      "link": "dok/javaslat-gesztenyes-csomopont-2026-11-20.pdf",
+      "forras": "Gesztenyés Tisza Sziget"
+    },
+    {
+      "id": "2026-002",
+      "cim": "Gödrös buszöböl és bejárati út a vasútállomásnál",
+      "kategoria": "ut",
+      "leiras": "A vasútállomás előtti buszöböl és bejárati út burkolata gödrös, töredezett. Az állapota a buszokra és az utasokra is veszélyes.",
+      "helyszin": "Herceghalom vasútállomás, buszöböl és bejárati út",
+      "lat": 47.49425,
+      "lng": 18.74355,
+      "allapot": "tovabbitva",
+      "bejelentve": "2026-11-20",
+      "frissitve": "2026-11-20",
+      "illetekes": "MÁV, Magyar Közút Nonprofit Zrt., Herceghalom Község Önkormányzata",
+      "megjegyzes": "A javaslat fényképmelléklete dokumentálja az állapotot.",
+      "link": "dok/javaslat-vasutallomas-2026-11-20.pdf",
+      "forras": "Gesztenyés Tisza Sziget"
+    },
+    {
+      "id": "2026-003",
+      "cim": "A vasútállomás nem akadálymentes, a gyalogos megközelítés veszélyes",
+      "kategoria": "jarda",
+      "leiras": "Babakocsival vagy kerekesszékkel a peronok szinte megközelíthetetlenek. Hiányos a járda és a világítás, a környezet gazos, a burkolat repedezett, a lépcső melletti betonfal sérült.",
+      "helyszin": "Herceghalom vasútállomás",
+      "lat": 47.49395,
+      "lng": 18.74290,
+      "allapot": "tovabbitva",
+      "bejelentve": "2026-11-20",
+      "frissitve": "2026-11-20",
+      "illetekes": "MÁV, Herceghalom Község Önkormányzata",
+      "megjegyzes": "Az önkormányzat 2026 áprilisában továbbította a vasútállomás biztonságáért gyűjtött aláírásokat (40/2026. határozat).",
+      "link": "dok/javaslat-vasutallomas-2026-11-20.pdf",
+      "forras": "Gesztenyés Tisza Sziget"
+    }
+  ]
+}

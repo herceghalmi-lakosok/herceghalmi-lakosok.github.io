@@ -7,6 +7,7 @@
 <meta name="description" content="Nem hivatalos, lakossági tájékoztató oldal Herceghalom önkormányzati döntéseiről, dokumentumairól és a közéletet foglalkoztató ügyekről. Üzemelteti: Herceghalmi Gesztenyés Tisza Sziget.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -112,6 +113,46 @@ section.block{padding:44px 0;border-top:1px solid var(--line)}
 .fig b{display:block;font-family:var(--font-display);font-size:1.15rem;font-variant-numeric:tabular-nums}
 .fig span{font-size:.78rem;color:var(--muted);line-height:1.3;display:block}
 
+/* Problem map */
+.pmap-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:start}
+.pmap-col,.plist-col,.report>*,.pfilters>*,.rgrid>*,.filters>*{min-width:0}
+.pfilters select,.rgrid input,.rgrid select,.rgrid textarea,.filters input,.filters select{width:100%;min-width:0;box-sizing:border-box}
+.pmap{height:460px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);z-index:0}
+.plegend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:.85rem;color:var(--muted)}
+.plegend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.pfilters{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pfilters label,.rgrid label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.pfilters select,.rgrid input,.rgrid select,.rgrid textarea{font:inherit;font-weight:400;color:var(--ink);padding:9px 11px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.pcount{font-size:.88rem;color:var(--muted);margin:10px 0 4px}
+.plist{list-style:none;margin:0;padding:0;max-height:390px;overflow:auto;border-top:1px solid var(--line)}
+.plist li{padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.plist li:hover,.plist li:focus-visible{background:var(--accent-soft)}
+.plist .pt{font-weight:600;display:block}
+.plist .pm{font-size:.84rem;color:var(--muted)}
+.stpill{font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;margin-right:6px}
+.st-beerkezett{background:#e6eefc;color:#1f4fa3}.st-tovabbitva{background:var(--warn-soft);color:var(--warn)}.st-folyamatban{background:#efe6fb;color:#6a3fb0}.st-megoldva{background:var(--good-soft);color:var(--good)}
+.pop h4{margin:0 0 4px;font-size:1rem}.pop p{margin:4px 0;font-size:.88rem}
+.report{margin-top:28px;display:grid;grid-template-columns:1.5fr 1fr;gap:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.report h3{margin-bottom:6px}
+.rhelp{color:var(--muted);font-size:.94rem}
+.rwarn{margin:10px 0 14px;font-size:.9rem;background:var(--bad-soft);color:var(--bad);padding:8px 12px;border-radius:var(--radius)}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rgrid .wide{grid-column:1/-1}
+.rloc{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:.9rem;background:var(--paper);border:1px dashed var(--line);border-radius:var(--radius);padding:9px 12px}
+.rcheck{flex-direction:row!important;align-items:flex-start;gap:8px!important;font-weight:400!important;color:var(--ink)!important;font-size:.88rem!important}
+.rcheck input{margin-top:4px}
+.rerr{color:var(--bad);font-size:.9rem;min-height:1.2em;margin:8px 0}
+.ractions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.rmsg{font-size:.9rem;color:var(--muted)}
+.rside{font-size:.9rem;border-left:1px solid var(--line);padding-left:20px}
+.rside h4{font-size:1rem;margin:0 0 6px}
+.rside ol{padding-left:18px;margin:0 0 16px;display:grid;gap:5px}
+.rside p{color:var(--muted)}
+.picking .pmap{outline:3px solid var(--accent);cursor:crosshair}
+.leaflet-container{font-family:var(--font-body)}
+@media (max-width:860px){.pmap-grid,.report{grid-template-columns:1fr}.rside{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:14px}.pmap{height:360px}.rgrid{grid-template-columns:1fr}}
+
 /* Search */
 .search-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
 .filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}
@@ -161,7 +202,7 @@ thead th{background:var(--accent-soft);font-size:.82rem;text-transform:uppercase
 .legal-note{margin-top:12px;font-size:.88rem;color:var(--muted);max-width:80ch}
 
 /* Act */
-.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;counter-reset:s}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;counter-reset:s}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;counter-increment:s}
 .step h3::before{content:counter(s) ". ";color:var(--accent)}
 .step p{font-size:.94rem;color:var(--muted);margin-top:6px}
@@ -205,6 +246,7 @@ footer.site .muted{color:var(--muted)}
     <nav class="main" aria-label="Fő navigáció">
       <ul>
         <li><a href="#temak">Témák</a></li>
+        <li><a href="#problemak">Problématérkép</a></li>
         <li><a href="#dokumentumok">Dokumentumkereső</a></li>
         <li><a href="#testulet">Testület</a></li>
         <li><a href="#atlathatosag">Átláthatóság</a></li>
@@ -321,6 +363,72 @@ footer.site .muted{color:var(--muted)}
   </div>
 </section>
 
+<section class="block" id="problemak" aria-labelledby="prob-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="prob-h">Problématérkép és bejelentés</h2>
+      <p>Kátyú, sötét utca, veszélyes kereszteződés, kidőlt tábla, illegális szemét? Jelezd nekünk. Ellenőrzés után felkerül a térképre, továbbítjuk az illetékesnek, és itt követheted, mi lett vele.</p>
+    </div>
+    <div class="pmap-grid">
+      <div class="pmap-col">
+        <div id="pmap" class="pmap" role="region" aria-label="Problématérkép"></div>
+        <p id="pmapNote" class="legal-note" hidden></p>
+        <div class="plegend" aria-label="Jelmagyarázat" id="plegend"></div>
+      </div>
+      <div class="plist-col">
+        <div class="pfilters">
+          <label for="pfCat">Kategória<select id="pfCat"><option value="">Mind</option></select></label>
+          <label for="pfSt">Állapot<select id="pfSt"><option value="">Mind</option></select></label>
+        </div>
+        <p class="pcount" id="pcount" aria-live="polite"></p>
+        <ul class="plist" id="plist"></ul>
+      </div>
+    </div>
+
+    <div class="report" id="bejelentes">
+      <div>
+        <h3>Probléma bejelentése</h3>
+        <p class="rhelp">Töltsd ki az űrlapot, és jelöld meg a helyet a térképen: kattints oda, ahol a probléma van. A „Bejelentés elküldése” gomb előkészít egy e-mailt a levelezőprogramodban. Ha fényképed is van, csatold az e-mailhez. Személyek arca és rendszám ne látsszon rajta.</p>
+        <p class="rwarn"><b>Életveszély, baleset, tűz vagy közműtörés esetén</b> ne itt jelezd: hívd a 112-t, illetve közvetlenül az illetékes szolgáltatót.</p>
+        <form id="rform" novalidate>
+          <div class="rgrid">
+            <label for="rCat">Kategória *<select id="rCat" required><option value="">Válassz…</option></select></label>
+            <label for="rTitle">Rövid cím *<input id="rTitle" type="text" maxlength="90" required placeholder="Például: kátyú a Liget utca elején"></label>
+            <label for="rPlace" class="wide">Helyszín *<input id="rPlace" type="text" maxlength="140" required placeholder="Utca, házszám vagy közeli tájékozódási pont"></label>
+            <label for="rDesc" class="wide">Leírás *<textarea id="rDesc" rows="4" maxlength="1500" required placeholder="Mi a probléma, mióta áll fenn, kit és mennyire veszélyeztet?"></textarea></label>
+            <div class="wide rloc">
+              <span id="rLocTxt">Még nincs kijelölve hely a térképen.</span>
+              <button type="button" class="linkbtn" id="rPick">Hely kijelölése a térképen</button>
+              <button type="button" class="linkbtn" id="rGeo">Saját helyzetem</button>
+            </div>
+            <label for="rName">Neved (nem tesszük közzé)<input id="rName" type="text" maxlength="80" autocomplete="name"></label>
+            <label for="rContact">E-mail vagy telefon a visszajelzéshez (nem tesszük közzé)<input id="rContact" type="text" maxlength="100" autocomplete="email"></label>
+            <label class="wide rcheck"><input id="rConsent" type="checkbox" required><span>Hozzájárulok, hogy a Herceghalmi Gesztenyés Tisza Sziget a bejelentésemet az alábbi <a href="#adatkezeles-bejelentes">adatkezelési tájékoztató</a> szerint kezelje, és a probléma leírását (név és elérhetőség nélkül) a térképen közzétegye és az illetékesnek továbbítsa. *</span></label>
+          </div>
+          <p class="rerr" id="rErr" role="alert"></p>
+          <div class="ractions">
+            <button class="btn" type="submit">Bejelentés elküldése</button>
+            <button class="btn ghost" type="button" id="rCopy">Szöveg másolása</button>
+            <span id="rMsg" aria-live="polite" class="rmsg"></span>
+          </div>
+        </form>
+      </div>
+      <aside class="rside">
+        <h4>Mi történik a bejelentéseddel?</h4>
+        <ol>
+          <li><b>Beérkezik</b> hozzánk e-mailben.</li>
+          <li><b>Ellenőrizzük:</b> valós-e, nincs-e benne személyes adat vagy sértő tartalom. Ha kell, visszakérdezünk.</li>
+          <li><b>Felkerül a térképre</b> „Beérkezett” állapottal.</li>
+          <li><b>Továbbítjuk</b> az illetékesnek: az önkormányzatnak, a Magyar Közútnak, a MÁV-nak vagy a szolgáltatónak.</li>
+          <li><b>Követjük</b> az ügyet, és frissítjük az állapotát egészen a megoldásig.</li>
+        </ol>
+        <h4 id="adatkezeles-bejelentes">Adatkezelési tájékoztató</h4>
+        <p>Adatkezelő: Herceghalmi Gesztenyés Tisza Sziget. A neved és az elérhetőséged kizárólag a bejelentés kezelésére és a visszajelzésre használjuk, a hozzájárulásod alapján (GDPR 6. cikk (1) a)). Ezeket nem tesszük közzé, és harmadik félnek csak akkor adjuk át, ha ezt kifejezetten kéred. A közzétett leírásból eltávolítjuk a személyes adatokat. Az adataidat az ügy lezárását követő egy évig őrizzük meg. Hozzájárulásodat bármikor visszavonhatod, és kérheted az adataid törlését a bejelentési e-mail-címen.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="dokumentumok" aria-labelledby="dok-h">
   <div class="wrap">
     <div class="sec-head">
@@ -417,6 +525,7 @@ footer.site .muted{color:var(--muted)}
       <div class="step"><h3>Kérj ki adatot</h3><p>Közérdekű adatot bárki igényelhet, indoklás nélkül. Lent lépésről lépésre leírjuk, hogyan, és mintaszöveget is adunk hozzá: <a href="#adatigenyles">közérdekű adatigénylés</a>.</p></div>
       <div class="step"><h3>Tekints bele az iratokba</h3><p>A nyilvános ülések előterjesztéseibe és jegyzőkönyveibe a választópolgárok betekinthetnek a Polgármesteri Hivatalban.</p></div>
       <div class="step"><h3>Ellenőrizd a vagyonnyilatkozatokat</h3><p>A választott tisztségviselők vagyonnyilatkozata nyilvános. Hiányosságot vagy szabálytalanságot az <a href="https://integritashatosag.whispli.com/lp/vnyt?locale=hu">Integritás Hatóság bejelentőfelületén</a> jelezhetsz, további tájékoztatás a <a href="https://integritashatosag.hu/tajekoztatok-az-onkormanyzatokhozkapcsolodo-vagyonnyilatkozatokrol/">Hatóság honlapján</a>.</p></div>
+      <div class="step"><h3>Jelezz egy problémát</h3><p>Kátyú, sötét utca, veszélyes kereszteződés: <a href="#bejelentes">jelentsd be</a>, és kövesd a <a href="#problemak">problématérképen</a>, mi lett vele.</p></div>
       <div class="step"><h3>Javasolj fejlesztést</h3><p>A közösségi költségvetés indulásával a lakosok maguk is javasolhatnak fejlesztéseket. Figyeld a felhívást.</p></div>
     </div>
     <div class="foia" id="adatigenyles">
@@ -476,7 +585,7 @@ Köszönettel:
     </div>
     <div>
       <h3>Adatkezelés és akadálymentesség</h3>
-      <p>Az oldal nem használ sütiket és látogatásmérést, és nem gyűjt személyes adatot.</p>
+      <p>Az oldal nem használ sütiket és látogatásmérést. Személyes adatot csak akkor kezelünk, ha valaki bejelentést küld nekünk e-mailben, erről a <a href="#adatkezeles-bejelentes">bejelentési adatkezelési tájékoztató</a> szól. A térképet az OpenStreetMap szolgáltatja.</p>
       <p>Az oldalt a WCAG 2.1 AA szint követelményeinek figyelembevételével készítettük: billentyűzettel is kezelhető, képernyőolvasóval is használható, nagyítható, és sötét módban is olvasható. A hivatkozott PDF-ek akadálymentességéért az önkormányzat felel.</p>
       <p class="muted">Utolsó frissítés: 2026. november 21.</p>
     </div>
@@ -564,6 +673,67 @@ Köszönettel:
     $('docCount').textContent=docs.length;
     render();meetings(D.ulesek);
   }).catch(function(){count.textContent='';out.innerHTML='<li class="empty">A dokumentumlista nem töltődött be. Frissítsd az oldalt, vagy nézd meg a dokumentumokat közvetlenül a <a href="https://www.herceghalom.hu/">herceghalom.hu</a> oldalon.</li>';});
+})();
+</script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script>
+(function(){
+  var REPORT_EMAIL='EMAIL_CIM_HIANYZIK'; // ide kerül a Gesztenyés Tisza Sziget bejelentési e-mail-címe
+  var CATS={ut:'Út, kátyú',jarda:'Járda, gyalogos közlekedés, akadálymentesség',kozlekedesbiztonsag:'Közlekedésbiztonság, tábla, zebra',vilagitas:'Közvilágítás',viz:'Csapadékvíz, árok, csatorna',hulladek:'Hulladék, illegális lerakás',zold:'Fák, zöldterület',eszkoz:'Játszótér, pad, közterületi eszköz',epulet:'Középület, intézmény',egyeb:'Egyéb'};
+  var STS={beerkezett:['Beérkezett','#2f6fd6'],tovabbitva:['Továbbítva','#c98a00'],folyamatban:['Folyamatban','#7b4cc4'],megoldva:['Megoldva','#2f8a55']};
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function fmt(d){if(!d)return '';var p=d.split('-');return p[0]+'. '+['jan.','febr.','márc.','ápr.','máj.','jún.','júl.','aug.','szept.','okt.','nov.','dec.'][+p[1]-1]+' '+(+p[2])+'.';}
+  Object.keys(CATS).forEach(function(k){[$('pfCat'),$('rCat')].forEach(function(sel){var o=document.createElement('option');o.value=k;o.textContent=CATS[k];sel.appendChild(o);});});
+  Object.keys(STS).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=STS[k][0];$('pfSt').appendChild(o);});
+  $('plegend').innerHTML=Object.keys(STS).map(function(k){return '<span><i class="dot" style="background:'+STS[k][1]+'"></i>'+STS[k][0]+'</span>';}).join('');
+  var map=null,markers={},items=[],pickMarker=null,picking=false,pick=null;
+  var CENTER=[47.4975,18.7475];
+  if(window.L){
+    map=L.map('pmap',{scrollWheelZoom:false}).setView(CENTER,15);
+    var tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-közreműködők'}).addTo(map);
+    var errs=0;tiles.on('tileerror',function(){errs++;if(errs===4){var n=$('pmapNote');n.hidden=false;n.textContent='A térkép háttere nem töltődött be. A jelölők és a lista így is használhatók; frissítsd az oldalt, vagy nyisd meg a herceghalmi-lakosok.github.io/nyitott/ címen.';}});
+    map.on('click',function(e){if(!picking)return;setPick(e.latlng.lat,e.latlng.lng);});
+  }else{$('pmapNote').hidden=false;$('pmapNote').textContent='A térkép nem töltődött be. A bejelentések listája így is használható.';}
+  function icon(st){var c=(STS[st]||STS.beerkezett)[1];return L.divIcon({className:'',html:'<span class="dot" style="background:'+c+';width:18px;height:18px"></span>',iconSize:[18,18],iconAnchor:[9,9],popupAnchor:[0,-8]});}
+  function popup(b){var st=STS[b.allapot]||STS.beerkezett;return '<div class="pop"><h4>'+esc(b.cim)+'</h4><p><span class="stpill st-'+esc(b.allapot)+'">'+st[0]+'</span>'+esc(CATS[b.kategoria]||'')+'</p><p>'+esc(b.helyszin)+'</p><p>'+esc(b.leiras)+'</p>'+(b.illetekes?'<p><b>Illetékes:</b> '+esc(b.illetekes)+'</p>':'')+(b.megjegyzes?'<p>'+esc(b.megjegyzes)+'</p>':'')+'<p style="color:#666">Bejelentve: '+fmt(b.bejelentve)+(b.frissitve&&b.frissitve!==b.bejelentve?' · frissítve: '+fmt(b.frissitve):'')+'</p>'+(b.link?'<p><a href="'+esc(b.link)+'">Kapcsolódó dokumentum</a></p>':'')+'</div>';}
+  function render(){
+    var c=$('pfCat').value,s=$('pfSt').value;
+    var res=items.filter(function(b){return (!c||b.kategoria===c)&&(!s||b.allapot===s);});
+    $('pcount').textContent=res.length+' bejelentés'+(items.length!==res.length?' ('+items.length+' közül)':'');
+    if(map){Object.keys(markers).forEach(function(id){var on=res.some(function(b){return b.id===id;});if(on&&!map.hasLayer(markers[id]))markers[id].addTo(map);if(!on&&map.hasLayer(markers[id]))map.removeLayer(markers[id]);});}
+    $('plist').innerHTML=res.length?res.map(function(b){var st=STS[b.allapot]||STS.beerkezett;return '<li tabindex="0" data-id="'+esc(b.id)+'"><span class="pt">'+esc(b.cim)+'</span><span class="pm"><span class="stpill st-'+esc(b.allapot)+'">'+st[0]+'</span>'+esc(CATS[b.kategoria]||'')+' · '+esc(b.helyszin)+' · '+fmt(b.bejelentve)+'</span></li>';}).join(''):'<li class="empty" style="cursor:default">Nincs a szűrésnek megfelelő bejelentés.</li>';
+    Array.prototype.forEach.call(document.querySelectorAll('#plist li[data-id]'),function(li){function go(){var m=markers[li.getAttribute('data-id')];if(m&&map){map.setView(m.getLatLng(),17);m.openPopup();$('pmap').scrollIntoView({block:'nearest'});}}li.addEventListener('click',go);li.addEventListener('keydown',function(e){if(e.key==='Enter')go();});});
+  }
+  $('pfCat').addEventListener('input',render);$('pfSt').addEventListener('input',render);
+  fetch('adatok/bejelentesek.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(D){
+    items=(D.bejelentesek||[]).slice().sort(function(a,b){return a.bejelentve<b.bejelentve?1:-1;});
+    if(map){var pts=[];items.forEach(function(b){if(b.lat&&b.lng){markers[b.id]=L.marker([b.lat,b.lng],{icon:icon(b.allapot),title:b.cim}).bindPopup(popup(b),{maxWidth:300});pts.push([b.lat,b.lng]);}});}
+    render();
+  }).catch(function(){$('pcount').textContent='A bejelentések listája nem töltődött be.';});
+  // picking
+  function setPick(lat,lng){pick=[+lat.toFixed(6),+lng.toFixed(6)];if(map){if(!pickMarker){pickMarker=L.marker(pick,{draggable:true,title:'A bejelentés helye'}).addTo(map);pickMarker.on('dragend',function(){var p=pickMarker.getLatLng();setPick(p.lat,p.lng);});}else pickMarker.setLatLng(pick);}
+    $('rLocTxt').textContent='Kijelölt hely: '+pick[0]+', '+pick[1]+' (a jelölő húzással pontosítható)';stopPick();}
+  function stopPick(){picking=false;document.body.classList.remove('picking');$('rPick').textContent=pick?'Hely módosítása a térképen':'Hely kijelölése a térképen';}
+  $('rPick').addEventListener('click',function(){if(!map){$('rErr').textContent='A térkép nem érhető el, add meg a helyszínt szövegesen.';return;}picking=true;document.body.classList.add('picking');$('rPick').textContent='Kattints a térképre a probléma helyén…';$('pmap').scrollIntoView({behavior:'smooth',block:'center'});});
+  $('rGeo').addEventListener('click',function(){try{navigator.geolocation.getCurrentPosition(function(p){setPick(p.coords.latitude,p.coords.longitude);if(map)map.setView(pick,17);},function(){$('rErr').textContent='A helymeghatározás nem sikerült. Jelöld ki a helyet a térképen.';},{enableHighAccuracy:true,timeout:10000});}catch(e){$('rErr').textContent='A helymeghatározás itt nem érhető el. Jelöld ki a helyet a térképen.';}});
+  function compose(){
+    var f={cat:$('rCat').value,t:$('rTitle').value.trim(),p:$('rPlace').value.trim(),d:$('rDesc').value.trim(),n:$('rName').value.trim(),c:$('rContact').value.trim()};
+    var miss=[];if(!f.cat)miss.push('kategória');if(!f.t)miss.push('rövid cím');if(!f.p)miss.push('helyszín');if(!f.d)miss.push('leírás');
+    if(miss.length){$('rErr').textContent='Hiányzik: '+miss.join(', ')+'.';return null;}
+    if(!$('rConsent').checked){$('rErr').textContent='A beküldéshez el kell fogadnod az adatkezelési tájékoztatót.';return null;}
+    $('rErr').textContent='';
+    var subj='[Bejelentés] '+CATS[f.cat]+' – '+f.t;
+    var body='PROBLÉMA BEJELENTÉSE – Nyitott Herceghalom\n\nKategória: '+CATS[f.cat]+'\nCím: '+f.t+'\nHelyszín: '+f.p+'\n'+(pick?'Koordináta: '+pick[0]+', '+pick[1]+'\nTérkép: https://www.openstreetmap.org/?mlat='+pick[0]+'&mlon='+pick[1]+'#map=18/'+pick[0]+'/'+pick[1]+'\n':'Koordináta: nincs megadva\n')+'\nLeírás:\n'+f.d+'\n\nBejelentő (nem közzétehető): '+(f.n||'–')+'\nElérhetőség (nem közzétehető): '+(f.c||'–')+'\n\nA bejelentő hozzájárult az adatkezelési tájékoztató szerinti adatkezeléshez.\n(Ha van fénykép, csatold ehhez az e-mailhez.)';
+    return {subj:subj,body:body};
+  }
+  $('rform').addEventListener('submit',function(e){e.preventDefault();var m=compose();if(!m)return;
+    if(REPORT_EMAIL.indexOf('@')<0){$('rMsg').textContent='A bejelentési e-mail-cím még nincs beállítva. Használd a „Szöveg másolása” gombot.';return;}
+    var href='mailto:'+REPORT_EMAIL+'?subject='+encodeURIComponent(m.subj)+'&body='+encodeURIComponent(m.body);
+    window.location.href=href;
+    $('rMsg').innerHTML='Megnyílt a levelezőprogramod? Ha nem, másold ki a szöveget, és küldd el ide: <b>'+esc(REPORT_EMAIL)+'</b>.';});
+  $('rCopy').addEventListener('click',function(){var m=compose();if(!m)return;var txt='Címzett: '+(REPORT_EMAIL.indexOf('@')<0?'(még nincs beállítva)':REPORT_EMAIL)+'\nTárgy: '+m.subj+'\n\n'+m.body;
+    try{navigator.clipboard.writeText(txt).then(function(){$('rMsg').textContent='A bejelentés szövege a vágólapra került.';},function(){$('rMsg').textContent='A másolás nem sikerült; jelöld ki és másold a mezők tartalmát.';});}catch(err){$('rMsg').textContent='A másolás nem sikerült.';}});
 })();
 </script>
 </body>
