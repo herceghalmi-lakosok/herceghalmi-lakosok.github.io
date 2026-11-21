@@ -150,6 +150,9 @@ thead th{background:var(--accent-soft);font-size:.82rem;text-transform:uppercase
 .st.ok{background:var(--good-soft);color:var(--good)}
 .st.chk{background:var(--warn-soft);color:var(--warn)}
 .st.no{background:var(--bad-soft);color:var(--bad)}
+.infobox{margin-top:16px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:var(--radius);padding:14px 16px;font-size:.93rem}
+.infobox h4{margin:0 0 6px;font-size:1rem}
+.infobox p+p{margin-top:8px}
 .legal-note{margin-top:12px;font-size:.88rem;color:var(--muted);max-width:80ch}
 
 /* Act */
@@ -353,6 +356,11 @@ footer.site .muted{color:var(--muted)}
           <li><b>Losonczi Csongor</b><span>képviselő · a Pénzügyi és Településfejlesztési Bizottság tagja</span></li>
         </ul>
         <p class="legal-note">Forrás: <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=testulet-kepviselok">Képviselők</a> és <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=kepv_vagyon">vagyonnyilatkozatok</a> a hivatalos honlapon.</p>
+        <div class="infobox" id="vagyonnyilatkozatok">
+          <h4>Vagyonnyilatkozatok</h4>
+          <p>A polgármester, az alpolgármesterek és a képviselők vagyonnyilatkozata közérdekből nyilvános, és 2026. június 29-től az önkormányzat honlapján is közzé kell tenni. A nem képviselő (külsős) bizottsági tagok nyilatkozata nem nyilvános. Az Integritás Hatóság betekinthet a nyilatkozatokba, és ellenőrizheti őket.</p>
+          <p>További tájékoztatást az <a href="https://integritashatosag.hu/tajekoztatok-az-onkormanyzatokhozkapcsolodo-vagyonnyilatkozatokrol/">Integritás Hatóság honlapján</a> találsz. Ha a közzétett vagyonnyilatkozatokkal kapcsolatban hiányosságot vagy szabálytalanságot tapasztalsz, például hiányzik vagy elavult egy nyilatkozat, az <a href="https://integritashatosag.whispli.com/lp/vnyt?locale=hu">Integritás Hatóság bejelentőfelületén</a> jelezheted.</p>
+        </div>
       </div>
       <div>
         <h3 style="margin-bottom:12px">Ülések a ciklus kezdete óta</h3>
@@ -381,7 +389,7 @@ footer.site .muted{color:var(--muted)}
           <tr><td>Testületi határozatok, zárt ülés esetén anonimizálva</td><td>Infotv. 1. melléklet II/8.</td><td><span class="st chk">Hiányos</span></td><td>Ülésenként közzéteszik, a legutóbbi a 2026. november 3-i ülésé. 2026-ban azonban 33 határozatszám nem szerepel a honlapon (például 2–3., 21–24., 47–55., 79–82., 105–107., 122–125.), és a 2024. október 29-i, valamint a 2026. január 22-i zárt ülésről sem találtunk közzétett határozatot. 2025-ben a zárt ülésen hozott határozatokat még közzétették.</td></tr>
           <tr><td>Az 5 millió forintot elérő szerződések adatai</td><td>Infotv. 1. melléklet III/4.</td><td><span class="st chk">Részben</span></td><td>A szerződések listája elérhető, de a megkötés dátuma és értéke nem látszik a listában.</td></tr>
           <tr><td>Költségvetés, zárszámadás, módosítások</td><td>Infotv. 1. melléklet III/1.; Áht.</td><td><span class="st ok">Megvan</span></td><td>2019-től évenként, egységes szerkezetben is.</td></tr>
-          <tr><td>Képviselői vagyonnyilatkozatok</td><td>Mötv. 39. §</td><td><span class="st ok">Megvan</span></td><td>Külön rovatban.</td></tr>
+          <tr><td>Képviselői vagyonnyilatkozatok</td><td>Mötv. 39. §; 2026. június 29-től a honlapon kötelező közzétenni</td><td><span class="st ok">Megvan</span></td><td>Külön rovatban. A nyilatkozatok teljességét és frissességét nem vizsgáltuk. Hiányosságot az <a href="https://integritashatosag.whispli.com/lp/vnyt?locale=hu">Integritás Hatóságnál</a> lehet bejelenteni.</td></tr>
           <tr><td>Akadálymentes honlap (WCAG 2.1 AA) és akadálymentesítési nyilatkozat</td><td>2018. évi LXXV. törvény; MSZ EN 301 549</td><td><span class="st chk">Ellenőrizendő</span></td><td>Van nyilatkozat-rovat és szöveges változat (index_vak.php). A tartalmát és a megfelelést nem vizsgáltuk.</td></tr>
           <tr><td>Adatkezelési tájékoztató, süti-tájékoztató</td><td>GDPR 13. cikk</td><td><span class="st no">Hibás link</span></td><td>Az oldal alján az „Adatvédelmi nyilatkozat” és az „Internetes sütik” hivatkozás üres. Adatkezelési tájékoztató a Közérdekű adatok rovatban található.</td></tr>
           <tr><td>Hivatkozás az egységes közadatkereső rendszerre</td><td>305/2005. (XII. 25.) Korm. rendelet</td><td><span class="st chk">Nem láttuk</span></td><td>A nyitóoldalon nem találtunk ilyen hivatkozást.</td></tr>
@@ -403,6 +411,7 @@ footer.site .muted{color:var(--muted)}
       <div class="step"><h3>Kérdezz a közmeghallgatáson</h3><p>A közmeghallgatáson bárki kérdést vagy javaslatot tehet közérdekű ügyben. A legközelebbi 2026. november 23-án, 18 órakor lesz.</p></div>
       <div class="step"><h3>Kérj ki adatot</h3><p>Közérdekű adatot bárki igényelhet szóban, írásban vagy e-mailben, indoklás nélkül. Az önkormányzat címe: polghiv@herceghalom.hu. A teljesítés határideje főszabályként 15 nap.</p></div>
       <div class="step"><h3>Tekints bele az iratokba</h3><p>A nyilvános ülések előterjesztéseibe és jegyzőkönyveibe a választópolgárok betekinthetnek a Polgármesteri Hivatalban.</p></div>
+      <div class="step"><h3>Ellenőrizd a vagyonnyilatkozatokat</h3><p>A választott tisztségviselők vagyonnyilatkozata nyilvános. Hiányosságot vagy szabálytalanságot az <a href="https://integritashatosag.whispli.com/lp/vnyt?locale=hu">Integritás Hatóság bejelentőfelületén</a> jelezhetsz, további tájékoztatás a <a href="https://integritashatosag.hu/tajekoztatok-az-onkormanyzatokhozkapcsolodo-vagyonnyilatkozatokrol/">Hatóság honlapján</a>.</p></div>
       <div class="step"><h3>Javasolj fejlesztést</h3><p>A közösségi költségvetés indulásával a lakosok maguk is javasolhatnak fejlesztéseket. Figyeld a felhívást.</p></div>
     </div>
   </div>
