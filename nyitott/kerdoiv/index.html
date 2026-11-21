@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lakossági kérdőív – Nyitott Herceghalom</title>
+<meta name="description" content="Mondd el, mit gondolsz Herceghalom jövőjéről! Rövid, 5 perces lakossági kérdőív; az összesített eredményeket közzétesszük.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../kepek/favicon-64.png">
+<link rel="apple-touch-icon" href="../kepek/apple-touch-icon.png">
+<style>
+  :root{--bg:#f6f5f1;--card:#fff;--ink:#1c2420;--muted:#58635d;--line:#d9ddd6;--accent:#2f6b4f;--accent-ink:#fff;--accent-soft:#e3efe8;--warn:#8a5a00;--focus:#2f6b4f;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--bg:#121614;--card:#1a201d;--ink:#e7ebe8;--muted:#a3ada7;--line:#2e3632;--accent:#7cc39d;--accent-ink:#0d1a13;--accent-soft:#1f3329;--warn:#e6b85c;--focus:#7cc39d;color-scheme:dark}
+    textarea,input[type=email],input[type=text]{background:#121614!important;color:var(--ink);border-color:var(--line)!important}
+    button.secondary{background:#2e3632!important;color:var(--ink)!important}
+    pre.copy{background:#121614!important}
+    .bar{background:#2e3632!important}}
+  h1,h2,legend{font-family:"Literata",Georgia,serif}
+  .notice{background:var(--ink);color:var(--bg);font-size:.88rem;padding:8px 16px}
+  .notice a{color:var(--bg)}
+  header.top{background:var(--card)!important;color:var(--ink)!important;border-bottom:1px solid var(--line)}
+  header.top a{display:flex;align-items:center;gap:12px}
+  header.top img{width:44px;height:44px;border-radius:50%;flex:none}
+  header.top b{font-family:"Literata",Georgia,serif;font-size:1.2rem;display:block}
+  header.top small{color:var(--muted)}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;font:17px/1.6 "Public Sans","Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  a{color:var(--accent)}
+  header.top{background:var(--accent);color:var(--accent-ink);padding:14px 16px}
+  header.top a{color:inherit;text-decoration:none;font-weight:600}
+  header.top small{display:block;opacity:.85;font-weight:400}
+  main{max-width:760px;margin:0 auto;padding:16px}
+  h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 .5rem}
+  h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+  .lead{color:var(--muted);margin:0 0 1rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 14px}
+  fieldset{border:0;margin:0;padding:0}
+  legend{font-weight:700;padding:0;margin:0 0 4px}
+  .qno{color:var(--accent);margin-right:4px}
+  .help{font-size:.9rem;color:var(--muted);margin:0 0 8px}
+  .opt{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+  .opt input{margin-top:4px;width:18px;height:18px;flex:none}
+  .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .scale label{display:flex;flex-direction:column;align-items:center;gap:2px;border:1px solid var(--line);border-radius:8px;padding:8px 2px;cursor:pointer;font-weight:600}
+  .scale input{width:18px;height:18px;margin:0}
+  .scale-ends{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);margin-top:4px}
+  .grid-row{border-top:1px solid var(--line);padding:10px 0}
+  .grid-row:first-of-type{border-top:0}
+  .grid-row .name{font-weight:600;margin-bottom:6px}
+  .grid-row .scale{grid-template-columns:repeat(6,1fr)}
+  .grid-row .scale label{font-size:.85rem}
+  textarea,input[type=email],input[type=text]{width:100%;padding:10px 12px;border:1px solid #b9bdb5;border-radius:8px;font:inherit;background:#fff}
+  textarea{min-height:96px;resize:vertical}
+  input:focus,textarea:focus,button:focus,a:focus,.opt input:focus,.scale input:focus{outline:3px solid var(--focus);outline-offset:1px}
+  .err{color:var(--warn);font-size:.92rem;margin:6px 0 0;display:none}
+  .err.show{display:block}
+  .card.bad{border-color:var(--warn)}
+  button{border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+  button.secondary{background:#e8ebe6;color:var(--ink);font-weight:600}
+  .progress{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0}
+  .bar{height:8px;background:#e3e4de;border-radius:99px;overflow:hidden}
+  .bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+  .ptxt{font-size:.82rem;color:var(--muted);margin-top:3px}
+  #done{display:none}
+  #done.show{display:block}
+  pre.copy{white-space:pre-wrap;background:#f1f1ec;border-radius:8px;padding:10px;font-size:.82rem;max-height:240px;overflow:auto}
+  .count{font-size:.82rem;color:var(--muted);text-align:right}
+  footer{max-width:760px;margin:0 auto;padding:16px 16px 40px;font-size:.88rem;color:var(--muted)}
+  .sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<div class="notice" role="note"><strong>Nem hivatalos oldal.</strong> Ez nem Herceghalom Község Önkormányzatának honlapja. A hivatalos honlap: <a href="https://www.herceghalom.hu/">herceghalom.hu</a>. Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget.</div>
+<header class="top">
+  <a href="../"><img src="../kepek/gesztenyes-tisza-sziget-logo-96.webp" width="44" height="44" alt=""><span><b>Nyitott Herceghalom</b><small>← vissza a főoldalra</small></span></a>
+</header>
+
+<main>
+  <h1>Milyen legyen Herceghalom?</h1>
+  <p class="lead">Kíváncsiak vagyunk, mi működik jól a faluban, mi zavar, és mit kellene megőrizni. A kitöltés kb. 5 perc, név nélkül is kitölthető. Az <strong>összesített eredményeket közzétesszük ezen az oldalon</strong>, és eljuttatjuk a képviselő-testületnek és az illetékes döntéshozóknak.</p>
+
+  <div class="progress" aria-hidden="true">
+    <div class="bar"><span id="bar"></span></div>
+    <div class="ptxt" id="ptxt">0 / 0 kérdés megválaszolva</div>
+  </div>
+
+  <form id="form" novalidate>
+    <div id="qs"></div>
+
+    <div class="card">
+      <label class="opt"><input type="checkbox" id="gdpr"> <span>Elolvastam az <a href="#adatkezeles">adatkezelési tájékoztatót</a>, és hozzájárulok, hogy a válaszaimat összesített, név nélküli formában feldolgozzátok és közzétegyétek.</span></label>
+      <p class="err" id="e-gdpr">A beküldéshez el kell fogadnod az adatkezelést.</p>
+      <label class="sr" for="website">Weboldal</label><input class="sr" type="text" id="website" tabindex="-1" autocomplete="off">
+      <p style="margin:14px 0 4px"><button type="submit">Válaszok elküldése ✉️</button></p>
+      <p class="help">A gomb a levelezőt nyitja meg egy előre kitöltött e-maillel, ezt kell még elküldened. A válaszok csak így jutnak el hozzánk.</p>
+    </div>
+  </form>
+
+  <div class="card" id="done" aria-live="polite">
+    <h2 style="margin-top:0">Köszönjük! Már csak el kell küldened a levelet.</h2>
+    <p>Ha nem nyílt meg a levelező, másold ki az alábbi szöveget, és küldd el a <a href="mailto:gesztenyestisza@proton.me">gesztenyestisza@proton.me</a> címre. Tárgy: <strong id="doneSubj"></strong></p>
+    <pre class="copy" id="doneBody"></pre>
+    <p><button type="button" class="secondary" id="btnCopy">Szöveg másolása</button></p>
+    <p class="help">Konkrét problémát (kátyú, lámpa, veszélyes hely) a <a href="../#problemak">Problématérképen</a> is jelezhetsz.</p>
+  </div>
+
+  <h2 id="eredmenyek">Eredmények</h2>
+  <div class="card">
+    <p>Az összesített eredményeket a gyűjtés lezárása után itt tesszük közzé, a beérkezett válaszok számával és a módszer leírásával együtt.</p>
+  </div>
+
+  <h2 id="adatkezeles">Adatkezelési tájékoztató (röviden)</h2>
+  <div class="card">
+    <p><strong>Adatkezelő:</strong> Herceghalmi Gesztenyés Tisza Sziget, <a href="mailto:gesztenyestisza@proton.me">gesztenyestisza@proton.me</a>.</p>
+    <p><strong>Mit kezelünk?</strong> A kérdőívre adott válaszaidat és a levél feladójának e-mail-címét. Ha a végén megadod, a kapcsolattartási címedet is.</p>
+    <p><strong>Mire?</strong> A válaszokat kizárólag összesítve, név nélkül dolgozzuk fel és tesszük közzé. A szöveges válaszokból csak olyan részletet idézünk, amelyből nem azonosítható a kitöltő. Az e-mail-címedet az összesítés után töröljük. Ha kérted, hogy értesítsünk, addig tartjuk meg, amíg le nem iratkozol.</p>
+    <p><strong>Jogaid:</strong> Bármikor kérheted a válaszaid törlését a fenti címen. Panasszal a NAIH-hoz (naih.hu) fordulhatsz.</p>
+    <p class="help">Kérjük, a szöveges válaszokban ne nevezz meg magánszemélyt.</p>
+  </div>
+</main>
+
+<footer>
+  A kérdőívet a Herceghalmi Gesztenyés Tisza Sziget önkéntesei készítették és dolgozzák fel. Ez nem Herceghalom Község Önkormányzatának hivatalos felmérése.
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var EMAIL="gesztenyestisza@proton.me";
+  var VERSION="HK-2026-1";
+
+  // Kérdések. A "id" kerül a levélbe, ez alapján összesíthető.
+  var Q=[
+    {id:"K01",type:"radio",req:true,text:"Milyen kapcsolatban állsz Herceghalommal?",
+      opts:["Itt élek","Itt dolgozom vagy ide jár a gyermekem, de máshol élek","Ide költözést tervezek","Egyéb"]},
+    {id:"K02",type:"radio",req:true,text:"Mióta élsz Herceghalmon?",
+      opts:["Kevesebb mint 2 éve","2–10 éve","Több mint 10 éve","Nem itt élek"]},
+    {id:"K03",type:"radio",req:false,text:"Korcsoport",help:"Nem kötelező, de segít, hogy lássuk, kik válaszoltak.",
+      opts:["18–29","30–44","45–64","65 felett","Nem szeretném megadni"]},
+    {id:"K04",type:"radio",req:false,text:"Van-e a háztartásodban óvodás vagy iskolás gyermek?",
+      opts:["Igen, óvodás","Igen, iskolás","Igen, mindkettő","Nincs"]},
+    {id:"K05",type:"scale",req:true,text:"Összességében mennyire vagy elégedett azzal, ahogy Herceghalmon élni lehet?",
+      ends:["Egyáltalán nem","Teljesen"]},
+    {id:"K06",type:"check",req:true,max:3,text:"Melyik a három legfontosabb ügy, amivel a következő években foglalkozni kellene?",help:"Legfeljebb hármat jelölj meg.",
+      opts:["Közlekedésbiztonság (1-es főút, Gesztenyés úti csomópont, átkelők)","Vasútállomás és megközelítése","Óvodai ellátás, csoportlétszámok","Iskola, gyermekprogramok","Egészségügyi ellátás (orvos, rendelési idő)","Utak, járdák állapota","Közvilágítás, közbiztonság","Zöldterületek, fák, játszóterek","Ipari és logisztikai beruházások hatásai (forgalom, zaj, por)","Az önkormányzat tájékoztatása, átláthatósága","Közösségi programok, kulturális élet","Idősek ellátása, segítése","Egyéb"]},
+    {id:"K07",type:"grid",req:false,text:"Mennyire vagy elégedett az alábbiakkal?",help:"1 = nagyon elégedetlen, 5 = nagyon elégedett. Ha nincs tapasztalatod, válaszd a „?” lehetőséget.",
+      rows:[["a","Gyalogos és kerékpáros közlekedés biztonsága"],["b","Vasúti és buszos közlekedés"],["c","Óvoda"],["d","Utak és járdák"],["e","Közvilágítás"],["f","Zöldterületek, játszóterek"],["g","Az önkormányzat tájékoztatása a döntésekről"]]},
+    {id:"K08",type:"scale",req:true,text:"Mennyire érzed magad tájékozottnak arról, milyen döntéseket hoz a képviselő-testület?",
+      ends:["Egyáltalán nem","Teljesen"]},
+    {id:"K09",type:"check",req:false,text:"Honnan tájékozódsz leginkább a helyi ügyekről?",
+      opts:["Önkormányzati honlap (herceghalom.hu)","Helyi újság","Facebook-csoportok, -oldalak","Testületi ülések, közmeghallgatás","Ismerősök, szomszédok","Plakátok, hirdetőtábla","Nem igazán tájékozódom","Egyéb"]},
+    {id:"K10",type:"text",req:false,max:500,text:"Ha egyetlen dolgot megváltoztathatnál Herceghalmon, mi lenne az?"},
+    {id:"K11",type:"text",req:false,max:500,text:"Mit kell mindenképpen megőrizni, ami most jó Herceghalmon?"},
+    {id:"K12",type:"check",req:false,text:"Szeretnél részt venni a helyi közéletben?",
+      opts:["Szívesen kapnék értesítést a kérdőív eredményéről","Eljönnék lakossági fórumra, közös bejárásra","Önkéntesként segítenék (pl. szemétszedés, faültetés, rendezvény)","Most nem"]},
+    {id:"K13",type:"email",req:false,text:"E-mail-cím, ha értesítést kérsz",help:"Nem kötelező. Csak akkor add meg, ha az előző kérdésnél értesítést kértél vagy részt vennél."}
+  ];
+
+  function $(id){return document.getElementById(id);}
+  function el(tag,attrs,html){var e=document.createElement(tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);if(html!=null)e.innerHTML=html;return e;}
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+
+  // ---- renderelés
+  var wrap=$("qs");
+  Q.forEach(function(q,i){
+    var card=el("div",{"class":"card",id:"c-"+q.id});
+    var fs=el("fieldset");
+    fs.appendChild(el("legend",{},'<span class="qno">'+(i+1)+'.</span>'+esc(q.text)+(q.req?' <span aria-hidden="true" style="color:var(--warn)">*</span>':'')));
+    if(q.help) fs.appendChild(el("p",{"class":"help"},esc(q.help)));
+    if(q.type==="radio"||q.type==="check"){
+      q.opts.forEach(function(o,j){
+        var lab=el("label",{"class":"opt"});
+        var inp=el("input",{type:q.type==="radio"?"radio":"checkbox",name:q.id,value:String(j+1)});
+        lab.appendChild(inp);lab.appendChild(el("span",{},esc(o)));fs.appendChild(lab);
+      });
+      if(q.opts[q.opts.length-1]==="Egyéb"){
+        var other=el("input",{type:"text",id:q.id+"_egyeb",maxlength:"120",placeholder:"Egyéb, éspedig…","aria-label":"Egyéb válasz"});
+        other.style.marginTop="4px";fs.appendChild(other);
+      }
+    } else if(q.type==="scale"){
+      var sc=el("div",{"class":"scale"});
+      for(var v=1;v<=5;v++){var l=el("label");l.appendChild(el("input",{type:"radio",name:q.id,value:String(v)}));l.appendChild(el("span",{},String(v)));sc.appendChild(l);}
+      fs.appendChild(sc);
+      fs.appendChild(el("div",{"class":"scale-ends"},"<span>"+esc(q.ends[0])+"</span><span>"+esc(q.ends[1])+"</span>"));
+    } else if(q.type==="grid"){
+      q.rows.forEach(function(r){
+        var row=el("div",{"class":"grid-row"});
+        row.appendChild(el("div",{"class":"name"},esc(r[1])));
+        var sc=el("div",{"class":"scale",role:"radiogroup","aria-label":r[1]});
+        ["1","2","3","4","5","?"].forEach(function(v){var l=el("label");l.appendChild(el("input",{type:"radio",name:q.id+r[0],value:v}));l.appendChild(el("span",{},v));sc.appendChild(l);});
+        row.appendChild(sc);fs.appendChild(row);
+      });
+    } else if(q.type==="text"){
+      var ta=el("textarea",{name:q.id,id:q.id,maxlength:String(q.max)});
+      fs.appendChild(ta);
+      var cnt=el("div",{"class":"count"},"0/"+q.max);fs.appendChild(cnt);
+      ta.addEventListener("input",function(){cnt.textContent=ta.value.length+"/"+q.max;});
+    } else if(q.type==="email"){
+      fs.appendChild(el("input",{type:"email",name:q.id,id:q.id,maxlength:"120",autocomplete:"email"}));
+    }
+    card.appendChild(fs);
+    card.appendChild(el("p",{"class":"err",id:"e-"+q.id},q.type==="check"&&q.max?"Jelölj meg 1–"+q.max+" választ.":"Kérjük, válaszolj erre a kérdésre."));
+    wrap.appendChild(card);
+  });
+
+  // ---- legfeljebb N jelölés
+  Q.filter(function(q){return q.type==="check"&&q.max;}).forEach(function(q){
+    var boxes=[].slice.call(document.querySelectorAll('input[name="'+q.id+'"]'));
+    boxes.forEach(function(b){b.addEventListener("change",function(){
+      var n=boxes.filter(function(x){return x.checked;}).length;
+      boxes.forEach(function(x){x.disabled=!x.checked&&n>=q.max;});
+    });});
+  });
+
+  // ---- K12 "Most nem" kizárja a többit
+  (function(){
+    var bx=[].slice.call(document.querySelectorAll('input[name="K12"]'));var none=bx[bx.length-1];
+    bx.forEach(function(b){b.addEventListener("change",function(){
+      if(b===none&&b.checked)bx.forEach(function(x){if(x!==none)x.checked=false;});
+      else if(b!==none&&b.checked)none.checked=false;
+    });});
+  })();
+
+  // ---- értékek
+  function val(q){
+    if(q.type==="radio"||q.type==="scale"){var c=document.querySelector('input[name="'+q.id+'"]:checked');return c?c.value:"";}
+    if(q.type==="check"){return [].slice.call(document.querySelectorAll('input[name="'+q.id+'"]:checked')).map(function(x){return x.value;}).join(",");}
+    if(q.type==="grid"){return q.rows.map(function(r){var c=document.querySelector('input[name="'+q.id+r[0]+'"]:checked');return r[0]+":"+(c?c.value:"-");}).join(" ");}
+    var e=$(q.id);return e?e.value.trim().replace(/\s+/g," "):"";
+  }
+  function answered(q){var v=val(q);return q.type==="grid"?/[1-5?]/.test(v.replace(/[a-g]:/g,"")):!!v;}
+
+  // ---- haladásjelző
+  function progress(){
+    var n=Q.filter(answered).length;
+    $("bar").style.width=Math.round(100*n/Q.length)+"%";
+    $("ptxt").textContent=n+" / "+Q.length+" kérdés megválaszolva";
+  }
+  $("form").addEventListener("change",progress);$("form").addEventListener("input",progress);progress();
+
+  // ---- beküldés
+  $("form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    if($("website").value)return;
+    var firstBad=null;
+    Q.forEach(function(q){
+      var bad=q.req&&!answered(q);
+      $("e-"+q.id).classList.toggle("show",bad);$("c-"+q.id).classList.toggle("bad",bad);
+      if(bad&&!firstBad)firstBad=$("c-"+q.id);
+    });
+    var g=$("gdpr").checked;$("e-gdpr").classList.toggle("show",!g);
+    if(!g&&!firstBad)firstBad=$("gdpr");
+    if(firstBad){firstBad.scrollIntoView({behavior:"smooth",block:"center"});return;}
+
+    var lines=["HERCEGHALMI LAKOSSÁGI KÉRDŐÍV","VERZIO="+VERSION,"DATUM="+new Date().toISOString().slice(0,10)];
+    Q.forEach(function(q){
+      var v=val(q);
+      var o=$(q.id+"_egyeb");
+      if(o&&o.value.trim())v+=(v?" ":"")+"[egyeb: "+o.value.trim().replace(/\s+/g," ")+"]";
+      lines.push(q.id+"="+(v||"-"));
+    });
+    lines.push("ADATKEZELES=igen","---","(Kérjük, ne módosítsd a fenti sorokat, így tudjuk gépileg összesíteni a válaszokat.)");
+    var subj="[Kérdőív] Herceghalmi lakossági kérdőív – "+VERSION;
+    var body=lines.join("\n");
+    $("doneSubj").textContent=subj;$("doneBody").textContent=body;$("done").classList.add("show");
+    window.location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
+    setTimeout(function(){$("done").scrollIntoView({behavior:"smooth"});},400);
+  });
+  $("btnCopy").addEventListener("click",function(){
+    var t="Címzett: "+EMAIL+"\nTárgy: "+$("doneSubj").textContent+"\n\n"+$("doneBody").textContent;
+    if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){$("btnCopy").textContent="Kimásolva ✓";});
+  });
+})();
+</script>
+</body>
+</html>
