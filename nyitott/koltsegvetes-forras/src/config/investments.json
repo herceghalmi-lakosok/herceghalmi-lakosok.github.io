@@ -1,44 +1,44 @@
 [
-    {
-        "icon": "Stethoscope",
-        "colorRef": "elsodleges",
-        "title": "Egészségház fejlesztése (TOP Plusz, uniós forrás)",
-        "amount": "365,3 millió Ft",
-        "desc": "A 2026-os terv legnagyobb beruházása. A felújítás idejére ideiglenes rendelők kialakításáról is döntött a testület (158/2026.). 2025-ben a tervezett összegből még semmi nem valósult meg."
-    },
-    {
-        "icon": "Smile",
-        "colorRef": "harmadlagos",
-        "title": "Csicsergő Óvoda fejlesztése (végszámla)",
-        "amount": "39,1 millió Ft",
-        "desc": "A TOP Plusz pályázatból megvalósult óvodafejlesztés záró tétele, mellette csoportöltöző, polcrendszer és udvari faszerkezetek felújítása."
-    },
-    {
-        "icon": "Route",
-        "colorRef": "masodlagos",
-        "title": "Járdaépítés",
-        "amount": "10,0 millió Ft",
-        "desc": "Felújítási keret járdákra. A testület 2026-ban döntött a Petőfi utcai és a Jókai utcai járda építéséről (86/2026., 140/2026.)."
-    },
-    {
-        "icon": "Droplets",
-        "colorRef": "elsodleges",
-        "title": "Vízmű- és szennyvízvagyon felújítása",
-        "amount": "6,5 millió Ft",
-        "desc": "Az önkormányzati víziközmű-vagyon felújítására tervezett összeg."
-    },
-    {
-        "icon": "Zap",
-        "colorRef": "harmadlagos",
-        "title": "Elektromos autó",
-        "amount": "8,9 millió Ft",
-        "desc": "Gépjármű-beszerzés a településüzemeltetéshez."
-    },
-    {
-        "icon": "Home",
-        "colorRef": "masodlagos",
-        "title": "Bérlakások felújítása",
-        "amount": "3,2 millió Ft",
-        "desc": "Az önkormányzati bérlakások felújítására tervezett összeg."
-    }
+  {
+    "icon": "Stethoscope",
+    "colorRef": "elsodleges",
+    "title": "Egészségház fejlesztése (TOP Plusz, uniós forrás)",
+    "amount": "365,3 millió Ft",
+    "desc": "A 2026-os terv legnagyobb beruházása (351,6 M Ft építés + 13,7 M Ft). Uniós projekt: TOP_PLUSZ-3.3.2-21-PT1-2022-00047, 400 M Ft EU-s forrással. A felújítás idejére ideiglenes rendelők kialakításáról is döntött a testület (158/2026.). 2025 végéig a keretből még semmit nem használtak fel."
+  },
+  {
+    "icon": "Smile",
+    "colorRef": "harmadlagos",
+    "title": "Csicsergő Óvoda fejlesztése (végszámla)",
+    "amount": "39,1 millió Ft",
+    "desc": "A TOP Plusz pályázatból megvalósult óvodafejlesztés záró tétele, mellette csoportöltöző, polcrendszer és udvari faszerkezetek felújítása."
+  },
+  {
+    "icon": "Route",
+    "colorRef": "masodlagos",
+    "title": "Járdaépítés",
+    "amount": "10,0 millió Ft",
+    "desc": "Felújítási keret járdákra. A testület 2026-ban döntött a Petőfi utcai és a Jókai utcai járda építéséről (86/2026., 140/2026.)."
+  },
+  {
+    "icon": "Droplets",
+    "colorRef": "elsodleges",
+    "title": "Vízmű- és szennyvízvagyon felújítása",
+    "amount": "6,5 millió Ft",
+    "desc": "Az önkormányzati víziközmű-vagyon felújítására tervezett összeg."
+  },
+  {
+    "icon": "Zap",
+    "colorRef": "harmadlagos",
+    "title": "Elektromos autó",
+    "amount": "8,9 millió Ft",
+    "desc": "Gépjármű-beszerzés a településüzemeltetéshez."
+  },
+  {
+    "icon": "Home",
+    "colorRef": "masodlagos",
+    "title": "Bérlakások felújítása",
+    "amount": "3,2 millió Ft",
+    "desc": "Az önkormányzati bérlakások felújítására tervezett összeg."
+  }
 ]
