@@ -81,7 +81,7 @@
 
   function card(f){
     var c=COL[f.allapot]||"#888", st=ST[f.allapot]||f.allapot, rows=[];
-    if(f.helyszin)rows.push("<dt>Helyszín</dt><dd>"+esc(f.helyszin)+(f.lat==null?' <span class="nopin">(a térképen még nincs jelölve)</span>':'')+"</dd>");
+    if(f.helyszin)rows.push("<dt>Helyszín</dt><dd>"+esc(f.helyszin)+(f.lat==null?' <span class="nopin">(a térképen még nincs jelölve)</span>':(f.kozelito?' <span class="nopin">(a térképen közelítő helyen: '+esc(f.hely_megjegyzes||"")+')</span>':''))+"</dd>");
     rows.push("<dt>Forrás</dt><dd>"+esc(f.forras||"nincs adat")+"</dd>");
     if(f.koltseg_megjegyzes)rows.push("<dt>Költség</dt><dd>"+esc(f.koltseg_megjegyzes)+"</dd>");
     if(f.hatarido)rows.push("<dt>Határidő</dt><dd>"+esc(f.hatarido)+"</dd>");
@@ -107,8 +107,8 @@
     $("count").textContent=list.length+" fejlesztés · ismert költség összesen: "+ft(sum);
     $("list").innerHTML=list.length?list.map(card).join(""):'<p class="empty">Nincs találat.</p>';
     if(map){
-      layer.clearLayers();markers={};var pts=[];
-      list.forEach(function(f){if(f.lat!=null&&f.lng!=null){var m=L.marker([f.lat,f.lng],{icon:icon(COL[f.allapot]||"#888"),title:f.cim}).bindPopup('<b>'+esc(f.cim)+'</b><br>'+esc(ST[f.allapot]||"")+' · '+ft(f.koltseg)+'<br><a href="#f-'+esc(f.id)+'">Részletek</a>');layer.addLayer(m);markers[f.id]=m;pts.push([f.lat,f.lng]);}});
+      layer.clearLayers();markers={};var pts=[];var seen={};
+      list.forEach(function(f){if(f.lat!=null&&f.lng!=null){var key=f.lat+','+f.lng,k=seen[key]=(seen[key]||0)+1,la=f.lat+(k-1)*0.00006,lo=f.lng+(k-1)*0.00009;var m=L.marker([la,lo],{icon:icon(COL[f.allapot]||"#888"),title:f.cim}).bindPopup('<b>'+esc(f.cim)+'</b><br>'+esc(ST[f.allapot]||"")+' · '+ft(f.koltseg)+(f.kozelito?'<br><small>Közelítő helyszín</small>':'')+'<br><a href="#f-'+esc(f.id)+'">Részletek</a>');layer.addLayer(m);markers[f.id]=m;pts.push([la,lo]);}});
       if(pts.length>1)map.fitBounds(pts,{padding:[30,30],maxZoom:16});
     }
   }

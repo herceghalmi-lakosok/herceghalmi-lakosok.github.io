@@ -1,6 +1,6 @@
 {
   "frissitve": "2026-11-22",
-  "megjegyzes": "Fejlesztéskövető: az önkormányzat beruházásai és felújításai. Költség: bruttó forint, ha a forrás bruttóként adja meg; különben a 'koltseg_megjegyzes' mondja meg. Állapot: tervezes, palyazat, dontes, szerzodes, kivitelezes, kesz, elakadt. A 'lat'/'lng' üres, ha a pontos helyet még nem rögzítettük. Útmutató: SZERKESZTOKNEK.md.",
+  "megjegyzes": "Fejlesztéskövető: az önkormányzat beruházásai és felújításai. Költség: bruttó forint, ha a forrás bruttóként adja meg; különben a 'koltseg_megjegyzes' mondja meg. Állapot: tervezes, palyazat, dontes, szerzodes, kivitelezes, kesz, elakadt. A 'lat'/'lng' üres, ha a pontos helyet még nem rögzítettük. Útmutató: SZERKESZTOKNEK.md. A koordináták az OpenStreetMap kereséséből származnak; 'kozelito': true, ha a pont csak az utcát vagy a telket jelöli.",
   "allapotok": {
     "tervezes": "Tervezés, előkészítés",
     "palyazat": "Pályázat",
@@ -41,8 +41,8 @@
       "cim": "Csicsergő Óvoda: a tetőszerkezet sürgős cseréje",
       "kategoria": "Oktatás, nevelés",
       "helyszin": "Herceghalmi Csicsergő Óvoda, székhely",
-      "lat": null,
-      "lng": null,
+      "lat": 47.49754,
+      "lng": 18.75377,
       "allapot": "dontes",
       "koltseg": 49000000,
       "koltseg_megjegyzes": "Keretösszeg a kivitelezésre és a műszaki ellenőrzésre.",
@@ -53,15 +53,17 @@
       "szerzodesek": [],
       "hatarido": "2026. szeptember 1.",
       "leiras": "A testület a Wienerberger Zrt. műszaki állásfoglalása alapján elkerülhetetlennek ítélte a tető azonnali cseréjét a rejtett kivitelezési és tervezési hibák miatt.",
-      "utolso_adat": "2026-07-07"
+      "utolso_adat": "2026-07-07",
+      "hely_megjegyzes": "Csicsergő Óvoda, Gesztenyés út 1/a (OSM)",
+      "kozelito": false
     },
     {
       "id": "ovoda-top",
       "cim": "Csicsergő Óvoda fejlesztése (TOP Plusz)",
       "kategoria": "Oktatás, nevelés",
       "helyszin": "Herceghalmi Csicsergő Óvoda",
-      "lat": null,
-      "lng": null,
+      "lat": 47.49754,
+      "lng": 18.75377,
       "allapot": "kesz",
       "koltseg": 39100000,
       "koltseg_megjegyzes": "A 2026-os költségvetésben szereplő záró tétel (végszámla), nem a teljes projektérték.",
@@ -72,15 +74,17 @@
       ],
       "hatarido": "",
       "leiras": "Megvalósult óvodafejlesztés; 2026-ban a végszámla kifizetése szerepel a költségvetésben.",
-      "utolso_adat": "2026-02-03"
+      "utolso_adat": "2026-02-03",
+      "hely_megjegyzes": "Csicsergő Óvoda, Gesztenyés út 1/a (OSM)",
+      "kozelito": false
     },
     {
       "id": "ovoda-udvar",
       "cim": "Csicsergő Óvoda: udvari fa játszóeszközök felújítása",
       "kategoria": "Oktatás, nevelés",
       "helyszin": "Herceghalmi Csicsergő Óvoda, székhely udvara",
-      "lat": null,
-      "lng": null,
+      "lat": 47.49754,
+      "lng": 18.75377,
       "allapot": "dontes",
       "koltseg": 4438800,
       "koltseg_megjegyzes": "Bruttó 2 717 800 Ft (76/2026.) + 721 000 Ft többletköltség (118/2026.) + 1 000 000 Ft keret (137/2026.).",
@@ -93,15 +97,17 @@
       "szerzodesek": [],
       "hatarido": "",
       "leiras": "A játszótéri faszerkezetek jogszabálynak és szabványnak megfelelő felújítása és részleges újjáépítése.",
-      "utolso_adat": "2026-09-01"
+      "utolso_adat": "2026-09-01",
+      "hely_megjegyzes": "Csicsergő Óvoda, Gesztenyés út 1/a (OSM)",
+      "kozelito": false
     },
     {
       "id": "petofi-jarda",
       "cim": "Petőfi utcai járda felújítása",
       "kategoria": "Utak, járdák",
       "helyszin": "Petőfi utca (74 hrsz.) és Kossuth Lajos utca (124 hrsz.), 225 m",
-      "lat": null,
-      "lng": null,
+      "lat": 47.49648,
+      "lng": 18.74813,
       "allapot": "szerzodes",
       "koltseg": 16524633,
       "koltseg_megjegyzes": "",
@@ -114,15 +120,17 @@
       ],
       "hatarido": "",
       "leiras": "Kivitelező: Puhi-Tárnok Út és Hídépítő Kft.",
-      "utolso_adat": "2026-07-07"
+      "utolso_adat": "2026-07-07",
+      "hely_megjegyzes": "a Petőfi utca középpontja (OSM); a felújított szakasz a Kossuth Lajos utcáig tart",
+      "kozelito": true
     },
     {
       "id": "jokai-jarda",
       "cim": "Jókai utcai járda felújítása",
       "kategoria": "Utak, járdák",
       "helyszin": "Jókai utca (101 hrsz.), páratlan oldal",
-      "lat": null,
-      "lng": null,
+      "lat": 47.49608,
+      "lng": 18.74537,
       "allapot": "dontes",
       "koltseg": 18971175,
       "koltseg_megjegyzes": "",
@@ -133,15 +141,17 @@
       "szerzodesek": [],
       "hatarido": "2026. október 30.",
       "leiras": "Kivitelező: Puhi-Tárnok Út és Hídépítő Kft.",
-      "utolso_adat": "2026-09-14"
+      "utolso_adat": "2026-09-14",
+      "hely_megjegyzes": "a Jókai Mór utca középpontja (OSM)",
+      "kozelito": true
     },
     {
       "id": "liliom-lejto",
       "cim": "Liliom lejtő felújítása",
       "kategoria": "Utak, járdák",
       "helyszin": "Liliom lejtő, az Árvalányhaj utca és a Pipacs utca között",
-      "lat": null,
-      "lng": null,
+      "lat": 47.4961,
+      "lng": 18.74195,
       "allapot": "szerzodes",
       "koltseg": 30706549,
       "koltseg_megjegyzes": "",
@@ -154,7 +164,9 @@
       ],
       "hatarido": "2026. október 15.",
       "leiras": "A teljes szakasz felújítása; a testület a Liliom lejtő – Árvalányhaj utca – Boróka utca kereszteződésben forgalomlassítási lehetőségeket is vizsgál.",
-      "utolso_adat": "2026-08-11"
+      "utolso_adat": "2026-08-11",
+      "hely_megjegyzes": "a Liliom lejtő középpontja (OSM)",
+      "kozelito": true
     },
     {
       "id": "fout-burkolat",
@@ -203,8 +215,8 @@
       "cim": "Napelemes közvilágítás: újabb kandeláberek",
       "kategoria": "Közvilágítás",
       "helyszin": "A Polgármesteri Hivatal melletti utcaszakasz és parkoló (Árvalányhaj utca – Móricz út), a Petőfi utca – Kossuth Lajos utca gyalogátkelő, az Árvácska utca – Ördöglovas lejtő kereszteződés és a temető",
-      "lat": null,
-      "lng": null,
+      "lat": 47.50136,
+      "lng": 18.75256,
       "allapot": "dontes",
       "koltseg": 7904480,
       "koltseg_megjegyzes": "Az eredeti bruttó 6 529 070 Ft-os keretet a 160/2026. határozat emelte meg.",
@@ -216,15 +228,17 @@
       "szerzodesek": [],
       "hatarido": "2026. november 20.",
       "leiras": "Több helyszín: a térképen a hivatal melletti szakasz jelöli.",
-      "utolso_adat": "2026-10-20"
+      "utolso_adat": "2026-10-20",
+      "hely_megjegyzes": "a Polgármesteri Hivatal (OSM); a többi helyszín a leírásban",
+      "kozelito": true
     },
     {
       "id": "viztorony",
       "cim": "A helyi védett víztorony villámhárítójának javítása",
       "kategoria": "Épületek",
       "helyszin": "Víztorony, 242 hrsz.",
-      "lat": null,
-      "lng": null,
+      "lat": 47.50218,
+      "lng": 18.7522,
       "allapot": "dontes",
       "koltseg": 2311604,
       "koltseg_megjegyzes": "Villámvédelem bruttó 1 219 404 Ft + emelőkosaras gép bruttó 1 092 200 Ft.",
@@ -235,15 +249,17 @@
       "szerzodesek": [],
       "hatarido": "2026. május 15.",
       "leiras": "A hivatalos honlapon a határozat tévesen 38/2026. számon szerepel.",
-      "utolso_adat": "2026-04-07"
+      "utolso_adat": "2026-04-07",
+      "hely_megjegyzes": "közelítő: a víztorony ugyanazon a telken (242 hrsz.) áll, mint az iskola",
+      "kozelito": true
     },
     {
       "id": "iskola",
       "cim": "Általános iskola: étkező, tantermi klíma, Klassz Room tanterem",
       "kategoria": "Oktatás, nevelés",
       "helyszin": "Herceghalmi Általános Iskola és Alapfokú Művészeti Iskola (242 hrsz.)",
-      "lat": null,
-      "lng": null,
+      "lat": 47.50218,
+      "lng": 18.7522,
       "allapot": "dontes",
       "koltseg": 7000000,
       "koltseg_megjegyzes": "Önkormányzati keret: étkező burkolata 3,5 M Ft (85/2026.) + klíma bruttó 3,5 M Ft (92/2026.). A Klassz Room tanterem-felújítás (bruttó 10 M Ft) a STRABAG programjából valósul meg, az önkormányzatnak nem kerül pénzbe (91/2026.).",
@@ -256,15 +272,17 @@
       "szerzodesek": [],
       "hatarido": "2026. augusztus 31.",
       "leiras": "Nyári felújítások az önkormányzati tulajdonú iskolaépületben.",
-      "utolso_adat": "2026-07-07"
+      "utolso_adat": "2026-07-07",
+      "hely_megjegyzes": "Általános Iskola és AMI, Gesztenyés út 15. (OSM)",
+      "kozelito": false
     },
     {
       "id": "tornacsarnok",
       "cim": "Tornacsarnok: világítás korszerűsítése és elosztószekrény felújítása",
       "kategoria": "Sport",
       "helyszin": "Tornacsarnok",
-      "lat": null,
-      "lng": null,
+      "lat": 47.50218,
+      "lng": 18.7522,
       "allapot": "dontes",
       "koltseg": 8000000,
       "koltseg_megjegyzes": "Világítás bruttó 6 M Ft keret (78/2026.) + elosztóberendezés 2 M Ft (104/2026.).",
@@ -276,15 +294,17 @@
       "szerzodesek": [],
       "hatarido": "",
       "leiras": "",
-      "utolso_adat": "2026-07-07"
+      "utolso_adat": "2026-07-07",
+      "hely_megjegyzes": "közelítő: az iskola épületegyüttese (OSM-ben nincs külön jelölve)",
+      "kozelito": true
     },
     {
       "id": "kek-kazan",
       "cim": "Kulturális és Egyházi Központ: kazáncsere",
       "kategoria": "Épületek",
       "helyszin": "Kulturális és Egyházi Központ (220/17 hrsz.)",
-      "lat": null,
-      "lng": null,
+      "lat": 47.50183,
+      "lng": 18.75237,
       "allapot": "dontes",
       "koltseg": 5054912,
       "koltseg_megjegyzes": "",
@@ -295,15 +315,17 @@
       "szerzodesek": [],
       "hatarido": "",
       "leiras": "A gázkazánok korszerűbbre cserélése; kivitelező: Kelemen és Társa Épületgépészeti Kft.",
-      "utolso_adat": "2026-07-07"
+      "utolso_adat": "2026-07-07",
+      "hely_megjegyzes": "a Községi Könyvtár, Gesztenyés út (OSM)",
+      "kozelito": false
     },
     {
       "id": "temeto-parkolo",
       "cim": "Köztemető: belső parkoló kialakítása",
       "kategoria": "Utak, járdák",
       "helyszin": "Herceghalomi Köztemető, Őszirózsa utca (220/2 hrsz.)",
-      "lat": null,
-      "lng": null,
+      "lat": 47.50139,
+      "lng": 18.75024,
       "allapot": "tervezes",
       "koltseg": 750000,
       "koltseg_megjegyzes": "Az előkészítés kerete; a kivitelezés költségéről még nem született döntés.",
@@ -314,15 +336,17 @@
       "szerzodesek": [],
       "hatarido": "",
       "leiras": "Kb. 300 m²-es parkoló; a tervezést építészmérnök végzi.",
-      "utolso_adat": "2026-05-05"
+      "utolso_adat": "2026-05-05",
+      "hely_megjegyzes": "közelítő: az Őszirózsa utca (a temető címe)",
+      "kozelito": true
     },
     {
       "id": "liget-park",
       "cim": "Liget utcai közpark és játszótér tervezése",
       "kategoria": "Zöldterület",
       "helyszin": "Liget utcai közpark (255/3 és 256 hrsz.)",
-      "lat": null,
-      "lng": null,
+      "lat": 47.49948,
+      "lng": 18.75175,
       "allapot": "tervezes",
       "koltseg": null,
       "koltseg_megjegyzes": "Árajánlatkérés a tájépítészeti tervezésre.",
@@ -333,7 +357,9 @@
       "szerzodesek": [],
       "hatarido": "",
       "leiras": "A tervnek a település teljes zöld-kék infrastruktúrájához kell illeszkednie; a 2026-os beruházási prioritások között is szerepel (4/2026.).",
-      "utolso_adat": "2026-10-06"
+      "utolso_adat": "2026-10-06",
+      "hely_megjegyzes": "közelítő: a Liget utca (OSM)",
+      "kozelito": true
     },
     {
       "id": "okos-zebra",
@@ -378,8 +404,8 @@
       "cim": "Boróka utcai bérlakások: teraszok és terasztetők",
       "kategoria": "Lakás",
       "helyszin": "Boróka utca 22–26.",
-      "lat": null,
-      "lng": null,
+      "lat": 47.49525,
+      "lng": 18.73762,
       "allapot": "dontes",
       "koltseg": 2484367,
       "koltseg_megjegyzes": "1 707 200 Ft + 777 167 Ft (75/2026.).",
@@ -390,15 +416,17 @@
       "szerzodesek": [],
       "hatarido": "",
       "leiras": "",
-      "utolso_adat": "2026-05-28"
+      "utolso_adat": "2026-05-28",
+      "hely_megjegyzes": "közelítő: a Boróka utca (OSM)",
+      "kozelito": true
     },
     {
       "id": "tanacsterem",
       "cim": "Polgármesteri Hivatal: a tanácsterem átalakítása",
       "kategoria": "Épületek",
       "helyszin": "Polgármesteri Hivatal, Gesztenyés út 13.",
-      "lat": null,
-      "lng": null,
+      "lat": 47.50136,
+      "lng": 18.75256,
       "allapot": "dontes",
       "koltseg": 3000000,
       "koltseg_megjegyzes": "",
@@ -409,7 +437,9 @@
       "szerzodesek": [],
       "hatarido": "",
       "leiras": "Irattár és egy önálló iroda kialakítása, új bútorzat. A döntés 5 igen, 1 nem szavazattal született.",
-      "utolso_adat": "2026-09-01"
+      "utolso_adat": "2026-09-01",
+      "hely_megjegyzes": "Polgármesteri Hivatal, Gesztenyés út 13. (OSM)",
+      "kozelito": false
     },
     {
       "id": "kommunalis-eszkozok",
