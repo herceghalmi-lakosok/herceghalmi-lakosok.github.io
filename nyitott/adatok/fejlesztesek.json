@@ -1,0 +1,456 @@
+{
+  "frissitve": "2026-11-22",
+  "megjegyzes": "Fejlesztéskövető: az önkormányzat beruházásai és felújításai. Költség: bruttó forint, ha a forrás bruttóként adja meg; különben a 'koltseg_megjegyzes' mondja meg. Állapot: tervezes, palyazat, dontes, szerzodes, kivitelezes, kesz, elakadt. A 'lat'/'lng' üres, ha a pontos helyet még nem rögzítettük. Útmutató: SZERKESZTOKNEK.md.",
+  "allapotok": {
+    "tervezes": "Tervezés, előkészítés",
+    "palyazat": "Pályázat",
+    "dontes": "Döntés megszületett",
+    "szerzodes": "Szerződés megkötve",
+    "kivitelezes": "Kivitelezés folyamatban",
+    "kesz": "Elkészült",
+    "elakadt": "Elakadt, elhalasztva"
+  },
+  "fejlesztesek": [
+    {
+      "id": "egeszseghaz",
+      "cim": "Egészségház felújítása és fejlesztése",
+      "kategoria": "Egészségügy",
+      "helyszin": "Egészségház",
+      "lat": null,
+      "lng": null,
+      "allapot": "tervezes",
+      "koltseg": 365300000,
+      "koltseg_megjegyzes": "A 2026. évi költségvetés tervezett összege (351,6 M Ft építés + 13,7 M Ft). Ezen felül: ideiglenes rendelők bruttó 25 M Ft (158/2026.), projektmenedzser bruttó 7 M Ft (159/2026.), közbeszerzési lebonyolító bruttó 4,45 M Ft (12/2026.), kiviteli tervek bruttó 6,67 M Ft (28/2026.).",
+      "forras": "Uniós támogatás (TOP Plusz, TOP_PLUSZ-3.3.2-21-PT1-2022-00047) és önkormányzati forrás",
+      "hatarozatok": [
+        "12/2026",
+        "28/2026",
+        "158/2026",
+        "159/2026"
+      ],
+      "szerzodesek": [
+        "Egészségház felújítása, fejlesztése - Koreny Építész Stúdió kiviteli terv elkészítése",
+        "Egészségház projektmenedzsment - Gödör István"
+      ],
+      "hatarido": "",
+      "leiras": "A 2026-os év legnagyobb beruházása és a testület első számú beruházási prioritása (4/2026.). A felújítás várhatóan 10 hónapig tart; erre az időre konténerrendelőket bérelnek a KEK mögötti aszfaltpályára.",
+      "utolso_adat": "2026-10-20"
+    },
+    {
+      "id": "ovoda-teto",
+      "cim": "Csicsergő Óvoda: a tetőszerkezet sürgős cseréje",
+      "kategoria": "Oktatás, nevelés",
+      "helyszin": "Herceghalmi Csicsergő Óvoda, székhely",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 49000000,
+      "koltseg_megjegyzes": "Keretösszeg a kivitelezésre és a műszaki ellenőrzésre.",
+      "forras": "Önkormányzati forrás",
+      "hatarozatok": [
+        "93/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "2026. szeptember 1.",
+      "leiras": "A testület a Wienerberger Zrt. műszaki állásfoglalása alapján elkerülhetetlennek ítélte a tető azonnali cseréjét a rejtett kivitelezési és tervezési hibák miatt.",
+      "utolso_adat": "2026-07-07"
+    },
+    {
+      "id": "ovoda-top",
+      "cim": "Csicsergő Óvoda fejlesztése (TOP Plusz)",
+      "kategoria": "Oktatás, nevelés",
+      "helyszin": "Herceghalmi Csicsergő Óvoda",
+      "lat": null,
+      "lng": null,
+      "allapot": "kesz",
+      "koltseg": 39100000,
+      "koltseg_megjegyzes": "A 2026-os költségvetésben szereplő záró tétel (végszámla), nem a teljes projektérték.",
+      "forras": "Uniós támogatás (TOP Plusz)",
+      "hatarozatok": [],
+      "szerzodesek": [
+        "Herceghalmi Csicsergő Óvoda fejlesztése - TOP-Plusz pályázat"
+      ],
+      "hatarido": "",
+      "leiras": "Megvalósult óvodafejlesztés; 2026-ban a végszámla kifizetése szerepel a költségvetésben.",
+      "utolso_adat": "2026-02-03"
+    },
+    {
+      "id": "ovoda-udvar",
+      "cim": "Csicsergő Óvoda: udvari fa játszóeszközök felújítása",
+      "kategoria": "Oktatás, nevelés",
+      "helyszin": "Herceghalmi Csicsergő Óvoda, székhely udvara",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 4438800,
+      "koltseg_megjegyzes": "Bruttó 2 717 800 Ft (76/2026.) + 721 000 Ft többletköltség (118/2026.) + 1 000 000 Ft keret (137/2026.).",
+      "forras": "Önkormányzati forrás (tartalékkeret)",
+      "hatarozatok": [
+        "76/2026",
+        "118/2026",
+        "137/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "A játszótéri faszerkezetek jogszabálynak és szabványnak megfelelő felújítása és részleges újjáépítése.",
+      "utolso_adat": "2026-09-01"
+    },
+    {
+      "id": "petofi-jarda",
+      "cim": "Petőfi utcai járda felújítása",
+      "kategoria": "Utak, járdák",
+      "helyszin": "Petőfi utca (74 hrsz.) és Kossuth Lajos utca (124 hrsz.), 225 m",
+      "lat": null,
+      "lng": null,
+      "allapot": "szerzodes",
+      "koltseg": 16524633,
+      "koltseg_megjegyzes": "",
+      "forras": "Állami támogatás (Közigazgatási és Területfejlesztési Minisztérium, JSZPF/61-4/2026-KTM támogatói okirat)",
+      "hatarozatok": [
+        "86/2026"
+      ],
+      "szerzodesek": [
+        "Szerződés Petőfi utcai járda - Puhi-Tárnok Kft."
+      ],
+      "hatarido": "",
+      "leiras": "Kivitelező: Puhi-Tárnok Út és Hídépítő Kft.",
+      "utolso_adat": "2026-07-07"
+    },
+    {
+      "id": "jokai-jarda",
+      "cim": "Jókai utcai járda felújítása",
+      "kategoria": "Utak, járdák",
+      "helyszin": "Jókai utca (101 hrsz.), páratlan oldal",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 18971175,
+      "koltseg_megjegyzes": "",
+      "forras": "Állami támogatás (Versenyképes Járások Program II.) 7 299 399 Ft és önkormányzati forrás 11 671 776 Ft",
+      "hatarozatok": [
+        "140/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "2026. október 30.",
+      "leiras": "Kivitelező: Puhi-Tárnok Út és Hídépítő Kft.",
+      "utolso_adat": "2026-09-14"
+    },
+    {
+      "id": "liliom-lejto",
+      "cim": "Liliom lejtő felújítása",
+      "kategoria": "Utak, járdák",
+      "helyszin": "Liliom lejtő, az Árvalányhaj utca és a Pipacs utca között",
+      "lat": null,
+      "lng": null,
+      "allapot": "szerzodes",
+      "koltseg": 30706549,
+      "koltseg_megjegyzes": "",
+      "forras": "Önkormányzati forrás (általános tartalékkeret)",
+      "hatarozatok": [
+        "115/2026"
+      ],
+      "szerzodesek": [
+        "PUHI-TÁRNOK Út- és Hídépítő Kft. - Liliom lejtő felújítása"
+      ],
+      "hatarido": "2026. október 15.",
+      "leiras": "A teljes szakasz felújítása; a testület a Liliom lejtő – Árvalányhaj utca – Boróka utca kereszteződésben forgalomlassítási lehetőségeket is vizsgál.",
+      "utolso_adat": "2026-08-11"
+    },
+    {
+      "id": "fout-burkolat",
+      "cim": "1-es főút: burkolatfelújítás a közlekedési lámpától Biatorbágy felé",
+      "kategoria": "Utak, járdák",
+      "helyszin": "1. sz. főút, a lámpás csomóponttól Biatorbágy irányába kb. 220 m",
+      "lat": null,
+      "lng": null,
+      "allapot": "szerzodes",
+      "koltseg": 7109412,
+      "koltseg_megjegyzes": "",
+      "forras": "Önkormányzati forrás, a Magyar Közúttal kötött megállapodás alapján",
+      "hatarozatok": [
+        "87/2026"
+      ],
+      "szerzodesek": [
+        "Herceghalom 1. számú főút burkolat felújítása - Puhi-Tárnok Kft."
+      ],
+      "hatarido": "2026. augusztus 15.",
+      "leiras": "A testület második beruházási prioritása volt 2026-ban (4/2026.).",
+      "utolso_adat": "2026-07-07"
+    },
+    {
+      "id": "vidar",
+      "cim": "Sebességmérő kamerák az 1-es főút mentén (VIDAR Speed)",
+      "kategoria": "Közlekedésbiztonság",
+      "helyszin": "1. sz. főút, két sebességellenőrző végpont",
+      "lat": null,
+      "lng": null,
+      "allapot": "szerzodes",
+      "koltseg": 19000000,
+      "koltseg_megjegyzes": "Keretösszeg.",
+      "forras": "Önkormányzati forrás",
+      "hatarozatok": [
+        "116/2026"
+      ],
+      "szerzodesek": [
+        "ARH Informatikai Zrt. - Vállalkozási szerződés VIDAR Speed sebességmérő kamera kihelyezésé"
+      ],
+      "hatarido": "",
+      "leiras": "Két végpont kiépítése teljes vállalkozói kivitelezéssel; kivitelező: ARH Informatikai Zrt.",
+      "utolso_adat": "2026-08-11"
+    },
+    {
+      "id": "kandelaberek",
+      "cim": "Napelemes közvilágítás: újabb kandeláberek",
+      "kategoria": "Közvilágítás",
+      "helyszin": "A Polgármesteri Hivatal melletti utcaszakasz és parkoló (Árvalányhaj utca – Móricz út), a Petőfi utca – Kossuth Lajos utca gyalogátkelő, az Árvácska utca – Ördöglovas lejtő kereszteződés és a temető",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 7904480,
+      "koltseg_megjegyzes": "Az eredeti bruttó 6 529 070 Ft-os keretet a 160/2026. határozat emelte meg.",
+      "forras": "Önkormányzati forrás (általános tartalékkeret)",
+      "hatarozatok": [
+        "147/2026",
+        "160/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "2026. november 20.",
+      "leiras": "Több helyszín: a térképen a hivatal melletti szakasz jelöli.",
+      "utolso_adat": "2026-10-20"
+    },
+    {
+      "id": "viztorony",
+      "cim": "A helyi védett víztorony villámhárítójának javítása",
+      "kategoria": "Épületek",
+      "helyszin": "Víztorony, 242 hrsz.",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 2311604,
+      "koltseg_megjegyzes": "Villámvédelem bruttó 1 219 404 Ft + emelőkosaras gép bruttó 1 092 200 Ft.",
+      "forras": "Önkormányzati forrás (tartalékkeret)",
+      "hatarozatok": [
+        "39/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "2026. május 15.",
+      "leiras": "A hivatalos honlapon a határozat tévesen 38/2026. számon szerepel.",
+      "utolso_adat": "2026-04-07"
+    },
+    {
+      "id": "iskola",
+      "cim": "Általános iskola: étkező, tantermi klíma, Klassz Room tanterem",
+      "kategoria": "Oktatás, nevelés",
+      "helyszin": "Herceghalmi Általános Iskola és Alapfokú Művészeti Iskola (242 hrsz.)",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 7000000,
+      "koltseg_megjegyzes": "Önkormányzati keret: étkező burkolata 3,5 M Ft (85/2026.) + klíma bruttó 3,5 M Ft (92/2026.). A Klassz Room tanterem-felújítás (bruttó 10 M Ft) a STRABAG programjából valósul meg, az önkormányzatnak nem kerül pénzbe (91/2026.).",
+      "forras": "Önkormányzati forrás; STRABAG Klassz Room Program",
+      "hatarozatok": [
+        "85/2026",
+        "91/2026",
+        "92/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "2026. augusztus 31.",
+      "leiras": "Nyári felújítások az önkormányzati tulajdonú iskolaépületben.",
+      "utolso_adat": "2026-07-07"
+    },
+    {
+      "id": "tornacsarnok",
+      "cim": "Tornacsarnok: világítás korszerűsítése és elosztószekrény felújítása",
+      "kategoria": "Sport",
+      "helyszin": "Tornacsarnok",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 8000000,
+      "koltseg_megjegyzes": "Világítás bruttó 6 M Ft keret (78/2026.) + elosztóberendezés 2 M Ft (104/2026.).",
+      "forras": "Önkormányzati forrás (tartalékkeret)",
+      "hatarozatok": [
+        "78/2026",
+        "104/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "",
+      "utolso_adat": "2026-07-07"
+    },
+    {
+      "id": "kek-kazan",
+      "cim": "Kulturális és Egyházi Központ: kazáncsere",
+      "kategoria": "Épületek",
+      "helyszin": "Kulturális és Egyházi Központ (220/17 hrsz.)",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 5054912,
+      "koltseg_megjegyzes": "",
+      "forras": "Önkormányzati forrás",
+      "hatarozatok": [
+        "89/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "A gázkazánok korszerűbbre cserélése; kivitelező: Kelemen és Társa Épületgépészeti Kft.",
+      "utolso_adat": "2026-07-07"
+    },
+    {
+      "id": "temeto-parkolo",
+      "cim": "Köztemető: belső parkoló kialakítása",
+      "kategoria": "Utak, járdák",
+      "helyszin": "Herceghalomi Köztemető, Őszirózsa utca (220/2 hrsz.)",
+      "lat": null,
+      "lng": null,
+      "allapot": "tervezes",
+      "koltseg": 750000,
+      "koltseg_megjegyzes": "Az előkészítés kerete; a kivitelezés költségéről még nem született döntés.",
+      "forras": "Önkormányzati forrás",
+      "hatarozatok": [
+        "61/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "Kb. 300 m²-es parkoló; a tervezést építészmérnök végzi.",
+      "utolso_adat": "2026-05-05"
+    },
+    {
+      "id": "liget-park",
+      "cim": "Liget utcai közpark és játszótér tervezése",
+      "kategoria": "Zöldterület",
+      "helyszin": "Liget utcai közpark (255/3 és 256 hrsz.)",
+      "lat": null,
+      "lng": null,
+      "allapot": "tervezes",
+      "koltseg": null,
+      "koltseg_megjegyzes": "Árajánlatkérés a tájépítészeti tervezésre.",
+      "forras": "Tervezett pályázat (zöld és kék infrastruktúra)",
+      "hatarozatok": [
+        "148/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "A tervnek a település teljes zöld-kék infrastruktúrájához kell illeszkednie; a 2026-os beruházási prioritások között is szerepel (4/2026.).",
+      "utolso_adat": "2026-10-06"
+    },
+    {
+      "id": "okos-zebra",
+      "cim": "Okos zebra a 8101-es úton",
+      "kategoria": "Közlekedésbiztonság",
+      "helyszin": "8101. sz. út, 9 km + 440 m szelvény, gyalogátkelőhely",
+      "lat": null,
+      "lng": null,
+      "allapot": "palyazat",
+      "koltseg": null,
+      "koltseg_megjegyzes": "Önerő: 50%, összege a műszaki felmérés után dől el; 3 évig vállalt üzemeltetés (áramdíj + 10 000 Ft/hó).",
+      "forras": "Pályázat (Generali a Biztonságért Alapítvány) és önerő",
+      "hatarozatok": [
+        "66/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "",
+      "utolso_adat": "2026-05-05"
+    },
+    {
+      "id": "mfp-jatszoudvar",
+      "cim": "Óvodai és közterületi játszóterek fejlesztése (Magyar Falu Program)",
+      "kategoria": "Zöldterület",
+      "helyszin": "",
+      "lat": null,
+      "lng": null,
+      "allapot": "palyazat",
+      "koltseg": 8000000,
+      "koltseg_megjegyzes": "A megpályázott támogatás (maximális összeg).",
+      "forras": "Pályázat (Magyar Falu Program, MFP/ÖTIFB/2026/OBJKJF)",
+      "hatarozatok": [
+        "13/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "A pályázat eredményéről nincs nyilvános adat a feldolgozott dokumentumokban.",
+      "utolso_adat": "2026-02-03"
+    },
+    {
+      "id": "boroka-teraszok",
+      "cim": "Boróka utcai bérlakások: teraszok és terasztetők",
+      "kategoria": "Lakás",
+      "helyszin": "Boróka utca 22–26.",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 2484367,
+      "koltseg_megjegyzes": "1 707 200 Ft + 777 167 Ft (75/2026.).",
+      "forras": "Önkormányzati forrás",
+      "hatarozatok": [
+        "75/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "",
+      "utolso_adat": "2026-05-28"
+    },
+    {
+      "id": "tanacsterem",
+      "cim": "Polgármesteri Hivatal: a tanácsterem átalakítása",
+      "kategoria": "Épületek",
+      "helyszin": "Polgármesteri Hivatal, Gesztenyés út 13.",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 3000000,
+      "koltseg_megjegyzes": "",
+      "forras": "Önkormányzati forrás (általános tartalék)",
+      "hatarozatok": [
+        "134/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "Irattár és egy önálló iroda kialakítása, új bútorzat. A döntés 5 igen, 1 nem szavazattal született.",
+      "utolso_adat": "2026-09-01"
+    },
+    {
+      "id": "kommunalis-eszkozok",
+      "cim": "Kommunális eszközök és járművek a településüzemeltetéshez",
+      "kategoria": "Településüzemeltetés",
+      "helyszin": "",
+      "lat": null,
+      "lng": null,
+      "allapot": "dontes",
+      "koltseg": 30074000,
+      "koltseg_megjegyzes": "Eszközkeret 20 M Ft (114/2026.) + gépjármű 3,299 M Ft (73/2026.) + használt gépjármű bruttó 6 M Ft-ig (100/2026.) + utánfutó 775 000 Ft (117/2026.).",
+      "forras": "Önkormányzati forrás",
+      "hatarozatok": [
+        "73/2026",
+        "100/2026",
+        "114/2026",
+        "117/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "Nincs egyetlen helyszíne, ezért a térképen nem jelenik meg.",
+      "utolso_adat": "2026-08-11"
+    },
+    {
+      "id": "viztorony-uj",
+      "cim": "Új víztorony a vízellátás fejlesztésére (KEHOP Plusz)",
+      "kategoria": "Víziközmű",
+      "helyszin": "",
+      "lat": null,
+      "lng": null,
+      "allapot": "palyazat",
+      "koltseg": null,
+      "koltseg_megjegyzes": "",
+      "forras": "Pályázat (KEHOP Plusz-2.1.31-26), az Érd és Térsége Víziközmű Kft. közreműködésével",
+      "hatarozatok": [
+        "119/2026"
+      ],
+      "szerzodesek": [],
+      "hatarido": "",
+      "leiras": "A testület kérte a víziközmű-szolgáltatót, hogy vizsgálja meg, beilleszthető-e egy új víztorony a pályázat műszaki tartalmába.",
+      "utolso_adat": "2026-08-11"
+    }
+  ]
+}

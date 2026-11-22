@@ -396,6 +396,20 @@
       "forras": "határozati kivonat, gépi szövegfelismeréssel ; szavazás: ülés jegyzőkönyve"
     },
     "38/2026": {
+      "szoveg": "1. A Képviselő-testület úgy határoz, hogy az előterjesztésben megfogalmazott feltételekkel támogatja hetente legalább 10, és legfeljebb 40 fő a Herceghalmi Általános Iskola és Alapfokú Művészeti Iskolában tanuló, vagy herceghalomi lakcímmel rendelkező gyermek részére a nyári napközis tábor megvalósulását az előzetes felmérés alapján, melynek helyszíne: Herceghalmi Általános Iskola és Alapfokú Művészeti Iskola Herceghalom, Gesztenyés út 15.\n2. A Képviselő-testület a jelentkezési határidőt 2026. május 31. napjában állapítja meg.\n3. A Képviselő-testület a tábor díját 12.500,-Ft -- étkezés/fő/hét díjban állapítja meg. A szociális rászorultságról és annak mértékéről a Humán és Környezetvédelmi Bizottság egyedi elbírálás alapján dönt a helyi szociális rendelet rendelkezéseit figyelembe véve.\n4. A Képviselő-testület úgy határoz, hogy a 2026. évi nyári napközis táborra a szülők által befizetett tábori díjat a nyári napközis tábor költségeinek finanszírozására, többek között a táboroztató pedagógusok részére bruttó 110.000,-Ft/fő/hét -járulék megbízási díj megfizetésére fordítja.\n5. A Képviselő-testület a nyári napközis tábor lebonyolításához szükséges költségeket az önkormányzat 2026. évi költségvetéséről szóló 3/2026 (III. 4.) önkormányzati rendelete\n2. mellékletének 2. Kiadási jogcímek 6. sora (, Ellátottak pénzbeli juttatásai\") terhére biztosította.",
+      "felelos": "Csizmadia Zsuzsanna polgármester",
+      "hatarido": "folyamatos",
+      "hatarido_datum": "",
+      "szavazas": {
+        "igen": 5,
+        "nem": 0,
+        "tartozkodas": 0
+      },
+      "vegrehajtas": "",
+      "vegrehajtas_megjegyzes": "",
+      "forras": "határozati kivonat, gépi szövegfelismeréssel ; szavazás: ülés jegyzőkönyve"
+    },
+    "39/2026": {
       "szoveg": "A Képviselő-testület úgy határoz, hogy a Herceghalom, 242 hrsz.-ú ingatlanon található, helyi védettség alatt álló víztorony villámhárítóját megjavíttatja. A Képviselő-testület a víztorony villámvédelmi rendszerének javítására és a villámvédelmi jegyzőkönyv elkészítésére a legkedvezőbb ajánlatot adó FormaFény Kft. (Székhely: 1116 Budapest Fehérvári út 132-144.) nettó 960.161 Ft 4 ÁFA, azaz bruttó 1.219.404 Ft összegű árajánlatát fogadja el. A Képviselő-testület a 2. pontban foglalt munkálatokhoz elengedhetetlenül szükséges emelőkosaras gépjármű biztosítására - emelőgép, gépkezelő, szállítás - a Forza Hungária Kft. (1063 Budapest, Szív u. 33.) nettó 860.000 Ft - ÁFA, azaz bruttó 1.092.200,- Ft összegű árajánlatát fogadja el. A Képviselő-testület a 2. és a 3. pont szerinti feladatok elvégzésére a fedezetet az önkormányzat 2026. évi költségvetéséről szóló 3/2026 (ITHI. 4.) önkormányzati rendeletében a tartalékkeret terhére biztosítja. A Képviselő-testület felhatalmazza Csizmadia Zsuzsanna polgármestert az 2. és 3. pont szerinti vállalkozási szerződések aláírására.",
       "felelos": "Csizmadia Zsuzsanna polgármester",
       "hatarido": "2026. május 15.",
@@ -408,7 +422,7 @@
       "vegrehajtas": "",
       "vegrehajtas_megjegyzes": "",
       "forras": "határozati kivonat, gépi szövegfelismeréssel ; szavazás: ülés jegyzőkönyve ; szavazás: ülés jegyzőkönyve",
-      "megjegyzes": "A hivatalos honlapon 38/2026. számon szerepel, de a kivonat és a jegyzőkönyv szerint ez a 39/2026. számú határozat."
+      "megjegyzes": "A hivatalos honlapon tévesen 38/2026. számon szerepel; a kivonat és a jegyzőkönyv szerint ez a 39/2026. számú határozat."
     },
     "40/2026": {
       "szoveg": "1. A Képviselő-testület megismerte és támogatja a polgármester kezdeményezésére indított lakossági aláírásgyűjtés eredményét.\n2. A Képviselő-testület megállapítja, hogy herceghalomi vasútállomással kapcsolatosan a felvetett közlekedésbiztonsági és kapacitásproblémák valósak, és széles körű lakossági támogatottsággal bírnak.\n3. A Képviselő-testület kiemelten indokoltnak tartja az alábbi fejlesztések mielőbbi megvalósítását: e az 1. számú főúton járdasziget kialakítása; e — vasúti aluljáró megépítése a herceghalomi vasútállomáson; e a személyvonati kapacitás növelése a Budapest-Tatabánya—Győr— Hegyeshalom vasútvonal herceghalomi szakaszán.\n4. A Képviselő-testület felkéri a polgármestert, hogy a Képviselő-testület támogatását kifejező jelen határozatot juttassa el az illetékes szervek részére, és képviselje a település érdekeit az egyeztetések során.\n5. A Képviselő-testület felhatalmazza a polgármestert, hogy a fejlesztések előmozdítása érdekében további tárgyalásokat folytasson.",
@@ -1908,5 +1922,8 @@
       "vegrehajtas_megjegyzes": "",
       "forras": "határozati kivonat, gépi szövegfelismeréssel ; szavazás: ülés jegyzőkönyve"
     }
+  },
+  "url_kulcs": {
+    "https://www.herceghalom.hu/?module=news&action=getfile&fid=298994": "39/2026"
   }
 }

@@ -1,0 +1,1103 @@
+{
+  "frissitve": "2026-11-22",
+  "megjegyzes": "Szerződéstár. A közzétett szerződések adatai a herceghalom.hu PDF-jeiből (szövegfelismeréssel, kézi ellenőrzéssel). 'ertek': Ft; 'ertek_tipus' mondja meg, bruttó, nettó, havi vagy egyéb. 'hianyzo': olyan 2026-os döntések legalább bruttó 5 M Ft értékben, amelyekhez nem találtunk közzétett szerződést a hivatalos honlapon. Útmutató: SZERKESZTOKNEK.md.",
+  "szerzodesek": [
+    {
+      "id": "303442",
+      "cim": "Környezetápolási gép adás-vételi szerződés",
+      "partner": "KITE Zrt.",
+      "tipus": "adásvétel",
+      "kategoria": "Eszközbeszerzés",
+      "ertek": 25387300,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-10-08",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "114/2026"
+      ],
+      "megjegyzes": "John Deere 3046R kompakt traktor és tartozékai; nettó 19 990 000 Ft. A határozati kapcsolatot a tárgy alapján jelöltük.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=303442",
+      "modositasok": []
+    },
+    {
+      "id": "302729",
+      "cim": "PUHI-TÁRNOK Út- és Hídépítő Kft. - Liliom lejtő felújítása",
+      "partner": "PUHI-TÁRNOK Út- és Hídépítő Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Utak, járdák",
+      "ertek": 30706549,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-09-17",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "115/2026"
+      ],
+      "megjegyzes": "Liliom lejtő felújítása az Árvalányhaj utca és a Pipacs utca között.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=302729",
+      "modositasok": []
+    },
+    {
+      "id": "302490",
+      "cim": "Herceghalom Gyermekeikért Közhasznú Alapítvány céltámogatása - általános iskolai játszóudvar kialakítása - ütéscsillapítás kiépítése",
+      "partner": "Herceghalom Gyermekeiért Közhasznú Alapítvány",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 500000,
+      "ertek_tipus": "",
+      "datum": "2026-09-15",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "142/2026"
+      ],
+      "megjegyzes": "Céltámogatás az általános iskolai játszóudvar ütéscsillapító burkolatához.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=302490",
+      "modositasok": []
+    },
+    {
+      "id": "302578",
+      "cim": "ARH Informatikai Zrt. - Vállalkozási szerződés VIDAR Speed sebességmérő kamera kihelyezésére",
+      "partner": "ARH Informatikai Zrt.",
+      "tipus": "vállalkozási",
+      "kategoria": "Közlekedésbiztonság",
+      "ertek": 14746000,
+      "ertek_tipus": "nettó",
+      "datum": "2026-08-28",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "116/2026"
+      ],
+      "megjegyzes": "Két VIDAR Speed sebességellenőrző végpont az 1-es főút mentén. Az érték a szerződés tételes mellékletének összesítője (szövegfelismerésből).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=302578",
+      "modositasok": []
+    },
+    {
+      "id": "301947",
+      "cim": "Herceghalom 1. számú főút burkolat felújítása - Puhi-Tárnok Kft.",
+      "partner": "PUHI-TÁRNOK Út- és Hídépítő Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Utak, járdák",
+      "ertek": 7109412,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-08-04",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "87/2026"
+      ],
+      "megjegyzes": "Az 1-es főút burkolatfelújítása a lámpától Biatorbágy felé, kb. 220 m.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=301947",
+      "modositasok": []
+    },
+    {
+      "id": "301632",
+      "cim": "Herceghalmi Pedagógusok Egyesülete 2026. évi programtámogatás",
+      "partner": "Herceghalmi Pedagógusok Egyesülete",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 1350000,
+      "ertek_tipus": "",
+      "datum": "2026-07-10",
+      "kezdete": "",
+      "vege": "2026. december 31.",
+      "hatarozatok": [
+        "96/2026"
+      ],
+      "megjegyzes": "2026. évi programtámogatás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=301632",
+      "modositasok": []
+    },
+    {
+      "id": "301946",
+      "cim": "Szerződés Petőfi utcai járda - Puhi-Tárnok Kft.",
+      "partner": "PUHI-TÁRNOK Út- és Hídépítő Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Utak, járdák",
+      "ertek": 16524633,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-07-03",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "86/2026"
+      ],
+      "megjegyzes": "Petőfi utcai és Kossuth Lajos utcai járdaszakasz, 225 m.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=301946",
+      "modositasok": []
+    },
+    {
+      "id": "299169",
+      "cim": "Herceghalom Kultúrájáért Egyesület 2026. évi együttműködési megállapodás",
+      "partner": "Herceghalom Kultúrájáért Egyesület",
+      "tipus": "együttműködési",
+      "kategoria": "Civil támogatás",
+      "ertek": 296000,
+      "ertek_tipus": "",
+      "datum": "2026-04-13",
+      "kezdete": "",
+      "vege": "2026. december 31.",
+      "hatarozatok": [
+        "44/2026"
+      ],
+      "megjegyzes": "2026. évi együttműködési megállapodás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=299169",
+      "modositasok": []
+    },
+    {
+      "id": "299144",
+      "cim": "Herceghalomi Mozgáskorlátozottak Egyesülete 2026. évi gyógytorna támogatás",
+      "partner": "Herceghalomi Mozgáskorlátozottak Egyesülete",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 360000,
+      "ertek_tipus": "",
+      "datum": "2026-04-13",
+      "kezdete": "",
+      "vege": "2026. december 31.",
+      "hatarozatok": [
+        "42/2026"
+      ],
+      "megjegyzes": "Gyógytorna költségeinek támogatása 2026-ban.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=299144",
+      "modositasok": []
+    },
+    {
+      "id": "299143",
+      "cim": "Herceghalomi Mozgáskorlátozottak Egyesülete 2026. évi programtámogatása",
+      "partner": "Herceghalomi Mozgáskorlátozottak Egyesülete",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 500000,
+      "ertek_tipus": "",
+      "datum": "2026-04-13",
+      "kezdete": "",
+      "vege": "2026. december 31.",
+      "hatarozatok": [],
+      "megjegyzes": "2026. évi programtámogatás (részletek a PDF-ben).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=299143",
+      "modositasok": []
+    },
+    {
+      "id": "299136",
+      "cim": "Labdarózsa Kórus Egyesület 2026. évi programtámogatása",
+      "partner": "Labdarózsa Kórus Egyesület",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 1085000,
+      "ertek_tipus": "",
+      "datum": "2026-04-13",
+      "kezdete": "",
+      "vege": "2026. december 31.",
+      "hatarozatok": [],
+      "megjegyzes": "2026. évi programtámogatás (részletek a PDF-ben).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=299136",
+      "modositasok": []
+    },
+    {
+      "id": "299135",
+      "cim": "Labdarózsa Kórus Egyesület együttműködési megállapodás 2026. évre",
+      "partner": "Labdarózsa Kórus Egyesület",
+      "tipus": "együttműködési",
+      "kategoria": "Civil támogatás",
+      "ertek": 550000,
+      "ertek_tipus": "",
+      "datum": "2026-04-13",
+      "kezdete": "",
+      "vege": "2026. december 31.",
+      "hatarozatok": [
+        "43/2026"
+      ],
+      "megjegyzes": "A kórusvezető tiszteletdíjának támogatása 2026-ban.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=299135",
+      "modositasok": []
+    },
+    {
+      "id": "301768",
+      "cim": "Versenyképes Járások Program II. - \"Út és járdaépítés\"",
+      "partner": "Magyar Államkincstár / konzorcium (Versenyképes Járások Program II.)",
+      "tipus": "támogatási (konzorciumi)",
+      "kategoria": "Utak, járdák",
+      "ertek": 7299399,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-03-25",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [],
+      "megjegyzes": "A járási konzorcium 250 M Ft-os támogatásából Herceghalomnak átadott rész, út- és járdaépítésre.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=301768",
+      "modositasok": []
+    },
+    {
+      "id": "300686",
+      "cim": "Egészségház felújítása, fejlesztése - Koreny Építész Stúdió kiviteli terv elkészítése",
+      "partner": "Koreny Építész Stúdió",
+      "tipus": "tervezési",
+      "kategoria": "Egészségügy",
+      "ertek": 6667500,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-03-10",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "28/2026"
+      ],
+      "megjegyzes": "Az Egészségház kiviteli és belsőépítészeti terveinek elkészítése; nettó 5 250 000 Ft.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=300686",
+      "modositasok": []
+    },
+    {
+      "id": "300687",
+      "cim": "Egészségház projektmenedzsment - Gödör István",
+      "partner": "Gödör István",
+      "tipus": "megbízási",
+      "kategoria": "Egészségügy",
+      "ertek": 6000000,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-01-05",
+      "kezdete": "",
+      "vege": "a projekt végéig",
+      "hatarozatok": [],
+      "megjegyzes": "Az Egészségház-projekt projektmenedzsmentje, a projekt teljes időtartamára.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=300687",
+      "modositasok": []
+    },
+    {
+      "id": "297925",
+      "cim": "Herceghalom Gyermekeiért Közhasznú Alapítvány 2026. évi jótékonysági báljának támogatása",
+      "partner": "Herceghalom Gyermekeiért Közhasznú Alapítvány",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 1250000,
+      "ertek_tipus": "",
+      "datum": "2026-01",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "162/2025"
+      ],
+      "megjegyzes": "A 2026. évi jótékonysági bál támogatása.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=297925",
+      "modositasok": []
+    },
+    {
+      "id": "295696",
+      "cim": "Esély Szociális Társulás - szociális alapellátási feladatok ellátása 2026. évben",
+      "partner": "Esély Szociális Társulás",
+      "tipus": "feladatellátási",
+      "kategoria": "Szociális",
+      "ertek": 16367300,
+      "ertek_tipus": "",
+      "datum": "2026",
+      "kezdete": "2026-01-01",
+      "vege": "2026-12-31",
+      "hatarozatok": [],
+      "megjegyzes": "Kötelező szociális alapellátások 2026-ban.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=295696",
+      "modositasok": []
+    },
+    {
+      "id": "295043",
+      "cim": "Járóbeteg szakellátás 2026. évi finanszírozása - Biatorbágyi Egészségház",
+      "partner": "Biatorbágyi Egészségház (Biatorbágy Város Önkormányzata)",
+      "tipus": "támogatási",
+      "kategoria": "Egészségügy",
+      "ertek": 6500000,
+      "ertek_tipus": "",
+      "datum": "2025-12",
+      "kezdete": "2026-01-01",
+      "vege": "2026-12-31",
+      "hatarozatok": [
+        "154/2025"
+      ],
+      "megjegyzes": "Hozzájárulás a járóbeteg-szakellátás 2026. évi működtetéséhez.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=295043",
+      "modositasok": []
+    },
+    {
+      "id": "295707",
+      "cim": "Herceghalom, 321/419. hrsz-ú ingatlan értékesítése",
+      "partner": "FNE Homes Kft.",
+      "tipus": "adásvétel (értékesítés)",
+      "kategoria": "Ingatlan",
+      "ertek": 52000000,
+      "ertek_tipus": "bruttó",
+      "datum": "2025-11-25",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "119/2025"
+      ],
+      "megjegyzes": "A 321/419. hrsz-ú önkormányzati ingatlan eladása; vételár, az önkormányzat bevétele.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=295707",
+      "modositasok": []
+    },
+    {
+      "id": "293904",
+      "cim": "Síkosságmentesítési szerződés - Sulymosi Norbert ev.",
+      "partner": "Sulymosi Norbert e.v.",
+      "tipus": "vállalkozási",
+      "kategoria": "Településüzemeltetés",
+      "ertek": 4200000,
+      "ertek_tipus": "nettó",
+      "datum": "2025-11-20",
+      "kezdete": "2025-11-20",
+      "vege": "2026-03-15",
+      "hatarozatok": [
+        "134/2025"
+      ],
+      "megjegyzes": "Téli síkosságmentesítés a 2025/2026-os télen.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293904",
+      "modositasok": []
+    },
+    {
+      "id": "293902",
+      "cim": "321/395. hrsz-ú ingatlan értékesítése",
+      "partner": "vevő (lásd a PDF-et)",
+      "tipus": "adásvétel (értékesítés)",
+      "kategoria": "Ingatlan",
+      "ertek": 75000000,
+      "ertek_tipus": "",
+      "datum": "2025-09-02",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "78/2025"
+      ],
+      "megjegyzes": "A 321/395. hrsz-ú önkormányzati ingatlan eladása; vételár, az önkormányzat bevétele.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293902",
+      "modositasok": []
+    },
+    {
+      "id": "293901",
+      "cim": "Közétkeztetési szerződés - Delirest Kft.",
+      "partner": "Delirest Kft.",
+      "tipus": "vállalkozási (közétkeztetés)",
+      "kategoria": "Oktatás, nevelés",
+      "ertek": null,
+      "ertek_tipus": "",
+      "datum": "2025-09-02",
+      "kezdete": "2025-09-02",
+      "vege": "2026-08-20",
+      "hatarozatok": [
+        "106/2025"
+      ],
+      "megjegyzes": "Óvodai és iskolai közétkeztetés egységárakon; a szerződés 12 hónappal meghosszabbítható (lásd 84/2026.). A beszerzés becsült értéke nem érte el a nettó 382,85 M Ft-os közbeszerzési értékhatárt.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293901",
+      "modositasok": []
+    },
+    {
+      "id": "293903",
+      "cim": "Herceghalmi Csicsergő Óvoda fejlesztése - TOP-Plusz pályázat",
+      "partner": "PELAPROJECT Kft.",
+      "tipus": "vállalkozási (közbeszerzés)",
+      "kategoria": "Oktatás, nevelés",
+      "ertek": 75647720,
+      "ertek_tipus": "nettó",
+      "datum": "2025-09-01",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "91/2025"
+      ],
+      "megjegyzes": "Csicsergő Óvoda fejlesztése, 1. rész: a Gesztenyés úti épület (TOP Plusz, EKR000721392025).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293903",
+      "modositasok": []
+    },
+    {
+      "id": "293898",
+      "cim": "Tájépítészeti koncepciótervek készítése - Pagony Táj- és Kertépítész Kft.",
+      "partner": "Pagony Táj- és Kertépítész Kft.",
+      "tipus": "tervezési",
+      "kategoria": "Zöldterület",
+      "ertek": 5334000,
+      "ertek_tipus": "bruttó",
+      "datum": "2025-08-06",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "96/2025"
+      ],
+      "megjegyzes": "Tájépítészeti koncepciótervek; nettó 4 200 000 Ft.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293898",
+      "modositasok": []
+    },
+    {
+      "id": "293900",
+      "cim": "Kazáncsere és fűtésszerelés - Gesztenyés út 15.",
+      "partner": "Kelemen és Társa Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Épületek",
+      "ertek": 25928967,
+      "ertek_tipus": "nettó",
+      "datum": "2025-08",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "98/2025"
+      ],
+      "megjegyzes": "Kazáncsere és fűtésszerelés, Gesztenyés út 15.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293900",
+      "modositasok": []
+    },
+    {
+      "id": "293899",
+      "cim": "Herceghalom utcanév tábláinak tervezése, gyártása - MC Design Kft.",
+      "partner": "MC Design Kft.",
+      "tipus": "megbízási",
+      "kategoria": "Közterület",
+      "ertek": 12144624,
+      "ertek_tipus": "bruttó",
+      "datum": "2025-08",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "100/2025"
+      ],
+      "megjegyzes": "Az utcanévtáblák tervezése és gyártása; nettó 9 562 696 Ft.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293899",
+      "modositasok": []
+    },
+    {
+      "id": "293897",
+      "cim": "Ördöglovas lejtő 34. sz. alatti ingatlan értékesítése",
+      "partner": "vevő gazdasági társaság (lásd a PDF-et)",
+      "tipus": "adásvétel (értékesítés)",
+      "kategoria": "Ingatlan",
+      "ertek": 52000000,
+      "ertek_tipus": "",
+      "datum": "2025-07-02",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "78/2025"
+      ],
+      "megjegyzes": "Az Ördöglovas lejtő 34. alatti ingatlan eladása; vételár, az önkormányzat bevétele.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=293897",
+      "modositasok": []
+    },
+    {
+      "id": "290845",
+      "cim": "Herceghalom Kultúrájáért Egyesület együttműködési megállapodás 2025. évre",
+      "partner": "Herceghalom Kultúrájáért Egyesület",
+      "tipus": "együttműködési",
+      "kategoria": "Civil támogatás",
+      "ertek": 430000,
+      "ertek_tipus": "",
+      "datum": "2025-05",
+      "kezdete": "",
+      "vege": "2025. december 31.",
+      "hatarozatok": [
+        "66/2025"
+      ],
+      "megjegyzes": "2025. évi együttműködési megállapodás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290845",
+      "modositasok": []
+    },
+    {
+      "id": "290851",
+      "cim": "Útépítések 2025. - Útéppark Útépítő és Mélyépítő Kft.",
+      "partner": "Útéppark Útépítő és Mélyépítő Kft.",
+      "tipus": "vállalkozási (közbeszerzés)",
+      "kategoria": "Utak, járdák",
+      "ertek": 62104389,
+      "ertek_tipus": "nettó",
+      "datum": "2025-04-10",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "42/2025"
+      ],
+      "megjegyzes": "Útépítések 2025.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290851",
+      "modositasok": []
+    },
+    {
+      "id": "291815",
+      "cim": "Gov-Info 2000. Bt - szerződés módosítás 2025. április (Polgármesteri Hivatal)",
+      "partner": "Gov-Info 2000 Bt.",
+      "tipus": "szerződésmódosítás",
+      "kategoria": "Hivatal működése",
+      "ertek": 135000,
+      "ertek_tipus": "havonta",
+      "datum": "2025-04-03",
+      "kezdete": "2025-04-01",
+      "vege": "",
+      "hatarozatok": [],
+      "megjegyzes": "Rendszergazdai feladatok a Polgármesteri Hivatalnál, díjmódosítás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=291815",
+      "modositasok": []
+    },
+    {
+      "id": "291800",
+      "cim": "Gov-Info 2000. Bt - informatikai rendszer üzemeltetése, rendszergazdai feladatok ellátása módosítás - 2025. április (Önkormányzat)",
+      "partner": "Gov-Info 2000 Bt.",
+      "tipus": "szerződésmódosítás",
+      "kategoria": "Hivatal működése",
+      "ertek": 54000,
+      "ertek_tipus": "havonta",
+      "datum": "2025-04-03",
+      "kezdete": "2025-04-01",
+      "vege": "",
+      "hatarozatok": [],
+      "megjegyzes": "Rendszergazdai feladatok az önkormányzatnál, díjmódosítás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=291800",
+      "modositasok": []
+    },
+    {
+      "id": "290841",
+      "cim": "Labdarózsa Kórus Egyesülettel 2025. évi együttműködési megállapodás",
+      "partner": "Labdarózsa Kórus Egyesület",
+      "tipus": "együttműködési",
+      "kategoria": "Civil támogatás",
+      "ertek": 500000,
+      "ertek_tipus": "",
+      "datum": "2025-04",
+      "kezdete": "",
+      "vege": "2025. december 31.",
+      "hatarozatok": [
+        "46/2025"
+      ],
+      "megjegyzes": "A kórusvezető tiszteletdíjának támogatása 2025-ben.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290841",
+      "modositasok": []
+    },
+    {
+      "id": "290842",
+      "cim": "Labdarózsa Kórus Egyesület 2025. évi programtámogatása",
+      "partner": "Labdarózsa Kórus Egyesület",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 979000,
+      "ertek_tipus": "",
+      "datum": "2025-04",
+      "kezdete": "",
+      "vege": "2025. december 31.",
+      "hatarozatok": [
+        "13/2025"
+      ],
+      "megjegyzes": "2025. évi programtámogatás (részletek a PDF-ben).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290842",
+      "modositasok": []
+    },
+    {
+      "id": "290843",
+      "cim": "Herceghalomi Mozgáskorlátozottak Egyesülete - gyógytorna költségeinek támogatása",
+      "partner": "Herceghalomi Mozgáskorlátozottak Egyesülete",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 300000,
+      "ertek_tipus": "",
+      "datum": "2025-04",
+      "kezdete": "",
+      "vege": "2025. december 31.",
+      "hatarozatok": [
+        "47/2025"
+      ],
+      "megjegyzes": "Gyógytorna költségeinek támogatása 2025-ben.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290843",
+      "modositasok": []
+    },
+    {
+      "id": "290844",
+      "cim": "Herceghalomi Mozgáskorlátozottak Egyesülete - 2025. évi programtámogatás",
+      "partner": "Herceghalomi Mozgáskorlátozottak Egyesülete",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 500000,
+      "ertek_tipus": "",
+      "datum": "2025-04",
+      "kezdete": "",
+      "vege": "2025. december 31.",
+      "hatarozatok": [
+        "14/2025"
+      ],
+      "megjegyzes": "2025. évi programtámogatás (részletek a PDF-ben).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290844",
+      "modositasok": []
+    },
+    {
+      "id": "290840",
+      "cim": "Bicskei Önkormányzati Tűzoltóság támogatása",
+      "partner": "Bicskei Önkormányzati Tűzoltóság",
+      "tipus": "támogatási",
+      "kategoria": "Közbiztonság",
+      "ertek": 200000,
+      "ertek_tipus": "",
+      "datum": "2025-03-07",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "40/2025"
+      ],
+      "megjegyzes": "Egyszeri támogatás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290840",
+      "modositasok": []
+    },
+    {
+      "id": "288858",
+      "cim": "Herceghalom Gyermekeiért Közhasznú Alapítvány 2025. évi jótékonysági báljának támogatása",
+      "partner": "Herceghalom Gyermekeiért Közhasznú Alapítvány",
+      "tipus": "támogatási",
+      "kategoria": "Civil támogatás",
+      "ertek": 1000000,
+      "ertek_tipus": "",
+      "datum": "2025-02-07",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "21/2025"
+      ],
+      "megjegyzes": "A 2025. évi jótékonysági bál támogatása.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288858",
+      "modositasok": []
+    },
+    {
+      "id": "290849",
+      "cim": "Járóbeteg szakellátás biztosításának támogatása - Biatorbágy Egészségház 2025. év",
+      "partner": "Biatorbágyi Egészségház (Biatorbágy Város Önkormányzata)",
+      "tipus": "támogatási",
+      "kategoria": "Egészségügy",
+      "ertek": 5830000,
+      "ertek_tipus": "",
+      "datum": "2025",
+      "kezdete": "2025-01-01",
+      "vege": "2025-12-31",
+      "hatarozatok": [
+        "18/2025"
+      ],
+      "megjegyzes": "Hozzájárulás a járóbeteg-szakellátás 2025. évi működtetéséhez.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290849",
+      "modositasok": []
+    },
+    {
+      "id": "290850",
+      "cim": "Herceghalom, 443/8. hrsz-ú ingatlan megvásárlása",
+      "partner": "több eladó",
+      "tipus": "adásvétel (vásárlás)",
+      "kategoria": "Ingatlan",
+      "ertek": 9803130,
+      "ertek_tipus": "nettó",
+      "datum": "2024-12-18",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "180/2024"
+      ],
+      "megjegyzes": "A 443/8. hrsz-ú ingatlan 4/8 tulajdoni hányadának megvásárlása.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=290850",
+      "modositasok": []
+    },
+    {
+      "id": "288857",
+      "cim": "Biatorbágyi Polgárőrség és Önkéntes Tűzoltó Egyesület 2025. évi támogatása",
+      "partner": "Biatorbágyi Polgárőrség és Önkéntes Tűzoltó Egyesület",
+      "tipus": "támogatási",
+      "kategoria": "Közbiztonság",
+      "ertek": 200000,
+      "ertek_tipus": "havonta",
+      "datum": "2024-12",
+      "kezdete": "2025-01-01",
+      "vege": "2025-12-31",
+      "hatarozatok": [
+        "154/2024"
+      ],
+      "megjegyzes": "Havi 200 000 Ft támogatás 2025-ben.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288857",
+      "modositasok": []
+    },
+    {
+      "id": "288855",
+      "cim": "Szociális alapellátások 2025. évi díjának biztosítása",
+      "partner": "Esély Szociális Társulás",
+      "tipus": "feladatellátási",
+      "kategoria": "Szociális",
+      "ertek": 14898000,
+      "ertek_tipus": "",
+      "datum": "2024-12",
+      "kezdete": "2025-01-01",
+      "vege": "2025-12-31",
+      "hatarozatok": [],
+      "megjegyzes": "Kötelező szociális alapellátások 2025-ben.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288855",
+      "modositasok": []
+    },
+    {
+      "id": "288854",
+      "cim": "Jelzőrendszeres házi segítségnyújtás feladatellátási szerződés 2025. évre - Esély Szociális Társulás",
+      "partner": "Esély Szociális Társulás",
+      "tipus": "feladatellátási",
+      "kategoria": "Szociális",
+      "ertek": 3030671,
+      "ertek_tipus": "",
+      "datum": "2024-12",
+      "kezdete": "2025-01-01",
+      "vege": "2025-12-31",
+      "hatarozatok": [
+        "158/2024"
+      ],
+      "megjegyzes": "Jelzőrendszeres házi segítségnyújtás 2025-ben.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288854",
+      "modositasok": []
+    },
+    {
+      "id": "288070",
+      "cim": "Sürgősségi betegellátás hétköznaponként 8 - 16 óra között 2025 - 2026. évben",
+      "partner": "Inter-Európa Mentőszolgálat Közhasznú Nonprofit Kft.",
+      "tipus": "szolgáltatási",
+      "kategoria": "Egészségügy",
+      "ertek": 3089000,
+      "ertek_tipus": "havonta, nettó",
+      "datum": "2024-12",
+      "kezdete": "2025-01-01",
+      "vege": "2026-12-31",
+      "hatarozatok": [],
+      "megjegyzes": "Sürgősségi betegellátás hétköznap 8 és 16 óra között, Biatorbágy és Herceghalom közös megrendelésében.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288070",
+      "modositasok": []
+    },
+    {
+      "id": "288072",
+      "cim": "Gyermekintézmények közétkeztetés - 1. sz. szerződés módosítás",
+      "partner": "közétkeztetési vállalkozó (a 2023-as közbeszerzés nyertese)",
+      "tipus": "szerződésmódosítás",
+      "kategoria": "Oktatás, nevelés",
+      "ertek": null,
+      "ertek_tipus": "",
+      "datum": "2024-10-09",
+      "kezdete": "",
+      "vege": "2025-08-19",
+      "hatarozatok": [
+        "128/2024"
+      ],
+      "megjegyzes": "A szerződés időtartamának meghosszabbítása.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288072",
+      "modositasok": []
+    },
+    {
+      "id": "288074",
+      "cim": "Szociális alapellátások 2024. évi díjának biztosítása",
+      "partner": "Esély Szociális Társulás",
+      "tipus": "feladatellátási",
+      "kategoria": "Szociális",
+      "ertek": 10877000,
+      "ertek_tipus": "",
+      "datum": "2024-10",
+      "kezdete": "2024-01-01",
+      "vege": "2024-12-31",
+      "hatarozatok": [
+        "137/2024"
+      ],
+      "megjegyzes": "Kötelező szociális alapellátások 2024-ben.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288074",
+      "modositasok": []
+    },
+    {
+      "id": "286259",
+      "cim": "Napelemes kandeláberek telepítése (futókör, Móric ligeti játszótér, Árvalányhaj utca – 1. sz. főút közötti járdaszakasz) – ILST-Hungary Kft.",
+      "partner": "ILST-Hungary Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Közvilágítás",
+      "ertek": 10896000,
+      "ertek_tipus": "nettó",
+      "datum": "2024-09-11",
+      "kezdete": "",
+      "vege": "2024. december 15.",
+      "hatarozatok": [
+        "106/2024"
+      ],
+      "megjegyzes": "Napelemes kandeláberek (futókör, Móric ligeti játszótér, Árvalányhaj utca – 1-es főút közötti járda).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=286259",
+      "modositasok": []
+    },
+    {
+      "id": "286257",
+      "cim": "A/1 jelű bérlakás felújítása – Adrup Kft.",
+      "partner": "Adrup Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Lakás",
+      "ertek": 7994015,
+      "ertek_tipus": "bruttó",
+      "datum": "2024-09",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "110/2024"
+      ],
+      "megjegyzes": "Az A/1 jelű bérlakás felújítása.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=286257",
+      "modositasok": []
+    },
+    {
+      "id": "286258",
+      "cim": "Járóbeteg szakellátási feladatok, Biatorbágyi Egészségház – 2024. második félév",
+      "partner": "Biatorbágyi Egészségház (Biatorbágy Város Önkormányzata)",
+      "tipus": "támogatási",
+      "kategoria": "Egészségügy",
+      "ertek": 7000000,
+      "ertek_tipus": "",
+      "datum": "2024-07-01",
+      "kezdete": "2024-01-01",
+      "vege": "2024-12-31",
+      "hatarozatok": [
+        "178/2023",
+        "112/2024"
+      ],
+      "megjegyzes": "Hozzájárulás a járóbeteg-szakellátáshoz 2024-ben (az éves összeg).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=286258",
+      "modositasok": []
+    },
+    {
+      "id": "286255",
+      "cim": "Forgalomlassító küszöbök építése – Puhi Tárnok Kft.",
+      "partner": "PUHI-TÁRNOK Út- és Hídépítő Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Közlekedésbiztonság",
+      "ertek": 15862644,
+      "ertek_tipus": "bruttó",
+      "datum": "2024-06",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "80/2024"
+      ],
+      "megjegyzes": "Forgalomlassító küszöbök építése.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=286255",
+      "modositasok": []
+    },
+    {
+      "id": "286253",
+      "cim": "Sportöltöző felújításának támogatása – Herceghalom Szabadidő- és Sportegyesület támogatási szerződés",
+      "partner": "Herceghalom Szabadidő- és Sportegyesület",
+      "tipus": "támogatási",
+      "kategoria": "Sport",
+      "ertek": 15163437,
+      "ertek_tipus": "bruttó",
+      "datum": "2024-02",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "12/2024"
+      ],
+      "megjegyzes": "A sportöltöző felújításának támogatása.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=286253",
+      "modositasok": []
+    },
+    {
+      "id": "288073",
+      "cim": "Gyermekintézmények étkeztetés - 2. sz. szerződés módosítás",
+      "partner": "közétkeztetési vállalkozó (a 2023-as közbeszerzés nyertese)",
+      "tipus": "szerződésmódosítás",
+      "kategoria": "Oktatás, nevelés",
+      "ertek": null,
+      "ertek_tipus": "",
+      "datum": "2024",
+      "kezdete": "2025-01-01",
+      "vege": "2025-08-19",
+      "hatarozatok": [
+        "153/2024"
+      ],
+      "megjegyzes": "Új étkezési egységárak 2025. január 1-jétől.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=288073",
+      "modositasok": []
+    },
+    {
+      "id": "286256",
+      "cim": "Településközpont térburkolatának javítása – Bencze B. Kft.",
+      "partner": "Bencze B. Kft.",
+      "tipus": "vállalkozási",
+      "kategoria": "Közterület",
+      "ertek": 8176552,
+      "ertek_tipus": "bruttó",
+      "datum": "2024",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "59/2024"
+      ],
+      "megjegyzes": "A településközpont térburkolatának javítása; nettó 6 438 230 Ft (további tételek a PDF-ben).",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=286256",
+      "modositasok": []
+    },
+    {
+      "id": "286254",
+      "cim": "Élőfüves focipálya 2024. évi karbantartása – Köntös Dániel ev.",
+      "partner": "Köntös Dániel e.v.",
+      "tipus": "vállalkozási",
+      "kategoria": "Sport",
+      "ertek": 7335000,
+      "ertek_tipus": "alanyi adómentes",
+      "datum": "2024",
+      "kezdete": "",
+      "vege": "2024. december 31.",
+      "hatarozatok": [
+        "60/2024"
+      ],
+      "megjegyzes": "Az élőfüves focipálya 2024. évi karbantartása.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=286254",
+      "modositasok": []
+    },
+    {
+      "id": "291214",
+      "cim": "Herceghalom, 440/9. hrsz-ú ingatlan vásárlása",
+      "partner": "CBS Property Zrt. és Kovács Gábor Művészeti Alapítvány (eladók)",
+      "tipus": "adásvétel (vásárlás)",
+      "kategoria": "Ingatlan",
+      "ertek": 98358000,
+      "ertek_tipus": "nettó",
+      "datum": "2021-12-02",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "181/2021"
+      ],
+      "megjegyzes": "A 440/9. hrsz-ú ingatlan megvásárlása; a vevő a Herceghalomi Községfejlesztési Kft.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=291214",
+      "modositasok": []
+    },
+    {
+      "id": "291818",
+      "cim": "Juhász Péter ev. - Tűz-, munkavédelmi és katasztrófavédelmi szakmai szolgáltatás",
+      "partner": "Juhász Péter e.v.",
+      "tipus": "megbízási",
+      "kategoria": "Hivatal működése",
+      "ertek": 100000,
+      "ertek_tipus": "negyedévente",
+      "datum": "2021-11-17",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [
+        "187/2021"
+      ],
+      "megjegyzes": "Tűz-, munka- és katasztrófavédelmi szolgáltatás; a díj évente inflációval emelkedik.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=291818",
+      "modositasok": []
+    },
+    {
+      "id": "291817",
+      "cim": "Web Biztonság Informatika Kft. - Információbiztonsági felelősi szolgáltatás",
+      "partner": "Web Biztonság Informatika Kft.",
+      "tipus": "megbízási",
+      "kategoria": "Hivatal működése",
+      "ertek": 35000,
+      "ertek_tipus": "havonta, nettó",
+      "datum": "2021-09-01",
+      "kezdete": "",
+      "vege": "",
+      "hatarozatok": [],
+      "megjegyzes": "Információbiztonsági felelősi szolgáltatás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=291817",
+      "modositasok": []
+    },
+    {
+      "id": "291816",
+      "cim": "Sales Database Kft. - adatvédelmi, információbiztonsági szaktanácsadás",
+      "partner": "Sales Database Kft.",
+      "tipus": "megbízási",
+      "kategoria": "Hivatal működése",
+      "ertek": 95000,
+      "ertek_tipus": "havonta, nettó",
+      "datum": "2021-04-30",
+      "kezdete": "",
+      "vege": "határozatlan",
+      "hatarozatok": [
+        "68/2021"
+      ],
+      "megjegyzes": "Adatvédelmi és információbiztonsági szaktanácsadás.",
+      "url": "https://www.herceghalom.hu/?module=news&action=getfile&fid=291816",
+      "modositasok": []
+    }
+  ],
+  "hianyzo": [
+    {
+      "hatarozat": "93/2026",
+      "targy": "A Csicsergő Óvoda tetőszerkezetének cseréje",
+      "partner": "",
+      "ertek": 49000000,
+      "ertek_tipus": "bruttó keret",
+      "datum": "2026-07-07"
+    },
+    {
+      "hatarozat": "158/2026",
+      "targy": "Ideiglenes konténerrendelők az Egészségház felújítása idejére",
+      "partner": "Mobilbox Kft.",
+      "ertek": 25000000,
+      "ertek_tipus": "bruttó keret",
+      "datum": "2026-10-20"
+    },
+    {
+      "hatarozat": "140/2026",
+      "targy": "Jókai utcai járda felújítása",
+      "partner": "PUHI-TÁRNOK Út- és Hídépítő Kft.",
+      "ertek": 18971175,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-09-14"
+    },
+    {
+      "hatarozat": "99/2026",
+      "targy": "Településfejlesztési és szakértői feladatok közvetlen szerződéssel",
+      "partner": "több szakértő",
+      "ertek": 11629390,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-07-07"
+    },
+    {
+      "hatarozat": "147/2026",
+      "targy": "Napelemes kandeláberek telepítése (módosítva: 160/2026.)",
+      "partner": "",
+      "ertek": 7904480,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-10-20"
+    },
+    {
+      "hatarozat": "159/2026",
+      "targy": "Projektmenedzser kiválasztása (Egészségház)",
+      "partner": "",
+      "ertek": 7000000,
+      "ertek_tipus": "bruttó keret",
+      "datum": "2026-10-20"
+    },
+    {
+      "hatarozat": "130/2026",
+      "targy": "Téli síkosságmentesítés 2026/2027",
+      "partner": "Sulymosi Norbert e.v.",
+      "ertek": 6223000,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-09-01"
+    },
+    {
+      "hatarozat": "78/2026",
+      "targy": "A tornacsarnok világításának korszerűsítése",
+      "partner": "",
+      "ertek": 6000000,
+      "ertek_tipus": "bruttó keret",
+      "datum": "2026-05-28"
+    },
+    {
+      "hatarozat": "100/2026",
+      "targy": "Használt gépjármű beszerzése",
+      "partner": "",
+      "ertek": 6000000,
+      "ertek_tipus": "bruttó keret",
+      "datum": "2026-07-07"
+    },
+    {
+      "hatarozat": "89/2026",
+      "targy": "A Kulturális és Egyházi Központ kazáncseréje",
+      "partner": "Kelemen és Társa Épületgépészeti Kft.",
+      "ertek": 5054912,
+      "ertek_tipus": "bruttó",
+      "datum": "2026-07-07"
+    },
+    {
+      "hatarozat": "84/2026",
+      "targy": "A közétkeztetési szerződés meghosszabbítása",
+      "partner": "Delirest Kft.",
+      "ertek": null,
+      "ertek_tipus": "egységárakon",
+      "datum": "2026-07-07"
+    }
+  ]
+}

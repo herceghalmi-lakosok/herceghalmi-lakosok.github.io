@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fejlesztéskövető – Nyitott Herceghalom</title>
+<meta name="description" content="Herceghalom önkormányzati beruházásai és felújításai térképen és listában: állapot, költség, forrás, a kapcsolódó határozatok és szerződések.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../kepek/favicon-64.png">
+<link rel="apple-touch-icon" href="../kepek/apple-touch-icon.png">
+<link rel="stylesheet" href="../vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="../kozos.css">
+<style>
+  #map{height:420px;border:1px solid var(--line);border-radius:var(--radius);margin:0 0 8px;z-index:0}
+  @media (max-width:640px){#map{height:320px}}
+  .legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:.85rem;margin:0 0 16px}
+  .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+  .proj{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin:0 0 12px}
+  .proj h3{font-size:1.08rem;margin:0 0 4px}
+  .meta{font-size:.88rem;color:var(--muted)}
+  .amt{font-family:"Literata",Georgia,serif;font-weight:700;font-variant-numeric:tabular-nums}
+  .proj dl{margin-top:6px}
+  .nopin{font-size:.75rem;color:var(--muted)}
+  #edit{display:none;background:var(--warn-soft);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;margin:0 0 12px;font-size:.9rem}
+  #edit code{font-size:.95rem;font-weight:700}
+</style>
+</head>
+<body>
+<div class="notice" role="note"><div class="wrap"><strong>Nem hivatalos oldal.</strong> Ez nem Herceghalom Község Önkormányzatának honlapja. A hivatalos honlap: <a href="https://www.herceghalom.hu/">herceghalom.hu</a>. Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget.</div></div>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../"><img src="../kepek/gesztenyes-tisza-sziget-logo-96.webp" width="44" height="44" alt=""><span><b>Nyitott Herceghalom</b><small>← vissza a főoldalra</small></span></a>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Fejlesztéskövető</h1>
+    <p class="lede">Hol épít, újít fel vagy tervez az önkormányzat, mennyiből, milyen forrásból, és hol tart a munka. Minden tétel mellett ott vannak a döntések és a szerződések, amelyekből az adat származik.</p>
+  </section>
+
+  <div class="stats" id="stats"></div>
+  <div id="edit">Szerkesztő mód: kattints a térképre, és másold a koordinátát a <code>fejlesztesek.json</code> megfelelő tételébe: <code id="ll">–</code></div>
+  <div id="map" role="region" aria-label="A fejlesztések térképe"></div>
+  <div class="legend" id="legend"></div>
+
+  <div class="panel" role="search" style="grid-template-columns:2fr 1fr 1fr">
+    <div class="q"><label for="q">Keresés</label><input id="q" type="search" placeholder="pl. járda, óvoda, Puhi-Tárnok" autocomplete="off"></div>
+    <div><label for="fa">Állapot</label><select id="fa"><option value="">Mind</option></select></div>
+    <div><label for="fk">Terület</label><select id="fk"><option value="">Mind</option></select></div>
+  </div>
+  <p class="count" id="count"></p>
+  <div id="list"><p class="empty">Betöltés…</p></div>
+
+  <div class="box">
+    <p><b>Hogyan olvasd?</b> A költség a döntésben vagy a költségvetésben szereplő bruttó összeg; ahol keretösszeg vagy részösszeg szerepel, azt a tételnél jelezzük. Az állapot azt mutatja, meddig jutott a fejlesztés a nyilvános dokumentumok szerint: ha valami elkészült, de erről nincs nyilvános adat, az oldal a legutolsó ismert állapotot mutatja. Ha tudsz a fejlesztés állásáról, írd meg: <a href="mailto:gesztenyestisza@proton.me">gesztenyestisza@proton.me</a>.</p>
+  </div>
+  <footer>Források: Herceghalom Község Önkormányzatának határozatai, 2026. évi költségvetése és közzétett szerződései. Térkép: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-közreműködők.</footer>
+</main>
+
+<script src="../vendor/leaflet/leaflet.js"></script>
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+  function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  function ft(n){return n==null?"–":(n>=1e6?(Math.round(n/1e5)/10).toLocaleString("hu-HU")+" millió Ft":n.toLocaleString("hu-HU")+" Ft");}
+  var COL={tervezes:"#7c6f9b",palyazat:"#8a5a00",dontes:"#2f6b4f",szerzodes:"#1f5fa8",kivitelezes:"#c06a00",kesz:"#256140",elakadt:"#9b2c2c"};
+  var CENTER=[47.4971,18.7452];
+  var map=null, layer=null, markers={}, ALL=[], ST={};
+  try{
+    map=L.map("map",{scrollWheelZoom:false}).setView(CENTER,15);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-közreműködők'}).addTo(map);
+    layer=L.layerGroup().addTo(map);
+    if(/szerkeszt/.test(location.search)){$("edit").style.display="block";map.on("click",function(e){$("ll").textContent='"lat": '+e.latlng.lat.toFixed(5)+', "lng": '+e.latlng.lng.toFixed(5);});}
+  }catch(e){$("map").style.display="none";}
+
+  function icon(c){return L.divIcon({className:"",iconSize:[18,18],iconAnchor:[9,9],html:'<span style="display:block;width:18px;height:18px;border-radius:50%;background:'+c+';border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)"></span>'});}
+  function refs(list,base,label){return (list||[]).map(function(x){return '<a href="'+base+encodeURIComponent(x)+'">'+esc(label?label(x):x)+'</a>';}).join(", ");}
+
+  function card(f){
+    var c=COL[f.allapot]||"#888", st=ST[f.allapot]||f.allapot, rows=[];
+    if(f.helyszin)rows.push("<dt>Helyszín</dt><dd>"+esc(f.helyszin)+(f.lat==null?' <span class="nopin">(a térképen még nincs jelölve)</span>':'')+"</dd>");
+    rows.push("<dt>Forrás</dt><dd>"+esc(f.forras||"nincs adat")+"</dd>");
+    if(f.koltseg_megjegyzes)rows.push("<dt>Költség</dt><dd>"+esc(f.koltseg_megjegyzes)+"</dd>");
+    if(f.hatarido)rows.push("<dt>Határidő</dt><dd>"+esc(f.hatarido)+"</dd>");
+    if((f.hatarozatok||[]).length)rows.push("<dt>Határozatok</dt><dd>"+refs(f.hatarozatok,"../dontesek/?q=",function(x){return x+".";})+"</dd>");
+    if((f.szerzodesek||[]).length)rows.push("<dt>Szerződés</dt><dd>"+refs(f.szerzodesek,"../szerzodesek/?q=")+"</dd>");
+    if(f.utolso_adat)rows.push("<dt>Utolsó adat</dt><dd>"+esc(f.utolso_adat.replace(/-/g,". ")+".")+"</dd>");
+    return '<article class="proj" id="f-'+esc(f.id)+'" style="border-left-color:'+c+'"><h3>'+esc(f.cim)+'</h3>'+
+      '<div class="chips"><span class="st" style="background:'+c+';color:#fff">'+esc(st)+'</span><span class="chip">'+esc(f.kategoria)+'</span></div>'+
+      '<p style="margin:8px 0 0"><span class="amt">'+ft(f.koltseg)+'</span></p>'+
+      (f.leiras?'<p style="margin:6px 0 0;font-size:.95rem">'+esc(f.leiras)+'</p>':'')+
+      '<dl>'+rows.join("")+'</dl></article>';
+  }
+
+  function render(){
+    var q=norm($("q").value.trim()),fa=$("fa").value,fk=$("fk").value,terms=q?q.split(/\s+/):[];
+    var list=ALL.filter(function(f){
+      if(fa&&f.allapot!==fa)return false;
+      if(fk&&f.kategoria!==fk)return false;
+      for(var i=0;i<terms.length;i++)if(f.hay.indexOf(terms[i])<0)return false;
+      return true;
+    });
+    var sum=list.reduce(function(a,f){return a+(f.koltseg||0);},0);
+    $("count").textContent=list.length+" fejlesztés · ismert költség összesen: "+ft(sum);
+    $("list").innerHTML=list.length?list.map(card).join(""):'<p class="empty">Nincs találat.</p>';
+    if(map){
+      layer.clearLayers();markers={};var pts=[];
+      list.forEach(function(f){if(f.lat!=null&&f.lng!=null){var m=L.marker([f.lat,f.lng],{icon:icon(COL[f.allapot]||"#888"),title:f.cim}).bindPopup('<b>'+esc(f.cim)+'</b><br>'+esc(ST[f.allapot]||"")+' · '+ft(f.koltseg)+'<br><a href="#f-'+esc(f.id)+'">Részletek</a>');layer.addLayer(m);markers[f.id]=m;pts.push([f.lat,f.lng]);}});
+      if(pts.length>1)map.fitBounds(pts,{padding:[30,30],maxZoom:16});
+    }
+  }
+
+  fetch("../adatok/fejlesztesek.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(D){
+    ST=D.allapotok||{};ALL=D.fejlesztesek||[];
+    ALL.forEach(function(f){f.hay=norm([f.cim,f.kategoria,f.helyszin,f.forras,f.leiras,f.koltseg_megjegyzes,(f.szerzodesek||[]).join(" "),(f.hatarozatok||[]).join(" ")].join(" "));});
+    Object.keys(ST).forEach(function(k){if(ALL.some(function(f){return f.allapot===k;})){$("fa").insertAdjacentHTML("beforeend",'<option value="'+k+'">'+esc(ST[k])+'</option>');$("legend").insertAdjacentHTML("beforeend",'<span><span class="dot" style="background:'+COL[k]+'"></span>'+esc(ST[k])+'</span>');}});
+    Array.from(new Set(ALL.map(function(f){return f.kategoria;}))).sort().forEach(function(k){$("fk").insertAdjacentHTML("beforeend",'<option>'+esc(k)+'</option>');});
+    var total=ALL.reduce(function(a,f){return a+(f.koltseg||0);},0), cnt={};ALL.forEach(function(f){cnt[f.allapot]=(cnt[f.allapot]||0)+1;});
+    var pinned=ALL.filter(function(f){return f.lat!=null;}).length;
+    if(!pinned&&!/szerkeszt/.test(location.search)){$("map").style.display="none";$("legend").insertAdjacentHTML("afterend",'<p class="count" style="margin-top:-8px">A fejlesztések helyszíneinek térképes jelölése folyamatban; addig a listában látható minden adat.</p>');}
+    $("stats").innerHTML='<div class="stat"><b>'+ALL.length+'</b><span>nyilvántartott fejlesztés</span></div>'+
+      '<div class="stat"><b>'+ft(total).replace(" Ft","")+'</b><span>Ft ismert költség összesen</span></div>'+
+      '<div class="stat"><b>'+((cnt.dontes||0)+(cnt.szerzodes||0)+(cnt.kivitelezes||0))+'</b><span>eldöntve vagy folyamatban</span></div>'+
+      '<div class="stat"><b>'+(cnt.kesz||0)+'</b><span>elkészült</span></div>'+
+      (pinned<ALL.length?'<div class="stat"><b>'+pinned+' / '+ALL.length+'</b><span>jelölve a térképen</span></div>':'');
+    try{var p=new URLSearchParams(location.search);if(p.get("q"))$("q").value=p.get("q");}catch(e){}
+    render();
+  }).catch(function(){$("list").innerHTML='<p class="empty">Az adatok nem töltődtek be. Frissítsd az oldalt.</p>';});
+  ["q","fa","fk"].forEach(function(id){$(id).addEventListener(id==="q"?"input":"change",render);});
+})();
+</script>
+</body>
+</html>

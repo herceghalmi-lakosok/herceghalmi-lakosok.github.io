@@ -98,3 +98,29 @@ Ha egy határozat magánszemély nevét tartalmazza (pl. ösztöndíjasok, felaj
 Ha a hivatalos honlapon hibás a határozat száma, a tételt a dokumentumkereső szerinti számon hagyd, és a `megjegyzes` mezőben írd le az eltérést (példa: 38/2026.).
 
 Csak olyat írj be, ami hivatalos dokumentumból igazolható. Ha bizonytalan, hagyd üresen: az oldal ilyenkor „nincs még adat” állapotot mutat.
+
+## Ülésfigyelő (`ulesek/`)
+
+Az oldal a napirendet (előterjesztések), a meghívót, a jegyzőkönyvet és a videólinkeket az `adatok/dokumentumok.json`-ból veszi. A szerkesztett tartalom az `adatok/ulesfigyelo.json`-ban van, az ülés dátumával kulcsolva:
+
+- `elozetes`: 1–2 mondatos, közérthető összefoglaló arról, miről szól az ülés. Az ülés előtt, a meghívó megjelenésekor írd meg.
+- `dontesek`: legfeljebb öt pont arról, mit döntöttek, mindegyik végén zárójelben a határozat száma, pl. `(162/2026.)`. A számokból az oldal automatikusan linket készít a Döntéskövetőre. Csak azt írd le, ami a határozat szövegében áll; nem egyhangú döntésnél add meg a szavazás arányát.
+- `videok`: a Budakörnyéki TV-oldal címe a kulcs. Értéke: `{"youtube": "videóazonosító", "pontok": [{"t": "0:12:30", "cim": "1. napirendi pont: …"}]}`. A YouTube-azonosító a BTV-oldalon beágyazott videó címében van (`youtu.be/<azonosító>`). Az időbélyegeket a videó visszanézésével lehet rögzíteni.
+- `kovetkezo` (a fájl tetején): a következő ülés adatai, amint a meghívó megjelent: `{"d": "2026-12-01", "ido": "18:00", "elozetes": "…", "meghivo": "PDF-link"}`. Az ülés után állítsd vissza `null`-ra, és az összefoglalót írd az ülés dátumához.
+
+## Szerződéstár (`szerzodesek/`)
+
+Az adatok az `adatok/szerzodesek.json`-ban vannak. Új szerződésnél:
+
+1. Töltsd le a PDF-et, és olvasd ki: partner, típus, tárgy, érték (bruttó/nettó/havi – az `ertek_tipus` mezőbe), aláírás dátuma, időtartam, a hivatkozott határozat száma.
+2. Vegyél fel egy új tételt a `szerzodesek` tömbbe (a meglévők mintájára; az `id` a PDF-link `fid` száma).
+3. Ha a szerződés a `hianyzo` listán szereplő döntéshez tartozik, onnan töröld a tételt.
+4. Szerződésmódosításnál a `modositasok` tömbbe írj egy sort: `{"datum": "…", "leiras": "…", "url": "…"}`.
+
+Az oldal változástörténetét a GitHub mutatja (a „változástörténete” gomb a fájl commitjaira mutat), ezért minden módosításhoz írj érthető commit-üzenetet. Magánszemély vevő vagy eladó nevét ne írd be; a vállalkozók és cégek neve maradhat.
+
+## Fejlesztéskövető (`fejlesztesek/`)
+
+Az adatok az `adatok/fejlesztesek.json`-ban vannak. Az `allapot` lehetséges értékei a fájl tetején, az `allapotok` alatt. Állapotváltozáskor (szerződés megkötve, munka megkezdődött, elkészült) frissítsd az `allapot` és az `utolso_adat` mezőt, és a forrást írd a `leiras` mezőbe.
+
+**Térképes jelölés:** nyisd meg az oldalt így: `fejlesztesek/?szerkeszt=1`. Kattints a térképen a fejlesztés helyére, és a megjelenő `"lat": …, "lng": …` értéket másold a tétel `lat` és `lng` mezőjébe. Ha egy tételnek nincs egyetlen helyszíne (pl. eszközbeszerzés), hagyd `null`-on: ilyenkor csak a listában jelenik meg.

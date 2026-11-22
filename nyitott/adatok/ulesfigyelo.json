@@ -1,0 +1,163 @@
+{
+  "frissitve": "2026-11-22",
+  "megjegyzes": "Az Ülésfigyelő szerkesztett tartalma. Ülésenként: 'elozetes' (közérthető összefoglaló a napirendről, az ülés előtt), 'dontesek' (legfeljebb öt pont: mit döntöttek), 'videok' (időbélyegek napirendi pontonként). A napirendet, az előterjesztéseket, a határozatokat és a videólinkeket az oldal a dokumentumok.json-ból és a hatarozat-reszletek.json-ból veszi. Útmutató: SZERKESZTOKNEK.md.",
+  "kovetkezo": null,
+  "ulesek": {
+    "2026-11-09": {
+      "elozetes": "Rendkívüli ülés egyetlen fő témával: a Panattoni-beruházás telepítési tanulmányterve (TTT). Napirenden volt a főépítész előterjesztése, maga a TTT, valamint a lakossági kérdések és az azokra adott válaszok összesítése.",
+      "dontesek": [],
+      "dontesek_megjegyzes": "Az ülés határozatai még nem jelentek meg a hivatalos honlapon. Amint közzéteszik őket, itt összefoglaljuk.",
+      "videok": {
+        "https://budakornyekitv.hu/herceghalom-kepviselo-testuleti-ules-2026-november-9/": {
+          "youtube": "cGidKUY9g_s",
+          "pontok": []
+        }
+      }
+    },
+    "2026-11-03": {
+      "elozetes": "Munkaterv szerinti ülés a 2027-es évre való felkészülésről (adók, díjak, Környezetvédelmi Alap, közmeghallgatás időpontja), valamint a Panattoni-ügyről.",
+      "dontesek": [
+        "2027-ben nem emelkednek a helyi adók és díjak; kivétel a tehergépjárművek behajtási díja, amelynek felülvizsgálatát javasolta a testület (162/2026.).",
+        "Helyi népszavazási kezdeményezést készítenek elő a 440/2, 440/4 és 440/5 hrsz-ú ingatlanokon (Panattoni-terület) tervezett beruházás ügyében; a kérdés megfogalmazásához lakossági felhívást tesznek közzé (168/2026.).",
+        "Független értékbecslést rendelnek meg ugyanezekre az ingatlanokra, 500 ezer forintos keretből (169/2026.).",
+        "Árajánlatokat kérnek be a helyi sürgősségi betegellátás biztosítására (164/2026.).",
+        "Meghatározták a 2027-es falugyűléssel egybekötött közmeghallgatás időpontját és helyét, és kiírták a könyvtár és közösségi ház vezetői pályázatát (165/2026., 167/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-10-20": {
+      "elozetes": "Rendkívüli ülés az óvodaigazgatói pályázatról (zárt ülésen), az Egészségház felújítása alatti ideiglenes rendelőkről és projektmenedzseréről, valamint a Panattoni-ügyhöz kapcsolódó szakvéleményekről.",
+      "dontesek": [
+        "Zárt ülésen elbírálták a Csicsergő Óvoda igazgatói pályázatát (157/2026.).",
+        "Az Egészségház felújításának idejére ideiglenes rendelőket alakítanak ki, bruttó 25 millió forintos keretből (158/2026.).",
+        "Projektmenedzsert választottak az Egészségház-projekthez, bruttó 7 millió forintos keretből (159/2026.).",
+        "A Panattoni-beruházással kapcsolatban táj- és természetvédelmi tanulmányt, valamint további szakvéleményeket rendelnek meg (161/2026.).",
+        "Módosították a napelemes kandeláberek telepítéséről szóló októberi döntést; az előirányzat bruttó 7,9 millió forintra nőtt (160/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-10-06": {
+      "elozetes": "Munkaterv szerinti ülés hosszú napirenddel: Panattoni-telekcsere, építésügyi hatáskörök, óvodai évindítás, közvilágítás, közparktervezés, utcanevek, ösztöndíjak és a 2027–2041-es Gördülő Fejlesztési Terv.",
+      "dontesek": [
+        "Megerősítették, hogy a Panattoni-beruházásnál továbbra is a lakóterületektől távolabbi, alternatív helyszínt tartják fontosnak, és támogatják a telekcsere vizsgálatát (143/2026.).",
+        "Kezdeményezik, hogy az építésügyi hatósági hatáskörök visszakerüljenek önkormányzati szintre (144/2026.).",
+        "Elfogadták a 2027–2041-es Gördülő Fejlesztési Tervet (152/2026.).",
+        "További napelemes kandeláberek telepítéséről döntöttek, bruttó 6,5 millió forintért (147/2026.), és megrendelik a Liget utcai közpark tájépítészeti tervezését (148/2026.).",
+        "Elnevezték a 443/1., 443/7., 443/11. és 443/12. hrsz-ú közterületeket, és elbírálták a felsőoktatási ösztöndíjpályázatokat (149/2026., 150/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-09-14": {
+      "elozetes": "Rendkívüli ülés a Jókai utcai járdáról, a szociális tűzifa-pályázatról és egy játszótér-fejlesztési kérelemről.",
+      "dontesek": [
+        "Megépül a Jókai utcai járda, bruttó 19 millió forintért (140/2026.).",
+        "Benyújtják a szociális célú tűzifa-pályázatot (141/2026.).",
+        "Bruttó 500 ezer forinttal támogatják a Herceghalom Gyermekeiért Közhasznú Alapítvány játszótér-fejlesztését (142/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-09-01": {
+      "elozetes": "Munkaterv szerinti ülés: féléves gazdálkodási beszámoló, iskolai helyiséghasználat, téli síkosságmentesítés, közösségi költségvetés bevezetése és több kisebb beszerzés.",
+      "dontesek": [
+        "Bevezetik a közösségi költségvetést, és létrehozzák a Közösségi Költségvetési Alapot (133/2026.).",
+        "Elfogadták az önkormányzat és intézményei 2026. első félévi gazdálkodásáról szóló beszámolót (128/2026., 5 igen, 1 tartózkodás).",
+        "A 2026/2027-es télre megbízták a síkosságmentesítést végző vállalkozót, bruttó 6,2 millió forintért (130/2026.).",
+        "Az iskola a 2026/2027-es tanévben ingyenesen használhatja a tornacsarnokot és az Egészségház egyik helyiségét (129/2026.).",
+        "Bruttó 3 millió forinttal átalakítják a hivatal tanácstermét (134/2026., 5 igen, 1 nem); keretet biztosítottak sportpályai padokra, sörpadokra és az óvodai fajátékok felújítására (135–137/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-08-19": {
+      "elozetes": "Rendkívüli ülés két oktatási ügyben: az óvodaigazgatói pályázat kiírása és az iskolai kültéri játszótér támogatása.",
+      "dontesek": [
+        "Kiírták a Csicsergő Óvoda igazgatói álláshelyére szóló pályázatot (126/2026., 5 igen, 1 tartózkodás).",
+        "Döntöttek az iskola területén kialakítandó kültéri játszótér önkormányzati támogatásáról szóló kérelemről (127/2026., 5 igen, 1 tartózkodás)."
+      ],
+      "videok": {}
+    },
+    "2026-08-11": {
+      "elozetes": "Rendkívüli ülés hosszú napirenddel: óvodai ügyek, lakossági kérelmek (szennyvíz, Ördöglovas lejtő, ingatlanvásárlás), útfelújítás, sebességmérő kamerák és eszközbeszerzések.",
+      "dontesek": [
+        "Felújítják a Liliom lejtőt teljes hosszában, bruttó 30,7 millió forintért (115/2026.).",
+        "Sebességmérő kamerákat (VIDAR Speed) szereznek be az 1-es főút mentére, bruttó 19 millió forintos keretből (116/2026.).",
+        "20 millió forintos keretből kommunális eszközöket szereznek be a közterületek karbantartásához (114/2026.).",
+        "Értékelték az óvoda elmúlt nevelési évét, és egy további pedagógiai asszisztens foglalkoztatását hagyták jóvá (109/2026., 110/2026., mindkettő 5 igen, 1 tartózkodás).",
+        "Lakossági megkeresések nyomán támogatják az 54 hrsz-ú terület gravitációs szennyvízelvezetését; az 1-es főút zajára a korábban vizsgált földsánc helyett más zajvédelmi megoldást vizsgáltatnak szakemberrel (111/2026., 112/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-07-07": {
+      "elozetes": "Rendkívüli ülés a nyári szünet előtt, 21 előterjesztéssel: iskolai és óvodai felújítások, járda- és útépítés, közétkeztetés, kazáncsere, településfejlesztési megbízások.",
+      "dontesek": [
+        "Megépül a Petőfi utcai járda, bruttó 16,5 millió forintért, és folytatódik az 1-es főút Herceghalmot érintő szakaszának burkolatfelújítása, bruttó 7,1 millió forintért (86/2026., 87/2026.).",
+        "Az óvoda tetőszerkezetének kárenyhítő felújításához bruttó 49 millió forintos keretről döntöttek (93/2026.).",
+        "Támogatják az iskolai étkező korszerűsítését (3,5 millió Ft), a tantermek klimatizálását (bruttó 3,5 millió Ft) és a Klassz Room programot (bruttó 10 millió Ft) (85/2026., 91/2026., 92/2026.).",
+        "Lecserélik a Kulturális és Egyházi Központ gázkazánjait, bruttó 5,1 millió forintért (89/2026.).",
+        "Megszüntették az alpolgármesterek költségtérítését (102/2026., 4 igen, 1 tartózkodás), és közvetlen szerződéssel adták ki a településfejlesztési és szakértői feladatokat, bruttó 11,6 millió forintért (99/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-05-28": {
+      "elozetes": "Rendkívüli ülés, amelynek központi témája az óvoda: a szakértői átvilágítás megállapításai, a csoportok száma a következő nevelési évben és a nyári munkálatok. Emellett rendészeti feladatok, gépjárműbeszerzés és kisebb felújítások.",
+      "dontesek": [
+        "Intézkedéseket fogalmaztak meg az óvodai szakértői vélemény alapján (69/2026., 3 igen, 2 tartózkodás).",
+        "Döntöttek a 2026/2027-es nevelési évben indítható óvodai csoportok számáról (70/2026., 5 igen, 1 nem).",
+        "Június 1-jétől új rendben látják el az önkormányzati rendészeti feladatokat (68/2026.).",
+        "Gépjárművet szereznek be 3,3 millió forintért, és bruttó 6 millió forintos keretből korszerűsítik a tornacsarnok világítását (73/2026., 78/2026.).",
+        "Elutasították egy helyi építési szabályzat (HÉSZ) módosítására irányuló kérelmet (74/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-05-05": {
+      "elozetes": "Munkaterv szerinti ülés beszámolókkal (adóztatás, községfejlesztési kft., rendőrség, tűzoltóság), a temetői fejlesztéssel és pályázatokkal.",
+      "dontesek": [
+        "Elfogadták a rendőrkapitányság és a tűzoltóság beszámolóját, valamint a Herceghalomi Községfejlesztési Kft. 2025. évi beszámolóját (57/2026., 64/2026., 65/2026.).",
+        "Parkolót alakítanak ki a köztemetőben (750 ezer forintos előkészítő keret), és egy sírhelyet egyedi védettség alá helyeztek (61/2026., 62/2026.).",
+        "Pályáznak az „okos zebra” programra (66/2026.).",
+        "Feltételekkel jóváhagyták a Zsámbéki út 445 méteres szakaszának üzemeltetéséről a Duna Aszfalt Zrt.-vel kötendő megállapodást (60/2026.).",
+        "Az önkormányzati chatbot a „Móric” nevet kapta, és bruttó 1 millió forinttal támogatják a röplabdapálya korszerűsítését (63/2026., 67/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-04-07": {
+      "elozetes": "Munkaterv szerinti ülés szociális és gyermekvédelmi beszámolókkal, óvodai beiratkozással, a nyári napközis táborral, civil támogatásokkal és a vasútállomás ügyével.",
+      "dontesek": [
+        "A testület megállapította, hogy a vasútállomás közlekedésbiztonsági és kapacitásproblémái valósak, és támogatja a lakossági aláírásgyűjtés eredményét (40/2026.).",
+        "Meghatározták a nyári napközis tábor feltételeit és az óvodai beiratkozás rendjét (37/2026., 38/2026.).",
+        "Megjavíttatják a helyi védett víztorony villámhárítóját, bruttó 2,3 millió forintért (39/2026., a hivatalos honlapon 38/2026. számon).",
+        "Elfogadták a gyermekvédelmi és az Esély Szociális Társulás beszámolóját (34/2026., 35/2026.).",
+        "Támogatást és együttműködési megállapodást hagytak jóvá több helyi civil szervezetnek (41–45/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-03-03": {
+      "elozetes": "Munkaterv szerinti ülés: belső ellenőrzés, könyvtári beszámoló, 2026-os közbeszerzési terv, az Egészségház tervezése és a chatszolgáltatás.",
+      "dontesek": [
+        "Elfogadták a 2026. évi közbeszerzési tervet (27/2026.).",
+        "Megrendelték az Egészségház-projekt kiviteli és belsőépítészeti terveit, bruttó 6,7 millió forintért (28/2026.).",
+        "Vízlágyítót telepítenek az óvoda telephelyén, bruttó 1,5 millió forintért (29/2026.).",
+        "Bevezetik a lakossági chatszolgáltatást (1,7 millió Ft + áfa bevezetési és 150 ezer Ft + áfa havi díj) (30/2026., 6 igen, 1 tartózkodás).",
+        "Elfogadták a 2025. évi belső ellenőrzési jelentést és a könyvtár beszámolóját (25/2026., 26/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-02-03": {
+      "elozetes": "Munkaterv szerinti ülés a 2026-os költségvetésről és beruházási prioritásokról, valamint egészségügyi, óvodai és hivatali ügyekről.",
+      "dontesek": [
+        "Meghatározták a 2026. évi beruházási prioritásokat, és beterjesztették a 2026-os költségvetést (4/2026., 4 igen, 1 tartózkodás; 5/2026.).",
+        "Kiválasztották az Egészségház-fejlesztés közbeszerzésének lebonyolítóját, bruttó 4,45 millió forintért (12/2026.).",
+        "Szakértőt választottak az óvoda átvilágítására (10/2026., 4 igen, 1 nem).",
+        "Pályáznak a Magyar Falu Programra (13/2026.), és elnapolták a lakossági chatszolgáltatásról szóló döntést (14/2026., 5 igen, 1 nem).",
+        "Döntöttek a közvilágítási aktív elemek üzemeltetéséről, és támogatták a Bicskei Önkormányzati Tűzoltóságot (18/2026., 20/2026.)."
+      ],
+      "videok": {}
+    },
+    "2026-01-12": {
+      "elozetes": "Rendkívüli ülés egyetlen napirendi ponttal: az M1-es autópálya bővítésével érintett pihenőhelyek vízellátása.",
+      "dontesek": [
+        "Visszavonták a 165/2025. számú határozatot, és új döntést hoztak az M1-es autópálya pihenőhelyeinek vízellátásáról (1/2026., 4 igen)."
+      ],
+      "videok": {}
+    }
+  }
+}
