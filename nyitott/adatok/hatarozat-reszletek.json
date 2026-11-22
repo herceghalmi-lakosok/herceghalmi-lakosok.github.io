@@ -1,0 +1,26 @@
+{
+  "frissitve": "2026-11-22",
+  "megjegyzes": "A határozatok részletei a hivatalos kivonatokból és jegyzőkönyvekből. Kulcs: a határozat száma (pl. 169/2026). Lásd: SZERKESZTOKNEK.md, Döntéskövető.",
+  "hatarozatok": {
+    "168/2026": {
+      "szoveg": "A Képviselő-testület úgy határoz, hogy helyi népszavazási kezdeményezést készít elő a Herceghalom 440/2, 440/4 és 440/5 helyrajzi számú ingatlanon tervezett beruházás ügyében azzal, hogy helyi népszavazási kérdés megfogalmazásához lakossági felhívást kíván közzétenni.",
+      "felelos": "Csizmadia Zsuzsanna polgármester",
+      "hatarido": "a következő, munkaterv szerinti képviselő-testületi ülés",
+      "hatarido_datum": "",
+      "szavazas": null,
+      "vegrehajtas": "",
+      "vegrehajtas_megjegyzes": "",
+      "forras": "határozati kivonat (szövegfelismeréssel, ellenőrizve)"
+    },
+    "169/2026": {
+      "szoveg": "A Képviselő-testület független értékbecslést rendel meg a 440/2, 440/4 és 440/5 helyrajzi számú ingatlanokra vonatkozóan. A képviselő-testület 500.000 forint keretösszeget biztosít a feladat költségeire a 2026. évi költségvetésének tartalékkerete terhére.",
+      "felelos": "Csizmadia Zsuzsanna polgármester",
+      "hatarido": "azonnal",
+      "hatarido_datum": "2026-11-03",
+      "szavazas": null,
+      "vegrehajtas": "",
+      "vegrehajtas_megjegyzes": "",
+      "forras": "határozati kivonat (szövegfelismeréssel, ellenőrizve)"
+    }
+  }
+}
