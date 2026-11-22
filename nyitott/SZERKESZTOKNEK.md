@@ -69,3 +69,32 @@ Az Önkormányzatok Elektronikus Hatásköri Jegyzékét a `.github/workflows/ha
 - Ha a gyűjtés közben módosítjátok a kérdéseket, írjátok át a `VERSION` értékét, hogy a régi és az új válaszok elkülöníthetők legyenek.
 - Az összesítéshez a feladók e-mail-címét nem kell megőrizni; aki értesítést kért (K12, K13), azt külön listában tartsátok, és a gyűjtés lezárása után a többit töröljétek.
 - Az eredményeket a kérdőív oldalának „Eredmények” szakaszában tegyétek közzé, a válaszok számával és a gyűjtés időszakával. Jelezzétek, hogy a felmérés nem reprezentatív.
+
+## Döntéskövető (`dontesek/`)
+
+Az oldal két fájlból dolgozik:
+- `adatok/dokumentumok.json`: a határozatok listája (szám, cím, dátum, téma, PDF-link) és az ülések (meghívó, jegyzőkönyv, videó). Ezt a dokumentumkereső frissítésével együtt frissítjük, külön teendő nincs.
+- `adatok/hatarozat-reszletek.json`: a határozatok részletei, a határozat számával kulcsolva (pl. `"169/2026"`).
+
+### A részletek kitöltése
+
+A herceghalom.hu-n a kivonatok szkennelt PDF-ek, ezért szövegfelismeréssel dolgozzuk fel őket:
+
+1. Töltsd le a feldolgozandó kivonatokat egy mappába (a linkek a dokumentumkeresőben vagy a Döntéskövetőben vannak).
+2. Futtasd: `python3 nyitott/tools/ocr_hatarozatok.py <mappa> --hatarido-azonnal`
+   (kell hozzá: poppler-utils, tesseract-ocr, tesseract-ocr-hun).
+3. **Ellenőrizd a PDF-fel** a felismert szöveget, a felelőst és a határidőt, majd a `forras` mezőt írd át erre: `határozati kivonat (szövegfelismeréssel, ellenőrizve)`.
+
+A program nem írja felül a kézzel kitöltött mezőket. Ezeket kézzel töltsd:
+- `hatarido_datum`: a határidő dátuma (ÉÉÉÉ-HH-NN). Ha a határidő „a következő ülés”, a következő ülés napját írd be. Ebből számolja az oldal, hogy lejárt-e a határidő; 30 nap türelmi idő után jelöli „nincs adat a végrehajtásról” állapottal.
+- `szavazas`: a jegyzőkönyvből, például `{"igen": 5, "nem": 1, "tartozkodas": 1}`. Ha név szerinti szavazás volt: `"nev_szerint": {"Név": "igen", …}`.
+- `vegrehajtas`: `teljesult`, `folyamatban`, `nem-teljesult` vagy `visszavonva`. Forrás lehet a polgármester beszámolója a lejárt határidejű határozatokról, egy újabb határozat, szerződés vagy hivatalos közlemény.
+- `vegrehajtas_megjegyzes`: egy mondat a végrehajtásról, a forrással együtt (pl. „A szerződést 2026. november 20-án megkötötték (lásd: …).”).
+
+A szavazási arányokat a jegyzőkönyvekből a `python3 nyitott/tools/szavazasok_jkv.py <jegyzőkönyv-PDF-ek>` program tölti ki (csak az üres `szavazas` mezőket). Az „ELLENŐRIZD” sorokat nézd meg a PDF-ben. Zárt ülésen hozott döntésnél a szavazás nem nyilvános: ilyenkor a `szavazas_megjegyzes` mezőbe írd ezt.
+
+Ha egy határozat magánszemély nevét tartalmazza (pl. ösztöndíjasok, felajánló magánszemély), a `szoveg` mezőt hagyd üresen, és a `szoveg_megjegyzes` mezőbe írd: „A határozat magánszemélyek nevét tartalmazza, ezért a szövegét itt nem közöljük. Az eredeti kivonat a hivatalos honlapon olvasható.” Vállalkozók, szerződő cégek és tisztségviselők neve maradhat.
+
+Ha a hivatalos honlapon hibás a határozat száma, a tételt a dokumentumkereső szerinti számon hagyd, és a `megjegyzes` mezőben írd le az eltérést (példa: 38/2026.).
+
+Csak olyat írj be, ami hivatalos dokumentumból igazolható. Ha bizonytalan, hagyd üresen: az oldal ilyenkor „nincs még adat” állapotot mutat.

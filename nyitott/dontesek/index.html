@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Döntéskövető – Nyitott Herceghalom</title>
+<meta name="description" content="Herceghalom képviselő-testületének határozatai ülésenként: miről döntöttek, ki a felelős, mi a határidő, és mi lett a döntés sorsa. Kereshető, szűrhető, a hivatalos kivonatokra mutat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../kepek/favicon-64.png">
+<link rel="apple-touch-icon" href="../kepek/apple-touch-icon.png">
+<style>
+  :root{--paper:#f6f5f1;--surface:#fff;--ink:#1c2420;--muted:#58635d;--line:#d9ddd6;--accent:#2f6b4f;--accent-ink:#fff;--accent-soft:#e3efe8;--warn:#8a5a00;--warn-soft:#fbf0d9;--bad:#9b2c2c;--bad-soft:#f8e3e1;--good:#256140;--good-soft:#e1f0e6;--radius:6px;color-scheme:light}
+  @media (prefers-color-scheme: dark){:root{--paper:#121614;--surface:#1a201d;--ink:#e7ebe8;--muted:#a3ada7;--line:#2e3632;--accent:#7cc39d;--accent-ink:#0d1a13;--accent-soft:#1f3329;--warn:#e6b85c;--warn-soft:#33290f;--bad:#ef9a93;--bad-soft:#3a1d1b;--good:#8fd1ab;--good-soft:#18301f;color-scheme:dark}}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Public Sans","Segoe UI",Roboto,Arial,sans-serif}
+  a{color:var(--accent);text-underline-offset:2px}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  h1,h2,h3{font-family:"Literata",Georgia,serif;line-height:1.2;margin:0}
+  h1{font-size:clamp(1.8rem,4.5vw,2.6rem)}
+  h2{font-size:1.35rem}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+  .notice{background:var(--ink);color:var(--paper);font-size:.88rem;padding:8px 0}
+  .notice a{color:var(--paper)}
+  header.site{background:var(--surface);border-bottom:1px solid var(--line)}
+  header.site .wrap{display:flex;align-items:center;gap:12px;min-height:62px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .brand img{width:44px;height:44px;border-radius:50%}
+  .brand b{font-family:"Literata",Georgia,serif;font-size:1.2rem;display:block}
+  .brand small{color:var(--muted)}
+  .hero{padding:28px 0 8px}
+  .lede{color:var(--muted);max-width:68ch;margin:10px 0 0}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:20px 0}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+  .stat b{display:block;font-family:"Literata",Georgia,serif;font-size:1.7rem;font-variant-numeric:tabular-nums}
+  .stat span{font-size:.88rem;color:var(--muted)}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:0 0 18px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}
+  .panel label{display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:3px}
+  .panel input,.panel select{width:100%;font:inherit;font-size:.95rem;padding:9px 10px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink)}
+  .panel .chk{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem}
+  .panel .chk label{display:flex;gap:6px;align-items:center;font-weight:500;color:var(--ink);font-size:.92rem;margin:0}
+  @media (max-width:720px){.panel{grid-template-columns:1fr 1fr}.panel .q{grid-column:1/-1}}
+  .count{font-size:.92rem;color:var(--muted);margin:0 0 10px}
+  .meeting{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin:0 0 16px;overflow:hidden}
+  .mh{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--accent-soft)}
+  .mh h3{font-size:1.1rem}
+  .mh .kind{font-size:.85rem;color:var(--muted)}
+  .mlinks{display:flex;gap:4px 14px;flex-wrap:wrap;font-size:.88rem;padding:8px 14px;border-bottom:1px solid var(--line)}
+  .res{list-style:none;margin:0;padding:0}
+  .res>li{padding:12px 14px;border-top:1px solid var(--line)}
+  .res>li:first-child{border-top:0}
+  .rtop{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .num{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ttl{flex:1 1 300px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  .chip{font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent)}
+  .st{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:99px}
+  .st.ok{background:var(--good-soft);color:var(--good)}
+  .st.wip{background:var(--warn-soft);color:var(--warn)}
+  .st.bad{background:var(--bad-soft);color:var(--bad)}
+  .st.na{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
+  details{margin-top:8px}
+  summary{cursor:pointer;font-size:.9rem;color:var(--accent);font-weight:600}
+  dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:8px 0 0;font-size:.93rem}
+  dt{color:var(--muted)}
+  dd{margin:0}
+  .txt{font-size:.95rem;margin:8px 0 0;padding-left:10px;border-left:3px solid var(--line);white-space:pre-line}
+  .ocr{font-size:.8rem;color:var(--muted);margin:4px 0 0 13px}
+  .vote{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--warn-soft);color:var(--warn)}
+  .more{display:block;margin:0 auto 24px;font:inherit;font-weight:600;padding:10px 18px;border-radius:var(--radius);border:1.5px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+  .box{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:14px 16px;margin:0 0 18px;font-size:.95rem}
+  .box p{margin:0 0 8px}.box p:last-child{margin:0}
+  .empty{padding:20px;text-align:center;color:var(--muted)}
+  footer{padding:20px 0 40px;font-size:.88rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="notice" role="note"><div class="wrap"><strong>Nem hivatalos oldal.</strong> Ez nem Herceghalom Község Önkormányzatának honlapja. A hivatalos honlap: <a href="https://www.herceghalom.hu/">herceghalom.hu</a>. Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget.</div></div>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../"><img src="../kepek/gesztenyes-tisza-sziget-logo-96.webp" width="44" height="44" alt=""><span><b>Nyitott Herceghalom</b><small>← vissza a főoldalra</small></span></a>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Döntéskövető</h1>
+    <p class="lede">A képviselő-testület határozatai ülésenként: miről döntöttek, ki felel a végrehajtásért, mi a határidő, és mi lett a döntés sorsa. Minden tétel a hivatalos határozati kivonatra mutat a herceghalom.hu-n.</p>
+  </section>
+
+  <div class="stats" id="stats" aria-live="polite"></div>
+
+  <div class="box">
+    <p><b>Hogyan olvasd?</b> A határozat a testület döntése. A kivonat tartalmazza a döntés szövegét, a felelőst és a határidőt; a szavazás arányát a jegyzőkönyv rögzíti. A végrehajtásról a polgármester általában a lejárt határidejű határozatokról szóló beszámolóban ad számot a testületnek.</p>
+    <p><b>Honnan vannak az adatok?</b> A határozatok listája a dokumentumkeresőből frissül. A részleteket (felelős, határidő, szavazás, végrehajtás) a szkennelt kivonatokból és jegyzőkönyvekből folyamatosan dolgozzuk fel; ahol még nincs adat, ott ezt jelezzük. A „Határidő lejárt – nincs nyilvános adat a végrehajtásról” jelzést csak a naptári dátummal megadott határidőknél, a határidő után 30 nappal tesszük ki. Ez a jelzés nem azt jelenti, hogy a döntést nem hajtották végre, hanem azt, hogy erről nem találtunk nyilvános dokumentumot. Ha tudsz róla, írd meg, és a forrással együtt frissítjük. Ha hibát találsz, írj: <a href="mailto:gesztenyestisza@proton.me">gesztenyestisza@proton.me</a>.</p>
+  </div>
+
+  <div class="panel" role="search">
+    <div class="q"><label for="q">Keresés a határozatok címében és szövegében</label><input id="q" type="search" placeholder="pl. óvoda, járda, 152/2026" autocomplete="off"></div>
+    <div><label for="fy">Év</label><select id="fy"><option value="">Mind</option></select></div>
+    <div><label for="fm">Ülés</label><select id="fm"><option value="">Minden ülés</option></select></div>
+    <div><label for="ft">Téma</label><select id="ft"><option value="">Minden téma</option></select></div>
+    <div class="chk">
+      <label><input type="checkbox" id="fd"> Csak a feldolgozott részletekkel</label>
+      <label><input type="checkbox" id="fu"> Csak a nem egyhangú döntések</label>
+      <label><input type="checkbox" id="fl"> Csak a lejárt határidejűek (30 nap türelmi idővel), végrehajtási adat nélkül</label>
+    </div>
+  </div>
+
+  <p class="count" id="count"></p>
+  <div id="list"><p class="empty">Betöltés…</p></div>
+  <button class="more" id="more" hidden>Több ülés mutatása</button>
+
+  <footer>
+    Forrás: Herceghalom Község Önkormányzatának <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=hatarozatok">határozatai</a> és <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=testulet-meghivok">ülésanyagai</a>. A videók a Budakörnyéki Televízió felvételei. A részletek feldolgozásakor szövegfelismerést használtunk; kétség esetén mindig az eredeti kivonat az irányadó.
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+  function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  var HU_MONTHS=["január","február","március","április","május","június","július","augusztus","szeptember","október","november","december"];
+  function sfx(y){return "3680".indexOf(String(y).slice(-1))>=0?"ban":"ben";}
+  function huDate(iso){var p=iso.split("-");return p[0]+". "+HU_MONTHS[+p[1]-1]+" "+(+p[2])+".";}
+  var TODAY=new Date().toISOString().slice(0,10);
+  var GRACE=30; // ennyi nap türelmi idő után jelöljük lejártnak a végrehajtási adat nélküli határozatot
+  function addDays(iso,n){var d=new Date(iso+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10);}
+  var ST={teljesult:["ok","Végrehajtva"],folyamatban:["wip","Folyamatban"],"nem-teljesult":["bad","Nem teljesült"],visszavonva:["na","Visszavonva / módosítva"]};
+
+  var TEMAK={}, meetings=[], shown=4;
+
+  function statusOf(r){
+    var x=r.x;
+    if(x&&x.vegrehajtas&&ST[x.vegrehajtas]) return {k:x.vegrehajtas,c:ST[x.vegrehajtas][0],t:ST[x.vegrehajtas][1]};
+    if(x&&x.hatarido_datum&&/20\d\d\./.test(x.hatarido||"")&&addDays(x.hatarido_datum,GRACE)<TODAY) return {k:"lejart",c:"wip",t:"Határidő lejárt – nincs nyilvános adat a végrehajtásról"};
+    if(x) return {k:"nincs",c:"na",t:"Végrehajtás: nincs még adat"};
+    return null;
+  }
+  function voteTxt(v){
+    if(!v) return "";
+    var s=(v.igen||0)+" igen, "+(v.nem||0)+" nem, "+(v.tartozkodas||0)+" tartózkodás"+(!v.nem&&!v.tartozkodas?" (egyhangú)":"");
+    if(v.nev_szerint){s+="<br><small>"+Object.keys(v.nev_szerint).map(function(n){return esc(n)+": "+esc(v.nev_szerint[n]);}).join(" · ")+"</small>";}
+    return s;
+  }
+
+  function build(D,R){
+    TEMAK=D.temak||{};
+    var det=(R&&R.hatarozatok)||{};
+    var byDate={};
+    (D.ulesek||[]).forEach(function(u){byDate[u.d]={u:u,d:u.d,res:[],egyben:[],year:u.d.slice(0,4)};});
+    D.dokumentumok.forEach(function(i){
+      if(i.t!=="Határozat")return;
+      var m=byDate[i.d]||(byDate[i.d]={u:null,d:i.d,res:[],egyben:[],year:i.d.slice(0,4)});
+      var mm=/^(\d+\/\d{4})\.?\s*(\([^)]*\))?\s*-?\s*(.*)$/.exec(i.ti);
+      if(!mm){m.egyben.push(i);return;}
+      var r={num:mm[1],title:mm[3]||i.ti,full:i.ti,url:i.u,tp:i.tp||[],x:det[mm[1]]||null};
+      r.st=statusOf(r);
+      r.hay=norm(r.num+" "+r.title+" "+(r.x?(r.x.szoveg||"")+" "+(r.x.felelos||""):""));
+      m.res.push(r);
+    });
+    meetings=Object.keys(byDate).map(function(k){return byDate[k];}).filter(function(m){return m.res.length||m.egyben.length;});
+    meetings.sort(function(a,b){return b.d.localeCompare(a.d);});
+    meetings.forEach(function(m){m.res.sort(function(a,b){return parseInt(b.num)-parseInt(a.num);});});
+
+    // szűrők
+    var years={};meetings.forEach(function(m){years[m.year]=1;});
+    Object.keys(years).sort().reverse().forEach(function(y){$("fy").insertAdjacentHTML("beforeend",'<option value="'+y+'">'+y+'</option>');});
+    meetings.forEach(function(m){$("fm").insertAdjacentHTML("beforeend",'<option value="'+m.d+'">'+huDate(m.d)+(m.u?" – "+esc(m.u.kind):"")+'</option>');});
+    Object.keys(TEMAK).forEach(function(k){$("ft").insertAdjacentHTML("beforeend",'<option value="'+k+'">'+esc(TEMAK[k])+'</option>');});
+
+    // statisztika
+    var all=[].concat.apply([],meetings.map(function(m){return m.res;}));
+    var y=TODAY.slice(0,4), thisY=all.filter(function(r){return r.num.slice(-4)===y;});
+    var nMeet=(D.ulesek||[]).filter(function(u){return u.d.slice(0,4)===y;}).length;
+    var nRk=(D.ulesek||[]).filter(function(u){return u.d.slice(0,4)===y&&/rendkívüli/.test(u.kind);}).length;
+    var withDet=all.filter(function(r){return r.x;}).length;
+    var late=all.filter(function(r){return r.st&&r.st.k==="lejart";}).length;
+    var voted=thisY.filter(function(r){return r.x&&r.x.szavazas;}), una=voted.filter(function(r){return !r.x.szavazas.nem&&!r.x.szavazas.tartozkodas;}).length;
+    $("stats").innerHTML=
+      '<div class="stat"><b>'+thisY.length+'</b><span>határozat '+y+'-'+sfx(y)+'</span></div>'+
+      '<div class="stat"><b>'+nMeet+'</b><span>ülés '+y+'-'+sfx(y)+', ebből '+nRk+' rendkívüli</span></div>'+
+      '<div class="stat"><b>'+all.length+'</b><span>határozat a ciklus kezdete óta</span></div>'+
+      '<div class="stat"><b>'+withDet+'</b><span>határozat részletei feldolgozva</span></div>'+
+      (voted.length?'<div class="stat"><b>'+Math.round(100*una/voted.length)+'%</b><span>egyhangú döntés '+y+'-'+sfx(y)+' ('+una+' / '+voted.length+')</span></div>':'')+
+      (late?'<div class="stat"><b>'+late+'</b><span>lejárt határidejű határozat, végrehajtási adat nélkül</span></div>':'');
+    render();
+  }
+
+  function filtered(){
+    var q=norm($("q").value.trim()), fy=$("fy").value, fm=$("fm").value, ft=$("ft").value, fd=$("fd").checked, fl=$("fl").checked, fu=$("fu").checked;
+    var terms=q?q.split(/\s+/):[];
+    return meetings.filter(function(m){return (!fy||m.year===fy)&&(!fm||m.d===fm);}).map(function(m){
+      var res=m.res.filter(function(r){
+        if(ft&&r.tp.indexOf(ft)<0)return false;
+        if(fd&&!r.x)return false;
+        if(fl&&!(r.st&&r.st.k==="lejart"))return false;
+        if(fu&&!(r.x&&r.x.szavazas&&(r.x.szavazas.nem||r.x.szavazas.tartozkodas)))return false;
+        for(var i=0;i<terms.length;i++)if(r.hay.indexOf(terms[i])<0)return false;
+        return true;
+      });
+      return {m:m,res:res};
+    }).filter(function(g){return g.res.length||(!q&&!ft&&!fd&&!fl&&!fu&&g.m.egyben.length);});
+  }
+
+  function render(){
+    var groups=filtered(), n=0;
+    groups.forEach(function(g){n+=g.res.length;});
+    $("count").textContent=n+" határozat, "+groups.length+" ülés";
+    if(!groups.length){$("list").innerHTML='<p class="empty">Nincs találat. Próbálj másik szót, vagy töröld a szűrőket.</p>';$("more").hidden=true;return;}
+    $("list").innerHTML=groups.slice(0,shown).map(function(g){
+      var m=g.m,u=m.u,links=[];
+      if(u&&u.m)links.push('<a href="'+esc(u.m)+'">Meghívó</a>');
+      if(u&&u.j)links.push('<a href="'+esc(u.j)+'">Jegyzőkönyv</a>');
+      if(u&&u.v)u.v.forEach(function(v,i){links.push('<a href="'+esc(v)+'">Videó'+(u.v.length>1?" "+(i+1):"")+'</a>');});
+      m.egyben.forEach(function(e){links.push('<a href="'+esc(e.u)+'">Az ülés határozatai egyben</a>');});
+      return '<article class="meeting"><div class="mh"><h3>'+huDate(m.d)+'</h3><span class="kind">'+(u?esc(u.kind)+" ülés":"ülés")+' · '+m.res.length+' határozat</span></div>'+
+        (links.length?'<div class="mlinks">'+links.join("")+'</div>':'')+
+        '<ul class="res">'+g.res.map(item).join("")+'</ul></article>';
+    }).join("");
+    $("more").hidden=groups.length<=shown;
+  }
+
+  function item(r){
+    var chips=r.tp.map(function(t){return '<span class="chip">'+esc(TEMAK[t]||t)+'</span>';}).join("");
+    var st=r.st?'<span class="st '+r.st.c+'">'+esc(r.st.t)+'</span>':'';
+    var sv=r.x&&r.x.szavazas; if(sv&&(sv.nem||sv.tartozkodas))st='<span class="vote">Nem egyhangú: '+sv.igen+'–'+(sv.nem||0)+'–'+(sv.tartozkodas||0)+'</span>'+st;
+    var body="";
+    if(r.x){
+      var x=r.x, rows=[];
+      if(x.felelos)rows.push("<dt>Felelős</dt><dd>"+esc(x.felelos)+"</dd>");
+      if(x.hatarido)rows.push("<dt>Határidő</dt><dd>"+esc(x.hatarido)+"</dd>");
+      rows.push("<dt>Szavazás</dt><dd>"+(x.szavazas?voteTxt(x.szavazas):esc(x.szavazas_megjegyzes||"nincs még adat (a jegyzőkönyvből dolgozzuk fel)"))+"</dd>");
+      if(x.megjegyzes)rows.push("<dt>Megjegyzés</dt><dd>"+esc(x.megjegyzes)+"</dd>");
+      if(x.vegrehajtas_megjegyzes)rows.push("<dt>Végrehajtás</dt><dd>"+esc(x.vegrehajtas_megjegyzes)+"</dd>");
+      body='<details><summary>Részletek</summary>'+(x.szoveg?'<p class="txt">'+esc(x.szoveg)+'</p><p class="ocr">Gépi szövegfelismeréssel átírt szöveg. Kétség esetén az <a href="'+esc(r.url)+'">eredeti kivonat</a> az irányadó.</p>':'')+(x.szoveg_megjegyzes?'<p class="txt">'+esc(x.szoveg_megjegyzes)+'</p>':'')+'<dl>'+rows.join("")+'</dl></details>';
+    }
+    return '<li><div class="rtop"><a class="num" href="'+esc(r.url)+'" title="Hivatalos kivonat (PDF)">'+esc(r.num)+'.</a><span class="ttl">'+esc(r.title.charAt(0).toUpperCase()+r.title.slice(1))+'</span></div>'+
+      '<div class="chips">'+chips+st+'</div>'+body+'</li>';
+  }
+
+  ["q","fy","fm","ft","fd","fl","fu"].forEach(function(id){$(id).addEventListener(id==="q"?"input":"change",function(){shown=4;render();});});
+  $("more").addEventListener("click",function(){shown+=6;render();});
+
+  // ?q= támogatás (linkelhető keresés)
+  try{var p=new URLSearchParams(location.search);if(p.get("q"))$("q").value=p.get("q");}catch(e){}
+
+  Promise.all([
+    fetch("../adatok/dokumentumok.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json();}),
+    fetch("../adatok/hatarozat-reszletek.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+  ]).then(function(a){build(a[0],a[1]);})
+    .catch(function(){$("list").innerHTML='<p class="empty">Az adatok nem töltődtek be. Frissítsd az oldalt, vagy nézd meg a <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=hatarozatok">határozatokat a hivatalos honlapon</a>.</p>';});
+})();
+</script>
+</body>
+</html>
