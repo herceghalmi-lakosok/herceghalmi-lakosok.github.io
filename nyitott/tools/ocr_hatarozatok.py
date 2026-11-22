@@ -43,33 +43,103 @@ def ocr_pdf(path):
 
 
 def clean(s):
+    s = s.replace("=====OLDAL=====", "")
+    s = re.sub(r"HERCEGHALOMI POLGÁRMESTERI HIVATAL[^\n]*\n[^\n]*Gesztenyés út 13\.[^\n]*\n[^\n]*Tel\.[^\n]*", "", s)
     s = re.sub(r"[ \t]+", " ", s)
     s = re.sub(r"-\n(?=[a-záéíóöőúüű])", "", s)  # elválasztás
-    s = re.sub(r"\s*\n\s*", " ", s)
+    # számozott pontok és bekezdések új sorba, a többi sortörés szóköz
+    s = re.sub(r"\s*\n\s*(?=\d{1,2}\.\s)", "\n", s)
+    s = re.sub(r"(?<!\n)\s*\n\s*(?!\d{1,2}\.\s)", " ", s)
     return s.strip()
+
+
+KT = re.compile(r"Herceghalom\s*[—–-]?\s*Község\s*[—–-]?\s*Önkorm[áa]n\s?y?zat(?:ának|a)\s*[—–-]?\s*Képviselő\s*-?\s*testülete")
+ROLE = re.compile(r"polgármester|jegyző|igazgató|vezető|elnök|képviselő|előadó|pont", re.I)
+# A határozat fejléce: "...Képviselő-testületének NN/ÉÉÉÉ. (..) számú határozata"
+NUM = re.compile(r"testületének\s*\n?\s*(\d{1,3})\s*/\s*(20\d\d)\s*\.?[^\n]{0,25}?sz[áa]m[úu]\s*hat[áa]rozat", re.I)
+NEVEK = [(re.compile(r"C[sz]i[sz]madia\s+Zsuzsann?a"), "Csizmadia Zsuzsanna"),
+         (re.compile(r"(dr\.?\s*)?Verh[óo]c[zk]+i\s+Zita", re.I), "dr. Verhóczki Zita"),
+         (re.compile(r"(dr\.?\s*)?S[zZ]elenc[zs]y\s+Gabriella", re.I), "dr. Szelenczy Gabriella")]
+
+
+def fix_names(s):
+    for rx, good in NEVEK:
+        s = rx.sub(good, s)
+    return s
+
+
+def _good_line(ln):
+    letters = sum(c.isalpha() for c in ln)
+    words = re.findall(r"[a-záéíóöőúüű]{3,}", ln, re.I)
+    if not ln or letters < 0.75 * len(ln.replace(" ", "")) or len(words) < 1:
+        return False
+    if re.search(r"HERCEGHALOMI POLGÁRMESTERI|kmf", ln):
+        return False
+    if re.fullmatch(r"(dr\.\s*)?[A-ZÁÉÍÓÖŐÚÜŰ][\w.]+\s+[A-ZÁÉÍÓÖŐÚÜŰ]\w+(\s+(dr\.\s*)?[A-ZÁÉÍÓÖŐÚÜŰ]\w+\s+[A-ZÁÉÍÓÖŐÚÜŰ]\w+)?", ln.strip()):
+        return False  # aláírók nevei
+    if re.fullmatch(r"(polgármester|jegyző|polgármester\s+jegyző)", ln.strip()):
+        return False
+    return True
+
+
+def _field(text, label, stop):
+    m = re.search(label + r"\s*:?\s*(.*)", text)
+    if not m:
+        return ""
+    out = [m.group(1).strip()]
+    for ln in text[m.end():].split("\n")[1:]:
+        ln = ln.strip()
+        if not ln or re.match(stop, ln) or not _good_line(ln):
+            break
+        out.append(ln)
+    v = " ".join(out)
+    return v
+
+
+def _felelos(text):
+    v = _field(text, r"Felel[őo]s(?=\s*:)", r"Hat[áa]rid")
+    v = re.sub(r"^[\s—–-]+", "", v)
+    return fix_names(v).rstrip(" .,")
+
+
+def _hatarido(text):
+    v = _field(text, r"Hat[áa]rid[őo](?=\s*:)", r"Felel[őo]s")
+    v = re.split(r"\s{2,}|\s(?=[^\wáéíóöőúüű,.()/:;–-])", v)[0] if not re.search(r"\w\s+\w", v) else v
+    # a sor végi szemét levágása
+    v = re.sub(r"(\s+\S{1,3}){2,}\s*$", "", v) if re.search(r"[!?|\]\[]", v) else v
+    v = re.sub(r"[\s.\"'’]+$", "", v)
+    return v
+
+
+def _body(block):
+    fel = re.search(r"Felel[őo]s\s*:", block)
+    body = block[:fel.start()] if fel else block
+    body = KT.sub("A Képviselő-testület", body)
+    m = re.search(r"(?:^|\n)\s*(?:\d{1,2}\.\)?\s|A Képviselő-testület|I\.\s)", body)
+    title = clean(body[:m.start()]) if m else ""
+    txt = clean(body[m.start():] if m else body)
+    txt = re.sub(r"^(\d{1,2})\.\)", r"\1.", txt, flags=re.M)
+    return title, fix_names(txt)
 
 
 def parse(text):
     """Egy vagy több határozat kiolvasása egy kivonat szövegéből."""
     out = {}
-    # A határozatszám pl. "169/ 2026. (XI. 03.) számú határozata"
-    starts = list(re.finditer(r"(\d{1,3})\s*/\s*(20\d\d)\s*\.?\s*\([^)]*\)\s*sz[áa]m[úu]\s*hat[áa]rozata", text))
+    starts = list(NUM.finditer(text))
     for i, m in enumerate(starts):
         num = f"{int(m.group(1))}/{m.group(2)}"
         end = starts[i + 1].start() if i + 1 < len(starts) else len(text)
         block = text[m.end():end]
-        fel = re.search(r"Felel[őo]s\s*:\s*(.+)", block)
-        hat = re.search(r"Hat[áa]rid[őo]\s*:\s*(.+)", block)
-        body = block[:fel.start()] if fel else block
-        parts = [p for p in re.split(r"\n\s*\n", body.strip()) if p.strip()]
-        title = clean(parts[0]) if parts else ""
-        szoveg = clean("\n\n".join(parts[1:])) if len(parts) > 1 else ""
-        szoveg = re.sub(r"^Herceghalom Község Önkormányzatának\s+Képviselő-testülete", "A Képviselő-testület", szoveg)
-        hatarido = clean(hat.group(1)) if hat else ""
+        if not re.search(r"Felel[őo]s\s*:", block) and len(starts) == 1:
+            first = re.search(r"^\s*1\.\s", text, re.M)
+            block = text[first.start():] if first else text
+        block = block.split("=====OLDAL=====\nMelléklet")[0]
+        title, szoveg = _body(block)
+        hatarido = _hatarido(block)
         out[num] = {
             "cim_ocr": title,
             "szoveg": szoveg,
-            "felelos": clean(fel.group(1)) if fel else "",
+            "felelos": _felelos(block),
             "hatarido": hatarido,
             "hatarido_datum_javaslat": deadline_iso(hatarido),
         }

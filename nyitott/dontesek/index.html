@@ -66,7 +66,9 @@
   dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:8px 0 0;font-size:.93rem}
   dt{color:var(--muted)}
   dd{margin:0}
-  .txt{font-size:.95rem;margin:8px 0 0;padding-left:10px;border-left:3px solid var(--line)}
+  .txt{font-size:.95rem;margin:8px 0 0;padding-left:10px;border-left:3px solid var(--line);white-space:pre-line}
+  .ocr{font-size:.8rem;color:var(--muted);margin:4px 0 0 13px}
+  .vote{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--warn-soft);color:var(--warn)}
   .more{display:block;margin:0 auto 24px;font:inherit;font-weight:600;padding:10px 18px;border-radius:var(--radius);border:1.5px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
   .box{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:14px 16px;margin:0 0 18px;font-size:.95rem}
   .box p{margin:0 0 8px}.box p:last-child{margin:0}
@@ -90,7 +92,7 @@
 
   <div class="box">
     <p><b>Hogyan olvasd?</b> A határozat a testület döntése. A kivonat tartalmazza a döntés szövegét, a felelőst és a határidőt; a szavazás arányát a jegyzőkönyv rögzíti. A végrehajtásról a polgármester általában a lejárt határidejű határozatokról szóló beszámolóban ad számot a testületnek.</p>
-    <p><b>Honnan vannak az adatok?</b> A határozatok listája a dokumentumkeresőből frissül. A részleteket (felelős, határidő, szavazás, végrehajtás) a szkennelt kivonatokból és jegyzőkönyvekből folyamatosan dolgozzuk fel; ahol még nincs adat, ott ezt jelezzük. Ha hibát találsz, írj: <a href="mailto:gesztenyestisza@proton.me">gesztenyestisza@proton.me</a>.</p>
+    <p><b>Honnan vannak az adatok?</b> A határozatok listája a dokumentumkeresőből frissül. A részleteket (felelős, határidő, szavazás, végrehajtás) a szkennelt kivonatokból és jegyzőkönyvekből folyamatosan dolgozzuk fel; ahol még nincs adat, ott ezt jelezzük. A „Határidő lejárt – nincs nyilvános adat a végrehajtásról” jelzést csak a naptári dátummal megadott határidőknél, a határidő után 30 nappal tesszük ki. Ez a jelzés nem azt jelenti, hogy a döntést nem hajtották végre, hanem azt, hogy erről nem találtunk nyilvános dokumentumot. Ha tudsz róla, írd meg, és a forrással együtt frissítjük. Ha hibát találsz, írj: <a href="mailto:gesztenyestisza@proton.me">gesztenyestisza@proton.me</a>.</p>
   </div>
 
   <div class="panel" role="search">
@@ -100,6 +102,7 @@
     <div><label for="ft">Téma</label><select id="ft"><option value="">Minden téma</option></select></div>
     <div class="chk">
       <label><input type="checkbox" id="fd"> Csak a feldolgozott részletekkel</label>
+      <label><input type="checkbox" id="fu"> Csak a nem egyhangú döntések</label>
       <label><input type="checkbox" id="fl"> Csak a lejárt határidejűek (30 nap türelmi idővel), végrehajtási adat nélkül</label>
     </div>
   </div>
@@ -132,13 +135,13 @@
   function statusOf(r){
     var x=r.x;
     if(x&&x.vegrehajtas&&ST[x.vegrehajtas]) return {k:x.vegrehajtas,c:ST[x.vegrehajtas][0],t:ST[x.vegrehajtas][1]};
-    if(x&&x.hatarido_datum&&addDays(x.hatarido_datum,GRACE)<TODAY) return {k:"lejart",c:"bad",t:"Határidő +30 nap eltelt – nincs adat a végrehajtásról"};
+    if(x&&x.hatarido_datum&&/20\d\d\./.test(x.hatarido||"")&&addDays(x.hatarido_datum,GRACE)<TODAY) return {k:"lejart",c:"wip",t:"Határidő lejárt – nincs nyilvános adat a végrehajtásról"};
     if(x) return {k:"nincs",c:"na",t:"Végrehajtás: nincs még adat"};
     return null;
   }
   function voteTxt(v){
     if(!v) return "";
-    var s=(v.igen!=null?v.igen+" igen":"")+(v.nem!=null?", "+v.nem+" nem":"")+(v.tartozkodas!=null?", "+v.tartozkodas+" tartózkodás":"");
+    var s=(v.igen||0)+" igen, "+(v.nem||0)+" nem, "+(v.tartozkodas||0)+" tartózkodás"+(!v.nem&&!v.tartozkodas?" (egyhangú)":"");
     if(v.nev_szerint){s+="<br><small>"+Object.keys(v.nev_szerint).map(function(n){return esc(n)+": "+esc(v.nev_szerint[n]);}).join(" · ")+"</small>";}
     return s;
   }
@@ -175,28 +178,31 @@
     var nRk=(D.ulesek||[]).filter(function(u){return u.d.slice(0,4)===y&&/rendkívüli/.test(u.kind);}).length;
     var withDet=all.filter(function(r){return r.x;}).length;
     var late=all.filter(function(r){return r.st&&r.st.k==="lejart";}).length;
+    var voted=thisY.filter(function(r){return r.x&&r.x.szavazas;}), una=voted.filter(function(r){return !r.x.szavazas.nem&&!r.x.szavazas.tartozkodas;}).length;
     $("stats").innerHTML=
       '<div class="stat"><b>'+thisY.length+'</b><span>határozat '+y+'-'+sfx(y)+'</span></div>'+
       '<div class="stat"><b>'+nMeet+'</b><span>ülés '+y+'-'+sfx(y)+', ebből '+nRk+' rendkívüli</span></div>'+
       '<div class="stat"><b>'+all.length+'</b><span>határozat a ciklus kezdete óta</span></div>'+
       '<div class="stat"><b>'+withDet+'</b><span>határozat részletei feldolgozva</span></div>'+
-      (late?'<div class="stat"><b>'+late+'</b><span>lejárt határidő, végrehajtási adat nélkül</span></div>':'');
+      (voted.length?'<div class="stat"><b>'+Math.round(100*una/voted.length)+'%</b><span>egyhangú döntés '+y+'-'+sfx(y)+' ('+una+' / '+voted.length+')</span></div>':'')+
+      (late?'<div class="stat"><b>'+late+'</b><span>lejárt határidejű határozat, végrehajtási adat nélkül</span></div>':'');
     render();
   }
 
   function filtered(){
-    var q=norm($("q").value.trim()), fy=$("fy").value, fm=$("fm").value, ft=$("ft").value, fd=$("fd").checked, fl=$("fl").checked;
+    var q=norm($("q").value.trim()), fy=$("fy").value, fm=$("fm").value, ft=$("ft").value, fd=$("fd").checked, fl=$("fl").checked, fu=$("fu").checked;
     var terms=q?q.split(/\s+/):[];
     return meetings.filter(function(m){return (!fy||m.year===fy)&&(!fm||m.d===fm);}).map(function(m){
       var res=m.res.filter(function(r){
         if(ft&&r.tp.indexOf(ft)<0)return false;
         if(fd&&!r.x)return false;
         if(fl&&!(r.st&&r.st.k==="lejart"))return false;
+        if(fu&&!(r.x&&r.x.szavazas&&(r.x.szavazas.nem||r.x.szavazas.tartozkodas)))return false;
         for(var i=0;i<terms.length;i++)if(r.hay.indexOf(terms[i])<0)return false;
         return true;
       });
       return {m:m,res:res};
-    }).filter(function(g){return g.res.length||(!q&&!ft&&!fd&&!fl&&g.m.egyben.length);});
+    }).filter(function(g){return g.res.length||(!q&&!ft&&!fd&&!fl&&!fu&&g.m.egyben.length);});
   }
 
   function render(){
@@ -220,20 +226,22 @@
   function item(r){
     var chips=r.tp.map(function(t){return '<span class="chip">'+esc(TEMAK[t]||t)+'</span>';}).join("");
     var st=r.st?'<span class="st '+r.st.c+'">'+esc(r.st.t)+'</span>':'';
+    var sv=r.x&&r.x.szavazas; if(sv&&(sv.nem||sv.tartozkodas))st='<span class="vote">Nem egyhangú: '+sv.igen+'–'+(sv.nem||0)+'–'+(sv.tartozkodas||0)+'</span>'+st;
     var body="";
     if(r.x){
       var x=r.x, rows=[];
       if(x.felelos)rows.push("<dt>Felelős</dt><dd>"+esc(x.felelos)+"</dd>");
       if(x.hatarido)rows.push("<dt>Határidő</dt><dd>"+esc(x.hatarido)+"</dd>");
-      rows.push("<dt>Szavazás</dt><dd>"+(x.szavazas?voteTxt(x.szavazas):"nincs még adat (a jegyzőkönyvből dolgozzuk fel)")+"</dd>");
+      rows.push("<dt>Szavazás</dt><dd>"+(x.szavazas?voteTxt(x.szavazas):esc(x.szavazas_megjegyzes||"nincs még adat (a jegyzőkönyvből dolgozzuk fel)"))+"</dd>");
+      if(x.megjegyzes)rows.push("<dt>Megjegyzés</dt><dd>"+esc(x.megjegyzes)+"</dd>");
       if(x.vegrehajtas_megjegyzes)rows.push("<dt>Végrehajtás</dt><dd>"+esc(x.vegrehajtas_megjegyzes)+"</dd>");
-      body='<details><summary>Részletek</summary>'+(x.szoveg?'<p class="txt">'+esc(x.szoveg)+'</p>':'')+'<dl>'+rows.join("")+'</dl></details>';
+      body='<details><summary>Részletek</summary>'+(x.szoveg?'<p class="txt">'+esc(x.szoveg)+'</p><p class="ocr">Gépi szövegfelismeréssel átírt szöveg. Kétség esetén az <a href="'+esc(r.url)+'">eredeti kivonat</a> az irányadó.</p>':'')+(x.szoveg_megjegyzes?'<p class="txt">'+esc(x.szoveg_megjegyzes)+'</p>':'')+'<dl>'+rows.join("")+'</dl></details>';
     }
     return '<li><div class="rtop"><a class="num" href="'+esc(r.url)+'" title="Hivatalos kivonat (PDF)">'+esc(r.num)+'.</a><span class="ttl">'+esc(r.title.charAt(0).toUpperCase()+r.title.slice(1))+'</span></div>'+
       '<div class="chips">'+chips+st+'</div>'+body+'</li>';
   }
 
-  ["q","fy","fm","ft","fd","fl"].forEach(function(id){$(id).addEventListener(id==="q"?"input":"change",function(){shown=4;render();});});
+  ["q","fy","fm","ft","fd","fl","fu"].forEach(function(id){$(id).addEventListener(id==="q"?"input":"change",function(){shown=4;render();});});
   $("more").addEventListener("click",function(){shown+=6;render();});
 
   // ?q= támogatás (linkelhető keresés)

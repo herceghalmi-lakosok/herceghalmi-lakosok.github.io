@@ -91,4 +91,10 @@ A program nem írja felül a kézzel kitöltött mezőket. Ezeket kézzel tölts
 - `vegrehajtas`: `teljesult`, `folyamatban`, `nem-teljesult` vagy `visszavonva`. Forrás lehet a polgármester beszámolója a lejárt határidejű határozatokról, egy újabb határozat, szerződés vagy hivatalos közlemény.
 - `vegrehajtas_megjegyzes`: egy mondat a végrehajtásról, a forrással együtt (pl. „A szerződést 2026. november 20-án megkötötték (lásd: …).”).
 
+A szavazási arányokat a jegyzőkönyvekből a `python3 nyitott/tools/szavazasok_jkv.py <jegyzőkönyv-PDF-ek>` program tölti ki (csak az üres `szavazas` mezőket). Az „ELLENŐRIZD” sorokat nézd meg a PDF-ben. Zárt ülésen hozott döntésnél a szavazás nem nyilvános: ilyenkor a `szavazas_megjegyzes` mezőbe írd ezt.
+
+Ha egy határozat magánszemély nevét tartalmazza (pl. ösztöndíjasok, felajánló magánszemély), a `szoveg` mezőt hagyd üresen, és a `szoveg_megjegyzes` mezőbe írd: „A határozat magánszemélyek nevét tartalmazza, ezért a szövegét itt nem közöljük. Az eredeti kivonat a hivatalos honlapon olvasható.” Vállalkozók, szerződő cégek és tisztségviselők neve maradhat.
+
+Ha a hivatalos honlapon hibás a határozat száma, a tételt a dokumentumkereső szerinti számon hagyd, és a `megjegyzes` mezőben írd le az eltérést (példa: 38/2026.).
+
 Csak olyat írj be, ami hivatalos dokumentumból igazolható. Ha bizonytalan, hagyd üresen: az oldal ilyenkor „nincs még adat” állapotot mutat.
