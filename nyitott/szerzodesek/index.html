@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Szerződéstár – Nyitott Herceghalom</title>
+<meta name="description" content="Herceghalom önkormányzatának közzétett szerződései kereshetően: partner, tárgy, érték, dátum és a kapcsolódó képviselő-testületi határozat. Letölthető táblázat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../kepek/favicon-64.png">
+<link rel="apple-touch-icon" href="../kepek/apple-touch-icon.png">
+<link rel="stylesheet" href="../kozos.css">
+<style>
+  .panel{grid-template-columns:2fr 1fr 1fr 1fr}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 10px}
+  .btn2{font:inherit;font-size:.9rem;font-weight:600;padding:8px 14px;border-radius:var(--radius);border:1.5px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer;text-decoration:none}
+  .tbl td small{display:block;color:var(--muted);font-size:.8rem}
+  .tbl th button{all:unset;cursor:pointer}
+  .big{font-weight:700}
+  .miss{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:var(--radius);padding:14px 16px;margin:24px 0 18px}
+  .miss h2{font-size:1.2rem;margin:0 0 6px}
+  textarea.mt{width:100%;min-height:170px;font:inherit;font-size:.88rem;padding:10px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--paper);color:var(--ink)}
+  @media (max-width:720px){.hide-s{display:none}}
+</style>
+</head>
+<body>
+<div class="notice" role="note"><div class="wrap"><strong>Nem hivatalos oldal.</strong> Ez nem Herceghalom Község Önkormányzatának honlapja. A hivatalos honlap: <a href="https://www.herceghalom.hu/">herceghalom.hu</a>. Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget.</div></div>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../"><img src="../kepek/gesztenyes-tisza-sziget-logo-96.webp" width="44" height="44" alt=""><span><b>Nyitott Herceghalom</b><small>← vissza a főoldalra</small></span></a>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Szerződéstár</h1>
+    <p class="lede">Az önkormányzat által közzétett szerződések egy helyen, kereshetően: kivel, mire, mennyiért, mikor, és melyik testületi döntés alapján. Minden sor a hivatalos PDF-re mutat.</p>
+  </section>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="panel" role="search">
+    <div class="q"><label for="q">Keresés partnerre, tárgyra, határozatszámra</label><input id="q" type="search" placeholder="pl. Puhi-Tárnok, járda, 115/2026" autocomplete="off"></div>
+    <div><label for="fy">Év</label><select id="fy"><option value="">Mind</option></select></div>
+    <div><label for="fk">Terület</label><select id="fk"><option value="">Mind</option></select></div>
+    <div><label for="fv">Érték</label><select id="fv"><option value="">Mind</option><option value="5">Legalább 5 millió Ft</option><option value="20">Legalább 20 millió Ft</option></select></div>
+  </div>
+  <div class="actions">
+    <span class="count" id="count" style="margin:0;align-self:center"></span>
+    <button class="btn2" id="csv" type="button">Letöltés táblázatként (CSV)</button>
+    <a class="btn2" href="https://github.com/herceghalmi-lakosok/herceghalmi-lakosok.github.io/commits/main/nyitott/adatok/szerzodesek.json">Az adatok változástörténete</a>
+  </div>
+  <div class="tblwrap"><table class="tbl" id="tbl">
+    <thead><tr><th><button data-s="datum">Dátum ↕</button></th><th>Partner és tárgy</th><th class="r"><button data-s="ertek">Érték ↕</button></th><th class="hide-s">Határozat</th><th>PDF</th></tr></thead>
+    <tbody id="rows"><tr><td colspan="5" class="empty">Betöltés…</td></tr></tbody>
+  </table></div>
+
+  <section class="miss" id="hianyzo">
+    <h2>Döntések, amelyekhez nem találtunk közzétett szerződést</h2>
+    <p class="lede2">2026-os, legalább bruttó 5 millió forintos döntések, amelyekhez a herceghalom.hu szerződései között nem találtunk megfelelő dokumentumot. Ennek lehet egyszerű oka is: a szerződést még nem kötötték meg, más felületen (pl. a <a href="https://kozadat.hu/">kozadat.hu</a>-n) tették közzé, vagy más címmel szerepel. Az ötmillió forintot elérő szerződések adatait az információszabadság-törvény szerint nyilvánosságra kell hozni.</p>
+    <div class="tblwrap" style="max-height:none;margin-top:10px"><table class="tbl"><thead><tr><th>Határozat</th><th>Tárgy</th><th class="r">Érték</th></tr></thead><tbody id="mrows"></tbody></table></div>
+    <h3 style="margin:16px 0 6px;font-size:1.05rem">Kérd ki őket közérdekű adatigényléssel</h3>
+    <p class="lede2" style="font-size:.95rem">Másold ki a szöveget, írd alá, és küldd el a <a href="mailto:polghiv@herceghalom.hu">polghiv@herceghalom.hu</a> címre, vagy add be nyilvánosan a <a href="https://kimittud.hu/new/herceghalomkzsg_nkormnyzat_polgrmesteri_hivatal">KiMitTud</a> oldalon. A válaszadási határidő 15 nap. Részletes útmutató: <a href="../#adatigenyles">közérdekű adatigénylés</a>.</p>
+    <textarea class="mt" id="mt" readonly></textarea>
+    <p style="margin:8px 0 0"><button class="btn2" id="copy" type="button">Szöveg másolása</button> <span id="cmsg" style="font-size:.9rem;color:var(--muted)"></span></p>
+  </section>
+
+  <div class="box">
+    <p><b>Honnan vannak az adatok?</b> A herceghalom.hu-n közzétett szerződések szkennelt PDF-ek; a partnert, az értéket, a dátumot és a határozatszámot szövegfelismeréssel olvastuk ki, és kézzel ellenőriztük. Az érték mellett jelezzük, ha nettó, havi vagy keretösszegről van szó. A pontos adat mindig az eredeti szerződésben van. Ha hibát találsz, írj: <a href="mailto:gesztenyestisza@proton.me">gesztenyestisza@proton.me</a>.</p>
+    <p><b>Minta:</b> a Fővárosi Önkormányzat 17/2025. (VI. 12.) rendelete szerint a szerződéseket kereshetően, naprakészen, a változások nyomon követésével, a megkötéstől számított 30 napon belül kell közzétenni (<a href="https://njt.jog.gov.hu/jogszabaly/2025-17-SP-5Y4191">Nemzeti Jogszabálytár</a>). Ezt az oldalt is ennek mintájára építettük.</p>
+  </div>
+  <footer>Forrás: Herceghalom Község Önkormányzatának <a href="https://www.herceghalom.hu/">közzétett szerződései</a> és határozatai.</footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+  function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  function ft(n){return n==null?"–":n.toLocaleString("hu-HU")+" Ft";}
+  var HM=["jan.","febr.","márc.","ápr.","máj.","jún.","júl.","aug.","szept.","okt.","nov.","dec."];
+  function hd(s){if(!s)return "–";var p=s.split("-");return p[0]+(p[1]?". "+HM[+p[1]-1]:"")+(p[2]?" "+(+p[2])+".":"");}
+  var ALL=[],sortKey="datum",sortDir=-1;
+
+  function filtered(){
+    var q=norm($("q").value.trim()),fy=$("fy").value,fk=$("fk").value,fv=+$("fv").value||0,terms=q?q.split(/\s+/):[];
+    return ALL.filter(function(c){
+      if(fy&&c.datum.slice(0,4)!==fy)return false;
+      if(fk&&c.kategoria!==fk)return false;
+      if(fv&&!(c.ertek!=null&&c.ertek>=fv*1e6&&!/havonta|negyed/.test(c.ertek_tipus)))return false;
+      for(var i=0;i<terms.length;i++)if(c.hay.indexOf(terms[i])<0)return false;
+      return true;
+    }).sort(function(a,b){var x=a[sortKey],y=b[sortKey];if(x==null)return 1;if(y==null)return -1;return (x>y?1:x<y?-1:0)*sortDir;});
+  }
+  function render(){
+    var list=filtered();
+    $("count").textContent=list.length+" szerződés";
+    $("rows").innerHTML=list.length?list.map(function(c){
+      return '<tr><td style="white-space:nowrap">'+hd(c.datum)+'</td><td><span class="big">'+esc(c.partner)+'</span><small>'+esc(c.megjegyzes||c.cim)+'</small><small>'+esc(c.tipus)+' · '+esc(c.kategoria)+(c.vege?' · lejár: '+esc(c.vege):'')+'</small></td>'+
+        '<td class="r">'+ft(c.ertek)+(c.ertek_tipus?'<small>'+esc(c.ertek_tipus)+'</small>':'')+'</td>'+
+        '<td class="hide-s">'+(c.hatarozatok||[]).map(function(h){return /\/2026$/.test(h)?'<a href="../dontesek/?q='+encodeURIComponent(h)+'">'+esc(h)+'.</a>':esc(h)+'.';}).join("<br>")+'</td>'+
+        '<td><a href="'+esc(c.url)+'">PDF</a></td></tr>';
+    }).join(""):'<tr><td colspan="5" class="empty">Nincs találat.</td></tr>';
+  }
+  function csv(){
+    var cols=["datum","partner","cim","tipus","kategoria","ertek","ertek_tipus","kezdete","vege","hatarozatok","url"];
+    var lines=[cols.join(";")].concat(filtered().map(function(c){return cols.map(function(k){var v=c[k];if(Array.isArray(v))v=v.join(", ");v=v==null?"":String(v);return /[;"\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}).join(";");}));
+    var blob=new Blob(["﻿"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="herceghalom-szerzodesek.csv";document.body.appendChild(a);a.click();a.remove();
+  }
+
+  fetch("../adatok/szerzodesek.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(D){
+    ALL=D.szerzodesek||[];
+    ALL.forEach(function(c){c.hay=norm([c.partner,c.cim,c.megjegyzes,c.tipus,c.kategoria,(c.hatarozatok||[]).join(" ")].join(" "));});
+    Array.from(new Set(ALL.map(function(c){return c.datum.slice(0,4);}))).sort().reverse().forEach(function(y){$("fy").insertAdjacentHTML("beforeend","<option>"+esc(y)+"</option>");});
+    Array.from(new Set(ALL.map(function(c){return c.kategoria;}))).sort().forEach(function(k){$("fk").insertAdjacentHTML("beforeend","<option>"+esc(k)+"</option>");});
+    var y26=ALL.filter(function(c){return c.datum.slice(0,4)==="2026";});
+    var big=ALL.filter(function(c){return c.ertek>=5e6&&!/havonta|negyed/.test(c.ertek_tipus);}).length;
+    var M=D.hianyzo||[];
+    $("stats").innerHTML='<div class="stat"><b>'+ALL.length+'</b><span>közzétett szerződés</span></div>'+
+      '<div class="stat"><b>'+y26.length+'</b><span>2026-ban kötött</span></div>'+
+      '<div class="stat"><b>'+big+'</b><span>legalább 5 millió Ft értékű</span></div>'+
+      '<div class="stat"><b>'+M.length+'</b><span>2026-os döntés közzétett szerződés nélkül (<a href="#hianyzo">lista</a>)</span></div>';
+    $("mrows").innerHTML=M.map(function(m){return '<tr><td><a href="../dontesek/?q='+encodeURIComponent(m.hatarozat)+'">'+esc(m.hatarozat)+'.</a></td><td>'+esc(m.targy)+(m.partner?'<small>'+esc(m.partner)+'</small>':'')+'</td><td class="r">'+ft(m.ertek)+'<small>'+esc(m.ertek_tipus)+'</small></td></tr>';}).join("");
+    $("mt").value="Tárgy: Közérdekű adatigénylés – szerződések\n\nTisztelt Polgármesteri Hivatal!\n\nAz információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény 28. §-a alapján közérdekű adatigénylést terjesztek elő. Kérem, szíveskedjenek elektronikus másolatban megküldeni az alábbi képviselő-testületi határozatok alapján megkötött szerződéseket, azok mellékleteit és esetleges módosításait. Ha valamelyik szerződést még nem kötötték meg, kérem, ezt jelezzék.\n\n"+
+      M.map(function(m){return "– "+m.hatarozat+". számú határozat: "+m.targy;}).join("\n")+
+      "\n\nKérem továbbá, tájékoztassanak arról, hogy az ötmillió forintot elérő szerződések Infotv. 1. melléklet III. 4. pontja szerinti adatait hol teszik közzé.\n\nAz adatokat elektronikus úton, erre az e-mail-címre kérem.\n\nTisztelettel:\n[név]\n[elérhetőség]";
+    try{var p=new URLSearchParams(location.search);if(p.get("q"))$("q").value=p.get("q");}catch(e){}
+    render();
+  }).catch(function(){$("rows").innerHTML='<tr><td colspan="5" class="empty">Az adatok nem töltődtek be. Frissítsd az oldalt.</td></tr>';});
+  ["q","fy","fk","fv"].forEach(function(id){$(id).addEventListener(id==="q"?"input":"change",render);});
+  Array.prototype.forEach.call(document.querySelectorAll("th button"),function(b){b.addEventListener("click",function(){var k=b.getAttribute("data-s");if(sortKey===k)sortDir=-sortDir;else{sortKey=k;sortDir=-1;}render();});});
+  $("csv").addEventListener("click",csv);
+  $("copy").addEventListener("click",function(){var t=$("mt");try{navigator.clipboard.writeText(t.value).then(function(){$("cmsg").textContent="A szöveg a vágólapra került.";});}catch(e){t.select();$("cmsg").textContent="Jelöld ki és másold a szöveget.";}});
+})();
+</script>
+</body>
+</html>

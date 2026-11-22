@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ülésfigyelő – Nyitott Herceghalom</title>
+<meta name="description" content="Herceghalom képviselő-testületének ülései közérthetően: mi volt napirenden, melyek az előterjesztések, mit döntöttek, és hol nézhető vissza a felvétel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../kepek/favicon-64.png">
+<link rel="apple-touch-icon" href="../kepek/apple-touch-icon.png">
+<link rel="stylesheet" href="../kozos.css">
+<style>
+  .next{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:var(--radius);padding:14px 16px;margin:0 0 18px}
+  .next h2{font-size:1.15rem;margin-bottom:6px}
+  .ts{list-style:none;margin:6px 0 0;padding:0}
+  .ts li{margin:3px 0}
+  .ts a{font-variant-numeric:tabular-nums;font-weight:600}
+  .dec li{margin:5px 0}
+  .tag{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--paper);color:var(--muted);border:1px solid var(--line);margin-left:6px}
+</style>
+</head>
+<body>
+<div class="notice" role="note"><div class="wrap"><strong>Nem hivatalos oldal.</strong> Ez nem Herceghalom Község Önkormányzatának honlapja. A hivatalos honlap: <a href="https://www.herceghalom.hu/">herceghalom.hu</a>. Üzemelteti és szerkeszti: Herceghalmi Gesztenyés Tisza Sziget.</div></div>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../"><img src="../kepek/gesztenyes-tisza-sziget-logo-96.webp" width="44" height="44" alt=""><span><b>Nyitott Herceghalom</b><small>← vissza a főoldalra</small></span></a>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Ülésfigyelő</h1>
+    <p class="lede">A képviselő-testület ülései közérthetően: röviden, miről szól az ülés, melyek az előterjesztések, és legfeljebb öt pontban, mit döntöttek. Ha van felvétel, napirendi pontonként is visszanézhető.</p>
+  </section>
+
+  <div id="next"></div>
+
+  <div class="panel" role="search" style="grid-template-columns:2fr 1fr">
+    <div class="q"><label for="q">Keresés az ülések napirendjében és döntéseiben</label><input id="q" type="search" placeholder="pl. óvoda, járda, Panattoni" autocomplete="off"></div>
+    <div><label for="fy">Év</label><select id="fy"><option value="">Mind</option></select></div>
+  </div>
+
+  <p class="count" id="count"></p>
+  <div id="list"><p class="empty">Betöltés…</p></div>
+  <button class="more" id="more" hidden>Korábbi ülések</button>
+
+  <div class="box">
+    <p><b>Honnan vannak az adatok?</b> A napirendet az ülésre benyújtott előterjesztések adják, a döntéseket a határozati kivonatokból foglaljuk össze. Az összefoglaló a szerkesztők munkája, a pontos szöveg mindig a hivatalos határozatban van: a számokra kattintva a <a href="../dontesek/">Döntéskövetőben</a> találod. A felvételeket a Budakörnyéki Televízió készíti.</p>
+  </div>
+
+  <footer>Forrás: Herceghalom Község Önkormányzatának <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=testulet-meghivok">ülésanyagai</a> és <a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=hatarozatok">határozatai</a>; Budakörnyéki Televízió.</footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+  function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+  var HM=["január","február","március","április","május","június","július","augusztus","szeptember","október","november","december"];
+  function huDate(iso){var p=iso.split("-");return p[0]+". "+HM[+p[1]-1]+" "+(+p[2])+".";}
+  function secs(t){var p=String(t).split(":").map(Number);var s=0;p.forEach(function(x){s=s*60+x;});return s;}
+  // "(162/2026.)" és "(135–137/2026.)" hivatkozások linkké alakítása
+  function linkRefs(txt){
+    return esc(txt).replace(/(\d{1,3})(?:[–-](\d{1,3}))?\/(20\d\d)\./g,function(m,a,b,y){
+      return '<a href="../dontesek/?q='+encodeURIComponent(a+"/"+y)+'">'+m+'</a>';
+    });
+  }
+  var meetings=[], shown=5;
+
+  function build(D,U){
+    var E=U.ulesek||{};
+    var props={}, resCount={};
+    D.dokumentumok.forEach(function(i){
+      if(i.t==="Előterjesztés")(props[i.d]=props[i.d]||[]).push(i);
+      if(i.t==="Határozat")resCount[i.d]=(resCount[i.d]||0)+1;
+    });
+    meetings=(D.ulesek||[]).slice().sort(function(a,b){return b.d.localeCompare(a.d);}).map(function(u){
+      var e=E[u.d]||{};
+      var m={u:u,e:e,p:props[u.d]||[],year:u.d.slice(0,4)};
+      m.hay=norm([e.elozetes,(e.dontesek||[]).join(" "),m.p.map(function(x){return x.ti;}).join(" "),u.kind].join(" "));
+      return m;
+    });
+    var ys={};meetings.forEach(function(m){ys[m.year]=1;});
+    Object.keys(ys).sort().reverse().forEach(function(y){$("fy").insertAdjacentHTML("beforeend",'<option>'+y+'</option>');});
+
+    var k=U.kovetkezo;
+    $("next").innerHTML='<div class="next"><h2>'+(k&&k.d?"Következő ülés: "+huDate(k.d)+(k.ido?", "+esc(k.ido):""):"Következő ülés")+'</h2>'+
+      (k&&k.elozetes?'<p class="lede2">'+esc(k.elozetes)+'</p>':'<p class="lede2">A következő ülés meghívója még nem jelent meg. Amint megjelenik, itt találod a napirendet és a rövid, közérthető összefoglalót. A testületi ülések nyilvánosak, bárki részt vehet rajtuk.</p>')+
+      (k&&k.meghivo?'<p style="margin:8px 0 0"><a href="'+esc(k.meghivo)+'">Meghívó (PDF)</a></p>':'<p style="margin:8px 0 0;font-size:.9rem"><a href="https://www.herceghalom.hu/?module=news&amp;action=list&amp;fname=testulet-meghivok">Meghívók a hivatalos honlapon</a></p>')+'</div>';
+    render();
+  }
+
+  function card(m){
+    var u=m.u,e=m.e,links=[];
+    if(u.m)links.push('<a href="'+esc(u.m)+'">Meghívó</a>');
+    if(u.j)links.push('<a href="'+esc(u.j)+'">Jegyzőkönyv</a>');
+    links.push('<a href="../dontesek/?ules='+u.d+'">Határozatok a Döntéskövetőben</a>');
+    var vids=(u.v||[]).map(function(v,i){
+      var info=(e.videok||{})[v]||{};
+      var ts=(info.pontok||[]).map(function(p){
+        var href=info.youtube?"https://www.youtube.com/watch?v="+encodeURIComponent(info.youtube)+"&t="+secs(p.t)+"s":v;
+        return '<li><a href="'+esc(href)+'">▶ '+esc(p.t)+'</a> '+esc(p.cim)+'</li>';
+      }).join("");
+      var main=info.youtube?"https://www.youtube.com/watch?v="+encodeURIComponent(info.youtube):v;
+      return '<li><a href="'+esc(main)+'">Felvétel'+((u.v.length>1)?" "+(i+1):"")+'</a>'+(ts?'<ul class="ts">'+ts+'</ul>':'')+'</li>';
+    }).join("");
+    var dec=(e.dontesek||[]).length?'<ul class="dec">'+e.dontesek.map(function(d){return '<li>'+linkRefs(d)+'</li>';}).join("")+'</ul>':
+      '<p class="lede2" style="color:var(--muted)">'+esc(e.dontesek_megjegyzes||(u.h?"Az összefoglaló még készül; addig a határozatokat a Döntéskövetőben találod.":"Ezen az ülésen nem született nyilvános határozat, vagy még nem tették közzé."))+'</p>';
+    var props=m.p.length?'<ul>'+m.p.map(function(p){return '<li><a href="'+esc(p.u)+'">'+esc(p.ti)+'</a></li>';}).join("")+'</ul>':'<p class="lede2" style="color:var(--muted)">'+(u.kind==="zárt ülés"?"Zárt ülés: az előterjesztések nem nyilvánosak.":"Nincs közzétett előterjesztés.")+'</p>';
+    return '<article class="meeting" id="u-'+u.d+'"><div class="mh"><h3>'+huDate(u.d)+'</h3><span class="kind">'+esc(u.kind)+' ülés · '+m.p.length+' előterjesztés · '+(u.h||0)+' határozat</span></div>'+
+      '<div class="mlinks">'+links.join("")+'</div>'+
+      (e.elozetes?'<div class="sec"><h4>Röviden</h4><p class="lede2">'+esc(e.elozetes)+'</p></div>':'')+
+      '<div class="grid2"><div class="sec"><h4>Mit döntöttek</h4>'+dec+'</div><div class="sec"><h4>Napirend és előterjesztések</h4>'+props+'</div></div>'+
+      (vids?'<div class="sec"><h4>Visszanézhető</h4><ul class="ts">'+vids+'</ul>'+(!/pontok/.test(JSON.stringify(e.videok||{}))?'<p style="font-size:.82rem;color:var(--muted);margin:4px 0 0">A napirendi pontonkénti időbélyegek feltöltése folyamatban.</p>':'')+'</div>':'')+
+      '</article>';
+  }
+
+  function render(){
+    var q=norm($("q").value.trim()),fy=$("fy").value,terms=q?q.split(/\s+/):[];
+    var list=meetings.filter(function(m){
+      if(fy&&m.year!==fy)return false;
+      for(var i=0;i<terms.length;i++)if(m.hay.indexOf(terms[i])<0)return false;
+      return true;
+    });
+    $("count").textContent=list.length+" ülés";
+    $("list").innerHTML=list.length?list.slice(0,shown).map(card).join(""):'<p class="empty">Nincs találat.</p>';
+    $("more").hidden=list.length<=shown;
+  }
+  $("q").addEventListener("input",function(){shown=5;render();});
+  $("fy").addEventListener("change",function(){shown=5;render();});
+  $("more").addEventListener("click",function(){shown+=5;render();});
+
+  Promise.all([
+    fetch("../adatok/dokumentumok.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json();}),
+    fetch("../adatok/ulesfigyelo.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
+  ]).then(function(a){
+    if(/^#u-/.test(location.hash)){shown=99;}
+    build(a[0],a[1]);
+    if(location.hash){var el=document.querySelector(location.hash);if(el)el.scrollIntoView();}
+  }).catch(function(){$("list").innerHTML='<p class="empty">Az adatok nem töltődtek be. Frissítsd az oldalt.</p>';});
+})();
+</script>
+</body>
+</html>

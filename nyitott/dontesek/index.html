@@ -156,7 +156,8 @@
       var m=byDate[i.d]||(byDate[i.d]={u:null,d:i.d,res:[],egyben:[],year:i.d.slice(0,4)});
       var mm=/^(\d+\/\d{4})\.?\s*(\([^)]*\))?\s*-?\s*(.*)$/.exec(i.ti);
       if(!mm){m.egyben.push(i);return;}
-      var r={num:mm[1],title:mm[3]||i.ti,full:i.ti,url:i.u,tp:i.tp||[],x:det[mm[1]]||null};
+      var num=(R&&R.url_kulcs&&R.url_kulcs[i.u])||mm[1];
+      var r={num:num,title:mm[3]||i.ti,full:i.ti,url:i.u,tp:i.tp||[],x:det[num]||null};
       r.st=statusOf(r);
       r.hay=norm(r.num+" "+r.title+" "+(r.x?(r.x.szoveg||"")+" "+(r.x.felelos||""):""));
       m.res.push(r);
@@ -170,6 +171,7 @@
     Object.keys(years).sort().reverse().forEach(function(y){$("fy").insertAdjacentHTML("beforeend",'<option value="'+y+'">'+y+'</option>');});
     meetings.forEach(function(m){$("fm").insertAdjacentHTML("beforeend",'<option value="'+m.d+'">'+huDate(m.d)+(m.u?" – "+esc(m.u.kind):"")+'</option>');});
     Object.keys(TEMAK).forEach(function(k){$("ft").insertAdjacentHTML("beforeend",'<option value="'+k+'">'+esc(TEMAK[k])+'</option>');});
+    if(PRESET_ULES){$("fm").value=PRESET_ULES;}
 
     // statisztika
     var all=[].concat.apply([],meetings.map(function(m){return m.res;}));
@@ -245,7 +247,8 @@
   $("more").addEventListener("click",function(){shown+=6;render();});
 
   // ?q= támogatás (linkelhető keresés)
-  try{var p=new URLSearchParams(location.search);if(p.get("q"))$("q").value=p.get("q");}catch(e){}
+  var PRESET_ULES="";
+  try{var p=new URLSearchParams(location.search);if(p.get("q"))$("q").value=p.get("q");if(p.get("ules"))PRESET_ULES=p.get("ules");}catch(e){}
 
   Promise.all([
     fetch("../adatok/dokumentumok.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json();}),
