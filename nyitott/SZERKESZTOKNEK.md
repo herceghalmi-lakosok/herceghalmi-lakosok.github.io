@@ -127,9 +127,10 @@ Az adatok az `adatok/fejlesztesek.json`-ban vannak. Az `allapot` lehetséges ér
 
 ## Herceghalom régen (`regen/index.html`)
 
-Helytörténeti oldal, statikus HTML, nem kell hozzá adatfájl. A fejezetek: kezdetek, uradalom, legendák, 1916, Kísérleti Gazdaság és ÁKI, önállóság, Talentis, régi fotók, források.
+Helytörténeti oldal, statikus HTML, nem kell hozzá adatfájl. A fejezetek: kezdetek, uradalom, legendák, 1916, Kísérleti Gazdaság és ÁKI, a Germinal forgatása (1962), önállóság, Talentis, régi fotók, források.
 
 - **Szöveg:** csak saját szavainkkal összefoglalt tényt írj, és a bekezdés végén a `[n]` számmal hivatkozz a Források listára. Újságcikkből vagy könyvből ne másolj be szöveget.
 - **Legenda:** új `<div class="legend">` blokk. Mindig jelezd, hogy hagyományról van szó, és add meg a forrást.
 - **Kép:** csak közkincs (public domain) vagy szabad licencű (Fortepan: CC BY-SA 3.0) képet tegyél fel, és a képaláírásba írd be a szerzőt vagy adományozót és a licencet. Fortepan-jelölés: „FORTEPAN / adományozó neve”. Lakossági fotót csak a beküldő írásos hozzájárulásával közölj, az általa kért névvel.
+- **Videó:** csak olyat ágyazz be, amelyhez a közzétevő maga ad beágyazókódot (YouTube, Filmhíradók Online). Minta a `<div class="video">` blokk: a gomb `data-embed` attribútumába a lejátszó címe kerül, így a videó csak kattintásra töltődik be.
 - **Nem közölhető:** Arcanum-oldalak (pl. Tolnai Világlapja), MTVA-fotók, újságcikkek képei és szövege. Ezekre csak hivatkozz.
